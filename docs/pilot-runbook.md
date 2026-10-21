@@ -1,6 +1,6 @@
 # Roteiro do ensaio multiagente
 
-1. **Orchestrator:** verificar agentes instalados, confirmar Project DNA e coletar aprovação humana.
+1. **Orchestrator:** verificar agentes instalados, confirmar que Project DNA v0.2.0 já foi aprovado como briefing fictício; verificar agentes instalados, credenciais e registrar primeira delegação REAL (evidências).
 2. **UX Architect:** produzir jornadas, arquitetura de informação, conteúdo e critérios de aceite (revisão/aceite).
 3. **UI Designer & Art Director:** direção de arte própria, tokens, layouts e estados acessíveis (revisão/aceite).
 4. **Developer:** implementar interface e interações sem descaracterizar arte; documentar execução e testes.
@@ -14,4 +14,4 @@
 - A criação remota automática de outro repositório de teste permanece separada e pendente.
 
 ## Estado inicial verificável
-`BOOTSTRAPPED_NOT_EXECUTED`, DNA `DRAFT`, todos os sete pacotes de trabalho `PENDING`, release desabilitado.
+`DNA_APPROVED_RUNTIME_UNVERIFIED`, DNA `APPROVED` (briefing fictício), ORCH-001 `BLOCKED` até runtime comprovado, todos os outros pacotes de trabalho `PENDING`, release desabilitado.

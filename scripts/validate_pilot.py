@@ -33,6 +33,12 @@ def validate(root=ROOT, require_release=False):
             raise ValueError('Completion requires evidence and artifacts')
         if not approved and t['status'] not in ('PENDING','BLOCKED'):
             raise ValueError('DNA approval is required')
+    by_id={t['task_id']:t for t in tasks}
+    for t in tasks:
+        if t['status'] in ('IN_PROGRESS','READY_FOR_REVIEW','COMPLETED_VERIFIED'):
+            for dep in t['depends_on']:
+                if by_id[dep]['status'] != 'COMPLETED_VERIFIED':
+                    raise ValueError(f"Unverified prerequisite {dep} for {t['task_id']}")
     if require_release:
         if not approved: raise ValueError('Release blocked: DNA not approved')
         if not dna.get('live_deploy_authorized'): raise ValueError('Release blocked: no authorization')

@@ -1,9 +1,9 @@
 {
   "project_id": "piloto-01",
-  "version": "0.1.0",
-  "approval_status": "DRAFT",
-  "approved_by": null,
-  "approved_at": null,
+  "version": "0.2.0",
+  "approval_status": "APPROVED",
+  "approved_by": "Proprietário da EIXO (confirmação expressa via conversa)",
+  "approved_at": "2026-10-21",
   "profile": "LITE",
   "client_type": "FICTITIOUS_DEMO",
   "client_name": "Ateliê Bruma (marca fictícia)",
@@ -23,10 +23,12 @@
     "Deploy em produção",
     "Integrações externas"
   ],
-  "brand_source": "PENDENTE_DE_APROVACAO",
+  "brand_source": "CONCEITO_FICTICIO_APROVADO; DIRECAO_DE_ARTE_PENDENTE",
   "assets_approved": false,
   "figma_url": null,
   "stack": "A definir após UX e UI aprovados",
   "live_deploy_authorized": false,
-  "repository": "mullz013/eixo-piloto-01"
+  "repository": "mullz013/eixo-piloto-01",
+  "approval_scope": "Aprovação do projeto demonstrativo Ateliê Bruma e execução controlada da esteira multiagente. Não inclui aprovações UX/UI, deploy ou custos externos.",
+  "approval_evidence": "Conversa: proposta do Ateliê Bruma explicitamente aceita com 'Beleza, mete o bronco aí.'"
 }
