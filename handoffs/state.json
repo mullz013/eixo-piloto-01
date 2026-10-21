@@ -1,0 +1,120 @@
+{
+  "project_id": "piloto-01",
+  "dna_version": "0.1.0",
+  "status": "BOOTSTRAPPED_NOT_EXECUTED",
+  "tasks": [
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "ORCH-001",
+      "agent": "Orchestrator",
+      "status": "PENDING",
+      "depends_on": [],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "UX-001",
+      "agent": "UX Architect",
+      "status": "PENDING",
+      "depends_on": [
+        "ORCH-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "UI-001",
+      "agent": "UI Designer & Art Director",
+      "status": "PENDING",
+      "depends_on": [
+        "UX-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "DEV-001",
+      "agent": "Full Stack Developer",
+      "status": "PENDING",
+      "depends_on": [
+        "UX-001",
+        "UI-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "QA-001",
+      "agent": "QA Engineer",
+      "status": "PENDING",
+      "depends_on": [
+        "DEV-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "QUAL-001",
+      "agent": "Quality Specialist",
+      "status": "PENDING",
+      "depends_on": [
+        "UI-001",
+        "DEV-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.1.0",
+      "task_id": "ORCH-RELEASE",
+      "agent": "Orchestrator",
+      "status": "PENDING",
+      "depends_on": [
+        "QA-001",
+        "QUAL-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    }
+  ]
+}

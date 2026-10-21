@@ -1,0 +1,32 @@
+{
+  "project_id": "piloto-01",
+  "version": "0.1.0",
+  "approval_status": "DRAFT",
+  "approved_by": null,
+  "approved_at": null,
+  "profile": "LITE",
+  "client_type": "FICTITIOUS_DEMO",
+  "client_name": "Ateliê Bruma (marca fictícia)",
+  "objective": "Testar seis agentes EIXO trabalhando em uma landing page demonstrativa, do UX ao QA.",
+  "audience": "Pessoas interessadas em cerâmica autoral e objetos para casa (hipótese).",
+  "primary_cta": "Conhecer a coleção (âncora, sem serviço externo)",
+  "scope_in": [
+    "Landing page responsiva",
+    "Direção de arte e tokens próprios",
+    "Manifesto, coleção e contato demonstrativo",
+    "Acessibilidade e SEO técnico básico"
+  ],
+  "scope_out": [
+    "E-commerce",
+    "Pagamentos",
+    "Coleta de dados reais",
+    "Deploy em produção",
+    "Integrações externas"
+  ],
+  "brand_source": "PENDENTE_DE_APROVACAO",
+  "assets_approved": false,
+  "figma_url": null,
+  "stack": "A definir após UX e UI aprovados",
+  "live_deploy_authorized": false,
+  "repository": "mullz013/eixo-piloto-01"
+}
