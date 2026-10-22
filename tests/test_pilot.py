@@ -30,7 +30,8 @@ class HandoffContracts(unittest.TestCase):
     def test_unverified_completion(self):
         td,root=self.make_copy()
         with td:
-            p=root/'handoffs/state.json';state=json.loads(p.read_text());state['tasks'][0]['status']='COMPLETED_VERIFIED';p.write_text(json.dumps(state))
+            p=root/'handoffs/state.json';state=json.loads(p.read_text())
+            state['tasks'][0].update(status='COMPLETED_VERIFIED',evidence=[],artifact_links=[]);p.write_text(json.dumps(state))
             with self.assertRaises(ValueError):validate(root)
     def test_unapproved_in_progress(self):
         td,root=self.make_copy()
@@ -48,13 +49,20 @@ class HandoffContracts(unittest.TestCase):
         td,root=self.make_copy()
         with td:
             p=root/'handoffs/state.json';state=json.loads(p.read_text())
-            state['tasks'][1]['status']='IN_PROGRESS';p.write_text(json.dumps(state))
+            state['tasks'][0]['status']='BLOCKED';state['tasks'][1]['status']='IN_PROGRESS';p.write_text(json.dumps(state))
             with self.assertRaisesRegex(ValueError,'prerequisite'): validate(root)
 
-    def test_allow_orchestrator_blocked_runtime(self):
+    def test_orchestrator_runtime_verified_with_evidence(self):
         state=json.loads((ROOT/'handoffs/state.json').read_text())
-        self.assertEqual(state['tasks'][0]['status'],'BLOCKED')
-        self.assertEqual(state['status'],'DNA_APPROVED_RUNTIME_UNVERIFIED')
+        orch=state['tasks'][0]
+        self.assertEqual(orch['status'],'COMPLETED_VERIFIED')
+        self.assertEqual(state['status'],'DNA_APPROVED_RUNTIME_VERIFIED')
+        for rel in orch['artifact_links']:
+            self.assertTrue((ROOT/rel).is_file(),rel)
+        transcript=json.loads((ROOT/'evidence/ORCH-001/delegation-transcript.json').read_text())
+        calls=[e for e in transcript if e['event']=='tool_use' and e['tool']=='Agent']
+        self.assertEqual(calls[0]['input']['subagent_type'],'eixo-ux-architect')
+        self.assertTrue(any(e.get('parent_tool_use_id')==calls[0]['id'] for e in transcript))
 
 if __name__=='__main__':unittest.main()
 
