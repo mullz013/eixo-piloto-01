@@ -1,13 +1,29 @@
 /* Ateliê Bruma | loja demonstrativa (DEV-002) | marca FICTÍCIA
    Menu e sacola em gaveta, carrossel com setas e bullets, filtro por categoria e sacola local.
-   Sem JavaScript o conteúdo continua acessível: vitrines rolam na horizontal e as âncoras funcionam. */
+   Sem JavaScript (classe no-js): o menu fica visível em todas as larguras, as vitrines rolam na horizontal
+   e os controles de compra somem, porque dependem deste arquivo. */
 (function () {
   "use strict";
 
   var $ = function (sel, root) { return (root || document).querySelector(sel); };
   var $$ = function (sel, root) { return Array.prototype.slice.call((root || document).querySelectorAll(sel)); };
   var FRETE = window.BRUMA_FRETE_GRATIS || 299;
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function onMedia(mq, fn) {
+    if (mq.addEventListener) mq.addEventListener("change", fn); else if (mq.addListener) mq.addListener(fn);
+  }
+  var motionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var reduceMotion = motionQuery.matches;
+  onMedia(motionQuery, function (mq) { reduceMotion = mq.matches; });
+
+  /* ---------- Pausa da névoa do banner ---------- */
+  var pauseBtn = $("[data-pause-motion]");
+  if (pauseBtn) {
+    pauseBtn.addEventListener("click", function () {
+      var paused = $(".hero").classList.toggle("is-paused");
+      pauseBtn.setAttribute("aria-pressed", String(paused));
+      pauseBtn.textContent = paused ? "Retomar animação" : "Pausar animação";
+    });
+  }
 
   function brl(v) {
     var s = v.toFixed(2).split(".");
@@ -30,6 +46,15 @@
     $$('[aria-controls="' + drawer.id + '"]').forEach(function (b) { b.setAttribute("aria-expanded", String(value)); });
   }
 
+  var background = [".announce", "[data-header]", "#conteudo", ".footer"];
+  function setInert(value) {
+    background.forEach(function (sel) {
+      var el = $(sel);
+      if (!el) return;
+      if (value) el.setAttribute("inert", ""); else el.removeAttribute("inert");
+    });
+  }
+
   function open(drawer) {
     var t = document.querySelector("[data-toast]");
     if (t) t.classList.remove("is-on");
@@ -37,6 +62,7 @@
     lastFocus = document.activeElement;
     drawer.hidden = false;
     document.body.classList.add("is-locked");
+    setInert(true);
     setExpanded(drawer, true);
     requestAnimationFrame(function () {
       requestAnimationFrame(function () { drawer.classList.add("is-open"); });
@@ -50,6 +76,7 @@
     drawer.classList.remove("is-open");
     setExpanded(drawer, false);
     document.body.classList.remove("is-locked");
+    setInert(false);
     openDrawer = null;
     var done = function () { if (!drawer.classList.contains("is-open")) drawer.hidden = true; };
     if (reduceMotion) done(); else setTimeout(done, 300);
@@ -78,7 +105,7 @@
   var cartDrawer = $("#sacola");
   $$("[data-open-menu]").forEach(function (b) { b.addEventListener("click", function () { open(menu); }); });
   $$("[data-open-cart]").forEach(function (b) { b.addEventListener("click", function () { open(cartDrawer); }); });
-  window.matchMedia("(min-width: 1024px)").addEventListener("change", function (mq) {
+  onMedia(window.matchMedia("(min-width: 1024px)"), function (mq) {
     if (mq.matches && openDrawer === menu) close(menu, true);
   });
 
@@ -116,7 +143,7 @@
         var b = document.createElement("button");
         b.type = "button";
         b.className = "dot";
-        b.setAttribute("aria-label", "Página " + (i + 1) + " de " + state.pages);
+        b.setAttribute("aria-label", "Página " + (i + 1) + " de " + state.pages + " de " + root.dataset.name);
         b.dataset.page = i;
         dotsBox.appendChild(b);
       }
@@ -132,16 +159,20 @@
       var page = current();
       $$(".dot", dotsBox).forEach(function (d, i) { d.setAttribute("aria-current", String(i === page)); });
       var max = track.scrollWidth - track.clientWidth;
-      prev.disabled = track.scrollLeft <= 2;
-      next.disabled = track.scrollLeft >= max - 2;
+      prev.setAttribute("aria-disabled", String(track.scrollLeft <= 2));
+      next.setAttribute("aria-disabled", String(track.scrollLeft >= max - 2));
     }
 
     function go(page) {
       track.scrollTo({ left: page * state.step, behavior: reduceMotion ? "auto" : "smooth" });
     }
 
-    prev.addEventListener("click", function () { go(Math.max(0, current() - 1)); });
-    next.addEventListener("click", function () { go(Math.min(state.pages - 1, current() + 1)); });
+    prev.addEventListener("click", function () {
+      if (prev.getAttribute("aria-disabled") !== "true") go(Math.max(0, current() - 1));
+    });
+    next.addEventListener("click", function () {
+      if (next.getAttribute("aria-disabled") !== "true") go(Math.min(state.pages - 1, current() + 1));
+    });
     dotsBox.addEventListener("click", function (e) {
       var d = e.target.closest(".dot");
       if (d) go(Number(d.dataset.page));
@@ -168,6 +199,7 @@
 
   /* ---------- Filtro por categoria ---------- */
   var bar = $("[data-filterbar]");
+  var activeFilter = null;
   var names = {};
   $$(".cat[data-filter]").forEach(function (a) { names[a.dataset.filter] = $(".cat__name", a).textContent; });
 
@@ -181,6 +213,8 @@
     var pastIntro = $("#colecoes .sec__intro");
     if (pastIntro) pastIntro.hidden = !!cat && !$(".past:not([hidden])");
     bar.hidden = !cat;
+    activeFilter = cat;
+    document.documentElement.classList.toggle("has-filter", !!cat);
     if (cat) $("[data-filter-name]", bar).textContent = names[cat];
     carousels.forEach(function (c) { c.reset(); c.measure(); });
   }
@@ -201,12 +235,29 @@
   $("[data-clear-filter]").addEventListener("click", function () {
     applyFilter(null);
     $("#categorias").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth" });
+    var h = $("#t-categorias");
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
   });
+  /* link de âncora para uma vitrine escondida pelo filtro: limpa o filtro antes de navegar */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest('a[href^="#"]:not([data-filter])');
+    if (!a || !activeFilter) return;
+    var target = document.getElementById(a.getAttribute("href").slice(1));
+    if (target && (target.hidden || target.closest("[hidden]"))) applyFilter(null);
+  }, true);
 
   /* ---------- Sacola ---------- */
   var KEY = "bruma-sacola-v1";
   var cart = [];
-  try { cart = JSON.parse(localStorage.getItem(KEY) || "[]") || []; } catch (err) { cart = []; }
+  try { cart = JSON.parse(localStorage.getItem(KEY) || "[]"); } catch (err) { cart = []; }
+  /* só aceita itens que existem no catálogo da página; nome, preço e imagem vêm sempre do botão */
+  cart = (Array.isArray(cart) ? cart : []).map(function (item) {
+    var btn = item && typeof item.id === "string" && $('[data-add="' + item.id.replace(/[^a-z-]/g, "") + '"]');
+    var qty = Math.floor(Number(item && item.qty));
+    if (!btn || !(qty >= 1)) return null;
+    return { id: btn.dataset.add, name: btn.dataset.name, price: Number(btn.dataset.price), img: btn.dataset.img, col: btn.dataset.col, qty: Math.min(qty, 20) };
+  }).filter(Boolean);
 
   var list = $("[data-cart-list]");
   var empty = $("[data-cart-empty]");
@@ -214,6 +265,7 @@
   var notice = $("[data-checkout-notice]");
   var toast = $("[data-toast]");
   var toastTimer;
+  var doneTimers = new WeakMap();
 
   function save() { try { localStorage.setItem(KEY, JSON.stringify(cart)); } catch (err) { /* sem armazenamento: a sacola vale só nesta visita */ } }
 
@@ -271,15 +323,21 @@
     if (!btn) return;
     var id = btn.dataset.add;
     var found = cart.filter(function (i) { return i.id === id; })[0];
-    if (found) found.qty += 1;
+    if (found) found.qty = Math.min(found.qty + 1, 20);
     else cart.push({ id: id, name: btn.dataset.name, price: Number(btn.dataset.price), img: btn.dataset.img, col: btn.dataset.col, qty: 1 });
     save();
     render();
+    var long = $(".add__long", btn), short = $(".add__short", btn);
+    if (!btn.dataset.long) { btn.dataset.long = long.textContent; btn.dataset.short = short.textContent; }
     btn.classList.add("is-done");
-    var label = $(".add__label", btn);
-    var original = label.textContent;
-    label.textContent = "Adicionada à sacola";
-    setTimeout(function () { btn.classList.remove("is-done"); label.textContent = original; }, 1600);
+    long.textContent = "Adicionada à sacola";
+    short.textContent = "Adicionada";
+    clearTimeout(doneTimers.get(btn));
+    doneTimers.set(btn, setTimeout(function () {
+      btn.classList.remove("is-done");
+      long.textContent = btn.dataset.long;
+      short.textContent = btn.dataset.short;
+    }, 1600));
     $$(".bag-btn").forEach(function (b) {
       b.classList.remove("is-bumped"); void b.offsetWidth; b.classList.add("is-bumped");
     });

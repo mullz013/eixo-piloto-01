@@ -1,4 +1,4 @@
-/* Ateliê Bruma | tokens (marca FICTÍCIA) | UI-001 | PROPOSTA, NÃO APROVADA
+/* Ateliê Bruma | tokens (marca FICTÍCIA) | UI-001 APROVADO em 2026-10-22 (ver handoffs/approval-log.md)
    Mantido à mão em sincronia com tokens.json. Sem identidade da EIXO.
    Contrastes: calculados à mão e conferidos por script pela revisão independente (evidence/UI-001/contrast-check.json); ver ui-handoff.md §7.
    Fontes: não carregadas aqui. Fraunces e Figtree (SIL OFL 1.1) devem ser auto-hospedadas pelo Developer. */
@@ -87,7 +87,7 @@
 
   /* ---------- Layout ---------- */
   --gutter: clamp(1rem, 5vw, 2rem);
-  --container: 72rem;
+  --container: 72rem;          /* a loja (DEV-002) usa 80rem, definido em styles.css */
   --measure: 62ch;
   --header-height: 56px;
   --anchor-offset: 5rem;       /* use em scroll-padding-top e scroll-margin-top */

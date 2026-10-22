@@ -32,7 +32,7 @@ Composição em camadas, da trás para a frente: gradiente de névoa (creme para
 
 ## 4. Ilustrações das peças
 
-Geradas por `scripts/gerar_pecas.py`: cada forma é um sólido de revolução descrito por um perfil (altura, raio) em perspectiva leve. Camadas: corpo com degradê de 7 paradas, camada de esmalte com escorridos (névoa clara na Névoa, areia na Terra Molhada, borda cobalto no Sal), pé de argila crua, textura de grés (pintas por `feTurbulence`), sombra de contato e brilho especular. 10 formas × 3 esmaltes = 30 arquivos, 4 a 6 KB cada.
+Geradas por `scripts/gerar_pecas.py`: cada forma é um sólido de revolução descrito por um perfil (altura, raio) em perspectiva leve. Camadas: corpo com degradê de 7 paradas, camada de esmalte com escorridos (névoa clara na Névoa, areia na Terra Molhada, borda cobalto no Sal), pé de argila crua, textura de grés (pintas por `feTurbulence`), sombra de contato e brilho especular. 10 formas × 3 esmaltes; o script grava só as 20 combinações que a loja usa (4 a 6 KB cada).
 
 São ilustrações, não fotos. Para fotos de produto realistas, ver a recomendação do agente de design gráfico no documento de resolução do feedback.
 

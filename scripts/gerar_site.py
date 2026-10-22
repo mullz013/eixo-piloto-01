@@ -88,7 +88,7 @@ def categoria_de(forma: str) -> str:
     return next(c["id"] for c in CATEGORIAS if forma in c["formas"])
 
 
-def card(p: tuple, idx: int) -> str:
+def card(p: tuple, idx: int, hn: str = "h3") -> str:
     col, forma, nome, medida, preco, selo = p
     pid = f"{col}-{forma}"
     esgotado = selo == "esgotado"
@@ -106,7 +106,8 @@ def card(p: tuple, idx: int) -> str:
         btn = (
             f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" '
             f'data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">'
-            f'{ICON["plus"]}<span class="add__label">Adicionar à sacola</span></button>'
+            f'{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
+            f'<span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>'
         )
     return f'''          <li class="card card--{col}" data-cat="{categoria_de(forma)}">
             <div class="card__media">
@@ -114,7 +115,7 @@ def card(p: tuple, idx: int) -> str:
               {badge}
             </div>
             <div class="card__body">
-              <h3 class="card__name">{escape(nome)}</h3>
+              <{hn} class="card__name">{escape(nome)}</{hn}>
               <p class="card__meta">{escape(medida)} · grés</p>
               <p class="price"><span class="price__val">{brl(preco)}</span>{parcela}</p>
               {btn}
@@ -124,16 +125,17 @@ def card(p: tuple, idx: int) -> str:
 
 def vitrine(col: dict, titulo_id: str) -> str:
     itens = [p for p in CATALOGO if p[0] == col["id"]]
-    cards = "\n".join(card(p, i) for i, p in enumerate(itens))
-    return f'''      <div class="carousel" data-carousel>
+    hn = "h3" if col["atual"] else "h4"
+    cards = "\n".join(card(p, i, hn) for i, p in enumerate(itens))
+    return f'''      <div class="carousel" data-carousel data-name="{col["nome"]}">
         <div class="carousel__nav" hidden>
-          <button class="arrow" type="button" data-dir="-1" aria-label="Peças anteriores">{ICON["prev"]}</button>
-          <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças">{ICON["next"]}</button>
+          <button class="arrow" type="button" data-dir="-1" aria-label="Peças anteriores de {col["nome"]}">{ICON["prev"]}</button>
+          <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças de {col["nome"]}">{ICON["next"]}</button>
         </div>
         <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="{titulo_id}">
 {cards}
         </ul>
-        <div class="carousel__dots" hidden></div>
+        <div class="carousel__dots" role="group" aria-label="Páginas da vitrine {col["nome"]}" hidden></div>
       </div>'''
 
 
@@ -212,7 +214,7 @@ def page() -> str:
         f'            <li><a href="#novidades" data-filter="{c["id"]}">{c["nome"]}</a></li>' for c in CATEGORIAS
     )
     return f'''<!doctype html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -226,13 +228,14 @@ def page() -> str:
 <link rel="preload" href="fonts/figtree-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.remove("no-js");</script>
 <script src="app.js" defer></script>
 </head>
 <body id="topo">
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<p class="announce">Frete grátis acima de {brl(FRETE_GRATIS)} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa: nenhuma compra é processada</span></p>
+<p class="announce">Frete grátis acima de {brl(FRETE_GRATIS)} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
 
 <header class="header" data-header>
   <div class="wrap header__in">
@@ -248,7 +251,7 @@ def page() -> str:
       </ul>
     </nav>
     <button class="bag-btn" type="button" aria-controls="sacola" aria-expanded="false" data-open-cart>
-      {ICON["bag"]}<span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count>0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
+      {ICON["bag"]}<span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
     </button>
   </div>
 </header>
@@ -260,7 +263,7 @@ def page() -> str:
       <img src="assets/logo-principal.svg" width="81" height="32" alt="Ateliê Bruma">
       <button class="icon-btn" type="button" aria-label="Fechar menu" data-close>{ICON["close"]}</button>
     </div>
-    <nav class="mnav" aria-label="Menu do celular">
+    <nav class="mnav" aria-label="Menu principal">
       <ul role="list" class="mnav__main">
         <li><a href="#novidades">Novidades</a></li>
         <li><a href="#categorias">Categorias</a>
@@ -298,6 +301,7 @@ def page() -> str:
       <div class="hero__mist hero__mist--3"></div>
       <p class="hero__note">Fornada nº 14 · Curitiba</p>
     </div>
+    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
     <div class="wrap hero__copy">
       <p class="kicker">Coleção Névoa · Primavera 2026</p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou mesa.</h1>
@@ -350,12 +354,12 @@ def page() -> str:
     <div class="wrap faq">
       <header>
         <h2 id="t-ajuda" class="sec__title">Ajuda</h2>
-        <p class="sec__lead">Respostas rápidas antes de fechar o pedido.</p>
+        <p class="sec__lead">Respostas rápidas antes de comprar.</p>
       </header>
       <div class="faq__list">
         <details id="envio">
           <summary>Envio e prazos</summary>
-          <p>Postamos em até 3 dias úteis, em caixa com proteção individual para cada peça. O prazo de entrega aparece no fechamento do pedido.</p>
+          <p>Postamos em até 3 dias úteis, em caixa com proteção individual para cada peça. O prazo de entrega depende do CEP e aparece na sacola de uma loja real; nesta demonstração não há cálculo de frete.</p>
         </details>
         <details id="trocas">
           <summary>Trocas e devoluções</summary>

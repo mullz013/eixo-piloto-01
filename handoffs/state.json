@@ -287,7 +287,9 @@
         "scripts/gerar_site.py",
         "scripts/gerar_pecas.py",
         "evidence/DEV-002/render/interaction-check.json",
-        "evidence/DEV-002/qa/parecer-qa.md"
+        "evidence/DEV-002/qa/parecer-qa.md",
+        "evidence/DEV-002/qa/correcoes-pos-qa.md",
+        "evidence/DEV-002/qa/delegation-transcript.jsonl"
       ],
       "assumptions": [
         "Escopo emendado para loja demonstrativa por pedido expresso do proprietário (docs/project-dna.md, emenda de 2026-10-22).",
@@ -296,7 +298,8 @@
       ],
       "open_questions": [
         "Proprietário aprova o novo layout (banner, carrossel, categorias, coleções passadas, sacola)?",
-        "Criar o agente eixo-graphic-designer e qual provedor de imagem usar (gasto e chave precisam de aprovação)?"
+        "Criar o agente eixo-graphic-designer e qual provedor de imagem usar (gasto e chave precisam de aprovação)?",
+        "Proprietário aprova formalmente as revisões UX-002 e UI-002 (o QA apontou que faltam no approval-log)?"
       ],
       "risks": [
         "Sem JavaScript, sacola e filtro não funcionam (vitrines e âncoras sim).",
@@ -306,7 +309,8 @@
         "AC-ECOM-01 a AC-ECOM-07 de docs/ux/revisao-002-ecommerce.md §6."
       ],
       "evidence": [
-        "2026-10-22: Playwright + Chromium (servidor http local) em 320/375/768/1024/1440 px: rolagem horizontal 0 em todas; cartões visíveis 2+0,3 (320/375), 3+0,46 (768), 4 (1024/1440); menu abre, prende foco, fecha com Esc e devolve foco; sacola 3 itens = R$ 364; filtro 'Vasos e jarras' mostra 4 peças; 0 animações com movimento reduzido; 0 erros de console (evidence/DEV-002/render/interaction-check.json e capturas)."
+        "2026-10-22: Playwright + Chromium (servidor http local) em 320/375/768/1024/1440 px: rolagem horizontal 0 em todas; cartões visíveis 2+0,3 (320/375), 3+0,46 (768), 4 (1024/1440); menu abre, prende foco, fecha com Esc e devolve foco; sacola 3 itens = R$ 364; filtro 'Vasos e jarras' mostra 4 peças; 0 animações com movimento reduzido; 0 erros de console (evidence/DEV-002/render/interaction-check.json e capturas).",
+        "2026-10-22: revisão independente pelo eixo-qa-engineer via eixo-orchestrator (subagent_type=eixo-qa-engineer, US$ 0,98): NO-GO por leitura, 22 achados, nenhum sobre o layout pedido. 20 corrigidos e retestados com Playwright, 2 parciais e 1 mantido (evidence/DEV-002/qa/correcoes-pos-qa.md)."
       ]
     },
     {

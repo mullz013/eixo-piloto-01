@@ -271,13 +271,22 @@ def piece_svg(collection: str, shape_key: str, seed: int) -> str:
 
 
 def main() -> None:
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    from gerar_site import CATALOGO, CATEGORIAS  # só gera as peças que a loja usa
+
+    usadas = {f"{p[0]}-{p[1]}" for p in CATALOGO} | {c["arte"] for c in CATEGORIAS}
     OUT.mkdir(parents=True, exist_ok=True)
+    for old in OUT.glob("*.svg"):
+        if old.stem not in usadas:
+            old.unlink()
     seed = 7
     for coll in GLAZES:
         for shape in SHAPES:
             seed += 3
-            (OUT / f"{coll}-{shape}.svg").write_text(piece_svg(coll, shape, seed), encoding="utf-8")
-    print(f"{len(GLAZES) * len(SHAPES)} ilustrações em {OUT.relative_to(ROOT)}")
+            if f"{coll}-{shape}" in usadas:
+                (OUT / f"{coll}-{shape}.svg").write_text(piece_svg(coll, shape, seed), encoding="utf-8")
+    print(f"{len(usadas)} ilustrações em {OUT.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

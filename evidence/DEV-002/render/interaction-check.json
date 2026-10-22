@@ -1,10 +1,10 @@
 {
   "overflow": {
-    "320": 0,
-    "375": 0,
-    "768": 0,
-    "1024": 0,
-    "1440": 0
+    "320": -15,
+    "375": -15,
+    "768": -15,
+    "1024": -15,
+    "1440": -15
   },
   "menu_visible": {
     "320": true,
@@ -35,7 +35,7 @@
       1,
       1,
       1,
-      0.46
+      0.54
     ],
     "1024": [
       1,
@@ -83,11 +83,33 @@
   ],
   "m_filter_bar": true,
   "m_filter_cleared_cards": 20,
-  "d_prev_disabled_start": true,
+  "d_prev_disabled_start": "true",
   "d_dot_after_next": 1,
-  "d_next_disabled_end": true,
+  "d_next_disabled_end": "true",
+  "d_next_focusable_at_end": true,
   "d_first_visible_after_next": "Jarra Névoa",
   "d_first_tab": "skip",
   "reduced_motion_animations": 0,
+  "m_bag_accessible_name": "- button \"Sacola , 0 itens\"",
+  "m_add_accessible_name": "- button \"Adicionar Caneca Névoa à sacola\"",
+  "m_add_label_after_double_click": "Adicionar",
+  "m_main_inert_when_drawer_open": true,
+  "m_main_inert_after_close": false,
+  "m_focus_after_clear_filter": "t-categorias",
+  "m_menu_link_clears_filter": true,
+  "m_bad_storage_count": "0",
+  "m_tampered_storage": [
+    "3",
+    "R$ 216"
+  ],
+  "reduced_motion_after_add_animations": 0,
+  "reduced_motion_pause_button_hidden": true,
+  "pause_state": [
+    "paused",
+    "true"
+  ],
+  "nojs_nav_visible": true,
+  "nojs_add_hidden": true,
+  "nojs_overflow": -15,
   "console_errors": []
 }
