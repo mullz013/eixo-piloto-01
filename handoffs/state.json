@@ -209,17 +209,61 @@
       "dna_version": "0.2.0",
       "task_id": "DEV-001",
       "agent": "Full Stack Developer",
-      "status": "PENDING",
+      "status": "READY_FOR_REVIEW",
       "depends_on": [
         "UX-001",
         "UI-001"
       ],
-      "artifact_links": [],
-      "assumptions": [],
-      "open_questions": [],
-      "risks": [],
-      "acceptance_criteria": [],
-      "evidence": []
+      "artifact_links": [
+        "handoffs/DEV-001.md",
+        "docs/dev/dev-handoff.md",
+        "docs/dev/adr-001-stack.md",
+        "site/index.html",
+        "site/styles.css",
+        "site/tokens.css",
+        "site/assets/logo-principal.svg",
+        "site/assets/logo-mono-fundo-escuro.svg",
+        "site/assets/icone.svg",
+        "site/fonts/README.md",
+        "evidence/DEV-001/verification.md",
+        "evidence/DEV-001/delegation-transcript.json",
+        "evidence/DEV-001/render/render-check.json",
+        "evidence/DEV-001/render/interaction-check.json"
+      ],
+      "assumptions": [
+        "Entrega do eixo-fullstack-developer sem shell: nada foi renderizado, medido ou testado pelo subagente; todos os checks do Developer estão NOT_RUN.",
+        "Stack: HTML + CSS puros, sem JavaScript, sem build, sem recursos externos (ADR-001). Fontes locais em site/fonts/ preparadas pela sessão coordenadora.",
+        "Desvios D1–D9 registrados em docs/dev/dev-handoff.md §3; D1 (foco suprimido em contêineres com tabindex=-1), D2 (maiúscula em 'Prazo de até 45 dias.'), D3 (linhas opcionais incluídas), D4 (alt dos placeholders só em aria-label) e D5 (size-adjust estimado) aguardam decisão UI/UX.",
+        "Todos os dados do site são FICTÍCIOS (Ateliê Bruma, DNA v0.2.0 como briefing fictício); página com noindex; sem deploy."
+      ],
+      "open_questions": [
+        "UI: aceita D1 (anel de foco suprimido em section/main com tabindex=-1)?",
+        "UI: o padrão exige alt visível nos placeholders (D4)?",
+        "UX: confirma D2 (maiúscula em 'Prazo') e D3 (linhas opcionais)?",
+        "Titularidade do logotipo fictício segue indefinida."
+      ],
+      "risks": [
+        "Primeira tela a 320x568 estimada como apertada pela UI; sem medição.",
+        "Largura da nav a 320 px não medida com Figtree real.",
+        "size-adjust dos fallbacks é estimativa; possível CLS na troca de fonte (M9).",
+        "tokens.css e SVGs copiados com Write pelo subagente; o Orchestrator conferiu por diff (idênticos a docs/ui), mas é verificação de integridade, não teste.",
+        "WCAG 2.2 AA, teclado, leitor de tela, LCP/CLS não testados.",
+        "Verificação independente da sessão coordenadora achou F1–F3 (evidence/DEV-001/verification.md), todos de baixa severidade; não substitui QA-001/QUAL-001."
+      ],
+      "acceptance_criteria": [
+        "AC-P0-01..AC-P0-05",
+        "AC-NAV-01..AC-NAV-09",
+        "AC-CON-01..AC-CON-08",
+        "M1–M12 (docs/ux/acceptance-criteria.md)",
+        "Copy exata de docs/ux/content-structure.md; ids, componentes e breakpoints de docs/ui/ui-handoff.md",
+        "Sem JS, sem formulário, sem recurso externo, sem depoimentos, CTA único, noindex",
+        "Pareceres independentes de QA (QA-001) e Quality (QUAL-001) antes de qualquer release"
+      ],
+      "evidence": [
+        "evidence/DEV-001/delegation-transcript.json (delegação real Orchestrator → eixo-fullstack-developer, parent_tool_use_id)",
+        "evidence/DEV-001/render/render-check.json (Playwright/Chromium: sem rolagem horizontal 320–1440, fontes carregadas, 0 requisições externas, CTA na primeira tela a 320×568 e 375×667)",
+        "evidence/DEV-001/render/interaction-check.json (skip link, ordem de Tab, âncoras do CTA e do header, axe-core 4.10.2 com 0 violações)"
+      ]
     },
     {
       "project_id": "piloto-01",

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ateliê Bruma | forma reduzida (ícone) FICTÍCIA, NÃO APROVADA | UI-001
+     Vaso garrafa cheio, com duas faixas de bruma vazadas (fill-rule evenodd). Uma cor: #25231F, fundo transparente.
+     Para fundo escuro, trocar o fill para #F4F1EC. Uso sugerido: favicon e avatar; mínimo 16 px (não renderizado nem testado). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Ateliê Bruma">
+  <title>Ateliê Bruma</title>
+  <path fill="#25231F" fill-rule="evenodd" d="M11.8 2H20.2V4.2L18.6 5.2V9C18.6 11.8 25.8 11.2 25.8 18C25.8 24 23.8 28 22.2 30.5H9.8C8.2 28 6.2 24 6.2 18C6.2 11.2 13.4 11.8 13.4 9V5.2L11.8 4.2ZM11.4 15.8H20.6A1.2 1.2 0 0 1 20.6 18.2H11.4A1.2 1.2 0 0 1 11.4 15.8ZM13.7 21.6H21.3A1.2 1.2 0 0 1 21.3 24H13.7A1.2 1.2 0 0 1 13.7 21.6Z"/>
+</svg>
