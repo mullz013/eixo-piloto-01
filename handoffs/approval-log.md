@@ -28,3 +28,9 @@
 - Origem: thread do projeto, 2026-10-22T17:19:12Z. O proprietário respondeu "Tudo aprovado, pode mergear" depois de receber o reteste no commit `afbd689`: QA PASS/GO (83 PASS, 0 FAIL, 2 P3 conhecidos) e Quality PASS_WITH_NOTES (P2 corrigidos).
 - P3 aceitos para depois: CTA abaixo da dobra em 320×568 e 360×640; demais P3 em `evidence/QUAL-001/report.md`.
 - Não cobre: deploy, domínio, hospedagem ou contratação de serviços (ORCH-RELEASE segue PENDING).
+
+## PREVIEW-001 — prévia no GitHub Pages
+- Decisão: **AUTORIZADO** publicar uma prévia do site (`site/`) no GitHub Pages para o proprietário navegar pelo celular.
+- Origem: thread do projeto, 2026-10-22T17:53:12Z. O proprietário escreveu "sobre o site piloto, pode simular com esse GitHub Pages, só pra gente ver como é que tá".
+- Forma: workflow `.github/workflows/pages-preview.yml`, só a pasta `site/`, página com `noindex`. Dados da loja seguem fictícios.
+- Não cobre: release oficial (ORCH-RELEASE segue PENDING e `live_deploy_authorized` segue falso), domínio próprio, hospedagem paga ou contratação de serviços.
