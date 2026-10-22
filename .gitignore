@@ -10,3 +10,6 @@ test-results/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Cópia local e transitória dos agentes do eixo-ai (não versionar)
+.claude/agents/
