@@ -61,6 +61,16 @@ CATALOGO = [
     ("sal", "ramequim", "Ramequim Sal", "Ø 9 cm · 150 ml", 58, ""),
 ]
 
+# momentos de uso (menu "Por momento"); uma peça pode estar em mais de um
+MOMENTOS = [
+    {"id": "cafe", "nome": "Café da manhã", "formas": ["caneca", "xicara", "copo", "tigela"]},
+    {"id": "mesa", "nome": "Mesa posta", "formas": ["prato", "tigela", "copo", "ramequim"]},
+    {"id": "servir", "nome": "Para servir", "formas": ["travessa", "jarra", "ramequim"]},
+    {"id": "presentear", "nome": "Para presentear", "formas": ["caneca", "xicara", "garrafa", "bojudo"]},
+]
+
+PROXIMA_FORNADA = "14 de novembro"  # fictício
+
 FRETE_GRATIS = 299
 
 ICON = {
@@ -88,6 +98,10 @@ def categoria_de(forma: str) -> str:
     return next(c["id"] for c in CATEGORIAS if forma in c["formas"])
 
 
+def filtros_de(forma: str) -> str:
+    return " ".join([categoria_de(forma)] + [m["id"] for m in MOMENTOS if forma in m["formas"]])
+
+
 def card(p: tuple, idx: int, hn: str = "h3") -> str:
     col, forma, nome, medida, preco, selo = p
     pid = f"{col}-{forma}"
@@ -109,7 +123,7 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
             f'{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
             f'<span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>'
         )
-    return f'''          <li class="card card--{col}" data-cat="{categoria_de(forma)}">
+    return f'''          <li class="card card--{col}" data-cat="{filtros_de(forma)}">
             <div class="card__media">
               <img src="assets/pecas/{pid}.svg" width="400" height="500" alt="" loading="{"eager" if idx < 4 and col == "nevoa" else "lazy"}" decoding="async">
               {badge}
@@ -190,7 +204,7 @@ def secao_categorias() -> str:
     for c in CATEGORIAS:
         n = sum(1 for p in CATALOGO if p[1] in c["formas"])
         tiles.append(f'''        <li>
-          <a class="cat" href="#novidades" data-filter="{c["id"]}">
+          <a class="cat" href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">
             <span class="cat__media"><img src="assets/pecas/{c["arte"]}.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">{c["nome"]}</span>
             <span class="cat__count">{n} peças</span>
@@ -211,7 +225,10 @@ def secao_categorias() -> str:
 
 def page() -> str:
     nav_cats = "\n".join(
-        f'            <li><a href="#novidades" data-filter="{c["id"]}">{c["nome"]}</a></li>' for c in CATEGORIAS
+        f'            <li><a href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">{c["nome"]}</a></li>' for c in CATEGORIAS
+    )
+    nav_momentos = "\n".join(
+        f'            <li><a href="#novidades" data-filter="{m["id"]}" data-label="{m["nome"]}">{m["nome"]}</a></li>' for m in MOMENTOS
     )
     return f'''<!doctype html>
 <html lang="pt-BR" class="no-js">
@@ -235,7 +252,7 @@ def page() -> str:
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<p class="announce">Frete grátis acima de {brl(FRETE_GRATIS)} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
+<p class="announce">Próxima fornada: {PROXIMA_FORNADA} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__ship">Frete grátis acima de {brl(FRETE_GRATIS)}</span> <span class="announce__sep announce__sep--2" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
 
 <header class="header" data-header>
   <div class="wrap header__in">
@@ -266,9 +283,14 @@ def page() -> str:
     <nav class="mnav" aria-label="Menu principal">
       <ul role="list" class="mnav__main">
         <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#categorias">Categorias</a>
-          <ul role="list" class="mnav__sub">
+        <li><span class="mnav__group" id="g-peca">Por peça</span>
+          <ul role="list" class="mnav__sub" aria-labelledby="g-peca">
 {nav_cats}
+          </ul>
+        </li>
+        <li><span class="mnav__group" id="g-momento">Por momento</span>
+          <ul role="list" class="mnav__sub" aria-labelledby="g-momento">
+{nav_momentos}
           </ul>
         </li>
         <li><a href="#colecoes">Coleções passadas</a>

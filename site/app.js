@@ -201,10 +201,10 @@
   var bar = $("[data-filterbar]");
   var activeFilter = null;
   var names = {};
-  $$(".cat[data-filter]").forEach(function (a) { names[a.dataset.filter] = $(".cat__name", a).textContent; });
+  $$("[data-filter][data-label]").forEach(function (a) { names[a.dataset.filter] = a.dataset.label; });
 
   function applyFilter(cat) {
-    $$(".carousel__track > li").forEach(function (li) { li.hidden = !!cat && li.dataset.cat !== cat; });
+    $$(".carousel__track > li").forEach(function (li) { li.hidden = !!cat && li.dataset.cat.split(" ").indexOf(cat) < 0; });
     $$(".past").forEach(function (block) {
       block.hidden = !!cat && !$(".carousel__track > li:not([hidden])", block);
     });

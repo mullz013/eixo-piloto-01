@@ -84,3 +84,16 @@ Proibições mantidas: sem depoimentos, avaliações, selos ou urgência inventa
 ## Limites
 
 Esta revisão foi escrita diretamente pela sessão do projeto, a partir do feedback do proprietário, para não atrasar a entrega; o eixo-ux-architect não foi acionado. A revisão independente do resultado foi delegada ao eixo-qa-engineer (`evidence/DEV-002/qa/`). Não houve teste com pessoas.
+
+## 7. Ajustes a partir da pesquisa de referências (2026-10-22)
+
+Pesquisa do projeto com 7 lojas reais de cerâmica e produtos artesanais (Woodwrights, Theobroma, Kevala, A Ways Away, Pomelo Casa, Mud Australia, Brightland); Dribbble, Behance e Pinterest ficaram inacessíveis naquela sessão. Aplicado:
+
+- Faixa do topo com mensagem datada: "Próxima fornada: 14 de novembro" **[FICTÍCIO]**.
+- Menu do celular em dois grupos, "Por peça" e "Por momento" (Café da manhã, Mesa posta, Para servir, Para presentear), no padrão "By Type / By Room"; cada momento filtra as vitrines como as categorias.
+
+Não aplicado nesta rodada:
+- Busca e conta no header: seriam controles sem função numa loja demonstrativa.
+- Segunda vista no hover: depende de uma segunda imagem por peça.
+- Selo "Últimas peças": é urgência inventada, proibida pelo tom da marca.
+- Abas no lugar das vitrines de coleções passadas: o proprietário pediu essas vitrines.

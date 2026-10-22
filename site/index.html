@@ -20,7 +20,7 @@
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<p class="announce">Frete grátis acima de R$ 299 <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
+<p class="announce">Próxima fornada: 14 de novembro <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__ship">Frete grátis acima de R$ 299</span> <span class="announce__sep announce__sep--2" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
 
 <header class="header" data-header>
   <div class="wrap header__in">
@@ -51,13 +51,21 @@
     <nav class="mnav" aria-label="Menu principal">
       <ul role="list" class="mnav__main">
         <li><a href="#novidades">Novidades</a></li>
-        <li><a href="#categorias">Categorias</a>
-          <ul role="list" class="mnav__sub">
-            <li><a href="#novidades" data-filter="canecas">Canecas e xícaras</a></li>
-            <li><a href="#novidades" data-filter="pratos">Pratos</a></li>
-            <li><a href="#novidades" data-filter="tigelas">Tigelas</a></li>
-            <li><a href="#novidades" data-filter="travessas">Travessas</a></li>
-            <li><a href="#novidades" data-filter="vasos">Vasos e jarras</a></li>
+        <li><span class="mnav__group" id="g-peca">Por peça</span>
+          <ul role="list" class="mnav__sub" aria-labelledby="g-peca">
+            <li><a href="#novidades" data-filter="canecas" data-label="Canecas e xícaras">Canecas e xícaras</a></li>
+            <li><a href="#novidades" data-filter="pratos" data-label="Pratos">Pratos</a></li>
+            <li><a href="#novidades" data-filter="tigelas" data-label="Tigelas">Tigelas</a></li>
+            <li><a href="#novidades" data-filter="travessas" data-label="Travessas">Travessas</a></li>
+            <li><a href="#novidades" data-filter="vasos" data-label="Vasos e jarras">Vasos e jarras</a></li>
+          </ul>
+        </li>
+        <li><span class="mnav__group" id="g-momento">Por momento</span>
+          <ul role="list" class="mnav__sub" aria-labelledby="g-momento">
+            <li><a href="#novidades" data-filter="cafe" data-label="Café da manhã">Café da manhã</a></li>
+            <li><a href="#novidades" data-filter="mesa" data-label="Mesa posta">Mesa posta</a></li>
+            <li><a href="#novidades" data-filter="servir" data-label="Para servir">Para servir</a></li>
+            <li><a href="#novidades" data-filter="presentear" data-label="Para presentear">Para presentear</a></li>
           </ul>
         </li>
         <li><a href="#colecoes">Coleções passadas</a>
@@ -119,35 +127,35 @@
       </header>
       <ul class="cats" role="list">
         <li>
-          <a class="cat" href="#novidades" data-filter="canecas">
+          <a class="cat" href="#novidades" data-filter="canecas" data-label="Canecas e xícaras">
             <span class="cat__media"><img src="assets/pecas/nevoa-caneca.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">Canecas e xícaras</span>
             <span class="cat__count">6 peças</span>
           </a>
         </li>
         <li>
-          <a class="cat" href="#novidades" data-filter="pratos">
+          <a class="cat" href="#novidades" data-filter="pratos" data-label="Pratos">
             <span class="cat__media"><img src="assets/pecas/sal-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">Pratos</span>
             <span class="cat__count">3 peças</span>
           </a>
         </li>
         <li>
-          <a class="cat" href="#novidades" data-filter="tigelas">
+          <a class="cat" href="#novidades" data-filter="tigelas" data-label="Tigelas">
             <span class="cat__media"><img src="assets/pecas/terra-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">Tigelas</span>
             <span class="cat__count">5 peças</span>
           </a>
         </li>
         <li>
-          <a class="cat" href="#novidades" data-filter="travessas">
+          <a class="cat" href="#novidades" data-filter="travessas" data-label="Travessas">
             <span class="cat__media"><img src="assets/pecas/nevoa-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">Travessas</span>
             <span class="cat__count">2 peças</span>
           </a>
         </li>
         <li>
-          <a class="cat" href="#novidades" data-filter="vasos">
+          <a class="cat" href="#novidades" data-filter="vasos" data-label="Vasos e jarras">
             <span class="cat__media"><img src="assets/pecas/terra-bojudo.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">Vasos e jarras</span>
             <span class="cat__count">4 peças</span>
@@ -179,7 +187,7 @@
           <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças de Névoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
         </div>
         <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-novidades">
-          <li class="card card--nevoa" data-cat="canecas">
+          <li class="card card--nevoa" data-cat="canecas cafe presentear">
             <div class="card__media">
               <img src="assets/pecas/nevoa-caneca.svg" width="400" height="500" alt="" loading="eager" decoding="async">
               <span class="badge">Novo</span>
@@ -191,7 +199,7 @@
               <button class="add" type="button" data-add="nevoa-caneca" data-name="Caneca Névoa" data-price="98" data-img="assets/pecas/nevoa-caneca.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Caneca Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="canecas">
+          <li class="card card--nevoa" data-cat="canecas cafe presentear">
             <div class="card__media">
               <img src="assets/pecas/nevoa-xicara.svg" width="400" height="500" alt="" loading="eager" decoding="async">
               <span class="badge">Novo</span>
@@ -203,7 +211,7 @@
               <button class="add" type="button" data-add="nevoa-xicara" data-name="Xícara com pires Névoa" data-price="84" data-img="assets/pecas/nevoa-xicara.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Xícara com pires Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="tigelas">
+          <li class="card card--nevoa" data-cat="tigelas cafe mesa">
             <div class="card__media">
               <img src="assets/pecas/nevoa-tigela.svg" width="400" height="500" alt="" loading="eager" decoding="async">
               
@@ -215,7 +223,7 @@
               <button class="add" type="button" data-add="nevoa-tigela" data-name="Tigela funda Névoa" data-price="92" data-img="assets/pecas/nevoa-tigela.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="pratos">
+          <li class="card card--nevoa" data-cat="pratos mesa">
             <div class="card__media">
               <img src="assets/pecas/nevoa-prato.svg" width="400" height="500" alt="" loading="eager" decoding="async">
               
@@ -227,7 +235,7 @@
               <button class="add" type="button" data-add="nevoa-prato" data-name="Prato raso Névoa" data-price="128" data-img="assets/pecas/nevoa-prato.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Prato raso Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="vasos">
+          <li class="card card--nevoa" data-cat="vasos servir">
             <div class="card__media">
               <img src="assets/pecas/nevoa-jarra.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               <span class="badge">Novo</span>
@@ -239,7 +247,7 @@
               <button class="add" type="button" data-add="nevoa-jarra" data-name="Jarra Névoa" data-price="168" data-img="assets/pecas/nevoa-jarra.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Jarra Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="vasos">
+          <li class="card card--nevoa" data-cat="vasos presentear">
             <div class="card__media">
               <img src="assets/pecas/nevoa-garrafa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -251,7 +259,7 @@
               <button class="add" type="button" data-add="nevoa-garrafa" data-name="Vaso garrafa Névoa" data-price="186" data-img="assets/pecas/nevoa-garrafa.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Vaso garrafa Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="travessas">
+          <li class="card card--nevoa" data-cat="travessas servir">
             <div class="card__media">
               <img src="assets/pecas/nevoa-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -263,7 +271,7 @@
               <button class="add" type="button" data-add="nevoa-travessa" data-name="Travessa oval Névoa" data-price="210" data-img="assets/pecas/nevoa-travessa.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Travessa oval Névoa à sacola</span></button>
             </div>
           </li>
-          <li class="card card--nevoa" data-cat="canecas">
+          <li class="card card--nevoa" data-cat="canecas cafe mesa">
             <div class="card__media">
               <img src="assets/pecas/nevoa-copo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -321,7 +329,7 @@
           <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças de Terra Molhada"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
         </div>
         <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-col-terra">
-          <li class="card card--terra" data-cat="canecas">
+          <li class="card card--terra" data-cat="canecas cafe presentear">
             <div class="card__media">
               <img src="assets/pecas/terra-caneca.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -333,7 +341,7 @@
               <button class="add" type="button" data-add="terra-caneca" data-name="Caneca Terra Molhada" data-price="98" data-img="assets/pecas/terra-caneca.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Caneca Terra Molhada à sacola</span></button>
             </div>
           </li>
-          <li class="card card--terra" data-cat="vasos">
+          <li class="card card--terra" data-cat="vasos presentear">
             <div class="card__media">
               <img src="assets/pecas/terra-bojudo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -345,7 +353,7 @@
               <button class="add" type="button" data-add="terra-bojudo" data-name="Vaso bojudo Terra Molhada" data-price="196" data-img="assets/pecas/terra-bojudo.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Vaso bojudo Terra Molhada à sacola</span></button>
             </div>
           </li>
-          <li class="card card--terra" data-cat="tigelas">
+          <li class="card card--terra" data-cat="tigelas cafe mesa">
             <div class="card__media">
               <img src="assets/pecas/terra-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -357,7 +365,7 @@
               <button class="add" type="button" data-add="terra-tigela" data-name="Tigela funda Terra Molhada" data-price="92" data-img="assets/pecas/terra-tigela.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Terra Molhada à sacola</span></button>
             </div>
           </li>
-          <li class="card card--terra" data-cat="pratos">
+          <li class="card card--terra" data-cat="pratos mesa">
             <div class="card__media">
               <img src="assets/pecas/terra-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               <span class="badge badge--muted">Esgotado</span>
@@ -369,7 +377,7 @@
               <button class="add" type="button" disabled>Esgotado</button>
             </div>
           </li>
-          <li class="card card--terra" data-cat="tigelas">
+          <li class="card card--terra" data-cat="tigelas mesa servir">
             <div class="card__media">
               <img src="assets/pecas/terra-ramequim.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -381,7 +389,7 @@
               <button class="add" type="button" data-add="terra-ramequim" data-name="Ramequim Terra Molhada" data-price="58" data-img="assets/pecas/terra-ramequim.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Ramequim Terra Molhada à sacola</span></button>
             </div>
           </li>
-          <li class="card card--terra" data-cat="canecas">
+          <li class="card card--terra" data-cat="canecas cafe mesa">
             <div class="card__media">
               <img src="assets/pecas/terra-copo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -416,7 +424,7 @@
           <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças de Sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
         </div>
         <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-col-sal">
-          <li class="card card--sal" data-cat="canecas">
+          <li class="card card--sal" data-cat="canecas cafe presentear">
             <div class="card__media">
               <img src="assets/pecas/sal-xicara.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -428,7 +436,7 @@
               <button class="add" type="button" data-add="sal-xicara" data-name="Xícara com pires Sal" data-price="84" data-img="assets/pecas/sal-xicara.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Xícara com pires Sal à sacola</span></button>
             </div>
           </li>
-          <li class="card card--sal" data-cat="tigelas">
+          <li class="card card--sal" data-cat="tigelas cafe mesa">
             <div class="card__media">
               <img src="assets/pecas/sal-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -440,7 +448,7 @@
               <button class="add" type="button" data-add="sal-tigela" data-name="Tigela funda Sal" data-price="92" data-img="assets/pecas/sal-tigela.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Sal à sacola</span></button>
             </div>
           </li>
-          <li class="card card--sal" data-cat="vasos">
+          <li class="card card--sal" data-cat="vasos servir">
             <div class="card__media">
               <img src="assets/pecas/sal-jarra.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -452,7 +460,7 @@
               <button class="add" type="button" data-add="sal-jarra" data-name="Jarra Sal" data-price="168" data-img="assets/pecas/sal-jarra.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Jarra Sal à sacola</span></button>
             </div>
           </li>
-          <li class="card card--sal" data-cat="pratos">
+          <li class="card card--sal" data-cat="pratos mesa">
             <div class="card__media">
               <img src="assets/pecas/sal-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               
@@ -464,7 +472,7 @@
               <button class="add" type="button" data-add="sal-prato" data-name="Prato raso Sal" data-price="128" data-img="assets/pecas/sal-prato.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Prato raso Sal à sacola</span></button>
             </div>
           </li>
-          <li class="card card--sal" data-cat="travessas">
+          <li class="card card--sal" data-cat="travessas servir">
             <div class="card__media">
               <img src="assets/pecas/sal-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               <span class="badge badge--muted">Esgotado</span>
@@ -476,7 +484,7 @@
               <button class="add" type="button" disabled>Esgotado</button>
             </div>
           </li>
-          <li class="card card--sal" data-cat="tigelas">
+          <li class="card card--sal" data-cat="tigelas mesa servir">
             <div class="card__media">
               <img src="assets/pecas/sal-ramequim.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
               

@@ -111,5 +111,17 @@
   "nojs_nav_visible": true,
   "nojs_add_hidden": true,
   "nojs_overflow": -15,
+  "m_moment_filter": [
+    "Para servir",
+    [
+      "Jarra Névoa",
+      "Travessa oval Névoa",
+      "Ramequim Terra Molhada",
+      "Jarra Sal",
+      "Travessa oval Sal",
+      "Ramequim Sal"
+    ]
+  ],
+  "m_announce": "Próxima fornada: 14 de novembro · Loja demonstrativa",
   "console_errors": []
 }

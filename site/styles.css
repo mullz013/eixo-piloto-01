@@ -137,7 +137,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 }
 .announce__demo { color: var(--text-inverse-secondary); }
 @media (max-width: 599px) {
-  .announce__long { display: none; }
+  .announce__long, .announce__ship, .announce__sep--2 { display: none; }
 }
 
 /* ---------- Header ---------- */
@@ -224,6 +224,10 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   display: flex; align-items: center; min-height: 56px;
   font-family: var(--stack-display); font-size: 1.5rem; font-weight: var(--weight-light);
   text-decoration: none; font-variation-settings: "opsz" 48;
+}
+.mnav__group {
+  display: flex; align-items: center; min-height: 48px; padding-top: var(--space-2);
+  font-size: var(--size-xs); font-weight: var(--weight-semibold); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-secondary);
 }
 .mnav__sub { padding: 0 0 var(--space-3); }
 .mnav__sub a { display: flex; align-items: center; min-height: 44px; color: var(--text-secondary); text-decoration: none; }
