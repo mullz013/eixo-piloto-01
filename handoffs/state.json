@@ -394,6 +394,39 @@
     {
       "project_id": "piloto-01",
       "dna_version": "0.2.0",
+      "task_id": "DES-001",
+      "agent": "eixo-graphic-designer",
+      "status": "READY_FOR_REVIEW",
+      "depends_on": [
+        "UI-001"
+      ],
+      "artifact_links": [
+        "site/assets/fotos/README.md",
+        "scripts/processar_fotos.py",
+        "https://claude.ai/artifact/Xcr4KNxiW1B2dAnZEQQJZs"
+      ],
+      "assumptions": [
+        "Imagens geradas por IA (ChatGPT) manualmente pelo proprietário a partir dos 33 prompts; marca fictícia, não são fotos de produto real.",
+        "Originais PNG ficam fora do repositório (Drive do proprietário); só os derivados WebP/JPG entram.",
+        "Status do agente: ASSETS_INTEGRATED (aguarda revisão do proprietário, QA e Quality)."
+      ],
+      "open_questions": [],
+      "risks": [
+        "og:image não declarado: precisa de URL absoluta quando houver domínio."
+      ],
+      "acceptance_criteria": [
+        "33 imagens conferidas e encaixadas",
+        "sem rolagem horizontal em 375 e 1440",
+        "margens simétricas 320–414 px"
+      ],
+      "evidence": [
+        "Prints 375/1440 em /mnt/project-files/eixo-piloto/des-001/ (pasta do projeto)",
+        "Executado pela sessão da thread seguindo o papel do eixo-graphic-designer; sem delegação via claude --agent (NOT_RUN como subagente)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
       "task_id": "ORCH-RELEASE",
       "agent": "Orchestrator",
       "status": "PENDING",

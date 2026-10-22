@@ -88,6 +88,19 @@ ICON = {
 }
 
 
+FOTOS = "assets/fotos"
+
+
+def foto(base: str, larguras: list[int], w: int, h: int, sizes: str, alt: str = "", cls: str = "",
+         loading: str = "lazy", extra: str = "") -> str:
+    """<picture> com WebP em srcset e JPG de fallback (gerados por scripts/processar_fotos.py)."""
+    srcset = ", ".join(f"{FOTOS}/{base}-{lw}.webp {lw}w" for lw in larguras)
+    c = f' class="{cls}"' if cls else ""
+    return (f'<picture><source type="image/webp" srcset="{srcset}" sizes="{sizes}">'
+            f'<img{c} src="{FOTOS}/{base}-{larguras[-1]}.jpg" width="{w}" height="{h}" alt="{escape(alt)}" '
+            f'loading="{loading}" decoding="async"{extra}></picture>')
+
+
 def brl(v: float) -> str:
     inteiro, cent = f"{v:.2f}".split(".")
     inteiro = f"{int(inteiro):,}".replace(",", ".")
@@ -119,13 +132,13 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
     else:
         btn = (
             f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" '
-            f'data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">'
+            f'data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">'
             f'{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
             f'<span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>'
         )
     return f'''          <li class="card card--{col}" data-cat="{filtros_de(forma)}">
             <div class="card__media">
-              <img src="assets/pecas/{pid}.svg" width="400" height="500" alt="" loading="{"eager" if idx < 4 and col == "nevoa" else "lazy"}" decoding="async">
+              {foto(f"produtos/{pid}", [480, 800], 800, 1000, "(min-width: 1024px) 300px, 45vw", loading="eager" if idx < 4 and col == "nevoa" else "lazy")}
               {badge}
             </div>
             <div class="card__body">
@@ -135,6 +148,20 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
               {btn}
             </div>
           </li>'''
+
+
+COLECAO_ALT = {
+    "nevoa": "Peças da coleção Névoa em fila sobre uma prateleira de pedra, com névoa ao fundo.",
+    "terra": "Peças da coleção Terra Molhada sobre ardósia molhada, com areia úmida e luz de fim de tarde.",
+    "sal": "Peças da coleção Sal sobre pedra clara, com cristais de sal grosso espalhados.",
+}
+
+
+def faixa_colecao(col: dict) -> str:
+    """Foto larga da coleção acima da vitrine (DES-001; espaço aprovado pelo proprietário em 2026-10-22)."""
+    return f'''      <figure class="colbanner colbanner--{col["id"]}">
+        {foto(f"colecoes/{col['id']}", [800, 1536], 1536, 1024, "(min-width: 1200px) 1152px, 100vw", COLECAO_ALT[col["id"]])}
+      </figure>'''
 
 
 def vitrine(col: dict, titulo_id: str) -> str:
@@ -157,6 +184,7 @@ def secao_atual() -> str:
     col = COLECOES[0]
     return f'''  <section id="novidades" class="sec" aria-labelledby="t-novidades">
     <div class="wrap">
+{faixa_colecao(col)}
       <header class="sec__head">
         <div>
           <p class="kicker">Coleção {col["nome"]} · {col["estacao"]}</p>
@@ -175,6 +203,7 @@ def secao_passadas() -> str:
         tid = f"t-col-{col['id']}"
         blocos.append(f'''    <div class="past past--{col["id"]}" id="colecao-{col["id"]}">
       <div class="wrap">
+{faixa_colecao(col)}
         <header class="sec__head sec__head--past">
           <div class="past__id">
             <span class="swatch swatch--{col["id"]}" aria-hidden="true"></span>
@@ -205,7 +234,7 @@ def secao_categorias() -> str:
         n = sum(1 for p in CATALOGO if p[1] in c["formas"])
         tiles.append(f'''        <li>
           <a class="cat cat--{c["id"]}" href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">
-            <span class="cat__media"><img src="assets/pecas/{c["arte"]}.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__media">{foto(f"categorias/{c['id']}", [400, 640], 640, 640, "(min-width: 768px) 210px, 38vw")}</span>
             <span class="cat__name">{c["nome"]}</span>
             <span class="cat__count">{n} peças</span>
           </a>
@@ -230,9 +259,9 @@ def hero_cards() -> str:
     pid = f"{col}-{forma}"
     n_atual = sum(1 for p in CATALOGO if p[0] == COLECOES[0]["id"])
     return f'''    <div class="hero__card hero__card--piece">
-      <img class="hero__card-img" src="assets/pecas/{pid}.svg" width="64" height="80" alt="">
+      <img class="hero__card-img" src="{FOTOS}/produtos/{pid}-480.webp" width="64" height="80" alt="">
       <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">{escape(nome)}</span><span class="hero__card-price">{brl(preco)}</span></p>
-      <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
+      <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
     </div>
     <p class="hero__card hero__card--batch"><span class="hero__batch-title">Fornada nº 14</span><span class="hero__batch-meta"><span class="hero__batch-sep"> · </span>{n_atual} peças<span class="hero__batch-city"> · Curitiba</span></span></p>'''
 
@@ -326,13 +355,11 @@ def page() -> str:
 
   <section class="hero" aria-labelledby="t-hero">
     <div class="hero__stage" aria-hidden="true">
-      <div class="hero__sun"></div>
-      <p class="hero__word">névoa</p>
-      <div class="hero__plinth"></div>
-      <img class="hero__piece hero__piece--a" src="assets/pecas/nevoa-garrafa.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--b" src="assets/pecas/nevoa-jarra.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--c" src="assets/pecas/nevoa-tigela.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--d" src="assets/pecas/nevoa-xicara.svg" alt="" width="400" height="500">
+      <picture class="hero__photo">
+        <source type="image/webp" media="(min-width: 1024px)" srcset="{FOTOS}/banner/desktop-1024.webp 1024w, {FOTOS}/banner/desktop-1536.webp 1536w" sizes="100vw">
+        <source type="image/webp" srcset="{FOTOS}/banner/celular-640.webp 640w, {FOTOS}/banner/celular-960.webp 960w" sizes="100vw">
+        <img src="{FOTOS}/banner/celular-960.jpg" width="960" height="960" alt="" fetchpriority="high" decoding="async">
+      </picture>
       <div class="hero__mist hero__mist--1"></div>
       <div class="hero__mist hero__mist--2"></div>
       <div class="hero__mist hero__mist--3"></div>
@@ -380,6 +407,9 @@ def page() -> str:
         <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, <em>uma fornada por mês.</em></h2>
         <p>Cada peça é torneada e esmaltada à mão em Curitiba. Por isso nenhuma é igual à outra: o esmalte escorre do seu jeito em cada queima.</p>
       </div>
+      <figure class="atelie__photo">
+        {foto("atelie/torno", [640, 1024], 1024, 1280, "(min-width: 1024px) 340px, 100vw", "Mãos da ceramista acertando o pé de uma tigela no torno.")}
+      </figure>
       <ul class="facts" role="list">
         <li><span class="facts__num">1.240<small>°C</small></span><span>Queima em alta temperatura: o grés fica resistente, vai ao micro-ondas e à lava-louças.</span></li>
         <li><span class="facts__num">14ª<small>fornada</small></span><span>Fornadas pequenas, uma por mês. A variação de tom entre peças é parte do desenho, não defeito.</span></li>
