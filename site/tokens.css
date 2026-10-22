@@ -1,0 +1,140 @@
+/* Ateliê Bruma | tokens (marca FICTÍCIA) | UI-001 APROVADO em 2026-10-22 (ver handoffs/approval-log.md)
+   Mantido à mão em sincronia com tokens.json. Sem identidade da EIXO.
+   Contrastes: calculados à mão e conferidos por script pela revisão independente (evidence/UI-001/contrast-check.json); ver ui-handoff.md §7.
+   Fontes: não carregadas aqui. Fraunces e Figtree (SIL OFL 1.1) devem ser auto-hospedadas pelo Developer. */
+
+:root {
+  /* ---------- Primitives de cor ---------- */
+  --fog-50:    #F4F1EC;
+  --fog-100:   #EAE6DF;
+  --fog-200:   #D9D4CB;
+  --stone-300: #BDB7AC;
+  --ink-700:   #55514A;
+  --ink-900:   #25231F;
+  --clay-700:  #8A3F22;
+  --clay-800:  #6F3019;
+  --clay-900:  #5A2813;
+  --mist-300:  #B9C4C8; /* DECORATIVO apenas */
+
+  /* ---------- Aliases semânticos ---------- */
+  --background-canvas:  var(--fog-50);
+  --background-surface: var(--fog-100);
+  --background-chip:    var(--fog-200);
+  --background-inverse: var(--ink-900);
+  --background-hover:   var(--fog-100);
+  --background-pressed: var(--fog-200);
+  --background-placeholder-mist: var(--mist-300);
+
+  --text-primary:           var(--ink-900);
+  --text-secondary:         var(--ink-700);
+  --text-link:              var(--clay-700);
+  --text-inverse:           var(--fog-50);
+  --text-inverse-secondary: var(--stone-300);
+
+  --action-primary:        var(--clay-700);
+  --action-primary-hover:  var(--clay-800);
+  --action-primary-active: var(--clay-900);
+  --action-on-primary:     var(--fog-50);
+
+  --border-default: var(--fog-200);   /* decorativo */
+  --border-strong:  var(--ink-700);   /* borda de placeholder; 4,43 a 7,00 sobre fog-50/100/200 e mist-300 */
+
+  --focus-ring:         var(--ink-900);
+  --focus-ring-inverse: var(--fog-50);
+
+  --brand-mark:   var(--ink-900);
+  --brand-accent: var(--clay-700);
+
+  /* ---------- Tipografia ---------- */
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --font-text:    "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+
+  --size-xs:   0.8125rem;
+  --size-sm:   0.875rem;
+  --size-base: 1.0625rem;
+  --size-lg:   clamp(1.1875rem, 1.1rem + 0.5vw, 1.375rem);
+  --size-h3:   1.375rem;
+  --size-h2:   clamp(1.75rem, 1.4rem + 1.8vw, 2.5rem);
+  --size-h1:   clamp(2.25rem, 1.4rem + 3.2vw, 4rem);
+
+  --leading-tight:   1.1;
+  --leading-heading: 1.2;
+  --leading-ui:      1.4;
+  --leading-body:    1.6;
+
+  --tracking-display: -0.01em;
+  --tracking-label:   0.02em;
+
+  /* ---------- Espaçamento (base 4 px) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+  --space-32: 128px;
+
+  /* ---------- Layout ---------- */
+  --gutter: clamp(1rem, 5vw, 2rem);
+  --container: 72rem;          /* a loja (DEV-002) usa 80rem, definido em styles.css */
+  --measure: 62ch;
+  --header-height: 56px;
+  --anchor-offset: 5rem;       /* use em scroll-padding-top e scroll-margin-top */
+  --section-y: 64px;           /* mobile; 112px a partir de 1024px (ver abaixo) */
+  --target-min: 24px;
+  --target-comfort: 44px;
+
+  /* ---------- Raio ---------- */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 20px;
+  --radius-arch: 999px 999px 10px 10px;
+  --radius-pill: 999px;
+
+  /* ---------- Foco e bordas ---------- */
+  --focus-width: 3px;
+  --focus-offset: 3px;
+  --focus-offset-tight: 2px;
+  --border-hairline: 1px;
+  --border-dashed-width: 2px;
+
+  /* ---------- Elevação ---------- */
+  --elevation-none: none;
+
+  /* ---------- Movimento ---------- */
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-easing: cubic-bezier(0.2, 0, 0, 1);
+  --scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  :root { --section-y: 112px; }
+}
+
+/* Movimento reduzido: nenhuma transição, rolagem imediata (WCAG 2.3.3 como boa prática; AC-NAV-06) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0s;
+    --motion-base: 0s;
+    --scroll-behavior: auto;
+  }
+}
+
+/* Uso esperado (referência, não obrigatório aqui):
+   html { scroll-behavior: var(--scroll-behavior); scroll-padding-top: var(--anchor-offset); }
+   :where([id]) { scroll-margin-top: var(--anchor-offset); }
+   :focus-visible { outline: var(--focus-width) solid var(--focus-ring); outline-offset: var(--focus-offset); }
+*/

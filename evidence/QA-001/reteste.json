@@ -1,0 +1,108 @@
+{
+ "task": "QA-001",
+ "type": "reteste",
+ "date": "2026-10-22",
+ "role": "eixo-qa-engineer",
+ "commit": "afbd689a05dac2fa98ac49e7486f5dbe42ee8c5b",
+ "branch": "claude/project-thread-8m8hi1",
+ "previous_commit": "1159d06",
+ "site_diff_vs_commit": "nenhuma (git diff afbd689 -- site/ vazio)",
+ "verdict": "PASS",
+ "release_recommendation": "GO",
+ "release_note": "GO técnico do QA para o escopo do piloto (aprovação humana). Não é autorização de deploy; deploy segue proibido pelo DNA. Quality precisa validar o mesmo commit afbd689.",
+ "environment": {
+  "chromium": "141.0.7390.37",
+  "executable": "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
+  "playwright_python": "1.64.0",
+  "base_url": "http://127.0.0.1:8765/index.html (python3 -m http.server, encerrado ao final)",
+  "axe_core": "4.10.2, tarball npm, shasum 85228e3e1d8b8532a27659b332e39b7fa0e022df conferido com registry.npmjs.org nesta execução; fora do repo"
+ },
+ "commands": [
+  {
+   "cmd": "python3 -m unittest discover -s tests -v",
+   "result": "8 testes OK, exit 0",
+   "log": "evidence/QA-001/reteste-unittest.log"
+  },
+  {
+   "cmd": "python3 scripts/validate_pilot.py",
+   "result": "exit 0",
+   "log": "evidence/QA-001/reteste-validate_pilot.log"
+  },
+  {
+   "cmd": "python3 evidence/QA-001/qa_test.py --axe <axe.min.js> --tag reteste-http --base-url http://127.0.0.1:8765/index.html",
+   "result": {
+    "PASS": 83,
+    "FAIL": 0,
+    "ERROR": 0,
+    "NOT_RUN": 0,
+    "KNOWN_P3": 2
+   },
+   "log": "evidence/QA-001/reteste-http.log",
+   "results": "evidence/QA-001/results-reteste-http.json",
+   "axe": "evidence/QA-001/axe-results-reteste-http.json",
+   "aria": "evidence/QA-001/aria-snapshot-reteste-http.yml"
+  }
+ ],
+ "counts": {
+  "PASS": 83,
+  "FAIL": 0,
+  "ERROR": 0,
+  "NOT_RUN": 0,
+  "KNOWN_P3": 2,
+  "total": 85
+ },
+ "test_changes_by_qa": {
+  "T19": "Espera 'Adicionada à sacola: Caneca Névoa' logo após o clique, 'Adicionar à sacola: Caneca Névoa' após 1,9 s, 'Esgotado: <peça>' nos 2 esgotados, nome antigo ausente e rótulo visível contido no nome (2.5.3).",
+  "T21": "Larguras 320×568, 360×640, 375×667, 390×844, 414×896. 320 e 360 relatam CTA abaixo da dobra como KNOWN_P3 (fora da decisão do proprietário de 2026-10-22); h1, âncora e título continuam exigidos. 375+ exigem CTA sem rolar.",
+  "summary": "Novo status KNOWN_P3 contado no resumo."
+ },
+ "bug_retests": [
+  {
+   "id": "BUG-01",
+   "status": "CORRIGIDO no escopo da decisão",
+   "evidence": "T21-375 CTA bottom 654 ≤ 667; T21-390 663 ≤ 844; T21-414 648 ≤ 896: PASS"
+  },
+  {
+   "id": "BUG-02",
+   "status": "CORRIGIDO",
+   "evidence": "T22 sem JS 375: título #t-ajuda top 248 abaixo do header (159,75): PASS; T11-nojs 375/1440 PASS"
+  },
+  {
+   "id": "BUG-03",
+   "status": "CORRIGIDO",
+   "evidence": "aria snapshot: 'Ateliê Bruma, início', 'Sacola, 1 item'; 0 ocorrências de ' ,' no snapshot; T19 PASS"
+  },
+  {
+   "id": "QUAL-P2-3",
+   "status": "VERIFICADO",
+   "evidence": "T19: 18 botões 'Adicionar à sacola: <peça>', troca para 'Adicionada à sacola: <peça>' e volta após 1,6 s, esgotados 'Esgotado: <peça>'"
+  }
+ ],
+ "findings": [
+  {
+   "id": "KNOWN-01",
+   "severity": "P3",
+   "status": "aberto, aceito pela decisão do proprietário",
+   "title": "CTA 'Comprar a coleção' abaixo da dobra em 320×568 (bottom 693, 125 px abaixo) e 360×640 (bottom 672, 32 px abaixo)",
+   "evidence": "T21-first-screen-320, T21-first-screen-360"
+  },
+  {
+   "id": "OBS-01",
+   "severity": "info",
+   "title": "axe-core: 0 violações em 9 estados; 'incomplete' color-contrast (texto sobre imagem/gradiente) e skip-link com gaveta aberta exigem revisão humana (Quality)",
+   "evidence": "axe-results-reteste-http.json"
+  }
+ ],
+ "open_p0_p1": 0,
+ "not_run": [
+  "Navegadores além do Chromium (Firefox, WebKit/Safari iOS)",
+  "Dispositivos físicos e leitores de tela reais (NVDA/VoiceOver)",
+  "Performance/Lighthouse",
+  "Execução file:// no reteste (só HTTP)",
+  "Conformidade WCAG integral (scanner não substitui revisão humana)"
+ ],
+ "preserved": [
+  "evidence/QA-001/devpre-results-reteste-http.json e devpre-aria-snapshot-reteste-http.yml: pré-execução do Developer, copiadas antes de serem sobrescritas"
+ ],
+ "repo_actions": "Nenhum commit/push. Alterados apenas arquivos em evidence/QA-001/. site/, scripts/, tests/ intocados."
+}

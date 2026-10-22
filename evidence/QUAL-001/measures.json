@@ -1,0 +1,1092 @@
+{
+ "375": {
+  "vw": 375,
+  "scrollW": 375,
+  "innerW": 375,
+  ".hero": {
+   "x": 18.75,
+   "w": 337.5,
+   "right": 18.75,
+   "h": 700.625
+  },
+  ".perks": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 285.203125
+  },
+  "#categorias": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 425.125
+  },
+  "#novidades": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 702.703125
+  },
+  "#atelie": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 1320.328125
+  },
+  "#colecoes": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 1578.765625
+  },
+  "#ajuda": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 526.171875
+  },
+  ".footer": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 756.453125
+  },
+  ".header__in": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 64
+  },
+  ".announce": {
+   "x": 0,
+   "w": 375,
+   "right": 0,
+   "h": 36.796875
+  },
+  "titles": [
+   {
+    "t": "A névoa virou mesa.",
+    "fs": "54.5px",
+    "fw": "300",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Compre por categoria",
+    "fs": "29.15px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Novidades da fornada",
+    "fs": "29.15px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Caneca Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Xícara com pires Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Tigela funda Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Prato raso Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Jarra Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Vaso garrafa Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Travessa oval Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Copo Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Uma ceramista, um forno, uma fornada por mês.",
+    "fs": "29.15px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Coleções passadas",
+    "fs": "29.15px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Terra Molhada",
+    "fs": "26px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Sal",
+    "fs": "26px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "29.15px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Loja",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Sua sacola",
+    "fs": "24px",
+    "fw": "400",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": false
+   }
+  ],
+  "tracks": [
+   {
+    "cls": "carousel__track",
+    "n": 8,
+    "fully": 2,
+    "partial": [
+     0.30005408328826394
+    ],
+    "left": 18.75,
+    "cardW": 144.453125
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 2,
+    "partial": [
+     0.30005408328826394
+    ],
+    "left": 18.75,
+    "cardW": 144.453125
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 2,
+    "partial": [
+     0.30005408328826394
+    ],
+    "left": 18.75,
+    "cardW": 144.453125
+   }
+  ],
+  "badges": [
+   {
+    "c": "hero__stage",
+    "t": "",
+    "br": "0px",
+    "fs": "17px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--outline",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "1px rgb(217, 212, 203)",
+    "vis": true
+   },
+   {
+    "c": "tag__extra",
+    "t": "· Primavera 2026",
+    "br": "0px",
+    "fs": "12px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": false
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--inverse",
+    "t": "O ateliê",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgba(244, 241, 236, 0.08)",
+    "bd": "1px rgba(244, 241, 236, 0.18)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Outono 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Verão 2025/26",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   }
+  ],
+  "small": [],
+  "smallText": [
+   "bag-btn__count:11:0",
+   "tag tag--outline:12:Coleção Névoa · Primavera 2026",
+   "tag tag--secondary:12:Coleção Névoa · Primavera 2026",
+   "badge:12:Novo",
+   "tag tag--inverse:12:O ateliê",
+   "tag tag--secondary:12:Outono 2026",
+   "badge badge--muted:12:Esgotado",
+   "tag tag--secondary:12:Verão 2025/26"
+  ],
+  "imgs": [
+   {
+    "s": "",
+    "ok": false,
+    "alt": ""
+   }
+  ],
+  "errors": []
+ },
+ "768": {
+  "vw": 768,
+  "scrollW": 768,
+  "innerW": 768,
+  ".hero": {
+   "x": 32,
+   "w": 704,
+   "right": 32,
+   "h": 765.5
+  },
+  ".perks": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 279.5625
+  },
+  "#categorias": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 378.359375
+  },
+  "#novidades": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 701.5
+  },
+  "#atelie": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 1285.265625
+  },
+  "#colecoes": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 1529.953125
+  },
+  "#ajuda": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 534.640625
+  },
+  ".footer": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 535.6875
+  },
+  ".header__in": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 64
+  },
+  ".announce": {
+   "x": 0,
+   "w": 768,
+   "right": 0,
+   "h": 57.59375
+  },
+  "titles": [
+   {
+    "t": "A névoa virou mesa.",
+    "fs": "78.08px",
+    "fw": "300",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Compre por categoria",
+    "fs": "36.224px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Novidades da fornada",
+    "fs": "36.224px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Caneca Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Xícara com pires Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Tigela funda Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Prato raso Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Jarra Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Vaso garrafa Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Travessa oval Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Copo Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Uma ceramista, um forno, uma fornada por mês.",
+    "fs": "36.224px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Coleções passadas",
+    "fs": "36.224px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Terra Molhada",
+    "fs": "30.016px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Sal",
+    "fs": "30.016px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "36.224px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Loja",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Sua sacola",
+    "fs": "24px",
+    "fw": "400",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": false
+   }
+  ],
+  "tracks": [
+   {
+    "cls": "carousel__track",
+    "n": 8,
+    "fully": 3,
+    "partial": [
+     0.46109102342398994
+    ],
+    "left": 32,
+    "cardW": 198.78125
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 3,
+    "partial": [
+     0.46109102342398994
+    ],
+    "left": 32,
+    "cardW": 198.78125
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 3,
+    "partial": [
+     0.46109102342398994
+    ],
+    "left": 32,
+    "cardW": 198.78125
+   }
+  ],
+  "badges": [
+   {
+    "c": "hero__stage",
+    "t": "",
+    "br": "0px",
+    "fs": "17px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--outline",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "1px rgb(217, 212, 203)",
+    "vis": true
+   },
+   {
+    "c": "tag__extra",
+    "t": "· Primavera 2026",
+    "br": "0px",
+    "fs": "12px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--inverse",
+    "t": "O ateliê",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgba(244, 241, 236, 0.08)",
+    "bd": "1px rgba(244, 241, 236, 0.18)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Outono 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Verão 2025/26",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   }
+  ],
+  "small": [],
+  "smallText": [
+   "bag-btn__count:11:0",
+   "tag tag--outline:12:Coleção Névoa · Primavera 2026",
+   "tag__extra:12:· Primavera 2026",
+   "tag tag--secondary:12:Coleção Névoa · Primavera 2026",
+   "badge:12:Novo",
+   "tag tag--inverse:12:O ateliê",
+   "tag tag--secondary:12:Outono 2026",
+   "badge badge--muted:12:Esgotado",
+   "tag tag--secondary:12:Verão 2025/26"
+  ],
+  "imgs": [
+   {
+    "s": "",
+    "ok": false,
+    "alt": ""
+   }
+  ],
+  "errors": []
+ },
+ "1440": {
+  "vw": 1440,
+  "scrollW": 1425,
+  "innerW": 1440,
+  ".hero": {
+   "x": 104.5,
+   "w": 1216,
+   "right": 119.5,
+   "h": 554.65625
+  },
+  ".perks": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 144
+  },
+  "#categorias": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 536.796875
+  },
+  "#novidades": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 919.078125
+  },
+  "#atelie": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 836.125
+  },
+  "#colecoes": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 1925.71875
+  },
+  "#ajuda": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 560
+  },
+  ".footer": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 644.59375
+  },
+  ".header__in": {
+   "x": 72.5,
+   "w": 1280,
+   "right": 87.5,
+   "h": 76
+  },
+  ".announce": {
+   "x": 0,
+   "w": 1425,
+   "right": 15,
+   "h": 36.796875
+  },
+  "titles": [
+   {
+    "t": "A névoa virou mesa.",
+    "fs": "108px",
+    "fw": "300",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Compre por categoria",
+    "fs": "40px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Novidades da fornada",
+    "fs": "40px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Caneca Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Xícara com pires Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Tigela funda Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Prato raso Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Jarra Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Vaso garrafa Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Travessa oval Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Copo Névoa",
+    "fs": "14px",
+    "fw": "600",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Uma ceramista, um forno, uma fornada por mês.",
+    "fs": "40px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Coleções passadas",
+    "fs": "40px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Terra Molhada",
+    "fs": "36px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Sal",
+    "fs": "36px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "40px",
+    "fw": "500",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": true
+   },
+   {
+    "t": "Loja",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Ajuda",
+    "fs": "13px",
+    "fw": "700",
+    "ff": "Figtree, system-ui, ",
+    "vis": true
+   },
+   {
+    "t": "Sua sacola",
+    "fs": "24px",
+    "fw": "400",
+    "ff": "Fraunces, \"Iowan Old",
+    "vis": false
+   }
+  ],
+  "tracks": [
+   {
+    "cls": "carousel__track",
+    "n": 8,
+    "fully": 4,
+    "partial": [
+     0.3339160839160839
+    ],
+    "left": 104.5,
+    "cardW": 286
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 4,
+    "partial": [
+     0.3339160839160839
+    ],
+    "left": 104.5,
+    "cardW": 286
+   },
+   {
+    "cls": "carousel__track",
+    "n": 6,
+    "fully": 4,
+    "partial": [
+     0.3339160839160839
+    ],
+    "left": 104.5,
+    "cardW": 286
+   }
+  ],
+  "badges": [
+   {
+    "c": "hero__stage",
+    "t": "",
+    "br": "0px",
+    "fs": "17px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--outline",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "1px rgb(217, 212, 203)",
+    "vis": true
+   },
+   {
+    "c": "tag__extra",
+    "t": "· Primavera 2026",
+    "br": "0px",
+    "fs": "12px",
+    "bg": "rgba(0, 0, 0, 0)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Coleção Névoa · Primavera 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "badge",
+    "t": "Novo",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(244, 241, 236)",
+    "bd": "0px rgb(37, 35, 31)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--inverse",
+    "t": "O ateliê",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgba(244, 241, 236, 0.08)",
+    "bd": "1px rgba(244, 241, 236, 0.18)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Outono 2026",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   },
+   {
+    "c": "tag tag--secondary",
+    "t": "Verão 2025/26",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(217, 212, 203)",
+    "bd": "1px rgba(0, 0, 0, 0)",
+    "vis": true
+   },
+   {
+    "c": "badge badge--muted",
+    "t": "Esgotado",
+    "br": "999px",
+    "fs": "12px",
+    "bg": "rgb(37, 35, 31)",
+    "bd": "0px rgb(244, 241, 236)",
+    "vis": true
+   }
+  ],
+  "small": [],
+  "smallText": [
+   "bag-btn__count:11:0",
+   "tag tag--outline:12:Coleção Névoa · Primavera 2026",
+   "tag__extra:12:· Primavera 2026",
+   "tag tag--secondary:12:Coleção Névoa · Primavera 2026",
+   "badge:12:Novo",
+   "tag tag--inverse:12:O ateliê",
+   "tag tag--secondary:12:Outono 2026",
+   "badge badge--muted:12:Esgotado",
+   "tag tag--secondary:12:Verão 2025/26"
+  ],
+  "imgs": [
+   {
+    "s": "",
+    "ok": false,
+    "alt": ""
+   },
+   {
+    "s": "",
+    "ok": false,
+    "alt": ""
+   }
+  ],
+  "errors": []
+ }
+}

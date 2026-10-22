@@ -1,0 +1,633 @@
+{
+ "margins": {
+  "320": {
+   "vw": 320,
+   "top": 16,
+   "left": 16,
+   "right": 16,
+   "bottom": 16,
+   "heroH": 634.3
+  },
+  "375": {
+   "vw": 375,
+   "top": 18.75,
+   "left": 18.75,
+   "right": 18.75,
+   "bottom": 18.75,
+   "heroH": 613.6
+  },
+  "768": {
+   "vw": 768,
+   "top": 32,
+   "left": 32,
+   "right": 32,
+   "bottom": 32,
+   "heroH": 752.7
+  },
+  "1024": {
+   "vw": 1024,
+   "top": 32,
+   "left": 32,
+   "right": 47,
+   "bottom": 32,
+   "heroH": 582.1
+  },
+  "1280": {
+   "vw": 1280,
+   "top": 32,
+   "left": 32,
+   "right": 47,
+   "bottom": 32,
+   "heroH": 554.7
+  },
+  "1440": {
+   "vw": 1440,
+   "top": 32,
+   "left": 104.5,
+   "right": 119.5,
+   "bottom": 32,
+   "heroH": 554.7
+  },
+  "1920": {
+   "vw": 1920,
+   "top": 32,
+   "left": 344.5,
+   "right": 359.5,
+   "bottom": 32,
+   "heroH": 554.7
+  }
+ },
+ "contrast": {
+  "1280": {
+   "mist_t0": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.73,
+    "p5": 5.0,
+    "median": 5.78,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t50": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.73,
+    "p5": 5.04,
+    "median": 5.75,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      13000
+     ],
+     [
+      "drift",
+      17000
+     ],
+     [
+      "drift",
+      20000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t100": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.73,
+    "p5": 5.04,
+    "median": 5.65,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      26000
+     ],
+     [
+      "drift",
+      34000
+     ],
+     [
+      "drift",
+      40000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   }
+  },
+  "1440": {
+   "mist_t0": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.02,
+    "median": 5.79,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t50": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.04,
+    "median": 5.75,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      13000
+     ],
+     [
+      "drift",
+      17000
+     ],
+     [
+      "drift",
+      20000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t100": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.04,
+    "median": 5.65,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      26000
+     ],
+     [
+      "drift",
+      34000
+     ],
+     [
+      "drift",
+      40000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   }
+  },
+  "1920": {
+   "mist_t0": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.02,
+    "median": 5.79,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "drift",
+      0
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t50": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.04,
+    "median": 5.75,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      13000
+     ],
+     [
+      "drift",
+      17000
+     ],
+     [
+      "drift",
+      20000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   },
+   "mist_t100": {
+    "color": [
+     85,
+     81,
+     74
+    ],
+    "fontSize": "22px",
+    "lines": 3,
+    "n": 6958,
+    "min": 4.69,
+    "p5": 5.04,
+    "median": 5.65,
+    "animations": [
+     [
+      "reveal",
+      1399
+     ],
+     [
+      "drift",
+      26000
+     ],
+     [
+      "drift",
+      34000
+     ],
+     [
+      "drift",
+      40000
+     ],
+     [
+      "settle",
+      899
+     ],
+     [
+      "settle",
+      979
+     ],
+     [
+      "settle",
+      1059
+     ],
+     [
+      "settle",
+      1139
+     ]
+    ]
+   }
+  }
+ },
+ "names": {
+  "1440": {
+   "add": [
+    "Adicionar à sacola: Caneca Névoa",
+    "Adicionar à sacola: Xícara com pires Névoa",
+    "Adicionar à sacola: Tigela funda Névoa",
+    "Adicionar à sacola: Prato raso Névoa",
+    "Adicionar à sacola: Jarra Névoa",
+    "Adicionar à sacola: Vaso garrafa Névoa",
+    "Adicionar à sacola: Travessa oval Névoa",
+    "Adicionar à sacola: Copo Névoa",
+    "Adicionar à sacola: Caneca Terra Molhada",
+    "Adicionar à sacola: Vaso bojudo Terra Molhada",
+    "Adicionar à sacola: Tigela funda Terra Molhada",
+    "Adicionar à sacola: Ramequim Terra Molhada",
+    "Adicionar à sacola: Copo Terra Molhada",
+    "Adicionar à sacola: Xícara com pires Sal",
+    "Adicionar à sacola: Tigela funda Sal",
+    "Adicionar à sacola: Jarra Sal",
+    "Adicionar à sacola: Prato raso Sal",
+    "Adicionar à sacola: Ramequim Sal"
+   ],
+   "esgotado": [
+    "Esgotado: Prato raso Terra Molhada",
+    "Esgotado: Travessa oval Sal"
+   ],
+   "brand": [
+    "Ateliê Bruma, início"
+   ],
+   "bag": [
+    "Sacola, 0 itens"
+   ],
+   "visibleLabel": [
+    {
+     "long": "Adicionar à sacola",
+     "short": null
+    },
+    {
+     "long": "Adicionar à sacola",
+     "short": null
+    }
+   ],
+   "afterClick": [
+    "Adicionada à sacola: Caneca Névoa"
+   ],
+   "bagAfter": [
+    "Sacola, 1 item"
+   ],
+   "afterRevert": "Adicionar à sacola: Caneca Névoa"
+  },
+  "375": {
+   "add": [
+    "Adicionar à sacola: Caneca Névoa",
+    "Adicionar à sacola: Xícara com pires Névoa",
+    "Adicionar à sacola: Tigela funda Névoa",
+    "Adicionar à sacola: Prato raso Névoa",
+    "Adicionar à sacola: Jarra Névoa",
+    "Adicionar à sacola: Vaso garrafa Névoa",
+    "Adicionar à sacola: Travessa oval Névoa",
+    "Adicionar à sacola: Copo Névoa",
+    "Adicionar à sacola: Caneca Terra Molhada",
+    "Adicionar à sacola: Vaso bojudo Terra Molhada",
+    "Adicionar à sacola: Tigela funda Terra Molhada",
+    "Adicionar à sacola: Ramequim Terra Molhada",
+    "Adicionar à sacola: Copo Terra Molhada",
+    "Adicionar à sacola: Xícara com pires Sal",
+    "Adicionar à sacola: Tigela funda Sal",
+    "Adicionar à sacola: Jarra Sal",
+    "Adicionar à sacola: Prato raso Sal",
+    "Adicionar à sacola: Ramequim Sal"
+   ],
+   "esgotado": [
+    "Esgotado: Prato raso Terra Molhada",
+    "Esgotado: Travessa oval Sal"
+   ],
+   "brand": [
+    "Ateliê Bruma, início"
+   ],
+   "bag": [
+    "Sacola, 0 itens"
+   ],
+   "visibleLabel": [
+    {
+     "long": null,
+     "short": "Adicionar"
+    },
+    {
+     "long": null,
+     "short": "Adicionar"
+    }
+   ],
+   "afterClick": [
+    "Adicionada à sacola: Caneca Névoa"
+   ],
+   "bagAfter": [
+    "Sacola, 1 item"
+   ],
+   "afterRevert": "Adicionar à sacola: Caneca Névoa"
+  }
+ },
+ "focus": [
+  "Pular para o conteúdo",
+  "",
+  "Novidades",
+  "Categorias",
+  "Coleções passadas",
+  "O ateliê",
+  "Ajuda",
+  "Sacola 0 Sacola, 0 itens",
+  "Comprar a coleção",
+  "Ver categorias",
+  "Pausar animação",
+  "Canecas e xícaras 6 peças",
+  "Pratos 3 peças",
+  "Tigelas 5 peças"
+ ],
+ "fold": {
+  "375x667": {
+   "ctaBottom": 654,
+   "innerH": 667,
+   "ctaInFold": true,
+   "stageH": 150
+  },
+  "1440x900": {
+   "ctaBottom": 652,
+   "innerH": 900,
+   "ctaInFold": true,
+   "stageH": 555
+  },
+  "320x568": {
+   "ctaBottom": 693,
+   "innerH": 568,
+   "ctaInFold": false,
+   "stageH": 150
+  },
+  "768x1024": {
+   "ctaBottom": 883,
+   "innerH": 1024,
+   "ctaInFold": true,
+   "stageH": 307
+  }
+ }
+}

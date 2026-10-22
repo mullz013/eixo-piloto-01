@@ -1,0 +1,180 @@
+{
+ "task": "QA-001",
+ "agent": "eixo-qa-engineer",
+ "version": "1.0",
+ "project_id": "piloto-01",
+ "project_dna_version": "0.2.0",
+ "commit": "1159d06",
+ "branch": "claude/project-thread-8m8hi1",
+ "date": "2026-10-22",
+ "verdict": "FAIL",
+ "release_verdict": "NO_GO",
+ "environment": {
+  "browser": "Chromium 141.0.7390.37 headless (/opt/pw-browsers/chromium-1194)",
+  "playwright_python": "1.64.0",
+  "axe_core": "4.10.2 (npm registry tarball, shasum 85228e3e1d8b8532a27659b332e39b7fa0e022df verified; file kept outside repo)",
+  "targets": [
+   "file:///home/claude/eixo-piloto-01/site/index.html",
+   "http://127.0.0.1:8765/index.html (python3 -m http.server serving site/)"
+  ],
+  "notes": "site/, scripts/, tests/ untouched; generator output == committed index.html; nothing committed/pushed"
+ },
+ "executions": [
+  {
+   "cmd": "python3 -m unittest discover -s tests -v",
+   "result": "8 tests OK, exit 0",
+   "log": "unittest.log"
+  },
+  {
+   "cmd": "python3 scripts/validate_pilot.py",
+   "result": "exit 0 {dna_approved: true, tasks: 10, release_authorized: false}",
+   "log": "validate_pilot.log"
+  },
+  {
+   "cmd": "python3 evidence/QA-001/qa_test.py --axe <axe.min.js> --tag http --base-url http://127.0.0.1:8765/index.html",
+   "result": "82 checks: 79 PASS, 3 FAIL, 0 ERROR",
+   "files": [
+    "run-http.log",
+    "results-http.json",
+    "axe-results-http.json",
+    "aria-snapshot-http.yml",
+    "shots/http/"
+   ]
+  },
+  {
+   "cmd": "python3 evidence/QA-001/qa_test.py --axe <axe.min.js> --tag file",
+   "result": "82 checks: 77 PASS, 5 FAIL (3 above + 2 font CORS on file://)",
+   "files": [
+    "run-file.log",
+    "results-file.json",
+    "axe-results-file.json",
+    "shots/file/"
+   ]
+  },
+  {
+   "cmd": "first file:// run (preserved)",
+   "result": "66 PASS, 4 FAIL; 2 were harness issues (lazy images scrolled off-screen; 'piloto de avaliação' false positive), fixed and documented",
+   "files": [
+    "run1-file.log",
+    "results-run1-file.json",
+    "shots/run1-file/"
+   ]
+  }
+ ],
+ "tests": {
+  "planned": 82,
+  "implemented": 82,
+  "executed": 82,
+  "passed": 79,
+  "failed": 3,
+  "skipped": 0,
+  "flaky": 0
+ },
+ "critical_journeys": {
+  "total": 7,
+  "passed": 6,
+  "not_tested": 0
+ },
+ "findings": [
+  {
+   "id": "QA-001-BUG-01",
+   "severity": "P1",
+   "regression": true,
+   "summary": "CTA principal 'Comprar a coleção' fora da primeira tela no celular (AC-P0-01 / M1 ainda vigentes; DEV-001 passava)",
+   "component": ".hero .btn / .hero__stage / .hero__copy (site/styles.css, scripts/gerar_site.py)",
+   "steps": [
+    "Abrir site/index.html em 375x667 (e 320x568), sem rolar",
+    "Medir getBoundingClientRect de .hero .btn"
+   ],
+   "expected": "h1, subtítulo e CTA inteiros sem rolar em 375x667",
+   "observed": "375x667: h1 407-514px, CTA 682-734px (viewport 667). 320x568: h1 423-523, CTA 719-771 (viewport 568). Banner 1:1 acima do texto. CTA funciona depois de rolar (#novidades, título visível, foco segue).",
+   "evidence": [
+    "shots/http/primeira-tela-375.png",
+    "shots/http/primeira-tela-320.png",
+    "results-http.json#T21-first-screen-*"
+   ],
+   "frequency": "100%",
+   "hypothesis": "altura do banner 1:1 antes do texto no celular (não verificada)",
+   "owner": "UI & Art Director -> Developer; ou UX/proprietário aposenta AC-P0-01/M1 para a loja (então cai para P3)",
+   "retest": "pendente"
+  },
+  {
+   "id": "QA-001-BUG-02",
+   "severity": "P3",
+   "regression": false,
+   "summary": "Sem JS: header sticky de ~160px (nav em 2 linhas) cobre 7,5px da caixa do título de destino",
+   "component": ".no-js .header__in / html scroll-padding-top",
+   "steps": [
+    "JS desabilitado, 375x667",
+    "Clicar 'Ajuda' na nav"
+   ],
+   "expected": "título inteiro abaixo do header (AC-NAV-02, WCAG 2.4.11)",
+   "observed": "#t-ajuda top 152px, header bottom 159.75px; glifos visualmente inteiros; header ocupa ~24% da altura",
+   "evidence": [
+    "shots/http/sem-js-ajuda-375.png",
+    "results-http.json#T22-nojs-anchor-scroll"
+   ],
+   "owner": "Developer"
+  },
+  {
+   "id": "QA-001-BUG-03",
+   "severity": "P3",
+   "regression": false,
+   "summary": "Espaço antes da vírgula nos nomes acessíveis: 'Ateliê Bruma , início' e 'Sacola , 1 item'",
+   "component": "a.brand, .bag-btn",
+   "steps": [
+    "aria snapshot do header no Chromium"
+   ],
+   "evidence": [
+    "aria-snapshot-http.yml"
+   ],
+   "owner": "Developer"
+  }
+ ],
+ "observations": [
+  "OBS-1: em file:// o Chromium bloqueia fonts/*.woff2 por CORS (origin null) -> fontes de fallback; por HTTP 0 erros de console/requisições. Não é defeito de hospedagem.",
+  "OBS-2: contraste sobre a foto, .hero__lead a 1440: pior pixel 4,45:1, p10 5,04:1 (mín. 4,5); 'mesa.' grande: pior 4,42, p10 4,8 (mín. 3). No limite: revisão humana.",
+  "OBS-3: site/tokens.css difere de docs/ui/tokens.css só em 2 comentários; 3 SVGs idênticos.",
+  "OBS-4: sem JS os 14 links de categoria/momento levam a #novidades sem filtrar (aceito na UX-002)."
+ ],
+ "coverage_pass": {
+  "console_images": "0 erros console/pageerror/requestfailed via HTTP; 30/30 imagens carregadas após lazy (375, 1440)",
+  "overflow": "0 em 320/375/414/768/1024/1440 e 667x375; também sem JS, imagens bloqueadas e espaçamento 1.4.12",
+  "margins": "14 blocos simétricos (diff 0,0px) em 320/375/414/768",
+  "hamburger": "abre, aria-expanded, foco no painel, inert, foco preso, Esc/X/scrim fecham, foco volta; âncora e filtro pelo menu; oculto a 1440; anel visível ao abrir pelo teclado",
+  "anchors": "5 da nav 1440, 4 links profundos + #naoexiste, Voltar sem recarregar",
+  "carousels": "1440: 4 inteiros, setas com estados desabilitados, bullets, ArrowRight; 375: sem setas, bullets, 1/1/0,30 visível",
+  "bag": "add/contador/toast/subtotal, +/-, remover, frete, aviso demonstrativo role=status, Esc devolve foco, persiste, estado vazio, foco preso, localStorage adulterado saneado",
+  "keyboard": "skip link 1º Tab -> main; Tab do topo cobre header/main/footer com foco visível e nenhum foco sob o header; acordeão Enter/Espaço",
+  "no_js": "nav visível, controles JS ocultos, trilhos roláveis, âncoras",
+  "reduced_motion": "0 animações (8 sem a preferência), scroll auto, transição 0s",
+  "weight_cls": "fotos sem rolar 139,6KB (375) / 172,8KB (1440); 30/30 img com width/height; CLS 0; LCP lab sem throttling 140/224ms (indicativo)",
+  "structure": "1 h1, headings sem saltos, ids únicos, lang, title, meta description, landmarks, alt 100%, botões nomeados",
+  "targets": "nenhum < 24x24 em 375",
+  "forbidden_content": "nenhum (falso positivo 'piloto de avaliação' documentado)",
+  "axe": "0 violações de qualquer impacto em 320/375/768/1024/1440 + menu, sacola (375/1440), filtro",
+  "contrast_computed": "166/173 textos sobre fundo sólido, mínimo 5,81:1; banner por amostragem de pixels (OBS-2)",
+  "images_blocked": "20/20 nomes e preços, mídia mantém proporção"
+ },
+ "not_run": [
+  "Lighthouse 4G, mediana de 3 (M8/M9)",
+  "Core Web Vitals de campo (NOT_MEASURED_FIELD)",
+  "Firefox/WebKit e dispositivos reais (iOS Safari/Android)",
+  "leitor de tela NVDA/VoiceOver",
+  "zoom 200%/400% do navegador",
+  "validador W3C de HTML",
+  "regressão visual contra baseline/Figma aprovado (inexistente)",
+  "arrasto por toque real no carrossel",
+  "sacola com localStorage indisponível"
+ ],
+ "blockers": [
+  "QA-001-BUG-01 (P1) aberto"
+ ],
+ "recommendation": "Trazer o CTA do banner para a primeira tela em 375x667 e 320x568, ou o UX/proprietário aposenta AC-P0-01/M1 formalmente; o QA reexecuta T21 e a regressão completa no mesmo commit que o Quality validar.",
+ "needs_human_review": [
+  "contraste .hero__lead sobre a foto (OBS-2)",
+  "leitor de tela e zoom (Quality Specialist)",
+  "vigência de AC-P0-01/M1 após a UX-002"
+ ],
+ "note": "report.md não foi gravado: o harness bloqueou a escrita de arquivos .md de relatório por subagente; este JSON é o relatório completo."
+}

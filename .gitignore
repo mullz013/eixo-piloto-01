@@ -1,0 +1,19 @@
+.env
+.env.*
+!.env.example
+node_modules/
+.next/
+dist/
+coverage/
+playwright-report/
+test-results/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Cópia local e transitória dos agentes do eixo-ai (não versionar)
+.claude/agents/
+
+# capturas pesadas das revisões ficam na pasta do projeto (/mnt/project-files/eixo-piloto/qa-001/ e qual-001/)
+evidence/QA-001/**/*.png
+evidence/QUAL-001/**/*.png

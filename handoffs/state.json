@@ -1,0 +1,464 @@
+{
+  "project_id": "piloto-01",
+  "dna_version": "0.2.0",
+  "status": "DNA_APPROVED_RUNTIME_VERIFIED",
+  "tasks": [
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "ORCH-001",
+      "agent": "Orchestrator",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [],
+      "artifact_links": [
+        "handoffs/ORCH-001.md",
+        "evidence/ORCH-001/inventory.json",
+        "evidence/ORCH-001/delegation-transcript.json"
+      ],
+      "assumptions": [
+        "Agentes copiados localmente de mullz013/eixo-ai@eixo/setup-multiagent-v1.1 (2b4a012) para .claude/agents/, sem versionar no piloto.",
+        "Execução em container Claude Code na nuvem (claude 2.1.307), não no computador do proprietário."
+      ],
+      "open_questions": [],
+      "resolved_questions": [
+        {
+          "question": "UX-001: forma da seção de contato demonstrativo (estática ou formulário sem envio)?",
+          "answer": "Contato só em texto estático, com domínio .example, sem formulário (sugerido a partir da autorização do proprietário e da pesquisa §3.3).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"pode meter bronca, sugere contato, coleção e métrica fictícia, mas com bons embasamentos; faz uma pesquisa de mercado do nicho; todos os dados podem ser inventados, mas com embasamento\""
+        },
+        {
+          "question": "UX-001: quantidade/campos das peças fictícias e uso de placeholders sem licença?",
+          "answer": "Coleção Névoa com 6 peças (nome, medida, preço de referência); imagens apenas como placeholders sem licença (pesquisa §3.2).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, mesma resposta"
+        },
+        {
+          "question": "UX-001: métricas do piloto ou apenas critérios funcionais Dado/Quando/Então?",
+          "answer": "Ambos: funil fictício como referência (não verificável) e metas verificáveis para QA (pesquisa §4).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, mesma resposta"
+        }
+      ],
+      "risks": [
+        "O probe foi somente leitura; UX-001 foi executado depois como tarefa própria (ver handoffs/UX-001.md).",
+        "Modelo padrão do runtime (claude-sonnet-5-5) herdado via model: inherit; outros ambientes podem usar outro modelo."
+      ],
+      "acceptance_criteria": [
+        "Validar seis agentes via runtime Claude Code.",
+        "Registrar evidência verificável da primeira delegação real ao UX Architect."
+      ],
+      "evidence": [
+        "2026-10-21: `claude --agent eixo-orchestrator -p` no diretório do piloto listou os seis agentes eixo-* no evento init (evidence/ORCH-001/inventory.json).",
+        "2026-10-21: o orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect (tool_use toolu_01BvBtKBTkVgA1U62PXvExXv); o subagente executou Read em docs/project-dna.md e docs/project-dna.json com parent_tool_use_id apontando para essa chamada e devolveu o relatório (evidence/ORCH-001/delegation-transcript.json).",
+        "Citações do subagente conferidas: docs/project-dna.md linhas 11–12 e project-dna.json primary_cta/assets_approved=false."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "UX-001",
+      "agent": "UX Architect",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "ORCH-001"
+      ],
+      "artifact_links": [
+        "handoffs/UX-001.md",
+        "docs/ux/ux-spec.md",
+        "docs/ux/content-structure.md",
+        "docs/ux/acceptance-criteria.md",
+        "docs/ux/handoff-ui.md",
+        "docs/ux/research/pesquisa-mercado.md",
+        "evidence/UX-001/delegation-transcript.json",
+        "evidence/UX-001/delegation-transcript-round2.json"
+      ],
+      "assumptions": [
+        "UI-001 propõe um logotipo (decisão do proprietário); o UX define só requisitos funcionais.",
+        "CTA \"Conhecer a coleção\" pulando o Manifesto decidido e aceito; efeito na conversão continua hipótese não testada.",
+        "Frase \"Evite choques bruscos de temperatura\" mantida por aceite do proprietário; continua inferência editorial fictícia.",
+        "Endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP e sem mapa, com etiqueta de dados de exemplo (decisão do proprietário).",
+        "Afirmações técnicas de produto (1.240 °C, micro-ondas, lava-louças) são fictícias, baseadas em AMME.",
+        "Dados do Ateliê Bruma são fictícios com embasamento de mercado, conforme autorização do proprietário em 2026-10-22."
+      ],
+      "open_questions": [],
+      "resolved_questions": [
+        {
+          "question": "Wordmark em texto apenas, ou UI deve propor logotipo?",
+          "answer": "UI-001 deve propor um logotipo; requisitos funcionais em docs/ux/handoff-ui.md §3.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"A logo precisa propor um logotipo.\""
+        },
+        {
+          "question": "Aceita o CTA saltar o Manifesto?",
+          "answer": "Sim; decidido, não é mais variante pendente.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode ter o CTA de conhecer a coleção.\""
+        },
+        {
+          "question": "Manter ou remover \"Evite choques bruscos de temperatura\"?",
+          "answer": "Manter; continua inferência editorial fictícia.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode manter a dica.\""
+        },
+        {
+          "question": "Curitiba (PR) sem endereço é aceitável?",
+          "answer": "Não; usar endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP, sem link de mapa, com etiqueta de dados de exemplo.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Invente um endereço.\""
+        }
+      ],
+      "risks": [
+        "Sem pesquisa primária nem teste com usuários; heurísticas são análise de especialista.",
+        "Dados de consumidor são de artesanato em geral; preços observados em 2026-10-22 podem mudar; fontes não reverificadas.",
+        "M8/M9 (LCP, CLS) dependem da stack e só serão medidos na implementação.",
+        "Funil fictício F1 não é verificável."
+      ],
+      "acceptance_criteria": [
+        "CTA único \"Conhecer a coleção\" → #colecao, visível sem rolagem em 375×667.",
+        "Contato alcançável em 1 ativação; 6 cartões com nome, medida e preço visíveis.",
+        "28 cenários Dado/Quando/Então (AC-P0, AC-NAV, AC-CON) e metas M1–M12 verificáveis.",
+        "WCAG 2.2 AA aplicável (revisão manual necessária, scanner não certifica).",
+        "Sem depoimentos, formulário, WhatsApp, e-commerce, dados reais ou identidade EIXO; dados fictícios com etiqueta \"exemplo\".",
+        "Revisão humana do UX antes de UI-001."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect em segundo plano (14 chamadas de ferramenta, ~47 mil tokens, ~172 s); o subagente escreveu os quatro arquivos em docs/ux/ e retornou READY_FOR_REVIEW sem blockers.",
+        "Orchestrator leu os quatro arquivos e conferiu as restrições (CTA único, sem formulário/WhatsApp/e-commerce, sem prova social, sem identidade EIXO, nada APPROVED); detalhes em handoffs/UX-001.md.",
+        "evidence/UX-001/delegation-transcript.json: claude 2.1.307 (claude-sonnet-5-5), eixo-orchestrator chamou Agent com subagent_type eixo-ux-architect (toolu_01YJMivLk34TeTL6Z2hFqzC4); os Write/Edit em docs/ux/*.md têm parent_tool_use_id igual a esse id, provando autoria do subagente. Custo ~US$ 0,76.",
+        "evidence/UX-001/delegation-transcript-round2.json: rodada 2 com as decisões do proprietário; Agent toolu_01XfTAkdaxe2tSWkRbjuBVzt (eixo-ux-architect), todos os Edit em docs/ux/ com esse parent_tool_use_id. Custo ~US$ 0,44.",
+        "2026-10-22T00:27:51Z: proprietário revisou a PR #5 (commit e1d8da8) e respondeu \"Tudo certo\" na conversa do projeto, registrado como aprovação humana do UX. UI-001 liberado."
+      ],
+      "approved_by": "Matheus Santos (proprietário)",
+      "approved_at": "2026-10-22T00:27:51Z"
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "UI-001",
+      "agent": "UI Designer & Art Director",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "UX-001"
+      ],
+      "artifact_links": [
+        "handoffs/UI-001.md",
+        "docs/ui/art-direction.md",
+        "docs/ui/ui-handoff.md",
+        "docs/ui/tokens.json",
+        "docs/ui/tokens.css",
+        "docs/ui/preview.html",
+        "docs/ui/logo/README.md",
+        "docs/ui/logo/logo-principal.svg",
+        "docs/ui/logo/logo-mono-fundo-claro.svg",
+        "docs/ui/logo/logo-mono-fundo-escuro.svg",
+        "docs/ui/logo/icone.svg",
+        "docs/ui/logo/icone-fundo-escuro.svg",
+        "evidence/UI-001/delegation-transcript-round1.json",
+        "evidence/UI-001/delegation-transcript-round2.json",
+        "evidence/UI-001/delegation-transcript-round3.json",
+        "evidence/UI-001/contrast-check.json",
+        "evidence/UI-001/render-check.json",
+        "evidence/UI-001/logo-32px-check.json",
+        "evidence/UI-001/logos-32px-1x.png"
+      ],
+      "assumptions": [
+        "Logotipo e direção de arte são FICTÍCIOS, criação original do eixo-ui-art-director, não aprovados.",
+        "Figma MCP não conectado: handoff Figma NÃO REALIZADO; entrega em docs/ui/.",
+        "Borda do placeholder em ink-700 adotada como padrão razoável (C16b), reversível pelo proprietário.",
+        "Fontes Fraunces e Figtree (SIL OFL 1.1) citadas sem baixar as licenças.",
+        "Titularidade do logotipo fictício segue indefinida (padrão razoável).",
+        "Developer baixa e arquiva as licenças OFL de Fraunces e Figtree ao embutir as fontes (DEV-001)."
+      ],
+      "open_questions": [],
+      "risks": [
+        "Sem teste com pessoas; só o revisor olhou a prancha.",
+        "Header a 320 px medido com fonte de fallback, sem Figtree.",
+        "Leitor de tela, teclado e WCAG 2.2 AA completo não testados.",
+        "Subagente em segundo plano é encerrado quando o processo claude -p termina (rodada 1 interrompida)."
+      ],
+      "acceptance_criteria": [
+        "Logotipo original em SVG (principal, mono claro/escuro, ícone), letras em paths, legível a 32 px, nome acessível \"Ateliê Bruma\", link #topo.",
+        "Contraste texto ≥ 4,5:1 e componentes/foco ≥ 3:1, conferido por script.",
+        "Prancha sem rolagem horizontal de 320 a 1440 px e sem recursos externos.",
+        "Sem identidade EIXO, assets sem licença, depoimentos, selos ou CTA secundário.",
+        "Aprovação humana antes de DEV-001."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator chamou Agent com subagent_type=eixo-ui-art-director três vezes (toolu_018nE5hipgqQPNMHU4ZpfXrq, toolu_01GvwTGu8hzJuWq4avNFTyxK, toolu_013nLLGn31Vi6TVNTbjP6wh3); todos os Write/Edit em docs/ui/ têm parent_tool_use_id igual ao Agent da rodada (evidence/UI-001/delegation-transcript-round*.json). Custo acumulado ~US$ 3,92.",
+        "Rodada 1 interrompida pelo fim do processo -p antes do ui-handoff.md (evento subagent_interrupted); rodadas 2 e 3 em primeiro plano retornaram READY_FOR_REVIEW.",
+        "Revisão independente: contraste por script confere os 20 pares (dif. máx. 0,04), falha C16b corrigida para 4,43:1 (evidence/UI-001/contrast-check.json).",
+        "Revisão independente: Playwright + Chromium, prancha sem rolagem horizontal em 320/375/768/1024/1440 e sem requisições externas; SVGs válidos em 81×32/32×32; header a 320 px em uma linha (evidence/UI-001/render-check.json, logo-32px-check.json).",
+        "2026-10-22T10:23:04Z: proprietário revisou a PR #6 (commit 4cd5343) e respondeu \"Sim para as 3 perguntas\" às 3 perguntas de aprovação; registrado como aprovação humana do UI. DEV-001 liberado."
+      ],
+      "resolved_questions": [
+        {
+          "question": "Aprova a direção \"Névoa quieta\" e o logotipo proposto?",
+          "answer": "Sim; direção e logotipo aprovados.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22T10:23:04Z, conversa do projeto: \"Sim para as 3 perguntas\""
+        },
+        {
+          "question": "Mantém as faixas de bruma dentro do símbolo?",
+          "answer": "Sim; faixas mantidas.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22T10:23:04Z, mesma resposta"
+        },
+        {
+          "question": "Aceita o tracejado como marca visual de fictício/ilustrativo?",
+          "answer": "Sim; tracejado aceito.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22T10:23:04Z, mesma resposta"
+        }
+      ],
+      "approved_by": "Matheus Santos (proprietário)",
+      "approved_at": "2026-10-22T10:23:04Z"
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "DEV-001",
+      "agent": "Full Stack Developer",
+      "status": "FAILED",
+      "depends_on": [
+        "UX-001",
+        "UI-001"
+      ],
+      "artifact_links": [
+        "handoffs/DEV-001.md",
+        "docs/dev/dev-handoff.md",
+        "docs/dev/adr-001-stack.md",
+        "site/index.html",
+        "site/styles.css",
+        "site/tokens.css",
+        "site/assets/logo-principal.svg",
+        "site/assets/logo-mono-fundo-escuro.svg",
+        "site/assets/icone.svg",
+        "site/fonts/README.md",
+        "evidence/DEV-001/verification.md",
+        "evidence/DEV-001/delegation-transcript.json",
+        "evidence/DEV-001/render/render-check.json",
+        "evidence/DEV-001/render/interaction-check.json"
+      ],
+      "assumptions": [
+        "Entrega do eixo-fullstack-developer sem shell: nada foi renderizado, medido ou testado pelo subagente; todos os checks do Developer estão NOT_RUN.",
+        "Stack: HTML + CSS puros, sem JavaScript, sem build, sem recursos externos (ADR-001). Fontes locais em site/fonts/ preparadas pela sessão coordenadora.",
+        "Desvios D1–D9 registrados em docs/dev/dev-handoff.md §3; D1 (foco suprimido em contêineres com tabindex=-1), D2 (maiúscula em 'Prazo de até 45 dias.'), D3 (linhas opcionais incluídas), D4 (alt dos placeholders só em aria-label) e D5 (size-adjust estimado) aguardam decisão UI/UX.",
+        "Todos os dados do site são FICTÍCIOS (Ateliê Bruma, DNA v0.2.0 como briefing fictício); página com noindex; sem deploy."
+      ],
+      "open_questions": [
+        "UI: aceita D1 (anel de foco suprimido em section/main com tabindex=-1)?",
+        "UI: o padrão exige alt visível nos placeholders (D4)?",
+        "UX: confirma D2 (maiúscula em 'Prazo') e D3 (linhas opcionais)?",
+        "Titularidade do logotipo fictício segue indefinida."
+      ],
+      "risks": [
+        "Primeira tela a 320x568 estimada como apertada pela UI; sem medição.",
+        "Largura da nav a 320 px não medida com Figtree real.",
+        "size-adjust dos fallbacks é estimativa; possível CLS na troca de fonte (M9).",
+        "tokens.css e SVGs copiados com Write pelo subagente; o Orchestrator conferiu por diff (idênticos a docs/ui), mas é verificação de integridade, não teste.",
+        "WCAG 2.2 AA, teclado, leitor de tela, LCP/CLS não testados.",
+        "Verificação independente da sessão coordenadora achou F1–F3 (evidence/DEV-001/verification.md), todos de baixa severidade; não substitui QA-001/QUAL-001.",
+        "2026-10-22: layout rejeitado pelo proprietário na revisão da PR #7 (arco no hero, menu solto no celular, vitrine grande, modelo de encomenda). Substituído por DEV-002."
+      ],
+      "acceptance_criteria": [
+        "AC-P0-01..AC-P0-05",
+        "AC-NAV-01..AC-NAV-09",
+        "AC-CON-01..AC-CON-08",
+        "M1–M12 (docs/ux/acceptance-criteria.md)",
+        "Copy exata de docs/ux/content-structure.md; ids, componentes e breakpoints de docs/ui/ui-handoff.md",
+        "Sem JS, sem formulário, sem recurso externo, sem depoimentos, CTA único, noindex",
+        "Pareceres independentes de QA (QA-001) e Quality (QUAL-001) antes de qualquer release"
+      ],
+      "evidence": [
+        "evidence/DEV-001/delegation-transcript.json (delegação real Orchestrator → eixo-fullstack-developer, parent_tool_use_id)",
+        "evidence/DEV-001/render/render-check.json (Playwright/Chromium: sem rolagem horizontal 320–1440, fontes carregadas, 0 requisições externas, CTA na primeira tela a 320×568 e 375×667)",
+        "evidence/DEV-001/render/interaction-check.json (skip link, ordem de Tab, âncoras do CTA e do header, axe-core 4.10.2 com 0 violações)"
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "DEV-002",
+      "agent": "Fullstack Developer (sessão do projeto)",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "UX-001",
+        "UI-001"
+      ],
+      "artifact_links": [
+        "handoffs/DEV-002.md",
+        "docs/ux/revisao-002-ecommerce.md",
+        "docs/ui/revisao-002.md",
+        "site/index.html",
+        "site/styles.css",
+        "site/app.js",
+        "site/assets/pecas/",
+        "scripts/gerar_site.py",
+        "scripts/gerar_pecas.py",
+        "evidence/DEV-002/render/interaction-check.json",
+        "evidence/DEV-002/qa/parecer-qa.md",
+        "evidence/DEV-002/qa/correcoes-pos-qa.md",
+        "evidence/DEV-002/qa/delegation-transcript.jsonl"
+      ],
+      "assumptions": [
+        "Escopo emendado para loja demonstrativa por pedido expresso do proprietário (docs/project-dna.md, emenda de 2026-10-22).",
+        "Revisões de UX e UI e o código foram feitos pela sessão do projeto, não pelos agentes eixo-ux-architect, eixo-ui-art-director e eixo-fullstack-developer, para entregar rápido; a revisão independente foi delegada ao eixo-qa-engineer.",
+        "Imagens de produto são ilustrações SVG próprias; fotos realistas exigiriam um agente de design gráfico com API de imagem paga (pendente de aprovação)."
+      ],
+      "open_questions": [
+        "Proprietário aprova o novo layout (banner, carrossel, categorias, coleções passadas, sacola)?",
+        "Criar o agente eixo-graphic-designer e qual provedor de imagem usar (gasto e chave precisam de aprovação)?",
+        "Proprietário aprova formalmente as revisões UX-002 e UI-002 (o QA apontou que faltam no approval-log)?"
+      ],
+      "risks": [
+        "Sem JavaScript, sacola e filtro não funcionam (vitrines e âncoras sim).",
+        "Ilustrações estilizadas não substituem foto de produto em uma loja real."
+      ],
+      "acceptance_criteria": [
+        "AC-ECOM-01 a AC-ECOM-07 de docs/ux/revisao-002-ecommerce.md §6."
+      ],
+      "evidence": [
+        "2026-10-22: Playwright + Chromium (servidor http local) em 320/375/768/1024/1440 px: rolagem horizontal 0 em todas; cartões visíveis 2+0,3 (320/375), 3+0,46 (768), 4 (1024/1440); menu abre, prende foco, fecha com Esc e devolve foco; sacola 3 itens = R$ 364; filtro 'Vasos e jarras' mostra 4 peças; 0 animações com movimento reduzido; 0 erros de console (evidence/DEV-002/render/interaction-check.json e capturas).",
+        "2026-10-22: revisão independente pelo eixo-qa-engineer via eixo-orchestrator (subagent_type=eixo-qa-engineer, US$ 0,98): NO-GO por leitura, 22 achados, nenhum sobre o layout pedido. 20 corrigidos e retestados com Playwright, 2 parciais e 1 mantido (evidence/DEV-002/qa/correcoes-pos-qa.md).",
+        "Aprovado pelo proprietário em 2026-10-22T17:19:12Z (handoffs/approval-log.md)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "UI-003",
+      "agent": "UI Designer & Art Director (especificação) + sessão do projeto (implementação)",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "UI-001"
+      ],
+      "artifact_links": [
+        "docs/ui/moodboard-002.md",
+        "docs/ui/revisao-003.md",
+        "site/styles.css",
+        "scripts/gerar_site.py",
+        "site/index.html",
+        "evidence/UI-003/delegation-transcript.jsonl",
+        "evidence/UI-003/contrast-check.json",
+        "evidence/UI-003/render/interaction-check.json",
+        "evidence/UI-003/render/hero-card-check.json",
+        "evidence/UI-003/render/depois-1440-full.png",
+        "evidence/UI-003/render/depois-375-full.png"
+      ],
+      "assumptions": [
+        "As 12 referências do proprietário ficam fora do repositório (capturas de terceiros); o agente trabalhou a partir da descrição em moodboard-002.md.",
+        "Itálico dos títulos em argila #8A3F22, seguindo o moodboard (recomendação do agente); plano B em #55514A registrado na revisao-003 §2.",
+        "Sombra só nos dois cartões flutuantes do hero, exceção registrada à regra 'sem sombras' de UI-001."
+      ],
+      "open_questions": [
+        "Proprietário aprova o visual UI-003 (itálico em argila, sombra nos cartões do hero, painéis escuros do ateliê e do rodapé)?"
+      ],
+      "risks": [
+        "Figma não foi usado: não há frame IDs; a referência visual são as capturas do site renderizado.",
+        "Contador da sacola continua com texto de 11 px (pendência herdada de UI-001)."
+      ],
+      "acceptance_criteria": [
+        "Decisões de e-commerce de revisao-002-ecommerce.md intactas (AC-ECOM-01 a 07).",
+        "Componentes da revisao-003 §4 aplicados em 375 e 1440 px.",
+        "Contrastes da revisao-003 §3 conferidos por script."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator delegou ao eixo-ui-art-director (subagent_type=eixo-ui-art-director, US$ 0,71), que escreveu docs/ui/revisao-003.md (evidence/UI-003/delegation-transcript.jsonl).",
+        "2026-10-22: contrastes da §3 e dos cartões refeitos por script; todos os 20 pares ≥ 4,5:1 e coincidem com o cálculo manual do agente com diferença ≤ 0,01 (evidence/UI-003/contrast-check.json).",
+        "2026-10-22: Playwright + Chromium após a implementação: mesmos resultados da DEV-002 em 320 a 1440 px (sem rolagem horizontal, 4 cartões no desktop e 2+0,3 no celular, menu, sacola, filtro, 0 animações com movimento reduzido, 0 erros de console); botão do cartão flutuante adiciona a Jarra Névoa à sacola em 375 e 1440; Fraunces Itálico carregada (evidence/UI-003/render/).",
+        "Aprovado pelo proprietário em 2026-10-22T17:19:12Z (handoffs/approval-log.md)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "QA-001",
+      "agent": "QA Engineer",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "DEV-002"
+      ],
+      "artifact_links": [
+        "evidence/QA-001/report.md",
+        "evidence/QA-001/report.json",
+        "evidence/QA-001/qa_test.py",
+        "evidence/QA-001/reteste.json"
+      ],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": [
+        "1159d06: 79/82 PASS por HTTP, axe 0 violações; P1 BUG-01 (CTA fora da primeira tela no celular). Correções aguardam reteste no novo commit.",
+        "Reteste em afbd689: PASS/GO, 83 PASS, 0 FAIL, 2 KNOWN_P3 (CTA abaixo da dobra em 320 e 360, fora da decisão do proprietário); axe 0 violações. Não é autorização de deploy.",
+        "Aprovado pelo proprietário em 2026-10-22T17:19:12Z (handoffs/approval-log.md)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "QUAL-001",
+      "agent": "Quality Specialist",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "UI-001",
+        "DEV-002"
+      ],
+      "artifact_links": [
+        "evidence/QUAL-001/report.md",
+        "evidence/QUAL-001/reteste.json"
+      ],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": [
+        "1159d06: PASS_WITH_NOTES, 0 P0, 0 P1, 3 P2 (margem do banner, contraste do texto do banner, nome do botão de compra). P2 corrigidos; aguardam reteste.",
+        "Reteste em afbd689: PASS_WITH_NOTES, os 3 P2 corrigidos (margens iguais, contraste mínimo 4,69:1, nomes acessíveis); P3 abertos registrados no report.md.",
+        "Aprovado pelo proprietário em 2026-10-22T17:19:12Z (handoffs/approval-log.md)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "DES-001",
+      "agent": "eixo-graphic-designer",
+      "status": "COMPLETED_VERIFIED",
+      "depends_on": [
+        "UI-001"
+      ],
+      "artifact_links": [
+        "site/assets/fotos/README.md",
+        "scripts/processar_fotos.py",
+        "https://claude.ai/artifact/Xcr4KNxiW1B2dAnZEQQJZs"
+      ],
+      "assumptions": [
+        "Imagens geradas por IA (ChatGPT) manualmente pelo proprietário a partir dos 33 prompts; marca fictícia, não são fotos de produto real.",
+        "Originais PNG ficam fora do repositório (Drive do proprietário); só os derivados WebP/JPG entram.",
+        "Status do agente: ASSETS_INTEGRATED (aguarda revisão do proprietário, QA e Quality)."
+      ],
+      "open_questions": [],
+      "risks": [
+        "og:image não declarado: precisa de URL absoluta quando houver domínio."
+      ],
+      "acceptance_criteria": [
+        "33 imagens conferidas e encaixadas",
+        "sem rolagem horizontal em 375 e 1440",
+        "margens simétricas 320–414 px"
+      ],
+      "evidence": [
+        "Prints 375/1440 em /mnt/project-files/eixo-piloto/des-001/ (pasta do projeto)",
+        "Executado pela sessão da thread seguindo o papel do eixo-graphic-designer; sem delegação via claude --agent (NOT_RUN como subagente).",
+        "Aprovado pelo proprietário em 2026-10-22T17:19:12Z (handoffs/approval-log.md)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
+      "task_id": "ORCH-RELEASE",
+      "agent": "Orchestrator",
+      "status": "PENDING",
+      "depends_on": [
+        "QA-001",
+        "QUAL-001"
+      ],
+      "artifact_links": [],
+      "assumptions": [],
+      "open_questions": [],
+      "risks": [],
+      "acceptance_criteria": [],
+      "evidence": []
+    }
+  ]
+}

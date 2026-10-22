@@ -1,0 +1,92 @@
+{
+ "320x568": {
+  "scrollW": 320,
+  "clientW": 320,
+  "docH": 7603,
+  "headerH": 57,
+  "h1Bottom": 212.375,
+  "ctaBottom": 459.53125,
+  "ctaFound": true,
+  "fonts": [
+   "Fraunces:loaded",
+   "Figtree:loaded",
+   "Fraunces Fallback:error",
+   "Figtree Fallback:error"
+  ],
+  "console_errors": [],
+  "external_requests": [],
+  "first_screen_cta_visible": true
+ },
+ "375x667": {
+  "scrollW": 375,
+  "clientW": 375,
+  "docH": 7826,
+  "headerH": 57,
+  "h1Bottom": 212.375,
+  "ctaBottom": 460.34375,
+  "ctaFound": true,
+  "fonts": [
+   "Fraunces:loaded",
+   "Figtree:loaded",
+   "Fraunces Fallback:error",
+   "Figtree Fallback:error"
+  ],
+  "console_errors": [],
+  "external_requests": [],
+  "first_screen_cta_visible": true
+ },
+ "768x1024": {
+  "scrollW": 768,
+  "clientW": 768,
+  "docH": 4698,
+  "headerH": 57,
+  "h1Bottom": 236.5,
+  "ctaBottom": 490.375,
+  "ctaFound": true,
+  "fonts": [
+   "Fraunces:loaded",
+   "Figtree:loaded",
+   "Fraunces Fallback:error",
+   "Figtree Fallback:error"
+  ],
+  "console_errors": [],
+  "external_requests": [],
+  "first_screen_cta_visible": true
+ },
+ "1024x768": {
+  "scrollW": 1024,
+  "clientW": 1024,
+  "docH": 4370,
+  "headerH": 57,
+  "h1Bottom": 327.09375,
+  "ctaBottom": 555.46875,
+  "ctaFound": true,
+  "fonts": [
+   "Fraunces:loaded",
+   "Figtree:loaded",
+   "Fraunces Fallback:error",
+   "Figtree Fallback:error"
+  ],
+  "console_errors": [],
+  "external_requests": [],
+  "first_screen_cta_visible": true
+ },
+ "1440x900": {
+  "scrollW": 1440,
+  "clientW": 1440,
+  "docH": 4539,
+  "headerH": 57,
+  "h1Bottom": 382.453125,
+  "ctaBottom": 577.828125,
+  "ctaFound": true,
+  "fonts": [
+   "Fraunces:loaded",
+   "Figtree:loaded",
+   "Fraunces Fallback:error",
+   "Figtree Fallback:error"
+  ],
+  "console_errors": [],
+  "external_requests": [],
+  "first_screen_cta_visible": true
+ }
+}
