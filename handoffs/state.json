@@ -67,21 +67,39 @@
         "docs/ux/acceptance-criteria.md",
         "docs/ux/handoff-ui.md",
         "docs/ux/research/pesquisa-mercado.md",
-        "evidence/UX-001/delegation-transcript.json"
+        "evidence/UX-001/delegation-transcript.json",
+        "evidence/UX-001/delegation-transcript-round2.json"
       ],
       "assumptions": [
-        "Wordmark em texto basta; sem logotipo.",
-        "CTA pulando o Manifesto é aceitável como variante a testar.",
-        "Frase \"Evite choques bruscos de temperatura\" mantida como inferência editorial marcada.",
-        "Curitiba (PR) sem endereço é aceitável.",
+        "UI-001 propõe um logotipo (decisão do proprietário); o UX define só requisitos funcionais.",
+        "CTA \"Conhecer a coleção\" pulando o Manifesto decidido e aceito; efeito na conversão continua hipótese não testada.",
+        "Frase \"Evite choques bruscos de temperatura\" mantida por aceite do proprietário; continua inferência editorial fictícia.",
+        "Endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP e sem mapa, com etiqueta de dados de exemplo (decisão do proprietário).",
         "Afirmações técnicas de produto (1.240 °C, micro-ondas, lava-louças) são fictícias, baseadas em AMME.",
         "Dados do Ateliê Bruma são fictícios com embasamento de mercado, conforme autorização do proprietário em 2026-10-22."
       ],
-      "open_questions": [
-        "Wordmark em texto apenas, ou UI deve propor logotipo?",
-        "Aceita o CTA saltar o Manifesto (variante a testar depois)?",
-        "Manter ou remover \"Evite choques bruscos de temperatura\"?",
-        "Curitiba (PR) sem endereço é aceitável?"
+      "open_questions": [],
+      "resolved_questions": [
+        {
+          "question": "Wordmark em texto apenas, ou UI deve propor logotipo?",
+          "answer": "UI-001 deve propor um logotipo; requisitos funcionais em docs/ux/handoff-ui.md §3.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"A logo precisa propor um logotipo.\""
+        },
+        {
+          "question": "Aceita o CTA saltar o Manifesto?",
+          "answer": "Sim; decidido, não é mais variante pendente.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode ter o CTA de conhecer a coleção.\""
+        },
+        {
+          "question": "Manter ou remover \"Evite choques bruscos de temperatura\"?",
+          "answer": "Manter; continua inferência editorial fictícia.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode manter a dica.\""
+        },
+        {
+          "question": "Curitiba (PR) sem endereço é aceitável?",
+          "answer": "Não; usar endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP, sem link de mapa, com etiqueta de dados de exemplo.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Invente um endereço.\""
+        }
       ],
       "risks": [
         "Sem pesquisa primária nem teste com usuários; heurísticas são análise de especialista.",
@@ -100,7 +118,8 @@
       "evidence": [
         "2026-10-22: eixo-orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect em segundo plano (14 chamadas de ferramenta, ~47 mil tokens, ~172 s); o subagente escreveu os quatro arquivos em docs/ux/ e retornou READY_FOR_REVIEW sem blockers.",
         "Orchestrator leu os quatro arquivos e conferiu as restrições (CTA único, sem formulário/WhatsApp/e-commerce, sem prova social, sem identidade EIXO, nada APPROVED); detalhes em handoffs/UX-001.md.",
-        "evidence/UX-001/delegation-transcript.json: claude 2.1.307 (claude-sonnet-5-5), eixo-orchestrator chamou Agent com subagent_type eixo-ux-architect (toolu_01YJMivLk34TeTL6Z2hFqzC4); os Write/Edit em docs/ux/*.md têm parent_tool_use_id igual a esse id, provando autoria do subagente. Custo ~US$ 0,76."
+        "evidence/UX-001/delegation-transcript.json: claude 2.1.307 (claude-sonnet-5-5), eixo-orchestrator chamou Agent com subagent_type eixo-ux-architect (toolu_01YJMivLk34TeTL6Z2hFqzC4); os Write/Edit em docs/ux/*.md têm parent_tool_use_id igual a esse id, provando autoria do subagente. Custo ~US$ 0,76.",
+        "evidence/UX-001/delegation-transcript-round2.json: rodada 2 com as decisões do proprietário; Agent toolu_01XfTAkdaxe2tSWkRbjuBVzt (eixo-ux-architect), todos os Edit em docs/ux/ com esse parent_tool_use_id. Custo ~US$ 0,44."
       ]
     },
     {

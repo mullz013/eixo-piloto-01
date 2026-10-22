@@ -5,9 +5,9 @@
 
 ## Regras gerais
 - Idioma: português do Brasil. Tom: direto, caloroso, sem exagero e sem promessa terapêutica ou regulatória.
-- **Tudo sobre o Ateliê Bruma é [FICTÍCIO].** Preços, medidas, temperatura, prazos, feira e e-mail levam a etiqueta visível **"exemplo"** (ou "dados de exemplo" no bloco).
+- **Tudo sobre o Ateliê Bruma é [FICTÍCIO].** Preços, medidas, temperatura, prazos, feira, endereço e e-mail levam a etiqueta visível **"exemplo"** (ou "dados de exemplo" no bloco).
 - **Sem depoimentos, avaliações, notas, selos, "mais vendido" ou números de vendas.** Sem contagem regressiva ou escassez artificial.
-- Sem telefone, WhatsApp, endereço, Instagram, CNPJ.
+- Sem telefone, WhatsApp, Instagram (nem outra rede social), CNPJ e CEP. O **único** endereço permitido é o fictício do §6 (decisão do proprietário, 2026-10-22), sem link de mapa.
 - Textos entre `{{ }}` são instruções ao desenvolvimento, não copy.
 - Etiqueta de caráter fictício: texto visível, não só no código.
 - Comprimento: títulos curtos; parágrafos de até ~3 linhas em mobile.
@@ -25,7 +25,7 @@
 ---
 
 ## 1. Header
-- Marca (texto, link para `#topo`): **Ateliê Bruma**
+- Logotipo do Ateliê Bruma (proposto por UI-001; link para `#topo`). Nome acessível/alt: **Ateliê Bruma** (ver `handoff-ui.md` §3). Requisitos: legível a 32 px de altura no mobile, versão monocromática.
 - Skip link: **Pular para o conteúdo**
 - Nav (nome acessível "Principal"): **Coleção** (`#colecao`) · **Material** (`#material`) · **Contato** (`#contato`)
 
@@ -90,7 +90,7 @@ Nota: a frase da travessa não menciona forno, porque a pesquisa (§3.2) só afi
 - Bloco 2, h3 **Como cuidar** (lista):
   - Pode ir ao micro-ondas.
   - Pode ir à lava-louças.
-  - Evite choques bruscos de temperatura. {{inferência editorial genérica, não consta na pesquisa}}
+  - Evite choques bruscos de temperatura. {{inferência editorial genérica [FICTÍCIO], não consta na pesquisa; mantida por aceite do proprietário em 2026-10-22}}
 - Bloco 3, h3 **Cada peça é um pouco diferente**: **O esmalte pode variar de tom entre uma fornada e outra. Isso não é defeito, é o jeito da peça.**
 - Bloco 4, h3 **Encomendas**: **Peças sob encomenda levam até 45 dias.** *(exemplo; abaixo dos ~60 dias citados, Pesquisa §1.1)*
 - Racional: responde à barreira "qualidade/acabamento" (39%) e "durabilidade" (47%) [FATO, Pesquisa §1.1].
@@ -101,10 +101,11 @@ Nota: a frase da travessa não menciona forno, porque a pesquisa (§3.2) só afi
 - Etiqueta (visível): **Dados de exemplo. Este endereço e esta feira não existem.**
 - Lista de descrição (rótulo + valor):
   - **E-mail:** `contato@ateliebruma.example` *(link `mailto:`; texto do link = endereço)*
+  - **Endereço:** Rua da Bruma Clara, 214, Curitiba (PR) *(texto simples, não é link; sem CEP; sem link de mapa; endereço inventado [FICTÍCIO] por decisão do proprietário, 2026-10-22)*
   - **Cidade:** Curitiba (PR). Ateliê aberto com hora marcada.
   - **Onde encontrar as peças:** Feira mensal de cerâmica autoral, todo 2º sábado.
   - **Encomendas:** prazo de até 45 dias.
-- Sem formulário, telefone, WhatsApp, endereço ou rede social (Pesquisa §3.3).
+- Sem formulário, telefone, WhatsApp ou rede social. O endereço acima vem de decisão do proprietário e substitui a omissão sugerida na Pesquisa §3.3. Não acrescentar CEP, link de mapa, `geo:`, embed de mapa nem outro endereço.
 - Texto de apoio opcional: **Escreva para saber quais peças da fornada estão disponíveis.** *(não prometer resposta em prazo)*
 
 ## 7. Rodapé
@@ -131,7 +132,7 @@ Nota: a frase da travessa não menciona forno, porque a pesquisa (§3.2) só afi
 1. h1 + subtítulo → 2. CTA → 3. etiqueta fictícia → 4. início da imagem.
 
 ## Itens que NÃO existem (conferência para QA)
-Depoimentos · avaliações/estrelas · contagem de clientes · selos · "mais vendido" · carrinho · botão comprar · formulário · WhatsApp · telefone · endereço · Instagram · imagens reais ou de banco.
+Depoimentos · avaliações/estrelas · contagem de clientes · selos · "mais vendido" · carrinho · botão comprar · formulário · WhatsApp · telefone · CEP · link/embed de mapa · endereço diferente do fictício do §6 · Instagram · imagens reais ou de banco.
 
 ## Pendências de revisão de conteúdo
-- Confirmar que "Evite choques bruscos de temperatura" é aceitável como orientação genérica ou removê-la (é inferência, não consta na pesquisa).
+Nenhuma pendência aberta. Resolvidas pelo proprietário em 2026-10-22 (DECIDIDO): "Evite choques bruscos de temperatura" mantida (continua inferência editorial FICTÍCIA, não consta na pesquisa); endereço fictício incluído (§6); logotipo a ser proposto pela UI; CTA para `#colecao` aceito.

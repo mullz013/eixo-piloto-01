@@ -89,10 +89,10 @@ Combinação de presente sugerida: caneca + xícara = R$ 182, perto do ticket m�
 ### 3.3 Contato demonstrativo
 Bloco só de texto, sem formulário (não coleta dados, perfil LITE):
 - **E-mail:** `contato@ateliebruma.example` (domínio `.example` é reservado pela RFC 2606 e nunca vai existir, então não aponta para ninguém real).
-- **Cidade:** Curitiba (PR), "ateliê aberto com hora marcada". Cidade real, endereço omitido.
+- **Cidade:** Curitiba (PR), "ateliê aberto com hora marcada". Cidade real. *(Atualização 2026-10-22: a omissão do endereço foi superada por decisão do proprietário, que pediu um endereço inventado: "Rua da Bruma Clara, 214, Curitiba (PR)", sem CEP e sem mapa, com etiqueta "dados de exemplo".)*
 - **Onde encontrar as peças:** "Feira mensal de cerâmica autoral, todo 2º sábado" (fictícia). Base: feiras são o principal canal presencial (§1.1).
 - **Encomendas:** "prazo de até 45 dias" (abaixo dos ~60 dias citados na §1.1).
-- **Sem** telefone, WhatsApp, endereço ou @ de Instagram, porque poderiam coincidir com pessoas reais. Todo o bloco leva a etiqueta "dados de exemplo".
+- **Sem** telefone, WhatsApp ou @ de Instagram (o endereço fictício acima é exceção por decisão do proprietário), porque poderiam coincidir com pessoas reais. Todo o bloco leva a etiqueta "dados de exemplo".
 
 ---
 

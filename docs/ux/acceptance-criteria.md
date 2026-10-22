@@ -74,13 +74,13 @@ IDs: `AC-P0-*` jornada, `AC-NAV-*` navegação, `AC-CON-*` conteúdo, `AC-A11Y-*
 
 **AC-NAV-08 · Voltar ao início**
 - Dado que estou no rodapé
-- Quando ativo "Voltar ao início" (ou a marca no header)
+- Quando ativo "Voltar ao início" (ou o logotipo no header)
 - Então vou a `#topo`.
 
 ### Conteúdo e estados
 **AC-CON-01 · Etiquetas "exemplo"**
 - Dado a página renderizada
-- Quando listo todo preço, medida técnica, temperatura, prazo, feira, e-mail e cidade
+- Quando listo todo preço, medida técnica, temperatura, prazo, feira, endereço, e-mail e cidade
 - Então cada um tem etiqueta "exemplo" ou "dados de exemplo" visível no próprio item ou no bloco, conforme `content-structure.md` (Mapa de etiquetas).
 
 **AC-CON-02 · Sem prova social inventada**
@@ -90,8 +90,19 @@ IDs: `AC-P0-*` jornada, `AC-NAV-*` navegação, `AC-CON-*` conteúdo, `AC-A11Y-*
 
 **AC-CON-03 · Sem funções fora de escopo**
 - Dado o HTML final
-- Quando busco `<form>`, botão comprar/carrinho, links `wa.me`/WhatsApp, telefone, endereço, @ de rede social, scripts de analytics ou de terceiros
+- Quando busco `<form>`, botão comprar/carrinho, links `wa.me`/WhatsApp, telefone, CEP, link ou embed de mapa, @ de rede social, scripts de analytics ou de terceiros
 - Então não há nenhum.
+- E quando busco endereço físico, o único permitido é o fictício "Rua da Bruma Clara, 214, Curitiba (PR)" no bloco Contato, em texto simples, com a etiqueta "dados de exemplo" (decisão do proprietário, 2026-10-22; substitui a omissão da Pesquisa §3.3). Qualquer outro endereço reprova.
+
+**AC-CON-08 · Endereço fictício**
+- Dado o bloco Contato
+- Quando leio o endereço
+- Então aparece "Rua da Bruma Clara, 214, Curitiba (PR)", sem CEP, não é link (nem mapa), e a etiqueta "Dados de exemplo. Este endereço e esta feira não existem." está visível no mesmo bloco.
+
+**AC-NAV-09 · Logotipo no header** *(requisitos funcionais; forma, cor e tipografia ficam com UI-001)*
+- Dado o header em 320 e 375 px de largura
+- Quando inspeciono o logotipo
+- Então ele tem 32 px de altura e continua legível, é um link para `#topo`, tem nome acessível que contém "Ateliê Bruma" (alt ou `aria-label`, sem "logotipo"/"imagem"), foco visível, alvo ≥ 24 × 24 px (recomendado 44), não causa rolagem horizontal, os 3 links de navegação continuam visíveis, e existe uma versão monocromática legível com contraste ≥ 3:1 (WCAG 1.4.11; texto conforme 1.4.3).
 
 **AC-CON-04 · Placeholders honestos**
 - Dado cada imagem

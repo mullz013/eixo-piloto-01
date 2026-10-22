@@ -48,7 +48,7 @@
 - **A. Quer contato direto:** chega, toca "Contato" no header, vai a `#contato`. Não passa pela coleção. Suportado.
 - **B. Rola sem tocar:** lê na ordem natural (hero → manifesto → coleção → material → contato). A ordem das seções reconta a jornada P0, então a rolagem também a cumpre.
 - **C. Link profundo:** abre a URL com `#colecao` ou `#contato`. A seção alvo aparece com o título visível (não coberto pelo header fixo).
-- **D. Voltar ao topo:** link "Voltar ao início" no rodapé (e a marca no header leva a `#topo`).
+- **D. Voltar ao topo:** link "Voltar ao início" no rodapé (e o logotipo no header leva a `#topo`).
 - **E. Teclado/leitor de tela:** "Pular para o conteúdo" como primeiro foco; navegação por landmarks e títulos.
 - **F. Sem JavaScript:** todo o conteúdo e todas as âncoras funcionam (ver §6.4).
 - **G. Clica no e-mail sem cliente de e-mail configurado:** o endereço está em texto visível e selecionável; o `mailto:` é só conveniência (§6.6).
@@ -85,10 +85,10 @@ Não há formulário, busca nem envio, portanto não há erros de validação. O
 | 6 | Contato | Fecha a jornada; inclui feira e prazo | Pesquisa §2.5 |
 | 7 | Rodapé | Transparência do caráter fictício | DNA |
 
-**Nota de risco [HIPÓTESE a testar]:** o CTA salta o Manifesto e vai direto à Coleção. O hero já carrega a proposta, então o salto não deixa o visitante sem contexto. Se o piloto for validado com pessoas, comparar com a variante "CTA leva ao Manifesto".
+**[DECIDIDO pelo proprietário, 2026-10-22]:** o CTA "Conhecer a coleção" salta o Manifesto e vai direto à Coleção (`#colecao`). Decisão aceita; não é mais variante nem pendência. Racional: o hero já carrega a proposta, então o salto não deixa o visitante sem contexto [HIPÓTESE, não testada com pessoas]. O Manifesto continua acessível por rolagem.
 
 ### 3.3 Navegação [DECISÃO]
-- Header com marca (texto, leva a `#topo`) e 3 links: **Coleção**, **Material**, **Contato**. Os links do header são navegação, não CTA; o único elemento com papel de CTA primário é o botão "Conhecer a coleção" no hero. UI não deve criar um segundo botão primário.
+- Header com o **logotipo** do Ateliê Bruma (proposto por UI-001, decisão do proprietário de 2026-10-22; link para `#topo`; requisitos funcionais em `handoff-ui.md` §3: legível a 32 px de altura no mobile, versão monocromática, nome acessível "Ateliê Bruma") e 3 links: **Coleção**, **Material**, **Contato**. Os links do header são navegação, não CTA; o único elemento com papel de CTA primário é o botão "Conhecer a coleção" no hero. UI não deve criar um segundo botão primário.
 - Header fixo (sticky) é permitido, pois garante "Contato em 1 toque de qualquer seção" (Pesquisa §4.2). Se fixo, exige `scroll-margin-top` nas seções alvo e foco não obscurecido (WCAG 2.4.11).
 - Menu hambúrguer: **evitar**. São 3 links curtos e cabem em uma linha a 320 px. Se UI julgar que não cabem, deve manter os links visíveis (ex.: duas linhas) e justificar.
 - Rótulos: "Coleção" no header e "Conhecer a coleção" no CTA apontam ao mesmo destino. Consistência intencional.
@@ -105,7 +105,7 @@ Notação: `[ ]` bloco; `(CTA)` elemento interativo; `▒` placeholder de imagem
 ┌────────────────────────────┐
 │ [Skip link: Pular p/ conteúdo]  (visível só no foco)
 │ HEADER                      │
-│ Ateliê Bruma   Coleção Material Contato │
+│ [logotipo Ateliê Bruma, 32 px] Coleção Material Contato │
 ├────────────────────────────┤
 │ HERO  #proposta             │
 │ h1  Cerâmica de mesa feita à mão │
@@ -134,7 +134,7 @@ Notação: `[ ]` bloco; `(CTA)` elemento interativo; `▒` placeholder de imagem
 │ CONTATO #contato            │
 │ h2 Contato  + etiqueta "dados de exemplo" │
 │ E-mail (texto + mailto)     │
-│ Cidade · Feira · Encomendas │
+│ Endereço · Cidade · Feira · Encomendas │
 ├────────────────────────────┤
 │ FOOTER: aviso fictício · Voltar ao início │
 └────────────────────────────┘
@@ -150,7 +150,7 @@ Regras mobile:
 
 ```
 ┌──────────────────────────────────────────────────────┐
-│ Ateliê Bruma                      Coleção  Material  Contato │
+│ [logotipo Ateliê Bruma]           Coleção  Material  Contato │
 ├──────────────────────────────────────────────────────┤
 │ HERO (2 colunas)                                     │
 │ [h1 · subtítulo · (CTA)]            [▒ imagem hero]  │
@@ -193,7 +193,7 @@ Tablet (768 a 1023 px): grade da coleção em 2 colunas (3 linhas). Largura máx
 - Se UI usar `<img>` para o placeholder, exigir `width` e `height` ou `aspect-ratio`. Se usar CSS puro, a descrição deve vir de `role="img"` + `aria-label` ou de texto visível.
 
 ### 6.2 Foco e teclado
-- Ordem de tabulação = ordem visual: skip link → marca → Coleção → Material → Contato → CTA → (links de e-mail) → rodapé.
+- Ordem de tabulação = ordem visual: skip link → logotipo → Coleção → Material → Contato → CTA → (links de e-mail) → rodapé.
 - Foco visível em todo elemento interativo, com contraste ≥ 3:1 contra o entorno (WCAG 2.4.7, 1.4.11). Estilo do foco: livre para UI.
 - Foco não pode ficar oculto por header fixo (WCAG 2.4.11).
 - Ao ativar uma âncora (header ou CTA), o foco deve ir para a seção alvo. Se o alvo for `h2`/`section` não focável, usar `tabindex="-1"` no alvo para o foco seguir a rolagem. Sem isso, o próximo Tab volta ao ponto de origem. [DECISÃO, validar com QA]
@@ -259,7 +259,9 @@ Tablet (768 a 1023 px): grade da coleção em 2 colunas (3 linhas). Largura máx
 2. **A promessa "uma fornada por mês"** e demais promessas operacionais são [FICTÍCIO]; se algum dia virar real, precisa ser validado.
 3. **Afirmações técnicas de produto** ("micro-ondas e lava-louças", "~1.240 °C") são [FICTÍCIO] baseadas em AMME (Pesquisa §3.2). Em marca real exigiriam validação do ateliê. Mantidas com a etiqueta "exemplo".
 4. **Preços** são [FICTÍCIO], posicionados na faixa [FATO] de Ise, AMME e Cafaz (Pesquisa §1.2). Preços observados em 2026-10-22 e podem mudar.
-5. **Cidade Curitiba (PR):** cidade real, sem endereço (Pesquisa §3.3). Manter o endereço omitido.
+5. **Cidade Curitiba (PR) e endereço:** a cidade é real. O endereço **"Rua da Bruma Clara, 214, Curitiba (PR)" é FICTÍCIO, inventado por decisão do proprietário (2026-10-22)**, em substituição à omissão prevista na Pesquisa §3.3 (que não é mais a referência para este item). Sem CEP, sem link de mapa, com a etiqueta "dados de exemplo". Risco residual: o endereço pode coincidir com via real; mantido por decisão do proprietário, sempre com a etiqueta. Telefone, WhatsApp e redes sociais continuam proibidos.
+6. **Logotipo:** a UI-001 propõe o logotipo (decisão do proprietário, 2026-10-22). O UX define só requisitos funcionais; forma, cor e tipografia ficam com a UI e dependem de aprovação humana.
+7. **Dica "Evite choques bruscos de temperatura":** mantida por aceite do proprietário (2026-10-22); continua inferência editorial [FICTÍCIO], não baseada na pesquisa.
 
 ## 9. Fontes
 - Pesquisa §1.1 (Sebrae/RJ, 2.400 consumidores, jan/2026), §1.2 (Ise, AMME, Cafaz, Ana Rojo), §1.3 (padrões de site), §1.4 (conversão), §2 (implicações), §3 (marca fictícia), §4 (metas), §5 (limites).
