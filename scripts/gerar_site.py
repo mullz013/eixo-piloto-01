@@ -150,57 +150,6 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
           </li>'''
 
 
-COLECAO_ALT = {
-    "nevoa": "Peças da coleção Névoa em fila sobre uma prateleira de pedra, com névoa ao fundo.",
-    "terra": "Peças da coleção Terra Molhada sobre ardósia molhada, com areia úmida e luz de fim de tarde.",
-    "sal": "Peças da coleção Sal sobre pedra clara, com cristais de sal grosso espalhados.",
-}
-
-
-COLECAO_ABA = {  # subtítulo curto e destino do CTA de cada aba (UI-004)
-    "nevoa": ("Fosco cinza-azulado, com névoa clara escorrendo da borda.", "#novidades"),
-    "terra": ("Ferrugem embaixo, areia molhada em cima.", "#colecao-terra"),
-    "sal": ("Branco de sal grosso, com a borda em azul cobalto.", "#colecao-sal"),
-}
-
-
-def secao_colecoes_abas() -> str:
-    """Seção 'Escolha sua coleção' (UI-004): abas à esquerda, foto à direita; no celular, foto em cima.
-    Padrão de disclosure (botão com aria-expanded), para o CTA poder ficar dentro da aba."""
-    abas, fotos = [], []
-    for i, col in enumerate(COLECOES):
-        cid = col["id"]
-        sub, href = COLECAO_ABA[cid]
-        n = sum(1 for p in CATALOGO if p[0] == cid)
-        ativo = i == 0
-        abas.append(f'''        <li class="ctab{" is-active" if ativo else ""}" data-ctab="{cid}">
-          <h3 class="ctab__h"><button class="ctab__btn" type="button" aria-expanded="{"true" if ativo else "false"}" aria-controls="ctab-foto-{cid} ctab-cta-{cid}">{col["nome"]}<span class="ctab__season">{col["estacao"]}</span></button></h3>
-          <p class="ctab__sub">{sub}</p>
-          <p class="ctab__cta" id="ctab-cta-{cid}"><a class="btn btn--sm" href="{href}">Ver as {n} peças {ICON["arrow"]}</a></p>
-        </li>''')
-        fotos.append(f'''        <figure class="ctabs__foto ctabs__foto--{cid}{" is-active" if ativo else ""}" id="ctab-foto-{cid}">
-          {foto(f"colecoes/{cid}", [800, 1536], 1536, 1024, "(min-width: 1024px) 700px, calc(100vw - 88px)", COLECAO_ALT[cid])}
-        </figure>''')
-    return f'''  <section id="escolha" class="sec sec--ctabs" aria-labelledby="t-escolha">
-    <div class="wrap">
-      <header class="sec__head">
-        <div>
-          <p class="kicker">Três esmaltes, três fornadas</p>
-          <h2 id="t-escolha" class="sec__title">Escolha sua <em>coleção</em></h2>
-        </div>
-      </header>
-      <div class="ctabs" data-ctabs>
-        <div class="ctabs__media">
-{chr(10).join(fotos)}
-        </div>
-        <ul class="ctabs__list" role="list">
-{chr(10).join(abas)}
-        </ul>
-      </div>
-    </div>
-  </section>'''
-
-
 def vitrine(col: dict, titulo_id: str) -> str:
     itens = [p for p in CATALOGO if p[0] == col["id"]]
     hn = "h3" if col["atual"] else "h4"
@@ -282,18 +231,6 @@ def secao_categorias() -> str:
       </ul>
     </div>
   </section>'''
-
-
-def hero_cards() -> str:
-    """Cartões flutuantes do hero (UI-003 §4.2): peça em destaque (selo da fornada removido a pedido do proprietário). Só dados do catálogo."""
-    destaque = next(p for p in CATALOGO if p[0] == "nevoa" and p[1] == "jarra")
-    col, forma, nome, _medida, preco, _selo = destaque
-    pid = f"{col}-{forma}"
-    return f'''    <div class="hero__card hero__card--piece">
-      <img class="hero__card-img" src="{FOTOS}/produtos/{pid}-480.webp" width="64" height="80" alt="">
-      <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">{escape(nome)}</span><span class="hero__card-price">{brl(preco)}</span></p>
-      <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
-    </div>'''
 
 
 def page() -> str:
@@ -395,7 +332,6 @@ def page() -> str:
       <div class="hero__mist hero__mist--3"></div>
     </div>
     <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
-{hero_cards()}
     <div class="hero__copy">
       <p class="kicker kicker--pill">Coleção Névoa<span class="kicker__season"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
@@ -419,8 +355,6 @@ def page() -> str:
   </section>
 
 {secao_categorias()}
-
-{secao_colecoes_abas()}
 
   <div class="filterbar" data-filterbar hidden>
     <div class="wrap filterbar__in">

@@ -31,23 +31,6 @@
     return "R$ " + int + (s[1] === "00" ? "" : "," + s[1]);
   }
 
-  /* ---------- Escolha sua coleção: abas com foto (UI-004) ---------- */
-  $$("[data-ctabs]").forEach(function (box) {
-    var tabs = $$(".ctab", box);
-    function abrir(tab) {
-      tabs.forEach(function (t) {
-        var on = t === tab;
-        t.classList.toggle("is-active", on);
-        $(".ctab__btn", t).setAttribute("aria-expanded", String(on));
-        var foto = document.getElementById("ctab-foto-" + t.dataset.ctab);
-        if (foto) foto.classList.toggle("is-active", on);
-      });
-    }
-    tabs.forEach(function (t) {
-      $(".ctab__btn", t).addEventListener("click", function () { abrir(t); });
-    });
-  });
-
   /* ---------- Header: linha fina depois de rolar ---------- */
   var header = $("[data-header]");
   var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 8); };
