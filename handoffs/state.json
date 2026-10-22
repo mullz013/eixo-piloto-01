@@ -209,7 +209,7 @@
       "dna_version": "0.2.0",
       "task_id": "DEV-001",
       "agent": "Full Stack Developer",
-      "status": "READY_FOR_REVIEW",
+      "status": "FAILED",
       "depends_on": [
         "UX-001",
         "UI-001"
@@ -248,7 +248,8 @@
         "size-adjust dos fallbacks é estimativa; possível CLS na troca de fonte (M9).",
         "tokens.css e SVGs copiados com Write pelo subagente; o Orchestrator conferiu por diff (idênticos a docs/ui), mas é verificação de integridade, não teste.",
         "WCAG 2.2 AA, teclado, leitor de tela, LCP/CLS não testados.",
-        "Verificação independente da sessão coordenadora achou F1–F3 (evidence/DEV-001/verification.md), todos de baixa severidade; não substitui QA-001/QUAL-001."
+        "Verificação independente da sessão coordenadora achou F1–F3 (evidence/DEV-001/verification.md), todos de baixa severidade; não substitui QA-001/QUAL-001.",
+        "2026-10-22: layout rejeitado pelo proprietário na revisão da PR #7 (arco no hero, menu solto no celular, vitrine grande, modelo de encomenda). Substituído por DEV-002."
       ],
       "acceptance_criteria": [
         "AC-P0-01..AC-P0-05",
@@ -268,11 +269,54 @@
     {
       "project_id": "piloto-01",
       "dna_version": "0.2.0",
+      "task_id": "DEV-002",
+      "agent": "Fullstack Developer (sessão do projeto)",
+      "status": "READY_FOR_REVIEW",
+      "depends_on": [
+        "UX-001",
+        "UI-001"
+      ],
+      "artifact_links": [
+        "handoffs/DEV-002.md",
+        "docs/ux/revisao-002-ecommerce.md",
+        "docs/ui/revisao-002.md",
+        "site/index.html",
+        "site/styles.css",
+        "site/app.js",
+        "site/assets/pecas/",
+        "scripts/gerar_site.py",
+        "scripts/gerar_pecas.py",
+        "evidence/DEV-002/render/interaction-check.json",
+        "evidence/DEV-002/qa/parecer-qa.md"
+      ],
+      "assumptions": [
+        "Escopo emendado para loja demonstrativa por pedido expresso do proprietário (docs/project-dna.md, emenda de 2026-10-22).",
+        "Revisões de UX e UI e o código foram feitos pela sessão do projeto, não pelos agentes eixo-ux-architect, eixo-ui-art-director e eixo-fullstack-developer, para entregar rápido; a revisão independente foi delegada ao eixo-qa-engineer.",
+        "Imagens de produto são ilustrações SVG próprias; fotos realistas exigiriam um agente de design gráfico com API de imagem paga (pendente de aprovação)."
+      ],
+      "open_questions": [
+        "Proprietário aprova o novo layout (banner, carrossel, categorias, coleções passadas, sacola)?",
+        "Criar o agente eixo-graphic-designer e qual provedor de imagem usar (gasto e chave precisam de aprovação)?"
+      ],
+      "risks": [
+        "Sem JavaScript, sacola e filtro não funcionam (vitrines e âncoras sim).",
+        "Ilustrações estilizadas não substituem foto de produto em uma loja real."
+      ],
+      "acceptance_criteria": [
+        "AC-ECOM-01 a AC-ECOM-07 de docs/ux/revisao-002-ecommerce.md §6."
+      ],
+      "evidence": [
+        "2026-10-22: Playwright + Chromium (servidor http local) em 320/375/768/1024/1440 px: rolagem horizontal 0 em todas; cartões visíveis 2+0,3 (320/375), 3+0,46 (768), 4 (1024/1440); menu abre, prende foco, fecha com Esc e devolve foco; sacola 3 itens = R$ 364; filtro 'Vasos e jarras' mostra 4 peças; 0 animações com movimento reduzido; 0 erros de console (evidence/DEV-002/render/interaction-check.json e capturas)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
       "status": "PENDING",
       "depends_on": [
-        "DEV-001"
+        "DEV-002"
       ],
       "artifact_links": [],
       "assumptions": [],
@@ -289,7 +333,7 @@
       "status": "PENDING",
       "depends_on": [
         "UI-001",
-        "DEV-001"
+        "DEV-002"
       ],
       "artifact_links": [],
       "assumptions": [],

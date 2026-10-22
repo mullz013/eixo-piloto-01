@@ -6,11 +6,11 @@
 
 ## 1. Instruções e objetivos
 - **Cliente fictício:** Ateliê Bruma, ateliê de cerâmica autoral.
-- **Objetivo:** testar delegações reais e handoffs entre os seis agentes para uma landing page.
+- **Objetivo:** testar delegações reais e handoffs entre os seis agentes para uma loja demonstrativa (e-commerce sem checkout real). *Emenda de 2026-10-22, ver abaixo.*
 - **Público (hipótese):** interessados em design, cerâmica autoral e peças artesanais para casa.
-- **Jornada P0:** entender a proposta → explorar coleção fictícia → localizar seção de contato.
-- **CTA:** “Conhecer a coleção”, navegação local na mesma página.
-- **Fora do escopo:** dados reais, e-commerce, checkout, domínio, deploy, WhatsApp e pagamentos.
+- **Jornada P0:** entender a proposta → explorar vitrines e categorias → adicionar à sacola → revisar a sacola (finalizar mostra aviso de loja demonstrativa).
+- **CTA:** “Comprar a coleção” (âncora para a vitrine) e “Adicionar à sacola” em cada peça.
+- **Fora do escopo:** dados reais, checkout, pedidos e pagamentos reais, encomendas e contato para encomendar, domínio, deploy, WhatsApp.
 
 ## 2. Contexto do projeto
 - UX Architect deve propor jornadas, arquitetura, conteúdo demonstrativo e critérios mensuráveis.
@@ -24,6 +24,9 @@
 - **Stack:** proposta pelo Developer só após critérios UX/UI.
 - **Validações:** semântica, responsividade, acessibilidade, SEO, testes reais e evidência de delegação.
 - **Deploy:** bloqueado, exigindo autorização específica e gates independentes.
+
+## Emenda de escopo (2026-10-22)
+Na revisão da PR #7 o proprietário rejeitou o layout e pediu: “Quero que você torne isso como se fosse um e-commerce mesmo [...] para que não tenha contatos para a pessoa encomendar”. O escopo passa de landing page informativa para loja demonstrativa. Marca, público e restrições de dados não mudam, por isso a versão continua 0.2.0. Detalhes em `docs/ux/revisao-002-ecommerce.md`.
 
 ## Registros de aprovação
 | Versão | Decisão | Responsável | Origem |

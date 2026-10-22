@@ -17,3 +17,8 @@
 - Decisão: **APROVADO** (direção de arte "Névoa quieta", logotipo, tokens e handoff para o Developer em `docs/ui/`).
 - Origem: conversa do projeto, 2026-10-22T10:23:04Z. O proprietário revisou a PR #6 (commit 4cd5343) e respondeu "Sim para as 3 perguntas" às perguntas: aprova direção e logotipo; mantém as faixas de bruma no símbolo; aceita o tracejado como marca de "fictício".
 - Não cobre: implementação, fotos reais, publicação ou contratação de serviços.
+
+## DEV-001 — Ateliê Bruma
+- Decisão: **REJEITADO** (layout da PR #7).
+- Origem: conversa do projeto, 2026-10-22T11:34:17Z. O proprietário apontou: retângulo vertical arredondado no topo (placeholder em arco), menu solto no celular, vitrine grande demais, ausência de categorias e coleções passadas, modelo de encomenda em vez de e-commerce, banner pouco artístico e falta de rigor estético.
+- Consequência: emenda de escopo no DNA (loja demonstrativa) e DEV-002 em `handoffs/DEV-002.md`.
