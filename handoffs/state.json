@@ -19,13 +19,26 @@
         "Agentes copiados localmente de mullz013/eixo-ai@eixo/setup-multiagent-v1.1 (2b4a012) para .claude/agents/, sem versionar no piloto.",
         "Execução em container Claude Code na nuvem (claude 2.1.307), não no computador do proprietário."
       ],
-      "open_questions": [
-        "UX-001: forma da seção de contato demonstrativo (estática ou formulário sem envio)?",
-        "UX-001: quantidade/campos das peças fictícias e uso de placeholders sem licença?",
-        "UX-001: métricas do piloto ou apenas critérios funcionais Dado/Quando/Então?"
+      "open_questions": [],
+      "resolved_questions": [
+        {
+          "question": "UX-001: forma da seção de contato demonstrativo (estática ou formulário sem envio)?",
+          "answer": "Contato só em texto estático, com domínio .example, sem formulário (sugerido a partir da autorização do proprietário e da pesquisa §3.3).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"pode meter bronca, sugere contato, coleção e métrica fictícia, mas com bons embasamentos; faz uma pesquisa de mercado do nicho; todos os dados podem ser inventados, mas com embasamento\""
+        },
+        {
+          "question": "UX-001: quantidade/campos das peças fictícias e uso de placeholders sem licença?",
+          "answer": "Coleção Névoa com 6 peças (nome, medida, preço de referência); imagens apenas como placeholders sem licença (pesquisa §3.2).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, mesma resposta"
+        },
+        {
+          "question": "UX-001: métricas do piloto ou apenas critérios funcionais Dado/Quando/Então?",
+          "answer": "Ambos: funil fictício como referência (não verificável) e metas verificáveis para QA (pesquisa §4).",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, mesma resposta"
+        }
       ],
       "risks": [
-        "O probe foi somente leitura; UX-001 completo ainda não foi executado.",
+        "O probe foi somente leitura; UX-001 foi executado depois como tarefa própria (ver handoffs/UX-001.md).",
         "Modelo padrão do runtime (claude-sonnet-5-5) herdado via model: inherit; outros ambientes podem usar outro modelo."
       ],
       "acceptance_criteria": [
@@ -43,16 +56,74 @@
       "dna_version": "0.2.0",
       "task_id": "UX-001",
       "agent": "UX Architect",
-      "status": "PENDING",
+      "status": "COMPLETED_VERIFIED",
       "depends_on": [
         "ORCH-001"
       ],
-      "artifact_links": [],
-      "assumptions": [],
+      "artifact_links": [
+        "handoffs/UX-001.md",
+        "docs/ux/ux-spec.md",
+        "docs/ux/content-structure.md",
+        "docs/ux/acceptance-criteria.md",
+        "docs/ux/handoff-ui.md",
+        "docs/ux/research/pesquisa-mercado.md",
+        "evidence/UX-001/delegation-transcript.json",
+        "evidence/UX-001/delegation-transcript-round2.json"
+      ],
+      "assumptions": [
+        "UI-001 propõe um logotipo (decisão do proprietário); o UX define só requisitos funcionais.",
+        "CTA \"Conhecer a coleção\" pulando o Manifesto decidido e aceito; efeito na conversão continua hipótese não testada.",
+        "Frase \"Evite choques bruscos de temperatura\" mantida por aceite do proprietário; continua inferência editorial fictícia.",
+        "Endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP e sem mapa, com etiqueta de dados de exemplo (decisão do proprietário).",
+        "Afirmações técnicas de produto (1.240 °C, micro-ondas, lava-louças) são fictícias, baseadas em AMME.",
+        "Dados do Ateliê Bruma são fictícios com embasamento de mercado, conforme autorização do proprietário em 2026-10-22."
+      ],
       "open_questions": [],
-      "risks": [],
-      "acceptance_criteria": [],
-      "evidence": []
+      "resolved_questions": [
+        {
+          "question": "Wordmark em texto apenas, ou UI deve propor logotipo?",
+          "answer": "UI-001 deve propor um logotipo; requisitos funcionais em docs/ux/handoff-ui.md §3.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"A logo precisa propor um logotipo.\""
+        },
+        {
+          "question": "Aceita o CTA saltar o Manifesto?",
+          "answer": "Sim; decidido, não é mais variante pendente.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode ter o CTA de conhecer a coleção.\""
+        },
+        {
+          "question": "Manter ou remover \"Evite choques bruscos de temperatura\"?",
+          "answer": "Manter; continua inferência editorial fictícia.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Pode manter a dica.\""
+        },
+        {
+          "question": "Curitiba (PR) sem endereço é aceitável?",
+          "answer": "Não; usar endereço fictício \"Rua da Bruma Clara, 214, Curitiba (PR)\", sem CEP, sem link de mapa, com etiqueta de dados de exemplo.",
+          "answered_by": "Proprietário (Matheus), 2026-10-22, conversa do projeto: \"Invente um endereço.\""
+        }
+      ],
+      "risks": [
+        "Sem pesquisa primária nem teste com usuários; heurísticas são análise de especialista.",
+        "Dados de consumidor são de artesanato em geral; preços observados em 2026-10-22 podem mudar; fontes não reverificadas.",
+        "M8/M9 (LCP, CLS) dependem da stack e só serão medidos na implementação.",
+        "Funil fictício F1 não é verificável."
+      ],
+      "acceptance_criteria": [
+        "CTA único \"Conhecer a coleção\" → #colecao, visível sem rolagem em 375×667.",
+        "Contato alcançável em 1 ativação; 6 cartões com nome, medida e preço visíveis.",
+        "28 cenários Dado/Quando/Então (AC-P0, AC-NAV, AC-CON) e metas M1–M12 verificáveis.",
+        "WCAG 2.2 AA aplicável (revisão manual necessária, scanner não certifica).",
+        "Sem depoimentos, formulário, WhatsApp, e-commerce, dados reais ou identidade EIXO; dados fictícios com etiqueta \"exemplo\".",
+        "Revisão humana do UX antes de UI-001."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect em segundo plano (14 chamadas de ferramenta, ~47 mil tokens, ~172 s); o subagente escreveu os quatro arquivos em docs/ux/ e retornou READY_FOR_REVIEW sem blockers.",
+        "Orchestrator leu os quatro arquivos e conferiu as restrições (CTA único, sem formulário/WhatsApp/e-commerce, sem prova social, sem identidade EIXO, nada APPROVED); detalhes em handoffs/UX-001.md.",
+        "evidence/UX-001/delegation-transcript.json: claude 2.1.307 (claude-sonnet-5-5), eixo-orchestrator chamou Agent com subagent_type eixo-ux-architect (toolu_01YJMivLk34TeTL6Z2hFqzC4); os Write/Edit em docs/ux/*.md têm parent_tool_use_id igual a esse id, provando autoria do subagente. Custo ~US$ 0,76.",
+        "evidence/UX-001/delegation-transcript-round2.json: rodada 2 com as decisões do proprietário; Agent toolu_01XfTAkdaxe2tSWkRbjuBVzt (eixo-ux-architect), todos os Edit em docs/ux/ com esse parent_tool_use_id. Custo ~US$ 0,44.",
+        "2026-10-22T00:27:51Z: proprietário revisou a PR #5 (commit e1d8da8) e respondeu \"Tudo certo\" na conversa do projeto, registrado como aprovação humana do UX. UI-001 liberado."
+      ],
+      "approved_by": "Matheus Santos (proprietário)",
+      "approved_at": "2026-10-22T00:27:51Z"
     },
     {
       "project_id": "piloto-01",
