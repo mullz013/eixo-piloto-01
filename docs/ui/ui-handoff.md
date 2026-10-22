@@ -2,7 +2,7 @@
 
 **Projeto:** piloto-01 · **Task:** UI-001 · **Agente:** eixo-ui-art-director · **Rodada:** 3 · **Data:** 2026-10-22
 **DNA:** v0.2.0 (aprovado somente como briefing fictício) · **Depende de:** UX-001 (aprovado pelo proprietário em 2026-10-22; `docs/ux/handoff-ui.md`)
-**Status:** PROPOSTA, **NÃO APROVADA**. Nada aqui está APPROVED. Marca, logotipo, copy e dados são **FICTÍCIOS**. O Developer só começa após aprovação humana registrada pelo Orchestrator (CLAUDE.md: fluxo UX → UI → Developer). Deploy continua proibido.
+**Status:** **APROVADO** pelo proprietário em 2026-10-22T10:23:04Z ("Sim para as 3 perguntas"; ver `handoffs/approval-log.md`). Marca, logotipo, copy e dados continuam **FICTÍCIOS**. DEV-001 liberado. Deploy continua proibido.
 
 > Legenda: **FATO** (fonte externa citada na pesquisa) · **HIPÓTESE** (a validar) · **FICTÍCIO** (inventado para o piloto) · **DECISÃO** (escolha desta UI, sujeita a aprovação). "Pesquisa §x" = `docs/ux/research/pesquisa-mercado.md`.
 
@@ -348,3 +348,12 @@ Fontes: auto-hospedar em WOFF2, subconjunto latino com acentos de português, `f
 ## 12. Estado de transferência
 
 UI-001 está **pronta para revisão** (`READY_FOR_REVIEW`), não concluída: sem Figma, sem avaliação visual por ninguém, sem nova medição da correção de rolagem (rodada 3), sem aprovação humana. Contraste conferido por script pela revisão independente. O registro em `handoffs/state.json` é do Orchestrator; este agente não o alterou.
+
+
+## 13. Decisões do proprietário (2026-10-22T10:23:04Z)
+Resposta literal: "Sim para as 3 perguntas", às perguntas 1 a 3 do resumo da PR #6:
+1. Direção "Névoa quieta" e logotipo: **aprovados**.
+2. Faixas de bruma dentro do símbolo: **mantidas**.
+3. Tracejado como marca visual de "fictício/ilustrativo": **aceito**.
+
+Perguntas 4 (titularidade do logotipo fictício), 6 (fotos) e 7 (licenças OFL das fontes) seguem abertas e passam para DEV-001 com padrão razoável: titularidade indefinida, placeholders no lugar de fotos e licenças OFL arquivadas pelo Developer ao embutir as fontes.

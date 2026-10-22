@@ -12,3 +12,8 @@
 - Origem: conversa do projeto, 2026-10-22T00:27:51Z. O proprietário escolheu revisar antes, revisou a PR #5 (commit e1d8da8) e respondeu "Tudo certo".
 - Decisões incorporadas antes: logotipo a ser proposto pela UI, CTA direto para `#colecao`, dica de temperatura mantida, endereço fictício "Rua da Bruma Clara, 214, Curitiba (PR)".
 - Não cobre: logotipo, paleta, tipografia, layouts finais, implementação, publicação ou contratação de serviços.
+
+## UI-001 — Ateliê Bruma
+- Decisão: **APROVADO** (direção de arte "Névoa quieta", logotipo, tokens e handoff para o Developer em `docs/ui/`).
+- Origem: conversa do projeto, 2026-10-22T10:23:04Z. O proprietário revisou a PR #6 (commit 4cd5343) e respondeu "Sim para as 3 perguntas" às perguntas: aprova direção e logotipo; mantém as faixas de bruma no símbolo; aceita o tracejado como marca de "fictício".
+- Não cobre: implementação, fotos reais, publicação ou contratação de serviços.

@@ -2,7 +2,7 @@
 
 **Projeto:** piloto-01 · **Task:** UI-001 · **Agente:** eixo-ui-art-director · **Data:** 2026-10-22
 **DNA:** v0.2.0 (aprovado somente como briefing fictício) · **Depende de:** UX-001 (aprovado pelo proprietário em 2026-10-22)
-**Status deste documento:** PROPOSTA, **NÃO APROVADA**. Marca, logotipo e direção são **FICTÍCIOS** e aguardam aprovação humana antes do Developer.
+**Status deste documento:** **APROVADO** pelo proprietário em 2026-10-22T10:23:04Z ("Sim para as 3 perguntas"; ver `handoffs/approval-log.md`). Marca, logotipo e direção continuam **FICTÍCIOS**.
 
 > Legenda: **FATO** (fonte externa citada na pesquisa) · **HIPÓTESE** (inferência a validar) · **FICTÍCIO** (inventado para o piloto) · **DECISÃO** (escolha desta UI, sujeita a aprovação). "Pesquisa §x" = `docs/ux/research/pesquisa-mercado.md`.
 

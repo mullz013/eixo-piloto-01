@@ -1,6 +1,6 @@
 # Logotipo do Ateliê Bruma (UI-001)
 
-**Status: FICTÍCIO, NÃO APROVADO.** Proposta de logotipo para a marca fictícia Ateliê Bruma, por decisão do proprietário em 2026-10-22 ("A logo precisa propor um logotipo"). Depende de aprovação humana posterior. Não é identidade de cliente real.
+**Status: FICTÍCIO, APROVADO pelo proprietário em 2026-10-22T10:23:04Z** ("Sim para as 3 perguntas": direção, faixas de bruma no símbolo e tracejado aceitos). Proposta de logotipo para a marca fictícia Ateliê Bruma, por decisão do proprietário em 2026-10-22 ("A logo precisa propor um logotipo"). Depende de aprovação humana posterior. Não é identidade de cliente real.
 
 **O que NÃO foi feito, e por quem:** o agente que desenhou o logotipo **não renderizou nem abriu** nenhum arquivo em navegador/visualizador; a geometria foi desenhada e conferida por cálculo de coordenadas. A **revisão independente** carregou os 5 SVGs com Playwright + Chromium headless (`evidence/UI-001/render-check.json` e `logo-32px-check.json`): todos válidos e renderizados em 81 × 32 (lockups) e 32 × 32 (ícones), e usados na prancha. Isso confirma que **os arquivos carregam e têm o tamanho nominal**; **ninguém avaliou visualmente o símbolo** (leitura como vaso, traço de 1,5 a 32 px, encaixe das letras), pois esses registros não contêm julgamento visual. Toda afirmação de legibilidade abaixo segue sendo **projeção de projeto**, a confirmar por QA/Quality olhando o render.
 
