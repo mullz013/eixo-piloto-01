@@ -160,7 +160,7 @@ def secao_atual() -> str:
       <header class="sec__head">
         <div>
           <p class="kicker">Coleção {col["nome"]} · {col["estacao"]}</p>
-          <h2 id="t-novidades" class="sec__title">Novidades da fornada</h2>
+          <h2 id="t-novidades" class="sec__title">Novidades da <em>fornada</em></h2>
         </div>
         <p class="sec__aside">{col["frase"]}</p>
       </header>
@@ -191,7 +191,7 @@ def secao_passadas() -> str:
     return f'''  <section id="colecoes" class="sec sec--past" aria-labelledby="t-colecoes">
     <div class="wrap">
       <header class="sec__intro">
-        <h2 id="t-colecoes" class="sec__title">Coleções passadas</h2>
+        <h2 id="t-colecoes" class="sec__title">Coleções <em>passadas</em></h2>
         <p class="sec__lead">Fornadas anteriores que ainda têm peças no ateliê. Cada coleção tem um esmalte só dela.</p>
       </header>
     </div>
@@ -204,7 +204,7 @@ def secao_categorias() -> str:
     for c in CATEGORIAS:
         n = sum(1 for p in CATALOGO if p[1] in c["formas"])
         tiles.append(f'''        <li>
-          <a class="cat" href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">
+          <a class="cat cat--{c["id"]}" href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">
             <span class="cat__media"><img src="assets/pecas/{c["arte"]}.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
             <span class="cat__name">{c["nome"]}</span>
             <span class="cat__count">{n} peças</span>
@@ -213,7 +213,7 @@ def secao_categorias() -> str:
     return f'''  <section id="categorias" class="sec sec--cats" aria-labelledby="t-categorias">
     <div class="wrap">
       <header class="sec__head">
-        <h2 id="t-categorias" class="sec__title">Compre por categoria</h2>
+        <h2 id="t-categorias" class="sec__title">Compre por <em>categoria</em></h2>
         <p class="sec__aside">Toque numa categoria para ver só essas peças em todas as coleções.</p>
       </header>
       <ul class="cats" role="list">
@@ -221,6 +221,20 @@ def secao_categorias() -> str:
       </ul>
     </div>
   </section>'''
+
+
+def hero_cards() -> str:
+    """Cartões flutuantes do hero (UI-003 §4.2): peça em destaque e selo da fornada. Só dados do catálogo."""
+    destaque = next(p for p in CATALOGO if p[0] == "nevoa" and p[1] == "jarra")
+    col, forma, nome, _medida, preco, _selo = destaque
+    pid = f"{col}-{forma}"
+    n_atual = sum(1 for p in CATALOGO if p[0] == COLECOES[0]["id"])
+    return f'''    <div class="hero__card hero__card--piece">
+      <img class="hero__card-img" src="assets/pecas/{pid}.svg" width="64" height="80" alt="">
+      <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">{escape(nome)}</span><span class="hero__card-price">{brl(preco)}</span></p>
+      <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
+    </div>
+    <p class="hero__card hero__card--batch"><span class="hero__batch-title">Fornada nº 14</span><span class="hero__batch-meta"><span class="hero__batch-sep"> · </span>{n_atual} peças<span class="hero__batch-city"> · Curitiba</span></span></p>'''
 
 
 def page() -> str:
@@ -243,6 +257,7 @@ def page() -> str:
 <link rel="icon" type="image/svg+xml" href="assets/icone.svg">
 <link rel="preload" href="fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/figtree-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fraunces-italic-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.remove("no-js");</script>
@@ -321,12 +336,12 @@ def page() -> str:
       <div class="hero__mist hero__mist--1"></div>
       <div class="hero__mist hero__mist--2"></div>
       <div class="hero__mist hero__mist--3"></div>
-      <p class="hero__note">Fornada nº 14 · Curitiba</p>
     </div>
     <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
-    <div class="wrap hero__copy">
-      <p class="kicker">Coleção Névoa · Primavera 2026</p>
-      <h1 id="t-hero" class="hero__title">A névoa<br> virou mesa.</h1>
+{hero_cards()}
+    <div class="hero__copy">
+      <p class="kicker kicker--pill">Coleção Névoa · Primavera 2026</p>
+      <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
       <p class="hero__lead">Grés de alta temperatura, esmalte fosco e uma fornada por mês. Peças feitas à mão para usar todo dia.</p>
       <div class="hero__cta">
         <a class="btn" href="#novidades">Comprar a coleção</a>
@@ -336,12 +351,14 @@ def page() -> str:
   </section>
 
   <section class="perks" aria-label="Vantagens da loja">
-    <ul class="wrap perks__list" role="list">
-      <li>{ICON["truck"]}<span><strong>Frete grátis</strong> acima de {brl(FRETE_GRATIS)}</span></li>
-      <li>{ICON["swap"]}<span><strong>Troca fácil</strong> em até 7 dias</span></li>
-      <li>{ICON["gift"]}<span><strong>Embalagem para presente</strong> sem custo</span></li>
-      <li>{ICON["card"]}<span><strong>Pix ou cartão</strong> em até 3x sem juros</span></li>
+    <div class="wrap">
+    <ul class="perks__list" role="list">
+      <li><span class="perks__icon">{ICON["truck"]}</span><span><strong>Frete grátis</strong> acima de {brl(FRETE_GRATIS)}</span></li>
+      <li><span class="perks__icon">{ICON["swap"]}</span><span><strong>Troca fácil</strong> em até 7 dias</span></li>
+      <li><span class="perks__icon">{ICON["gift"]}</span><span><strong>Embalagem para presente</strong> sem custo</span></li>
+      <li><span class="perks__icon">{ICON["card"]}</span><span><strong>Pix ou cartão</strong> em até 3x sem juros</span></li>
     </ul>
+    </div>
   </section>
 
 {secao_categorias()}
@@ -355,18 +372,20 @@ def page() -> str:
 
 {secao_atual()}
 
-  <section id="atelie" class="sec sec--ink" aria-labelledby="t-atelie">
-    <div class="wrap atelie">
+  <section id="atelie" class="sec sec--atelie" aria-labelledby="t-atelie">
+    <div class="wrap">
+    <div class="atelie">
       <div class="atelie__intro">
         <p class="kicker kicker--inverse">O ateliê</p>
-        <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, uma fornada por mês.</h2>
+        <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, <em>uma fornada por mês.</em></h2>
         <p>Cada peça é torneada e esmaltada à mão em Curitiba. Por isso nenhuma é igual à outra: o esmalte escorre do seu jeito em cada queima.</p>
       </div>
       <ul class="facts" role="list">
-        <li><span class="facts__num">1.240 °C</span><span>Queima em alta temperatura: o grés fica resistente e pouco poroso.</span></li>
-        <li><span class="facts__num">Dia a dia</span><span>Vai ao micro-ondas e à lava-louças. Evite choques bruscos de temperatura.</span></li>
-        <li><span class="facts__num">Peça única</span><span>A variação de tom entre peças é parte do desenho, não defeito.</span></li>
+        <li><span class="facts__num">1.240<small>°C</small></span><span>Queima em alta temperatura: o grés fica resistente, vai ao micro-ondas e à lava-louças.</span></li>
+        <li><span class="facts__num">14ª<small>fornada</small></span><span>Fornadas pequenas, uma por mês. A variação de tom entre peças é parte do desenho, não defeito.</span></li>
+        <li><span class="facts__num">1<small>ceramista</small></span><span>Cada peça é torneada e esmaltada à mão, do começo ao fim, pela mesma pessoa.</span></li>
       </ul>
+    </div>
     </div>
   </section>
 
@@ -403,7 +422,8 @@ def page() -> str:
 </main>
 
 <footer class="footer">
-  <div class="wrap footer__grid">
+  <div class="footer__panel">
+  <div class="footer__grid">
     <div class="footer__brand">
       <img src="assets/logo-mono-fundo-escuro.svg" width="101" height="40" alt="Ateliê Bruma">
       <p>Cerâmica de mesa feita à mão, em fornadas pequenas.</p>
@@ -426,6 +446,8 @@ def page() -> str:
       </ul>
     </nav>
     <p class="footer__legal">Ateliê Bruma é uma marca fictícia criada para um piloto de avaliação. Produtos, preços e políticas são exemplos e nenhuma compra é processada.</p>
+  </div>
+  <p class="footer__mark" aria-hidden="true">Bruma</p>
   </div>
 </footer>
 

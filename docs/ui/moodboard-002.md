@@ -46,4 +46,4 @@
 
 ## 4. Status
 
-Moodboard registrado pela sessão do projeto. A tradução em especificação fica em `docs/ui/revisao-003.md`, escrita pelo `eixo-ui-art-director`. As referências também foram adicionadas à base do agente de UI no eixo-ai (`docs/referencias-esteticas-proprietario.md`), para valer em projetos futuros.
+Moodboard registrado pela sessão do projeto. A tradução em especificação fica em `docs/ui/revisao-003.md`, escrita pelo `eixo-ui-art-director` e já aplicada ao site (ver §7 daquele arquivo). As referências também foram adicionadas à base do agente de UI no eixo-ai (`docs/referencias-esteticas-proprietario.md`), para valer em projetos futuros.

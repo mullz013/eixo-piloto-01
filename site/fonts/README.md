@@ -10,3 +10,11 @@ Baixadas em 2026-10-22 pela sessão que coordena o piloto (não pelo agente).
 **Transformações (versão modificada pela OFL):** subconjunto latino (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212) com `pyftsubset`, conversão para WOFF2; no Fraunces, eixos fixados `SOFT=0`, `WONK=0` e `wght` limitado a 300–600 (eixo `opsz` 9–144 mantido). Os dois `OFL.txt` **não declaram Reserved Font Name**, então a versão modificada pode manter o nome.
 
 Eixos disponíveis: Fraunces `opsz` 9–144, `wght` 300–600 · Figtree `wght` 300–900.
+
+## Fraunces Itálico (UI-003)
+
+| Arquivo | Origem | Licença |
+|---|---|---|
+| `fraunces-italic-latin-var.woff2` | `google/fonts` @ main, `ofl/fraunces/Fraunces-Italic[SOFT,WONK,opsz,wght].ttf` | SIL OFL 1.1, `OFL-Fraunces.txt` |
+
+Mesmo subconjunto latino e conversão para WOFF2; eixos fixados `SOFT=0`, `WONK=1` (o "itálico torto" que dá personalidade aos destaques) e `wght` 300–600, `opsz` 9–144 mantido. sha256 do WOFF2: `0dbd7632…bc000f7c`. Usada só nas palavras em destaque dos títulos (`em`), com `font-synthesis: none` para nunca gerar itálico falso.

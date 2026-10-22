@@ -1,0 +1,125 @@
+{
+ "metodo": "script WCAG 2.x (luminância relativa sRGB), confere o cálculo manual da revisao-003",
+ "pares": [
+  {
+   "texto": "#25231F",
+   "fundo": "#E6E7E3",
+   "razao": 12.63,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#E1E7E8",
+   "razao": 12.55,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#EDE3D7",
+   "razao": 12.38,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#E1E6D8",
+   "razao": 12.33,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#EFD9CC",
+   "razao": 11.55,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#E6E7E3",
+   "razao": 6.35,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#E1E7E8",
+   "razao": 6.31,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#EDE3D7",
+   "razao": 6.22,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#E1E6D8",
+   "razao": 6.2,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#EFD9CC",
+   "razao": 5.81,
+   "AA_texto": true
+  },
+  {
+   "texto": "#8A3F22",
+   "fundo": "#F4F1EC",
+   "razao": 6.62,
+   "AA_texto": true
+  },
+  {
+   "texto": "#8A3F22",
+   "fundo": "#E3E1DB",
+   "razao": 5.71,
+   "AA_texto": true
+  },
+  {
+   "texto": "#EFD9CC",
+   "fundo": "#25231F",
+   "razao": 11.55,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#F8F5F0",
+   "razao": 7.25,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#F8F5F0",
+   "razao": 14.42,
+   "AA_texto": true
+  },
+  {
+   "texto": "#8A3F22",
+   "fundo": "#EAE6DF",
+   "razao": 6.0,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#EAE6DF",
+   "razao": 6.34,
+   "AA_texto": true
+  },
+  {
+   "texto": "#25231F",
+   "fundo": "#D9D4CB",
+   "razao": 10.63,
+   "AA_texto": true
+  },
+  {
+   "texto": "#BDB7AC",
+   "fundo": "#25231F",
+   "razao": 7.87,
+   "AA_texto": true
+  },
+  {
+   "texto": "#55514A",
+   "fundo": "#F4F1EC",
+   "razao": 7.0,
+   "AA_texto": true
+  }
+ ]
+}

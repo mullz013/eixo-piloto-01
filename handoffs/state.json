@@ -316,6 +316,51 @@
     {
       "project_id": "piloto-01",
       "dna_version": "0.2.0",
+      "task_id": "UI-003",
+      "agent": "UI Designer & Art Director (especificação) + sessão do projeto (implementação)",
+      "status": "READY_FOR_REVIEW",
+      "depends_on": [
+        "UI-001"
+      ],
+      "artifact_links": [
+        "docs/ui/moodboard-002.md",
+        "docs/ui/revisao-003.md",
+        "site/styles.css",
+        "scripts/gerar_site.py",
+        "site/index.html",
+        "evidence/UI-003/delegation-transcript.jsonl",
+        "evidence/UI-003/contrast-check.json",
+        "evidence/UI-003/render/interaction-check.json",
+        "evidence/UI-003/render/hero-card-check.json",
+        "evidence/UI-003/render/depois-1440-full.png",
+        "evidence/UI-003/render/depois-375-full.png"
+      ],
+      "assumptions": [
+        "As 12 referências do proprietário ficam fora do repositório (capturas de terceiros); o agente trabalhou a partir da descrição em moodboard-002.md.",
+        "Itálico dos títulos em argila #8A3F22, seguindo o moodboard (recomendação do agente); plano B em #55514A registrado na revisao-003 §2.",
+        "Sombra só nos dois cartões flutuantes do hero, exceção registrada à regra 'sem sombras' de UI-001."
+      ],
+      "open_questions": [
+        "Proprietário aprova o visual UI-003 (itálico em argila, sombra nos cartões do hero, painéis escuros do ateliê e do rodapé)?"
+      ],
+      "risks": [
+        "Figma não foi usado: não há frame IDs; a referência visual são as capturas do site renderizado.",
+        "Contador da sacola continua com texto de 11 px (pendência herdada de UI-001)."
+      ],
+      "acceptance_criteria": [
+        "Decisões de e-commerce de revisao-002-ecommerce.md intactas (AC-ECOM-01 a 07).",
+        "Componentes da revisao-003 §4 aplicados em 375 e 1440 px.",
+        "Contrastes da revisao-003 §3 conferidos por script."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator delegou ao eixo-ui-art-director (subagent_type=eixo-ui-art-director, US$ 0,71), que escreveu docs/ui/revisao-003.md (evidence/UI-003/delegation-transcript.jsonl).",
+        "2026-10-22: contrastes da §3 e dos cartões refeitos por script; todos os 20 pares ≥ 4,5:1 e coincidem com o cálculo manual do agente com diferença ≤ 0,01 (evidence/UI-003/contrast-check.json).",
+        "2026-10-22: Playwright + Chromium após a implementação: mesmos resultados da DEV-002 em 320 a 1440 px (sem rolagem horizontal, 4 cartões no desktop e 2+0,3 no celular, menu, sacola, filtro, 0 animações com movimento reduzido, 0 erros de console); botão do cartão flutuante adiciona a Jarra Névoa à sacola em 375 e 1440; Fraunces Itálico carregada (evidence/UI-003/render/)."
+      ]
+    },
+    {
+      "project_id": "piloto-01",
+      "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
       "status": "PENDING",
