@@ -1,7 +1,7 @@
 # UX Spec — Landing page Ateliê Bruma
 
 **Task:** UX-001 (issue #3) · **Projeto:** piloto-01 · **DNA:** v0.2.0 (APPROVED somente como briefing fictício)
-**Status deste documento:** READY_FOR_REVIEW (não aprovado; UX e UI continuam sem aprovação humana)
+**Status deste documento:** APROVADO pelo proprietário em 2026-10-22 (ver handoffs/approval-log.md); UI ainda não aprovada
 **Autor:** eixo-ux-architect · **Data:** 2026-10-22
 **Entrada principal:** `docs/ux/research/pesquisa-mercado.md` (citada abaixo como "Pesquisa §x")
 

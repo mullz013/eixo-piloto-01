@@ -1,7 +1,7 @@
 # Handoff UX → UI/Art Direction (UI-001)
 
 **Origem:** UX-001 (eixo-ux-architect) · **Destino:** eixo-ui-art-director · **Projeto:** piloto-01
-**DNA:** v0.2.0 (APPROVED somente como briefing fictício) · **Status:** READY_FOR_REVIEW
+**DNA:** v0.2.0 (APPROVED somente como briefing fictício) · **Status:** APROVADO pelo proprietário em 2026-10-22 (ver handoffs/approval-log.md)
 **Condição:** o UX ainda **não está aprovado** por humano. UI-001 só começa como versão final após aprovação registrada pelo Orchestrator; antes disso, apenas exploração. Esta spec não decide paleta, tipografia nem estilo visual.
 
 ## 1. O que você recebe

@@ -1,6 +1,6 @@
 # Critérios de aceite — Landing page Ateliê Bruma
 
-**Task:** UX-001 · **DNA:** v0.2.0 (briefing fictício) · **Status:** READY_FOR_REVIEW (não aprovado)
+**Task:** UX-001 · **DNA:** v0.2.0 (briefing fictício) · **Status:** APROVADO pelo proprietário em 2026-10-22 (ver handoffs/approval-log.md)
 **Base:** `ux-spec.md`, `content-structure.md`, `research/pesquisa-mercado.md` ("Pesquisa §x").
 Esses critérios valem para a implementação futura (DEV) e para a validação (QA e Quality). Nenhum foi executado: não há site.
 

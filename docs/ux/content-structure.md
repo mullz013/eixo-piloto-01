@@ -1,6 +1,6 @@
 # Estrutura de conteúdo — Landing page Ateliê Bruma
 
-**Task:** UX-001 · **DNA:** v0.2.0 (briefing fictício) · **Status:** READY_FOR_REVIEW (copy demonstrativa, não aprovada)
+**Task:** UX-001 · **DNA:** v0.2.0 (briefing fictício) · **Status:** APROVADO pelo proprietário em 2026-10-22 (ver handoffs/approval-log.md); copy demonstrativa fictícia
 **Base:** `docs/ux/research/pesquisa-mercado.md` ("Pesquisa §x") e `docs/ux/ux-spec.md`.
 
 ## Regras gerais
