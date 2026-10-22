@@ -172,7 +172,7 @@ def secao_atual() -> str:
     <div class="wrap">
       <header class="sec__head">
         <div>
-          <p class="kicker">Coleção {col["nome"]} · {col["estacao"]}</p>
+          <p class="tag tag--secondary">Coleção {col["nome"]} · {col["estacao"]}</p>
           <h2 id="t-novidades" class="sec__title">Novidades da <em>fornada</em></h2>
         </div>
         <p class="sec__aside">{col["frase"]}</p>
@@ -190,7 +190,7 @@ def secao_passadas() -> str:
       <div class="wrap">
         <header class="sec__head sec__head--past">
           <div class="past__id">
-            <p class="kicker">{col["estacao"]}</p>
+            <p class="tag tag--secondary">{col["estacao"]}</p>
             <h3 id="{tid}" class="past__title">{col["nome"]}</h3>
           </div>
           <p class="sec__aside">{col["frase"]}</p>
@@ -333,7 +333,7 @@ def page() -> str:
     </div>
     <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
     <div class="hero__copy">
-      <p class="kicker kicker--pill">Coleção Névoa<span class="kicker__season"> · Primavera 2026</span></p>
+      <p class="tag tag--outline">Coleção Névoa<span class="tag__extra"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
       <p class="hero__lead">Grés de alta temperatura, esmalte fosco e uma fornada por mês. Peças feitas à mão para usar todo dia.</p>
       <div class="hero__cta">
@@ -369,7 +369,7 @@ def page() -> str:
     <div class="wrap">
     <div class="atelie">
       <div class="atelie__intro">
-        <p class="kicker kicker--inverse">O ateliê</p>
+        <p class="tag tag--inverse">O ateliê</p>
         <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, <em>uma fornada por mês.</em></h2>
         <p>Cada peça é torneada e esmaltada à mão em Curitiba. Por isso nenhuma é igual à outra: o esmalte escorre do seu jeito em cada queima.</p>
       </div>

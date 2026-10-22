@@ -104,15 +104,22 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .skip:focus { top: var(--space-4); }
 
 /* ---------- Tipografia utilitária ---------- */
-.kicker {
-  font-size: var(--size-xs);
-  font-weight: var(--weight-semibold);
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-  margin-bottom: var(--space-3);
+/* Tag acima dos títulos: componente Badge do design system (Obra shadcn/ui, Figma EBwZvqrrD1hCc9kTTH7YjJ, nó 1953:31170).
+   Mesma anatomia (pílula, uma linha, rótulo semibold, ícone opcional à esquerda, variantes secondary/outline/ghost),
+   com tokens da Ateliê Bruma; nenhuma cor da EIXO. Escala ajustada para tag editorial (UI-004 §8). */
+.tag {
+  display: inline-flex; align-items: center; gap: var(--space-1);
+  max-width: 100%; min-height: 26px; padding: 3px 12px;
+  border: var(--border-hairline) solid transparent; border-radius: var(--radius-pill);
+  font-family: var(--stack-text);
+  font-size: 0.75rem; line-height: 1rem; font-weight: var(--weight-semibold);
+  letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
 }
-.kicker--inverse { color: var(--text-inverse-secondary); }
+.tag--secondary { background: var(--background-chip); }
+.tag--outline { background: var(--background-canvas); border-color: var(--border-default); }
+.tag--inverse { background: rgb(244 241 236 / 0.08); border-color: rgb(244 241 236 / 0.18); color: var(--text-inverse); }
 .sec__title {
   font-family: var(--stack-display);
   font-weight: var(--weight-medium); /* mais encorpado a pedido do proprietário (UI-004 §7) */
@@ -128,13 +135,8 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   font-variation-settings: "opsz" 96;
 }
 .hero__title em { font-variation-settings: "opsz" 144; }
-.kicker--pill {
-  display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px;
-  border: 1px solid rgb(37 35 31 / 0.16); border-radius: var(--radius-pill); background: var(--background-canvas);
-}
-.kicker--pill { max-width: 100%; white-space: nowrap; }
 @media (max-width: 419px) {
-  .kicker__season { display: none; }
+  .tag__extra { display: none; }
 }
 .sec__lead { color: var(--text-secondary); max-width: 46ch; margin-top: var(--space-3); }
 .sec__aside { color: var(--text-secondary); font-size: var(--size-sm); max-width: 40ch; }
@@ -456,7 +458,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .badge {
   position: absolute; left: 10px; top: 10px;
   padding: 3px 10px; border-radius: var(--radius-pill);
-  background: var(--background-canvas); font-size: var(--size-xs); font-weight: var(--weight-semibold); letter-spacing: 0.06em; text-transform: uppercase;
+  background: var(--background-canvas); font-size: 0.75rem; line-height: 1rem; font-weight: var(--weight-semibold); letter-spacing: 0.08em; /* mesma escala da .tag */ text-transform: uppercase;
 }
 @media (min-width: 1024px) {
   .badge { left: var(--space-3); top: var(--space-3); }
@@ -523,7 +525,8 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .past--terra { background: linear-gradient(180deg, #F2ECE4 0%, var(--background-canvas) 70%); }
 .past--sal { background: linear-gradient(180deg, #EBEFEF 0%, var(--background-canvas) 70%); }
 .past__id { display: grid; }
-.past__id .kicker { margin-bottom: var(--space-1); }
+.past__id { justify-items: start; }
+.past__id .tag { margin-bottom: var(--space-3); }
 .past__title { font-family: var(--stack-display); font-weight: var(--weight-medium); font-size: clamp(1.625rem, 1.3rem + 1.2vw, 2.25rem); line-height: 1.1; font-variation-settings: "opsz" 72; }
 
 /* ---------- Vantagens ---------- */
