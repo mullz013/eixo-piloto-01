@@ -1,0 +1,49 @@
+# header
+- banner:
+  - link "Ateliê Bruma , início":
+    - /url: "#topo"
+    - img "Ateliê Bruma"
+    - text: ", início"
+  - navigation "Principal":
+    - list:
+      - listitem:
+        - link "Novidades":
+          - /url: "#novidades"
+      - listitem:
+        - link "Categorias":
+          - /url: "#categorias"
+      - listitem:
+        - link "Coleções passadas":
+          - /url: "#colecoes"
+      - listitem:
+        - link "O ateliê":
+          - /url: "#atelie"
+      - listitem:
+        - link "Ajuda":
+          - /url: "#ajuda"
+  - button "Sacola , 1 item"
+
+# first_card
+- listitem:
+  - text: Novo
+  - heading "Caneca Névoa" [level=3]
+  - paragraph: 300 ml · grés
+  - paragraph: R$ 98 3x de R$ 32,67 sem juros
+  - button "Adicionar Caneca Névoa à sacola"
+
+# carousel_controls
+- button "Peças anteriores de Névoa" [disabled]
+- button "Próximas peças de Névoa"
+
+# dots
+- group "Páginas da vitrine Névoa":
+  - button "Página 1 de 2 de Névoa"
+  - button "Página 2 de 2 de Névoa"
+
+# sold_out
+- listitem:
+  - text: Esgotado
+  - heading "Prato raso Terra Molhada" [level=4]
+  - paragraph: Ø 26 cm · grés
+  - paragraph: R$ 128 3x de R$ 42,67 sem juros
+  - button "Esgotado" [disabled]

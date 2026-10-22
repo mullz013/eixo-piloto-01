@@ -304,7 +304,7 @@
       el.textContent = count;
       if (count) el.removeAttribute("data-empty"); else el.setAttribute("data-empty", "");
     });
-    $$("[data-cart-count-sr]").forEach(function (el) { el.textContent = ", " + count + (count === 1 ? " item" : " itens"); });
+    $$("[data-cart-count-sr]").forEach(function (el) { el.textContent = "Sacola, " + count + (count === 1 ? " item" : " itens"); });
     var falta = Math.max(0, FRETE - total);
     $("[data-ship-text]").textContent = falta > 0 ? "Faltam " + brl(falta) + " para o frete grátis." : "Seu pedido tem frete grátis.";
     $("[data-ship-bar]").style.width = Math.min(100, (total / FRETE) * 100) + "%";
@@ -330,6 +330,7 @@
     var long = $(".add__long", btn), short = $(".add__short", btn);
     if (!btn.dataset.long) { btn.dataset.long = long.textContent; btn.dataset.short = short.textContent; }
     btn.classList.add("is-done");
+    btn.setAttribute("aria-label", "Adicionada à sacola: " + btn.dataset.name);
     long.textContent = "Adicionada à sacola";
     short.textContent = "Adicionada";
     clearTimeout(doneTimers.get(btn));
@@ -337,6 +338,7 @@
       btn.classList.remove("is-done");
       long.textContent = btn.dataset.long;
       short.textContent = btn.dataset.short;
+      btn.setAttribute("aria-label", "Adicionar à sacola: " + btn.dataset.name);
     }, 1600));
     $$(".bag-btn").forEach(function (b) {
       b.classList.remove("is-bumped"); void b.offsetWidth; b.classList.add("is-bumped");

@@ -1,0 +1,14 @@
+test_approved_briefing_contract (test_pilot.HandoffContracts.test_approved_briefing_contract) ... ok
+test_block_task_before_verified_dependencies (test_pilot.HandoffContracts.test_block_task_before_verified_dependencies) ... ok
+test_duplicate_task (test_pilot.HandoffContracts.test_duplicate_task) ... ok
+test_missing_approval_record (test_pilot.HandoffContracts.test_missing_approval_record) ... ok
+test_orchestrator_runtime_verified_with_evidence (test_pilot.HandoffContracts.test_orchestrator_runtime_verified_with_evidence) ... ok
+test_release_blocked (test_pilot.HandoffContracts.test_release_blocked) ... ok
+test_unapproved_in_progress (test_pilot.HandoffContracts.test_unapproved_in_progress) ... ok
+test_unverified_completion (test_pilot.HandoffContracts.test_unverified_completion) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.015s
+
+OK
+exit=0

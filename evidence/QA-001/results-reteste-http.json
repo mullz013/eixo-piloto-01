@@ -1,0 +1,2189 @@
+{
+ "meta": {
+  "url": "http://127.0.0.1:8765/index.html",
+  "chromium": "141.0.7390.37",
+  "playwright_python": "1.64.0",
+  "axe": "/tmp/claude-0/-home-claude/ccc621f2-8dc4-5dad-8106-d1347f352e12/scratchpad/axe/package/axe.min.js"
+ },
+ "summary": {
+  "PASS": 83,
+  "FAIL": 0,
+  "ERROR": 0,
+  "NOT_RUN": 0,
+  "KNOWN_P3": 2
+ },
+ "results": [
+  {
+   "id": "T01-console-375",
+   "title": "Sem erros de console/pageerror/requestfailed (375px, página percorrida)",
+   "status": "PASS",
+   "details": {
+    "warnings": []
+   }
+  },
+  {
+   "id": "T02-images-375",
+   "title": "Nenhuma imagem quebrada depois de rolar até as lazy (375px)",
+   "status": "PASS",
+   "details": {
+    "images_checked": 30
+   }
+  },
+  {
+   "id": "T01-console-1440",
+   "title": "Sem erros de console/pageerror/requestfailed (1440px, página percorrida)",
+   "status": "PASS",
+   "details": {
+    "warnings": []
+   }
+  },
+  {
+   "id": "T02-images-1440",
+   "title": "Nenhuma imagem quebrada depois de rolar até as lazy (1440px)",
+   "status": "PASS",
+   "details": {
+    "images_checked": 30
+   }
+  },
+  {
+   "id": "T03-overflow-320",
+   "title": "Sem rolagem horizontal da página em 320px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 320,
+    "clientWidth": 320,
+    "bodyScrollWidth": 320,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T03-overflow-375",
+   "title": "Sem rolagem horizontal da página em 375px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "bodyScrollWidth": 375,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T03-overflow-414",
+   "title": "Sem rolagem horizontal da página em 414px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 414,
+    "clientWidth": 414,
+    "bodyScrollWidth": 414,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T03-overflow-768",
+   "title": "Sem rolagem horizontal da página em 768px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 768,
+    "clientWidth": 768,
+    "bodyScrollWidth": 768,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T03-overflow-1024",
+   "title": "Sem rolagem horizontal da página em 1024px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 1009,
+    "clientWidth": 1024,
+    "bodyScrollWidth": 1009,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T03-overflow-1440",
+   "title": "Sem rolagem horizontal da página em 1440px",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 1425,
+    "clientWidth": 1440,
+    "bodyScrollWidth": 1425,
+    "offenders": [],
+    "scrollX_after_scrollTo500": 0
+   }
+  },
+  {
+   "id": "T04-margins-320",
+   "title": "Margens horizontais simétricas no celular/tablet (320px, tolerância 1px)",
+   "status": "PASS",
+   "details": [
+    {
+     "sel": ".announce",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".header__in",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".hero__copy",
+     "left": 40,
+     "right": 40,
+     "diff": 0
+    },
+    {
+     "sel": ".perks .wrap",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .wrap",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .sec__head",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": "#novidades .sec__head",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": "#atelie .wrap",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": "#colecoes .sec__intro",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head[1]",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".faq",
+     "left": 16,
+     "right": 16,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__panel",
+     "left": 40,
+     "right": 40,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__grid",
+     "left": 40,
+     "right": 40,
+     "diff": 0
+    },
+    {
+     "sel": "first-card:Névoa",
+     "left": 16,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Terra Molhada",
+     "left": 16,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Sal",
+     "left": 16,
+     "right": null,
+     "diff": null
+    }
+   ]
+  },
+  {
+   "id": "T04-margins-375",
+   "title": "Margens horizontais simétricas no celular/tablet (375px, tolerância 1px)",
+   "status": "PASS",
+   "details": [
+    {
+     "sel": ".announce",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".header__in",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".hero__copy",
+     "left": 42.8,
+     "right": 42.8,
+     "diff": 0
+    },
+    {
+     "sel": ".perks .wrap",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .wrap",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .sec__head",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": "#novidades .sec__head",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": "#atelie .wrap",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": "#colecoes .sec__intro",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head[1]",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".faq",
+     "left": 18.8,
+     "right": 18.8,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__panel",
+     "left": 42.8,
+     "right": 42.8,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__grid",
+     "left": 42.8,
+     "right": 42.8,
+     "diff": 0
+    },
+    {
+     "sel": "first-card:Névoa",
+     "left": 18.8,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Terra Molhada",
+     "left": 18.8,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Sal",
+     "left": 18.8,
+     "right": null,
+     "diff": null
+    }
+   ]
+  },
+  {
+   "id": "T04-margins-414",
+   "title": "Margens horizontais simétricas no celular/tablet (414px, tolerância 1px)",
+   "status": "PASS",
+   "details": [
+    {
+     "sel": ".announce",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".header__in",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".hero__copy",
+     "left": 44.7,
+     "right": 44.7,
+     "diff": 0
+    },
+    {
+     "sel": ".perks .wrap",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .wrap",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .sec__head",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": "#novidades .sec__head",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": "#atelie .wrap",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": "#colecoes .sec__intro",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head[1]",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".faq",
+     "left": 20.7,
+     "right": 20.7,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__panel",
+     "left": 44.7,
+     "right": 44.7,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__grid",
+     "left": 44.7,
+     "right": 44.7,
+     "diff": 0
+    },
+    {
+     "sel": "first-card:Névoa",
+     "left": 20.7,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Terra Molhada",
+     "left": 20.7,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Sal",
+     "left": 20.7,
+     "right": null,
+     "diff": null
+    }
+   ]
+  },
+  {
+   "id": "T04-margins-768",
+   "title": "Margens horizontais simétricas no celular/tablet (768px, tolerância 1px)",
+   "status": "PASS",
+   "details": [
+    {
+     "sel": ".announce",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".header__in",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".hero__copy",
+     "left": 56,
+     "right": 56,
+     "diff": 0
+    },
+    {
+     "sel": ".perks .wrap",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .wrap",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": "#categorias .sec__head",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": "#novidades .sec__head",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": "#atelie .wrap",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": "#colecoes .sec__intro",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".past .sec__head[1]",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".faq",
+     "left": 32,
+     "right": 32,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__panel",
+     "left": 56,
+     "right": 56,
+     "diff": 0
+    },
+    {
+     "sel": ".footer__grid",
+     "left": 56,
+     "right": 56,
+     "diff": 0
+    },
+    {
+     "sel": "first-card:Névoa",
+     "left": 32,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Terra Molhada",
+     "left": 32,
+     "right": null,
+     "diff": null
+    },
+    {
+     "sel": "first-card:Sal",
+     "left": 32,
+     "right": null,
+     "diff": null
+    }
+   ]
+  },
+  {
+   "id": "T05a-menu-open",
+   "title": "Menu: botão 'Abrir menu' visível; abre gaveta, aria-expanded=true, foco dentro do painel",
+   "status": "PASS",
+   "details": {
+    "focused": {
+     "tag": "BUTTON",
+     "text": "Fechar menu",
+     "cls": "icon-btn",
+     "outline": null,
+     "shadow": null,
+     "visibleIndicator": false,
+     "top": 10,
+     "bottom": 54,
+     "w": 44,
+     "h": 44,
+     "inViewport": true,
+     "obscuredByHeader": false,
+     "partlyUnderHeader": false
+    }
+   }
+  },
+  {
+   "id": "T05b-menu-trap",
+   "title": "Menu: Tab/Shift+Tab ficam presos no painel (40 Tabs)",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T05c-menu-escape",
+   "title": "Menu: Escape fecha, aria-expanded=false, foco volta ao botão, gaveta hidden",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T05d-menu-close-x-scrim",
+   "title": "Menu: fecha pelo X e pelo toque fora (scrim)",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T05e-menu-anchor",
+   "title": "Menu: link de âncora (Ajuda) fecha a gaveta e navega",
+   "status": "PASS",
+   "details": {
+    "title_top": 152.296875,
+    "header_bottom": 65
+   }
+  },
+  {
+   "id": "T05f-menu-category",
+   "title": "Menu: categoria filtra as vitrines e mostra 'Mostrando' + 'Limpar filtro'",
+   "status": "PASS",
+   "details": {
+    "filter": "Canecas e xícaras",
+    "bar": "Mostrando: Canecas e xícaras\n\nLimpar filtro",
+    "visible": 6,
+    "total": 20
+   }
+  },
+  {
+   "id": "T05g-menu-desktop",
+   "title": "1440px: hambúrguer oculto, nav principal visível",
+   "status": "PASS",
+   "details": {
+    "links": [
+     "Novidades",
+     "Categorias",
+     "Coleções passadas",
+     "O ateliê",
+     "Ajuda"
+    ]
+   }
+  },
+  {
+   "id": "T06-anchor-#novidades-Novidades",
+   "title": "Nav desktop 'Novidades' -> #novidades",
+   "status": "PASS",
+   "details": {
+    "hash": "#novidades",
+    "top": 244,
+    "hb": 77,
+    "hidden": false
+   }
+  },
+  {
+   "id": "T06-anchor-#categorias-Categorias",
+   "title": "Nav desktop 'Categorias' -> #categorias",
+   "status": "PASS",
+   "details": {
+    "hash": "#categorias",
+    "top": 200,
+    "hb": 77,
+    "hidden": false
+   }
+  },
+  {
+   "id": "T06-anchor-#colecoes-Coleções pas",
+   "title": "Nav desktop 'Coleções passadas' -> #colecoes",
+   "status": "PASS",
+   "details": {
+    "hash": "#colecoes",
+    "top": 200,
+    "hb": 77,
+    "hidden": false
+   }
+  },
+  {
+   "id": "T06-anchor-#atelie-O ateliê",
+   "title": "Nav desktop 'O ateliê' -> #atelie",
+   "status": "PASS",
+   "details": {
+    "hash": "#atelie",
+    "top": 308,
+    "hb": 77,
+    "hidden": false
+   }
+  },
+  {
+   "id": "T06-anchor-#ajuda-Ajuda",
+   "title": "Nav desktop 'Ajuda' -> #ajuda",
+   "status": "PASS",
+   "details": {
+    "hash": "#ajuda",
+    "top": 200,
+    "hb": 77,
+    "hidden": false
+   }
+  },
+  {
+   "id": "T07-deeplink-#colecoes",
+   "title": "Link profundo index.html#colecoes (375px)",
+   "status": "PASS",
+   "details": {
+    "top": 402,
+    "hb": 65
+   }
+  },
+  {
+   "id": "T07-deeplink-#colecao-terra",
+   "title": "Link profundo index.html#colecao-terra (375px)",
+   "status": "PASS",
+   "details": {
+    "top": 314,
+    "hb": 65
+   }
+  },
+  {
+   "id": "T07-deeplink-#colecao-sal",
+   "title": "Link profundo index.html#colecao-sal (375px)",
+   "status": "PASS",
+   "details": {
+    "top": 343,
+    "hb": 65
+   }
+  },
+  {
+   "id": "T07-deeplink-#ajuda",
+   "title": "Link profundo index.html#ajuda (375px)",
+   "status": "PASS",
+   "details": {
+    "top": 355,
+    "hb": 65
+   }
+  },
+  {
+   "id": "T07-deeplink-#naoexiste",
+   "title": "Link profundo index.html#naoexiste (375px)",
+   "status": "PASS",
+   "details": {
+    "scrollY": 0
+   }
+  },
+  {
+   "id": "T07-back",
+   "title": "Voltar do navegador após âncora retorna à posição anterior sem recarregar",
+   "status": "PASS",
+   "details": {
+    "y_at_anchor": 4974,
+    "y_after_back": 0
+   }
+  },
+  {
+   "id": "T08a-carousel-desktop",
+   "title": "Carrossel Névoa 1440: 4 cartões inteiros, setas e bullets; anterior desabilitada na 1ª página",
+   "status": "PASS",
+   "details": {
+    "full": 4,
+    "total": 8,
+    "navHidden": false,
+    "dots": 2,
+    "prevDisabled": "true",
+    "nextDisabled": "false"
+   }
+  },
+  {
+   "id": "T08b-carousel-arrows",
+   "title": "Carrossel Névoa 1440: seta próxima avança página, bullet atual muda; última página desabilita próxima; seta anterior volta",
+   "status": "PASS",
+   "details": {
+    "after_next": {
+     "left": 1240,
+     "current": 1,
+     "prev": "false",
+     "next": "true"
+    },
+    "after_prev": 0,
+    "after_dot2": 1240
+   }
+  },
+  {
+   "id": "T08c-carousel-keyboard",
+   "title": "Carrossel 1440: trilho focável rola com ArrowRight (teclado)",
+   "status": "PASS",
+   "details": {
+    "scrollLeft": 310
+   }
+  },
+  {
+   "id": "T08d-carousel-past",
+   "title": "Carrosséis Terra/Sal 1440: 6 peças, 2 páginas, setas operam",
+   "status": "PASS",
+   "details": {
+    "#colecao-terra": {
+     "scrollLeft": 620,
+     "dots": 2
+    },
+    "#colecao-sal": {
+     "scrollLeft": 620,
+     "dots": 2
+    }
+   }
+  },
+  {
+   "id": "T08e-carousel-mobile",
+   "title": "Carrossel 375: sem setas, com bullets, 2 cartões + parte do 3º; rolagem por scroll atualiza bullet",
+   "status": "PASS",
+   "details": {
+    "navVisible": false,
+    "dots": 4,
+    "dotsHidden": false,
+    "visibleFractions": [
+     1,
+     1,
+     0.3,
+     0
+    ],
+    "currentDotAtEnd": 3
+   }
+  },
+  {
+   "id": "T09a-bag-add-375",
+   "title": "Sacola 375: adicionar atualiza contador, toast e subtotal",
+   "status": "PASS",
+   "details": {
+    "count": "2",
+    "toast": "Caneca Névoa foi para a sacola",
+    "btn_after": "Adicionada",
+    "subtotal": "R$ 266",
+    "bag_name": "Sacola\n2\nSacola, 2 itens"
+   }
+  },
+  {
+   "id": "T09b-bag-drawer-375",
+   "title": "Sacola 375: abre, foco no painel, +/−, remover, total, frete, finalizar, Esc devolve foco",
+   "status": "PASS",
+   "details": {
+    "items": 2,
+    "qty_after_plus": "2",
+    "subtotal_after_plus": "R$ 364",
+    "focus_after_plus": "Aumentar quantidade de Caneca Névoa",
+    "ship": "Seu pedido tem frete grátis.",
+    "qty_after_minus": "1",
+    "subtotal_after_remove": "R$ 98",
+    "count": "1",
+    "notice": "Esta é uma loja demonstrativa de uma marca fictícia: nenhum pedido é criado e nenhum pagamento é processado.",
+    "notice_live": "status",
+    "closed": true,
+    "focus_back": true
+   }
+  },
+  {
+   "id": "T09c-bag-persist-empty-375",
+   "title": "Sacola 375: persiste após recarregar; − até zero esvazia e mostra estado vazio",
+   "status": "PASS",
+   "details": {
+    "count_after_reload": "1",
+    "empty_visible": true,
+    "foot_visible": false,
+    "focus_after_empty": "Fechar sacola",
+    "count": "0"
+   }
+  },
+  {
+   "id": "T09d-bag-trap-375",
+   "title": "Sacola 375: foco preso no painel (20 Tabs) e fundo inert",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T09a-bag-add-1440",
+   "title": "Sacola 1440: adicionar atualiza contador, toast e subtotal",
+   "status": "PASS",
+   "details": {
+    "count": "2",
+    "toast": "Caneca Névoa foi para a sacola",
+    "btn_after": "Adicionada à sacola",
+    "subtotal": "R$ 266",
+    "bag_name": "Sacola\n2\nSacola, 2 itens"
+   }
+  },
+  {
+   "id": "T09b-bag-drawer-1440",
+   "title": "Sacola 1440: abre, foco no painel, +/−, remover, total, frete, finalizar, Esc devolve foco",
+   "status": "PASS",
+   "details": {
+    "items": 2,
+    "qty_after_plus": "2",
+    "subtotal_after_plus": "R$ 364",
+    "focus_after_plus": "Aumentar quantidade de Caneca Névoa",
+    "ship": "Seu pedido tem frete grátis.",
+    "qty_after_minus": "1",
+    "subtotal_after_remove": "R$ 98",
+    "count": "1",
+    "notice": "Esta é uma loja demonstrativa de uma marca fictícia: nenhum pedido é criado e nenhum pagamento é processado.",
+    "notice_live": "status",
+    "closed": true,
+    "focus_back": true
+   }
+  },
+  {
+   "id": "T09c-bag-persist-empty-1440",
+   "title": "Sacola 1440: persiste após recarregar; − até zero esvazia e mostra estado vazio",
+   "status": "PASS",
+   "details": {
+    "count_after_reload": "1",
+    "empty_visible": true,
+    "foot_visible": false,
+    "focus_after_empty": "Fechar sacola",
+    "count": "0"
+   }
+  },
+  {
+   "id": "T09d-bag-trap-1440",
+   "title": "Sacola 1440: foco preso no painel (20 Tabs) e fundo inert",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T09e-bag-tamper",
+   "title": "Sacola: localStorage adulterado (id inexistente, qty absurda, preço) é saneado",
+   "status": "PASS",
+   "details": {
+    "count": "20",
+    "subtotal": "R$ 1.960"
+   }
+  },
+  {
+   "id": "T10a-skip-375",
+   "title": "Teclado 375: 1º Tab = 'Pular para o conteúdo' visível; Enter foca main",
+   "status": "PASS",
+   "details": {
+    "first": {
+     "tag": "A",
+     "text": "Pular para o conteúdo",
+     "cls": "skip",
+     "outline": "solid 3px rgb(37, 35, 31) off 3px",
+     "shadow": null,
+     "visibleIndicator": true,
+     "top": 16,
+     "bottom": 67,
+     "w": 199,
+     "h": 51,
+     "inViewport": true,
+     "obscuredByHeader": true,
+     "partlyUnderHeader": true
+    },
+    "after_enter": "conteudo"
+   }
+  },
+  {
+   "id": "T10b-tab-walk-375",
+   "title": "Teclado 375: percorrer 120 Tabs; todo foco tem indicador visível e não fica sob o header",
+   "status": "PASS",
+   "details": {
+    "steps": 49,
+    "without_indicator": [],
+    "fully_obscured_by_header": [],
+    "partly_under_header": [],
+    "sequence_head": [
+     "A:Comprar a coleção",
+     "A:Ver categorias",
+     "A:Canecas e xícaras 6 peça",
+     "A:Pratos 3 peças",
+     "A:Tigelas 5 peças",
+     "A:Travessas 2 peças",
+     "A:Vasos e jarras 4 peças",
+     "UL:Novo Caneca Névoa 300 ml",
+     "BUTTON:Adicionar à sacola: Cane",
+     "BUTTON:Adicionar à sacola: Xíca",
+     "BUTTON:Adicionar à sacola: Tige",
+     "BUTTON:Adicionar à sacola: Prat",
+     "BUTTON:Adicionar à sacola: Jarr",
+     "BUTTON:Adicionar à sacola: Vaso",
+     "BUTTON:Adicionar à sacola: Trav",
+     "BUTTON:Adicionar à sacola: Copo",
+     "BUTTON:Página 1 de 4 de Névoa",
+     "BUTTON:Página 2 de 4 de Névoa",
+     "BUTTON:Página 3 de 4 de Névoa",
+     "BUTTON:Página 4 de 4 de Névoa",
+     "UL:Caneca Terra Molhada 300",
+     "BUTTON:Adicionar à sacola: Cane",
+     "BUTTON:Adicionar à sacola: Vaso",
+     "BUTTON:Adicionar à sacola: Tige",
+     "BUTTON:Adicionar à sacola: Rame",
+     "BUTTON:Adicionar à sacola: Copo",
+     "BUTTON:Página 1 de 3 de Terra M",
+     "BUTTON:Página 2 de 3 de Terra M",
+     "BUTTON:Página 3 de 3 de Terra M",
+     "UL:Xícara com pires Sal 120"
+    ]
+   }
+  },
+  {
+   "id": "T10c-details-375",
+   "title": "Teclado 375: acordeão de Ajuda abre com Enter/Espaço",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T10a-skip-1440",
+   "title": "Teclado 1440: 1º Tab = 'Pular para o conteúdo' visível; Enter foca main",
+   "status": "PASS",
+   "details": {
+    "first": {
+     "tag": "A",
+     "text": "Pular para o conteúdo",
+     "cls": "skip",
+     "outline": "solid 3px rgb(37, 35, 31) off 3px",
+     "shadow": null,
+     "visibleIndicator": true,
+     "top": 16,
+     "bottom": 67,
+     "w": 199,
+     "h": 51,
+     "inViewport": true,
+     "obscuredByHeader": true,
+     "partlyUnderHeader": true
+    },
+    "after_enter": "conteudo"
+   }
+  },
+  {
+   "id": "T10b-tab-walk-1440",
+   "title": "Teclado 1440: percorrer 120 Tabs; todo foco tem indicador visível e não fica sob o header",
+   "status": "PASS",
+   "details": {
+    "steps": 51,
+    "without_indicator": [],
+    "fully_obscured_by_header": [],
+    "partly_under_header": [],
+    "sequence_head": [
+     "A:Comprar a coleção",
+     "A:Ver categorias",
+     "A:Canecas e xícaras 6 peça",
+     "A:Pratos 3 peças",
+     "A:Tigelas 5 peças",
+     "A:Travessas 2 peças",
+     "A:Vasos e jarras 4 peças",
+     "BUTTON:Peças anteriores de Névo",
+     "BUTTON:Próximas peças de Névoa",
+     "UL:Novo Caneca Névoa 300 ml",
+     "BUTTON:Adicionar à sacola: Cane",
+     "BUTTON:Adicionar à sacola: Xíca",
+     "BUTTON:Adicionar à sacola: Tige",
+     "BUTTON:Adicionar à sacola: Prat",
+     "BUTTON:Adicionar à sacola: Jarr",
+     "BUTTON:Adicionar à sacola: Vaso",
+     "BUTTON:Adicionar à sacola: Trav",
+     "BUTTON:Adicionar à sacola: Copo",
+     "BUTTON:Página 1 de 2 de Névoa",
+     "BUTTON:Página 2 de 2 de Névoa",
+     "BUTTON:Peças anteriores de Terr",
+     "BUTTON:Próximas peças de Terra ",
+     "UL:Caneca Terra Molhada 300",
+     "BUTTON:Adicionar à sacola: Cane",
+     "BUTTON:Adicionar à sacola: Vaso",
+     "BUTTON:Adicionar à sacola: Tige",
+     "BUTTON:Adicionar à sacola: Rame",
+     "BUTTON:Adicionar à sacola: Copo",
+     "BUTTON:Página 1 de 2 de Terra M",
+     "BUTTON:Página 2 de 2 de Terra M"
+    ]
+   }
+  },
+  {
+   "id": "T10c-details-1440",
+   "title": "Teclado 1440: acordeão de Ajuda abre com Enter/Espaço",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T11-nojs-375",
+   "title": "Sem JavaScript 375: nav visível, vitrines rolam, controles JS ocultos, sem overflow, âncoras funcionam",
+   "status": "PASS",
+   "details": {
+    "noJsClass": true,
+    "navVisible": true,
+    "hamburgerVisible": false,
+    "bagVisible": false,
+    "addVisible": false,
+    "tracks": [
+     {
+      "sw": 1258,
+      "cw": 356,
+      "ox": "auto"
+     },
+     {
+      "sw": 945,
+      "cw": 356,
+      "ox": "auto"
+     },
+     {
+      "sw": 945,
+      "cw": 356,
+      "ox": "auto"
+     }
+    ],
+    "pricesVisible": 20,
+    "scrollWidth": 375,
+    "clientWidth": 375,
+    "arrowsVisible": false,
+    "filterLinks": 14,
+    "hash_after_click": "#ajuda",
+    "ajuda_top": 3158.046875,
+    "first_tab": "Envio e prazos"
+   }
+  },
+  {
+   "id": "T11-nojs-1440",
+   "title": "Sem JavaScript 1440: nav visível, vitrines rolam, controles JS ocultos, sem overflow, âncoras funcionam",
+   "status": "PASS",
+   "details": {
+    "noJsClass": true,
+    "navVisible": true,
+    "hamburgerVisible": false,
+    "bagVisible": false,
+    "addVisible": false,
+    "tracks": [
+     {
+      "sw": 2456,
+      "cw": 1216,
+      "ox": "auto"
+     },
+     {
+      "sw": 1836,
+      "cw": 1216,
+      "ox": "auto"
+     },
+     {
+      "sw": 1836,
+      "cw": 1216,
+      "ox": "auto"
+     }
+    ],
+    "pricesVisible": 20,
+    "scrollWidth": 1425,
+    "clientWidth": 1440,
+    "arrowsVisible": false,
+    "filterLinks": 14,
+    "hash_after_click": "#ajuda",
+    "ajuda_top": 3865.0625,
+    "first_tab": "Envio e prazos"
+   }
+  },
+  {
+   "id": "T11b-nojs-filter-links",
+   "title": "Sem JavaScript: links de categoria/momento levam a uma âncora válida (filtro indisponível)",
+   "status": "PASS",
+   "details": {
+    "hrefs": [
+     "#novidades"
+    ]
+   }
+  },
+  {
+   "id": "T12-reduced-motion",
+   "title": "prefers-reduced-motion: nenhuma animação CSS rodando; scroll-behavior auto; transições ~0",
+   "status": "PASS",
+   "details": {
+    "no-preference": {
+     "running": 8,
+     "names": [
+      "reveal",
+      "drift",
+      "settle"
+     ],
+     "scrollBehavior": "smooth",
+     "drawerTransition": "0.28s",
+     "running_after_open_bag": 9
+    },
+    "reduce": {
+     "running": 0,
+     "names": [],
+     "scrollBehavior": "auto",
+     "drawerTransition": "0s",
+     "running_after_open_bag": 0
+    }
+   }
+  },
+  {
+   "id": "T13-weight-cls-375",
+   "title": "Peso de imagens carregadas sem rolar (site/assets/fotos) e CLS/LCP de laboratório (375px, sem throttling)",
+   "status": "PASS",
+   "details": {
+    "fotos_loaded_without_scroll": [
+     {
+      "file": "assets/fotos/banner/celular-640.webp",
+      "bytes": 23148
+     },
+     {
+      "file": "assets/fotos/categorias/canecas-400.webp",
+      "bytes": 9728
+     },
+     {
+      "file": "assets/fotos/categorias/pratos-400.webp",
+      "bytes": 8812
+     },
+     {
+      "file": "assets/fotos/categorias/tigelas-400.webp",
+      "bytes": 9320
+     },
+     {
+      "file": "assets/fotos/categorias/travessas-400.webp",
+      "bytes": 10692
+     },
+     {
+      "file": "assets/fotos/categorias/vasos-400.webp",
+      "bytes": 11296
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-caneca-480.webp",
+      "bytes": 11264
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-garrafa-480.webp",
+      "bytes": 10350
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-jarra-480.webp",
+      "bytes": 10594
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-prato-480.webp",
+      "bytes": 8292
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-tigela-480.webp",
+      "bytes": 7782
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-travessa-480.webp",
+      "bytes": 9530
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-xicara-480.webp",
+      "bytes": 8834
+     }
+    ],
+    "fotos_bytes": 139642,
+    "all_local_resources_bytes": 362878,
+    "cls_after_load": 0,
+    "cls_after_full_scroll": 0,
+    "shifts": [],
+    "lcp_ms_lab_unthrottled": {
+     "t": 124,
+     "el": "hero",
+     "size": 22801
+    },
+    "imgs_without_width_height": []
+   }
+  },
+  {
+   "id": "T13-weight-cls-1440",
+   "title": "Peso de imagens carregadas sem rolar (site/assets/fotos) e CLS/LCP de laboratório (1440px, sem throttling)",
+   "status": "PASS",
+   "details": {
+    "fotos_loaded_without_scroll": [
+     {
+      "file": "assets/fotos/banner/desktop-1536.webp",
+      "bytes": 65834
+     },
+     {
+      "file": "assets/fotos/categorias/canecas-400.webp",
+      "bytes": 9728
+     },
+     {
+      "file": "assets/fotos/categorias/pratos-400.webp",
+      "bytes": 8812
+     },
+     {
+      "file": "assets/fotos/categorias/tigelas-400.webp",
+      "bytes": 9320
+     },
+     {
+      "file": "assets/fotos/categorias/travessas-400.webp",
+      "bytes": 10692
+     },
+     {
+      "file": "assets/fotos/categorias/vasos-400.webp",
+      "bytes": 11296
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-caneca-480.webp",
+      "bytes": 11264
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-garrafa-480.webp",
+      "bytes": 10350
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-jarra-480.webp",
+      "bytes": 10594
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-prato-480.webp",
+      "bytes": 8292
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-tigela-480.webp",
+      "bytes": 7782
+     },
+     {
+      "file": "assets/fotos/produtos/nevoa-xicara-480.webp",
+      "bytes": 8834
+     }
+    ],
+    "fotos_bytes": 172798,
+    "all_local_resources_bytes": 396034,
+    "cls_after_load": 0,
+    "cls_after_full_scroll": 0.0,
+    "shifts": [
+     {
+      "v": 6.965877914951989e-07,
+      "src": [
+       "::before",
+       "::before"
+      ]
+     }
+    ],
+    "lcp_ms_lab_unthrottled": {
+     "t": 224,
+     "el": "hero",
+     "size": 25589
+    },
+    "imgs_without_width_height": []
+   }
+  },
+  {
+   "id": "T14a-structure",
+   "title": "Estrutura: 1 h1, sem salto de nível de heading, landmarks, ids únicos, alt em todas as imagens, nome em todos os botões",
+   "status": "PASS",
+   "details": {
+    "h1": 1,
+    "headings": [
+     "H1 A névoa virou mesa.",
+     "H2 Compre por categoria",
+     "H2 Novidades da fornada",
+     "H3 Caneca Névoa",
+     "H3 Xícara com pires Névoa",
+     "H3 Tigela funda Névoa",
+     "H3 Prato raso Névoa",
+     "H3 Jarra Névoa",
+     "H3 Vaso garrafa Névoa",
+     "H3 Travessa oval Névoa",
+     "H3 Copo Névoa",
+     "H2 Uma ceramista, um forno, uma fornada por",
+     "H2 Coleções passadas",
+     "H3 Terra Molhada",
+     "H4 Caneca Terra Molhada",
+     "H4 Vaso bojudo Terra Molhada",
+     "H4 Tigela funda Terra Molhada",
+     "H4 Prato raso Terra Molhada",
+     "H4 Ramequim Terra Molhada",
+     "H4 Copo Terra Molhada",
+     "H3 Sal",
+     "H4 Xícara com pires Sal",
+     "H4 Tigela funda Sal",
+     "H4 Jarra Sal",
+     "H4 Prato raso Sal",
+     "H4 Travessa oval Sal",
+     "H4 Ramequim Sal",
+     "H2 Ajuda",
+     "H2 Loja",
+     "H2 Ajuda"
+    ],
+    "jumps": [],
+    "dupIds": [],
+    "noAlt": [],
+    "btnNoName": [],
+    "landmarks": {
+     "main": 1,
+     "header": true,
+     "footer": true,
+     "navs": [
+      "Principal",
+      "Menu principal",
+      "Loja",
+      "Ajuda"
+     ]
+    },
+    "lang": "pt-BR",
+    "title": "Ateliê Bruma | Loja de cerâmica de mesa feita à mão (marca fictícia)",
+    "altList": [
+     {
+      "src": "logo-principal.svg",
+      "alt": "Ateliê Bruma, início"
+     },
+     {
+      "src": "logo-principal.svg",
+      "alt": "Ateliê Bruma"
+     },
+     {
+      "src": "celular-960.jpg",
+      "alt": ""
+     },
+     {
+      "src": "canecas-640.jpg",
+      "alt": ""
+     },
+     {
+      "src": "pratos-640.jpg",
+      "alt": ""
+     },
+     {
+      "src": "tigelas-640.jpg",
+      "alt": ""
+     },
+     {
+      "src": "travessas-640.jpg",
+      "alt": ""
+     },
+     {
+      "src": "vasos-640.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-caneca-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-xicara-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-tigela-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-prato-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-jarra-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-garrafa-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-travessa-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "nevoa-copo-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "torno-1024.jpg",
+      "alt": "Mãos da ceramista acertando o pé de uma tigela no torno."
+     },
+     {
+      "src": "terra-caneca-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "terra-bojudo-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "terra-tigela-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "terra-prato-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "terra-ramequim-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "terra-copo-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-xicara-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-tigela-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-jarra-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-prato-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-travessa-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "sal-ramequim-800.jpg",
+      "alt": ""
+     },
+     {
+      "src": "logo-mono-fundo-escuro.svg",
+      "alt": "Ateliê Bruma"
+     }
+    ],
+    "emptyAlt": 26,
+    "metaDesc": true
+   }
+  },
+  {
+   "id": "T14b-targets-375",
+   "title": "Alvos de toque ≥ 24×24 px em 375 (WCAG 2.5.8), sem considerar exceções de espaçamento",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T14c-forbidden",
+   "title": "Conteúdo proibido: sem <form>, wa.me/WhatsApp, tel:, scripts externos, depoimento/avaliação/estrelas/mais vendido, contato/encomenda (AC-ECOM-07)",
+   "status": "PASS",
+   "details": null
+  },
+  {
+   "id": "T15-axe-320",
+   "title": "axe-core 4.10.2 (320): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 106
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-375",
+   "title": "axe-core 4.10.2 (375): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 106
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-768",
+   "title": "axe-core 4.10.2 (768): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 98
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-1024",
+   "title": "axe-core 4.10.2 (1024): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 95
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-1440",
+   "title": "axe-core 4.10.2 (1440): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 91
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-375-menu",
+   "title": "axe-core 4.10.2 (375-menu): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 33
+   }
+  },
+  {
+   "id": "T15-axe-375-sacola",
+   "title": "axe-core 4.10.2 (375-sacola): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 1
+     },
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 35
+   }
+  },
+  {
+   "id": "T15-axe-1440-sacola",
+   "title": "axe-core 4.10.2 (1440-sacola): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 1
+     },
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 35
+   }
+  },
+  {
+   "id": "T15-axe-375-filtro",
+   "title": "axe-core 4.10.2 (375-filtro): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 29
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T16-contrast-375",
+   "title": "Contraste de texto calculado (WCAG 1.4.3) em 375px; texto sobre a foto do banner por amostragem de pixels",
+   "status": "PASS",
+   "details": {
+    "checked_solid": 183,
+    "solid_fails": [],
+    "hero": [
+     {
+      "el": "tag tag--outline",
+      "text": "Coleção Névoa · Primavera 2026",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgb(244, 241, 236)",
+      "worst_pixel_ratio": 10.63,
+      "p10_ratio": 11.93,
+      "need": 4.5
+     },
+     {
+      "el": "hero__title",
+      "text": "A névoa virou mesa.",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 11.0,
+      "p10_ratio": 11.33,
+      "need": 3
+     },
+     {
+      "el": "mesa.",
+      "text": "mesa.",
+      "fg": "rgb(138, 63, 34)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 5.28,
+      "p10_ratio": 5.35,
+      "need": 3
+     },
+     {
+      "el": "hero__lead",
+      "text": "Grés de alta temperatura, esma",
+      "fg": "rgb(85, 81, 74)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 5.08,
+      "p10_ratio": 5.35,
+      "need": 4.5
+     },
+     {
+      "el": "btn",
+      "text": "Comprar a coleção",
+      "fg": "rgb(244, 241, 236)",
+      "own_bg": "rgb(138, 63, 34)",
+      "worst_pixel_ratio": 1.24,
+      "p10_ratio": 6.62,
+      "need": 4.5
+     },
+     {
+      "el": "btn-link",
+      "text": "Ver categorias",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 9.85,
+      "p10_ratio": 10.06,
+      "need": 4.5
+     }
+    ],
+    "hero_fails_p10": [],
+    "min_solid": {
+     "text": "4 peças",
+     "cls": "cat__count",
+     "ratio": 5.81,
+     "large": false,
+     "need": 4.5,
+     "fg": [
+      85,
+      81,
+      74
+     ],
+     "bg": [
+      239,
+      217,
+      204
+     ]
+    }
+   }
+  },
+  {
+   "id": "T16-contrast-1440",
+   "title": "Contraste de texto calculado (WCAG 1.4.3) em 1440px; texto sobre a foto do banner por amostragem de pixels",
+   "status": "PASS",
+   "details": {
+    "checked_solid": 190,
+    "solid_fails": [],
+    "hero": [
+     {
+      "el": "tag tag--outline",
+      "text": "Coleção Névoa · Primavera 2026",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgb(244, 241, 236)",
+      "worst_pixel_ratio": 10.39,
+      "p10_ratio": 11.67,
+      "need": 4.5
+     },
+     {
+      "el": "hero__title",
+      "text": "A névoa virou mesa.",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 8.22,
+      "p10_ratio": 9.64,
+      "need": 3
+     },
+     {
+      "el": "mesa.",
+      "text": "mesa.",
+      "fg": "rgb(138, 63, 34)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 4.42,
+      "p10_ratio": 4.8,
+      "need": 3
+     },
+     {
+      "el": "hero__lead",
+      "text": "Grés de alta temperatura, esma",
+      "fg": "rgb(85, 81, 74)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 4.49,
+      "p10_ratio": 5.19,
+      "need": 4.5
+     },
+     {
+      "el": "btn",
+      "text": "Comprar a coleção",
+      "fg": "rgb(244, 241, 236)",
+      "own_bg": "rgb(138, 63, 34)",
+      "worst_pixel_ratio": 1.13,
+      "p10_ratio": 6.62,
+      "need": 4.5
+     },
+     {
+      "el": "btn-link",
+      "text": "Ver categorias",
+      "fg": "rgb(37, 35, 31)",
+      "own_bg": "rgba(0, 0, 0, 0)",
+      "worst_pixel_ratio": 9.13,
+      "p10_ratio": 10.03,
+      "need": 4.5
+     }
+    ],
+    "hero_fails_p10": [],
+    "min_solid": {
+     "text": "4 peças",
+     "cls": "cat__count",
+     "ratio": 5.81,
+     "large": false,
+     "need": 4.5,
+     "fg": [
+      85,
+      81,
+      74
+     ],
+     "bg": [
+      239,
+      217,
+      204
+     ]
+    }
+   }
+  },
+  {
+   "id": "T17-tab-from-top-375",
+   "title": "Tab desde o carregamento (375px): header, conteúdo e rodapé alcançáveis; foco visível em todos",
+   "status": "PASS",
+   "details": {
+    "steps": 53,
+    "regions": [
+     "footer",
+     "header",
+     "main",
+     "other"
+    ],
+    "sequence": [
+     "other:A:Pular para o conteúdo",
+     "header:BUTTON:Abrir menu",
+     "header:A:",
+     "header:BUTTON:Sacola0Sacola, 0 itens",
+     "main:A:Comprar a coleção",
+     "main:A:Ver categorias",
+     "main:A:Canecas e xícaras 6 pe",
+     "main:A:Pratos 3 peças",
+     "main:A:Tigelas 5 peças",
+     "main:A:Travessas 2 peças",
+     "main:A:Vasos e jarras 4 peças",
+     "main:UL:Novo Caneca Névoa 300 ",
+     "main:BUTTON:Adicionar à sacola: Ca",
+     "main:BUTTON:Adicionar à sacola: Xí",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Pr",
+     "main:BUTTON:Adicionar à sacola: Ja",
+     "main:BUTTON:Adicionar à sacola: Va",
+     "main:BUTTON:Adicionar à sacola: Tr",
+     "main:BUTTON:Adicionar à sacola: Co",
+     "main:BUTTON:Página 1 de 4 de Névoa",
+     "main:BUTTON:Página 2 de 4 de Névoa",
+     "main:BUTTON:Página 3 de 4 de Névoa",
+     "main:BUTTON:Página 4 de 4 de Névoa",
+     "main:UL:Caneca Terra Molhada 3",
+     "main:BUTTON:Adicionar à sacola: Ca",
+     "main:BUTTON:Adicionar à sacola: Va",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Ra",
+     "main:BUTTON:Adicionar à sacola: Co",
+     "main:BUTTON:Página 1 de 3 de Terra",
+     "main:BUTTON:Página 2 de 3 de Terra",
+     "main:BUTTON:Página 3 de 3 de Terra",
+     "main:UL:Xícara com pires Sal 1",
+     "main:BUTTON:Adicionar à sacola: Xí",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Ja",
+     "main:BUTTON:Adicionar à sacola: Pr",
+     "main:BUTTON:Adicionar à sacola: Ra",
+     "main:BUTTON:Página 1 de 3 de Sal",
+     "main:BUTTON:Página 2 de 3 de Sal",
+     "main:BUTTON:Página 3 de 3 de Sal",
+     "main:SUMMARY:Envio e prazos",
+     "main:SUMMARY:Trocas e devoluções",
+     "main:SUMMARY:Cuidados com as peças",
+     "main:SUMMARY:Formas de pagamento",
+     "footer:A:Novidades",
+     "footer:A:Categorias",
+     "footer:A:Coleções passadas",
+     "footer:A:Envio e prazos",
+     "footer:A:Trocas e devoluções",
+     "footer:A:Cuidados com as peças",
+     "footer:A:Pagamento"
+    ],
+    "no_indicator": [],
+    "fully_under_header_2_4_11": [],
+    "partly_under_header_2_4_12": []
+   }
+  },
+  {
+   "id": "T17-tab-from-top-1440",
+   "title": "Tab desde o carregamento (1440px): header, conteúdo e rodapé alcançáveis; foco visível em todos",
+   "status": "PASS",
+   "details": {
+    "steps": 59,
+    "regions": [
+     "footer",
+     "header",
+     "main",
+     "other"
+    ],
+    "sequence": [
+     "other:A:Pular para o conteúdo",
+     "header:A:",
+     "header:A:Novidades",
+     "header:A:Categorias",
+     "header:A:Coleções passadas",
+     "header:A:O ateliê",
+     "header:A:Ajuda",
+     "header:BUTTON:Sacola0Sacola, 0 itens",
+     "main:A:Comprar a coleção",
+     "main:A:Ver categorias",
+     "main:A:Canecas e xícaras 6 pe",
+     "main:A:Pratos 3 peças",
+     "main:A:Tigelas 5 peças",
+     "main:A:Travessas 2 peças",
+     "main:A:Vasos e jarras 4 peças",
+     "main:BUTTON:Peças anteriores de Né",
+     "main:BUTTON:Próximas peças de Névo",
+     "main:UL:Novo Caneca Névoa 300 ",
+     "main:BUTTON:Adicionar à sacola: Ca",
+     "main:BUTTON:Adicionar à sacola: Xí",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Pr",
+     "main:BUTTON:Adicionar à sacola: Ja",
+     "main:BUTTON:Adicionar à sacola: Va",
+     "main:BUTTON:Adicionar à sacola: Tr",
+     "main:BUTTON:Adicionar à sacola: Co",
+     "main:BUTTON:Página 1 de 2 de Névoa",
+     "main:BUTTON:Página 2 de 2 de Névoa",
+     "main:BUTTON:Peças anteriores de Te",
+     "main:BUTTON:Próximas peças de Terr",
+     "main:UL:Caneca Terra Molhada 3",
+     "main:BUTTON:Adicionar à sacola: Ca",
+     "main:BUTTON:Adicionar à sacola: Va",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Ra",
+     "main:BUTTON:Adicionar à sacola: Co",
+     "main:BUTTON:Página 1 de 2 de Terra",
+     "main:BUTTON:Página 2 de 2 de Terra",
+     "main:BUTTON:Peças anteriores de Sa",
+     "main:BUTTON:Próximas peças de Sal",
+     "main:UL:Xícara com pires Sal 1",
+     "main:BUTTON:Adicionar à sacola: Xí",
+     "main:BUTTON:Adicionar à sacola: Ti",
+     "main:BUTTON:Adicionar à sacola: Ja",
+     "main:BUTTON:Adicionar à sacola: Pr",
+     "main:BUTTON:Adicionar à sacola: Ra",
+     "main:BUTTON:Página 1 de 2 de Sal",
+     "main:BUTTON:Página 2 de 2 de Sal",
+     "main:SUMMARY:Envio e prazos",
+     "main:SUMMARY:Trocas e devoluções",
+     "main:SUMMARY:Cuidados com as peças",
+     "main:SUMMARY:Formas de pagamento",
+     "footer:A:Novidades",
+     "footer:A:Categorias",
+     "footer:A:Coleções passadas",
+     "footer:A:Envio e prazos",
+     "footer:A:Trocas e devoluções",
+     "footer:A:Cuidados com as peças",
+     "footer:A:Pagamento"
+    ],
+    "no_indicator": [],
+    "fully_under_header_2_4_11": [],
+    "partly_under_header_2_4_12": []
+   }
+  },
+  {
+   "id": "T18-drawer-keyboard-focus",
+   "title": "Menu e sacola abertos com Enter (375): 1º foco no painel tem indicador visível",
+   "status": "PASS",
+   "details": {
+    "menu": {
+     "tag": "BUTTON",
+     "text": "Fechar menu",
+     "cls": "icon-btn",
+     "outline": "solid 3px rgb(37, 35, 31) off 3px",
+     "shadow": null,
+     "visibleIndicator": true,
+     "top": 10,
+     "bottom": 54,
+     "w": 44,
+     "h": 44,
+     "inViewport": true,
+     "obscuredByHeader": false,
+     "partlyUnderHeader": false
+    },
+    "bag": {
+     "tag": "BUTTON",
+     "text": "Fechar sacola",
+     "cls": "icon-btn",
+     "outline": "solid 3px rgb(37, 35, 31) off 3px",
+     "shadow": null,
+     "visibleIndicator": true,
+     "top": 10,
+     "bottom": 54,
+     "w": 44,
+     "h": 44,
+     "inViewport": true,
+     "obscuredByHeader": false,
+     "partlyUnderHeader": false
+    }
+   }
+  },
+  {
+   "id": "T19-accessible-names",
+   "title": "Nomes acessíveis: sacola, adicionar, setas, bullets, hambúrguer (aria snapshot do Chromium)",
+   "status": "PASS",
+   "details": {
+    "bag_text": "Sacola1Sacola, 1 item",
+    "names": {
+     "done_after_click": 1,
+     "add_after_1_9s": 1,
+     "add_all": 18,
+     "sold_out": [
+      "Esgotado: Prato raso Terra Molhada",
+      "Esgotado: Travessa oval Sal"
+     ],
+     "sold_out_role_ok": 1,
+     "old_name": 0,
+     "label_in_name": true
+    },
+    "snapshots_file": "aria-snapshot-reteste-http.yml",
+    "header": "- banner:\n  - link \"Ateliê Bruma, início\":\n    - /url: \"#topo\"\n    - img \"Ateliê Bruma, início\"\n  - navigation \"Principal\":\n    - list:\n      - listitem:\n        - link \"Novidades\":\n          - /url: \"#novidades\"\n      - listitem:\n        - link \"Categorias\":\n          - /url: \"#categorias\"\n      - listitem:\n        - link \"Coleções passadas\":\n          - /url: \"#colecoes\"\n      - listitem:\n        - link \"O ateliê\":\n          - /url: \"#atelie\"\n      - listitem:\n        - link \"Ajuda\":\n          - /url: \"#ajuda\"\n  - button \"Sacola, 1 item\"",
+    "sold_out": "- listitem:\n  - text: Esgotado\n  - heading \"Prato raso Terra Molhada\" [level=4]\n  - paragraph: Ø 26 cm · grés\n  - paragraph: R$ 128 3x de R$ 42,67 sem juros\n  - 'button \"Esgotado: Prato raso Terra Molhada\" [disabled]': Esgotado"
+   }
+  },
+  {
+   "id": "T20-landscape",
+   "title": "Paisagem 667×375: sem rolagem horizontal; header não ocupa a tela",
+   "status": "PASS",
+   "details": {
+    "scrollWidth": 667,
+    "clientWidth": 667,
+    "bodyScrollWidth": 667,
+    "offenders": [],
+    "header_h": 65
+   }
+  },
+  {
+   "id": "T21-first-screen-320",
+   "title": "Primeira tela 320×568: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível [CTA na dobra fora do escopo da decisão de 2026-10-22]",
+   "status": "KNOWN_P3",
+   "details": {
+    "h1": {
+     "top": 357,
+     "bottom": 457
+    },
+    "cta": {
+     "top": 641,
+     "bottom": 693
+    },
+    "vh": 568,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 196.203125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades",
+    "known_issue": {
+     "severity": "P3",
+     "why": "CTA abaixo da dobra; fora do escopo da decisão do proprietário de 2026-10-22 (375×667+)",
+     "px_below_fold": 125
+    }
+   }
+  },
+  {
+   "id": "T21-first-screen-360",
+   "title": "Primeira tela 360×640: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível [CTA na dobra fora do escopo da decisão de 2026-10-22]",
+   "status": "KNOWN_P3",
+   "details": {
+    "h1": {
+     "top": 359,
+     "bottom": 464
+    },
+    "cta": {
+     "top": 620,
+     "bottom": 672
+    },
+    "vh": 640,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 195.8125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades",
+    "known_issue": {
+     "severity": "P3",
+     "why": "CTA abaixo da dobra; fora do escopo da decisão do proprietário de 2026-10-22 (375×667+)",
+     "px_below_fold": 32
+    }
+   }
+  },
+  {
+   "id": "T21-first-screen-375",
+   "title": "Primeira tela 375×667: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
+   "status": "PASS",
+   "details": {
+    "h1": {
+     "top": 339,
+     "bottom": 445
+    },
+    "cta": {
+     "top": 602,
+     "bottom": 654
+    },
+    "vh": 667,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 195.5,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades"
+   }
+  },
+  {
+   "id": "T21-first-screen-390",
+   "title": "Primeira tela 390×844: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
+   "status": "PASS",
+   "details": {
+    "h1": {
+     "top": 345,
+     "bottom": 454
+    },
+    "cta": {
+     "top": 611,
+     "bottom": 663
+    },
+    "vh": 844,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 196.015625,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades"
+   }
+  },
+  {
+   "id": "T21-first-screen-414",
+   "title": "Primeira tela 414×896: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
+   "status": "PASS",
+   "details": {
+    "h1": {
+     "top": 356,
+     "bottom": 467
+    },
+    "cta": {
+     "top": 596,
+     "bottom": 648
+    },
+    "vh": 896,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 195.953125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades"
+   }
+  },
+  {
+   "id": "T22-nojs-anchor-scroll",
+   "title": "Sem JavaScript (375): clicar 'Ajuda' leva o título para baixo do header (após a rolagem suave)",
+   "status": "PASS",
+   "details": {
+    "top": 248.046875,
+    "header_bottom": 159.75
+   }
+  },
+  {
+   "id": "T23-images-blocked",
+   "title": "Imagens bloqueadas (375): nomes, preços e textos legíveis, sem rolagem horizontal, cartões mantêm proporção",
+   "status": "PASS",
+   "details": {
+    "sw": 375,
+    "cw": 375,
+    "names": 20,
+    "prices": 20,
+    "mediaHeights": [
+     181,
+     181,
+     181
+    ]
+   }
+  },
+  {
+   "id": "T24-text-spacing",
+   "title": "Espaçamento de texto 1.4.12 (375): sem rolagem horizontal e sem texto cortado em botões/links",
+   "status": "PASS",
+   "details": {
+    "sw": 375,
+    "cw": 375,
+    "clipped": []
+   }
+  }
+ ]
+}

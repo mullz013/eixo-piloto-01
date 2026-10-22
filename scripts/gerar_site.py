@@ -88,6 +88,19 @@ ICON = {
 }
 
 
+FOTOS = "assets/fotos"
+
+
+def foto(base: str, larguras: list[int], w: int, h: int, sizes: str, alt: str = "", cls: str = "",
+         loading: str = "lazy", extra: str = "") -> str:
+    """<picture> com WebP em srcset e JPG de fallback (gerados por scripts/processar_fotos.py)."""
+    srcset = ", ".join(f"{FOTOS}/{base}-{lw}.webp {lw}w" for lw in larguras)
+    c = f' class="{cls}"' if cls else ""
+    return (f'<picture><source type="image/webp" srcset="{srcset}" sizes="{sizes}">'
+            f'<img{c} src="{FOTOS}/{base}-{larguras[-1]}.jpg" width="{w}" height="{h}" alt="{escape(alt)}" '
+            f'loading="{loading}" decoding="async"{extra}></picture>')
+
+
 def brl(v: float) -> str:
     inteiro, cent = f"{v:.2f}".split(".")
     inteiro = f"{int(inteiro):,}".replace(",", ".")
@@ -115,17 +128,17 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
     if preco >= 90:
         parcela = f'<span class="price__inst">3x de {brl(preco / 3)}<span class="price__nojuros"> sem juros</span></span>'
     if esgotado:
-        btn = '<button class="add" type="button" disabled>Esgotado</button>'
+        btn = f'<button class="add" type="button" disabled aria-label="Esgotado: {escape(nome)}">Esgotado</button>'
     else:
         btn = (
-            f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" '
-            f'data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">'
-            f'{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
-            f'<span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>'
+            f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" aria-label="Adicionar à sacola: {escape(nome)}" '
+            f'data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">'
+            f'{ICON["plus"]}<span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
+            f'</button>'
         )
     return f'''          <li class="card card--{col}" data-cat="{filtros_de(forma)}">
             <div class="card__media">
-              <img src="assets/pecas/{pid}.svg" width="400" height="500" alt="" loading="{"eager" if idx < 4 and col == "nevoa" else "lazy"}" decoding="async">
+              {foto(f"produtos/{pid}", [480, 800], 800, 1000, "(min-width: 1024px) 300px, 45vw", loading="eager" if idx < 4 and col == "nevoa" else "lazy")}
               {badge}
             </div>
             <div class="card__body">
@@ -159,7 +172,7 @@ def secao_atual() -> str:
     <div class="wrap">
       <header class="sec__head">
         <div>
-          <p class="kicker">Coleção {col["nome"]} · {col["estacao"]}</p>
+          <p class="tag tag--secondary">Coleção {col["nome"]} · {col["estacao"]}</p>
           <h2 id="t-novidades" class="sec__title">Novidades da <em>fornada</em></h2>
         </div>
         <p class="sec__aside">{col["frase"]}</p>
@@ -177,11 +190,8 @@ def secao_passadas() -> str:
       <div class="wrap">
         <header class="sec__head sec__head--past">
           <div class="past__id">
-            <span class="swatch swatch--{col["id"]}" aria-hidden="true"></span>
-            <div>
-              <p class="kicker">{col["estacao"]}</p>
-              <h3 id="{tid}" class="past__title">{col["nome"]}</h3>
-            </div>
+            <p class="tag tag--secondary">{col["estacao"]}</p>
+            <h3 id="{tid}" class="past__title">{col["nome"]}</h3>
           </div>
           <p class="sec__aside">{col["frase"]}</p>
         </header>
@@ -205,7 +215,7 @@ def secao_categorias() -> str:
         n = sum(1 for p in CATALOGO if p[1] in c["formas"])
         tiles.append(f'''        <li>
           <a class="cat cat--{c["id"]}" href="#novidades" data-filter="{c["id"]}" data-label="{c["nome"]}">
-            <span class="cat__media"><img src="assets/pecas/{c["arte"]}.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__media">{foto(f"categorias/{c['id']}", [400, 640], 640, 640, "(min-width: 768px) 210px, 38vw")}</span>
             <span class="cat__name">{c["nome"]}</span>
             <span class="cat__count">{n} peças</span>
           </a>
@@ -221,20 +231,6 @@ def secao_categorias() -> str:
       </ul>
     </div>
   </section>'''
-
-
-def hero_cards() -> str:
-    """Cartões flutuantes do hero (UI-003 §4.2): peça em destaque e selo da fornada. Só dados do catálogo."""
-    destaque = next(p for p in CATALOGO if p[0] == "nevoa" and p[1] == "jarra")
-    col, forma, nome, _medida, preco, _selo = destaque
-    pid = f"{col}-{forma}"
-    n_atual = sum(1 for p in CATALOGO if p[0] == COLECOES[0]["id"])
-    return f'''    <div class="hero__card hero__card--piece">
-      <img class="hero__card-img" src="assets/pecas/{pid}.svg" width="64" height="80" alt="">
-      <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">{escape(nome)}</span><span class="hero__card-price">{brl(preco)}</span></p>
-      <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="assets/pecas/{pid}.svg" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
-    </div>
-    <p class="hero__card hero__card--batch"><span class="hero__batch-title">Fornada nº 14</span><span class="hero__batch-meta"><span class="hero__batch-sep"> · </span>{n_atual} peças<span class="hero__batch-city"> · Curitiba</span></span></p>'''
 
 
 def page() -> str:
@@ -272,7 +268,7 @@ def page() -> str:
 <header class="header" data-header>
   <div class="wrap header__in">
     <button class="icon-btn header__menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-open-menu>{ICON["menu"]}</button>
-    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
+    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma, início"></a>
     <nav class="nav" aria-label="Principal">
       <ul role="list">
         <li><a href="#novidades">Novidades</a></li>
@@ -283,7 +279,7 @@ def page() -> str:
       </ul>
     </nav>
     <button class="bag-btn" type="button" aria-controls="sacola" aria-expanded="false" data-open-cart>
-      {ICON["bag"]}<span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
+      {ICON["bag"]}<span class="bag-btn__label" aria-hidden="true">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>Sacola, 0 itens</span>
     </button>
   </div>
 </header>
@@ -326,21 +322,17 @@ def page() -> str:
 
   <section class="hero" aria-labelledby="t-hero">
     <div class="hero__stage" aria-hidden="true">
-      <div class="hero__sun"></div>
-      <p class="hero__word">névoa</p>
-      <div class="hero__plinth"></div>
-      <img class="hero__piece hero__piece--a" src="assets/pecas/nevoa-garrafa.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--b" src="assets/pecas/nevoa-jarra.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--c" src="assets/pecas/nevoa-tigela.svg" alt="" width="400" height="500">
-      <img class="hero__piece hero__piece--d" src="assets/pecas/nevoa-xicara.svg" alt="" width="400" height="500">
+      <picture class="hero__photo">
+        <source type="image/webp" media="(min-width: 1024px)" srcset="{FOTOS}/banner/desktop-1024.webp 1024w, {FOTOS}/banner/desktop-1536.webp 1536w" sizes="100vw">
+        <source type="image/webp" srcset="{FOTOS}/banner/celular-640.webp 640w, {FOTOS}/banner/celular-960.webp 960w" sizes="100vw">
+        <img src="{FOTOS}/banner/celular-960.jpg" width="960" height="960" alt="" fetchpriority="high" decoding="async">
+      </picture>
       <div class="hero__mist hero__mist--1"></div>
       <div class="hero__mist hero__mist--2"></div>
       <div class="hero__mist hero__mist--3"></div>
     </div>
-    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
-{hero_cards()}
     <div class="hero__copy">
-      <p class="kicker kicker--pill">Coleção Névoa<span class="kicker__season"> · Primavera 2026</span></p>
+      <p class="tag tag--outline">Coleção Névoa<span class="tag__extra"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
       <p class="hero__lead">Grés de alta temperatura, esmalte fosco e uma fornada por mês. Peças feitas à mão para usar todo dia.</p>
       <div class="hero__cta">
@@ -348,6 +340,7 @@ def page() -> str:
         <a class="btn-link" href="#categorias">Ver categorias {ICON["arrow"]}</a>
       </div>
     </div>
+    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
   </section>
 
   <section class="perks" aria-label="Vantagens da loja">
@@ -376,10 +369,13 @@ def page() -> str:
     <div class="wrap">
     <div class="atelie">
       <div class="atelie__intro">
-        <p class="kicker kicker--inverse">O ateliê</p>
+        <p class="tag tag--inverse">O ateliê</p>
         <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, <em>uma fornada por mês.</em></h2>
         <p>Cada peça é torneada e esmaltada à mão em Curitiba. Por isso nenhuma é igual à outra: o esmalte escorre do seu jeito em cada queima.</p>
       </div>
+      <figure class="atelie__photo">
+        {foto("atelie/torno", [640, 1024], 1024, 1280, "(min-width: 1024px) 340px, 100vw", "Mãos da ceramista acertando o pé de uma tigela no torno.")}
+      </figure>
       <ul class="facts" role="list">
         <li><span class="facts__num">1.240<small>°C</small></span><span>Queima em alta temperatura: o grés fica resistente, vai ao micro-ondas e à lava-louças.</span></li>
         <li><span class="facts__num">14ª<small>fornada</small></span><span>Fornadas pequenas, uma por mês. A variação de tom entre peças é parte do desenho, não defeito.</span></li>

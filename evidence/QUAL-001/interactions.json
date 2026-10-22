@@ -1,0 +1,555 @@
+{
+ "375": {
+  "tab1": {
+   "tag": "A",
+   "name": "Pular para o conteúdo",
+   "top": 16,
+   "bottom": 67,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 102,
+   "obscured": true
+  },
+  "menu_focus": {
+   "tag": "BUTTON",
+   "name": "Fechar menu",
+   "top": 10,
+   "bottom": 54,
+   "outline": "none 0px rgb(37, 35, 31)",
+   "hdrBottom": 102,
+   "obscured": true
+  },
+  "menu_tabseq": [
+   "Novidades",
+   "Canecas e xícaras",
+   "Pratos",
+   "Tigelas",
+   "Travessas",
+   "Vasos e jarras",
+   "Café da manhã",
+   "Mesa posta",
+   "Para servir",
+   "Para presentear",
+   "Coleções passadas",
+   "Terra Molhada",
+   "Sal",
+   "O ateliê",
+   "Ajuda",
+   "Fechar menu",
+   "Novidades",
+   "Canecas e xícaras",
+   "Pratos",
+   "Tigelas",
+   "Travessas",
+   "Vasos e jarras",
+   "Café da manhã",
+   "Mesa posta",
+   "Para servir"
+  ],
+  "menu_inside": true,
+  "after_esc": {
+   "tag": "BUTTON",
+   "name": "Abrir menu",
+   "top": 47,
+   "bottom": 91,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 102,
+   "obscured": true
+  },
+  "menu_hidden": true,
+  "toast": "Caneca Névoa foi para a sacola",
+  "count": "1",
+  "focus_after_add": {
+   "tag": "BUTTON",
+   "name": "Adicionada Adicionar Caneca Névoa à sacola",
+   "top": 428,
+   "bottom": 472,
+   "outline": "none 0px rgb(244, 241, 236)",
+   "hdrBottom": 65,
+   "obscured": false
+  },
+  "cart_text": "Sua sacola\n\nFaltam R$ 73 para o frete grátis.\n\nCaneca Névoa\n\nR$ 98\n\n−\n1\n+\nRemover\n\nPrato raso Névoa\n\nR$ 128\n\n−\n1\n+\nRemover\n\nSubtotal\nR$ 226\n\nFinalizar compra",
+  "notice": "Esta é uma loja demonstrativa de uma marca fictícia: nenhum pedido é criado e nenhum pagamento é processado.",
+  "filterbar": {
+   "hidden": false,
+   "text": "Mostrando: Pratos\n\nLimpar filtro",
+   "top": 70.75
+  },
+  "scrollY_after_filter": 1454,
+  "visible_cards": 3
+ },
+ "1440_tab": [
+  {
+   "tag": "A",
+   "name": "Pular para o conteúdo",
+   "top": 16,
+   "bottom": 67,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": ", início",
+   "top": 55,
+   "bottom": 95,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": "Novidades",
+   "top": 56,
+   "bottom": 94,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": "Categorias",
+   "top": 56,
+   "bottom": 94,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": "Coleções passadas",
+   "top": 56,
+   "bottom": 94,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": "O ateliê",
+   "top": 56,
+   "bottom": 94,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "A",
+   "name": "Ajuda",
+   "top": 56,
+   "bottom": 94,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Sacola 0 , 0 itens",
+   "top": 53,
+   "bottom": 97,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": true
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Pausar animação",
+   "top": 604,
+   "bottom": 636,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Comprar a coleção",
+   "top": 584,
+   "bottom": 636,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Ver categorias",
+   "top": 588,
+   "bottom": 632,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Canecas e xícaras 6 peças",
+   "top": 1020,
+   "bottom": 1309,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Pratos 3 peças",
+   "top": 1020,
+   "bottom": 1309,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Tigelas 5 peças",
+   "top": 1020,
+   "bottom": 1309,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 114,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Travessas 2 peças",
+   "top": 1018,
+   "bottom": 1307,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 112,
+   "obscured": false
+  },
+  {
+   "tag": "A",
+   "name": "Vasos e jarras 4 peças",
+   "top": 349,
+   "bottom": 638,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Peças anteriores de Névoa",
+   "top": 850,
+   "bottom": 898,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Próximas peças de Névoa",
+   "top": 850,
+   "bottom": 898,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "UL",
+   "name": "NOVO Caneca Névoa 300 ml · grés R$ 98 3x de R$ 32,",
+   "top": 930,
+   "bottom": 1453,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Caneca Névoa à sacola",
+   "top": 1409,
+   "bottom": 1453,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Xícara com pires Névo",
+   "top": 1409,
+   "bottom": 1453,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Tigela funda Névoa à ",
+   "top": 1157,
+   "bottom": 1201,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Prato raso Névoa à sa",
+   "top": 1157,
+   "bottom": 1201,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Jarra Névoa à sacola",
+   "top": 1157,
+   "bottom": 1201,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Vaso garrafa Névoa à ",
+   "top": 1009,
+   "bottom": 1053,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Travessa oval Névoa à",
+   "top": 957,
+   "bottom": 1001,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Copo Névoa à sacola",
+   "top": 852,
+   "bottom": 896,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Página 1 de 2 de Névoa",
+   "top": 771,
+   "bottom": 799,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Página 2 de 2 de Névoa",
+   "top": 690,
+   "bottom": 718,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Peças anteriores de Terra Molhada",
+   "top": 1995,
+   "bottom": 2043,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Próximas peças de Terra Molhada",
+   "top": 1961,
+   "bottom": 2009,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "UL",
+   "name": "Caneca Terra Molhada 300 ml · grés R$ 98 3x de R$ ",
+   "top": 1316,
+   "bottom": 1840,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Caneca Terra Molhada ",
+   "top": 1729,
+   "bottom": 1773,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Vaso bojudo Terra Mol",
+   "top": 1729,
+   "bottom": 1773,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Tigela funda Terra Mo",
+   "top": 1721,
+   "bottom": 1765,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Ramequim Terra Molhad",
+   "top": 1721,
+   "bottom": 1765,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Copo Terra Molhada à ",
+   "top": 1719,
+   "bottom": 1763,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Página 1 de 2 de Terra Molhada",
+   "top": 1777,
+   "bottom": 1805,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Página 2 de 2 de Terra Molhada",
+   "top": 1777,
+   "bottom": 1805,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Peças anteriores de Sal",
+   "top": 1977,
+   "bottom": 2025,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Próximas peças de Sal",
+   "top": 1977,
+   "bottom": 2025,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "UL",
+   "name": "Xícara com pires Sal 120 ml · grés R$ 84 Adicionar",
+   "top": 2055,
+   "bottom": 2578,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Xícara com pires Sal ",
+   "top": 2534,
+   "bottom": 2578,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Tigela funda Sal à sa",
+   "top": 2534,
+   "bottom": 2578,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  },
+  {
+   "tag": "BUTTON",
+   "name": "Adicionar à sacola Adicionar Jarra Sal à sacola",
+   "top": 2532,
+   "bottom": 2576,
+   "outline": "solid 3px rgb(37, 35, 31)",
+   "hdrBottom": 77,
+   "obscured": false
+  }
+ ],
+ "arrows_after_tab": "false,true|scrollLeft=1240",
+ "arrows_fresh": [
+  "true",
+  "false"
+ ],
+ "arrows": [
+  {
+   "l": "Peças anteriores de Névoa",
+   "dis": "false"
+  },
+  {
+   "l": "Próximas peças de Névoa",
+   "dis": "false"
+  }
+ ],
+ "bullets": [
+  {
+   "t": "DIV",
+   "l": "Páginas da vitrine Névoa",
+   "cur": null,
+   "w": 1216,
+   "h": 28
+  },
+  {
+   "t": "BUTTON",
+   "l": "Página 1 de 2 de Névoa",
+   "cur": "true",
+   "w": 28,
+   "h": 28
+  },
+  {
+   "t": "BUTTON",
+   "l": "Página 2 de 2 de Névoa",
+   "cur": "false",
+   "w": 28,
+   "h": 28
+  }
+ ],
+ "axe_1440": {
+  "v": [],
+  "inc": [
+   "color-contrast:96"
+  ]
+ },
+ "axe_375": {
+  "v": [],
+  "inc": [
+   "color-contrast:107"
+  ]
+ },
+ "hscroll_375": 375,
+ "axe_320": {
+  "v": [],
+  "inc": [
+   "color-contrast:107"
+  ]
+ },
+ "hscroll_320": 320,
+ "textspacing_hscroll": 640,
+ "rm_anims": 0,
+ "anims_default": [
+  "drift",
+  "drift",
+  "drift"
+ ],
+ "anims_after_pause": 0,
+ "pause_label": "Retomar animação|true",
+ "nojs_menu_btn_visible": false
+}
