@@ -267,7 +267,7 @@ def page() -> str:
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<p class="announce">Próxima fornada: {PROXIMA_FORNADA} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__ship">Frete grátis acima de {brl(FRETE_GRATIS)}</span> <span class="announce__sep announce__sep--2" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p>
+<aside class="announce" aria-label="Avisos da loja"><p>Próxima fornada: {PROXIMA_FORNADA} <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__ship">Frete grátis acima de {brl(FRETE_GRATIS)}</span> <span class="announce__sep announce__sep--2" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa<span class="announce__long">: nenhuma compra é processada</span></span></p></aside>
 
 <header class="header" data-header>
   <div class="wrap header__in">
@@ -340,7 +340,7 @@ def page() -> str:
     <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
 {hero_cards()}
     <div class="hero__copy">
-      <p class="kicker kicker--pill">Coleção Névoa · Primavera 2026</p>
+      <p class="kicker kicker--pill">Coleção Névoa<span class="kicker__season"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
       <p class="hero__lead">Grés de alta temperatura, esmalte fosco e uma fornada por mês. Peças feitas à mão para usar todo dia.</p>
       <div class="hero__cta">
@@ -447,7 +447,7 @@ def page() -> str:
     </nav>
     <p class="footer__legal">Ateliê Bruma é uma marca fictícia criada para um piloto de avaliação. Produtos, preços e políticas são exemplos e nenhuma compra é processada.</p>
   </div>
-  <p class="footer__mark" aria-hidden="true">Bruma</p>
+  <div class="footer__mark" aria-hidden="true"></div>
   </div>
 </footer>
 

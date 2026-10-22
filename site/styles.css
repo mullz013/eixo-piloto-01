@@ -64,13 +64,16 @@
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html {
-  scrollbar-gutter: stable;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   scroll-padding-top: var(--anchor-offset);
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
+}
+/* reserva da barra de rolagem só em telas com mouse: no celular ela deslocava tudo 15 px para a esquerda */
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  html { scrollbar-gutter: stable; }
 }
 body {
   margin: 0;
@@ -129,8 +132,9 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px;
   border: 1px solid rgb(37 35 31 / 0.16); border-radius: var(--radius-pill); background: var(--background-canvas);
 }
-@media (max-width: 479px) {
-  .kicker--pill { letter-spacing: 0.08em; white-space: nowrap; }
+.kicker--pill { max-width: 100%; white-space: nowrap; }
+@media (max-width: 419px) {
+  .kicker__season { display: none; }
 }
 .sec__lead { color: var(--text-secondary); max-width: 46ch; margin-top: var(--space-3); }
 .sec__aside { color: var(--text-secondary); font-size: var(--size-sm); max-width: 40ch; }
@@ -269,7 +273,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 /* ---------- Hero ---------- */
 .hero {
   position: relative; isolation: isolate; overflow: hidden;
-  display: grid;
+  display: grid; grid-template-columns: minmax(0, 1fr); /* nenhum filho alarga o painel */
   width: var(--panel-w); margin: var(--space-3) auto 0; border-radius: var(--radius-panel);
   background:
     radial-gradient(120% 70% at 70% 100%, #CDD3D3 0%, transparent 60%),
@@ -327,7 +331,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 }
 .hero__card--piece {
   display: grid; grid-template-columns: 56px 1fr 44px; align-items: center; gap: var(--space-3);
-  margin: -20px var(--space-3) 0; padding: var(--space-3);
+  margin: -20px var(--space-6) 0; padding: var(--space-3);
 }
 .hero__card-img { width: 56px; height: 70px; border-radius: 12px; object-fit: cover; background: linear-gradient(180deg, var(--tint-nevoa) 79%, var(--tint-nevoa-floor) 79%); }
 .hero__card-text { display: grid; line-height: 1.25; min-width: 0; }
@@ -338,7 +342,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .add--float svg { width: 20px; height: 20px; }
 .add--float .add__label { display: none; }
 .hero__card--batch {
-  position: absolute; top: var(--space-3); right: var(--space-3);
+  position: absolute; top: var(--space-4); right: var(--space-4);
   display: inline-flex; align-items: center; min-height: 32px; padding: 0 var(--space-3); border-radius: var(--radius-pill);
   font-size: var(--size-xs); font-weight: var(--weight-semibold);
 }
@@ -359,7 +363,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 }
 
 @media (min-width: 1024px) {
-  .hero { grid-template-columns: 1fr; min-height: clamp(600px, calc(100svh - var(--header-height) - 32px), 780px); }
+  .hero { min-height: clamp(600px, calc(100svh - var(--header-height) - 32px), 780px); }
   .hero__stage { position: absolute; inset: 0 0 0 42%; height: auto; }
   .hero__sun { width: min(40vw, 540px); top: 7%; left: 52%; }
   .hero__word { font-size: min(20vw, 300px); top: 3%; left: 52%; }
@@ -604,7 +608,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .perks .wrap { padding-inline: 0; width: var(--panel-w); }
 .perks__list {
   display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5) var(--space-4);
-  padding: var(--space-5); border-radius: var(--radius-panel-sm); background: var(--background-surface);
+  padding: var(--space-6); border-radius: var(--radius-panel-sm); background: var(--background-surface);
 }
 .perks li { display: grid; align-content: start; gap: var(--space-3); font-size: var(--size-sm); line-height: 1.35; color: var(--text-secondary); }
 .perks strong { display: block; color: var(--text-primary); font-weight: var(--weight-semibold); }
@@ -621,7 +625,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .faq { display: grid; gap: var(--space-8); }
 .faq__list { display: grid; gap: var(--space-3); }
 .faq details {
-  padding: 0 var(--space-5); border-radius: var(--radius-card); background: var(--background-surface);
+  padding: 0 var(--space-6); border-radius: var(--radius-card); background: var(--background-surface);
   box-shadow: inset 0 0 0 1px transparent; transition: background-color var(--motion-base) var(--motion-easing);
 }
 .faq details:hover { background: var(--fog-200); }
@@ -659,6 +663,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   font-family: var(--stack-display); font-weight: var(--weight-light); font-variation-settings: "opsz" 144;
   font-size: 27vw; line-height: 0.8; letter-spacing: -0.04em; color: rgb(244 241 236 / 0.10);
 }
+.footer__mark::before { content: "Bruma"; } /* decorativo: como pseudo-elemento não entra na leitura nem na checagem de contraste */
 .footer__brand img { margin-bottom: var(--space-3); }
 .footer__col h2 { font-size: var(--size-xs); letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-inverse); margin-bottom: var(--space-3); }
 .footer__col a { display: inline-flex; align-items: center; min-height: 36px; text-decoration: none; }
@@ -709,7 +714,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 
 /* ---------- Pausa da névoa (WCAG 2.2.2) ---------- */
 .hero__pause {
-  position: absolute; left: var(--gutter); top: var(--space-3); z-index: 7;
+  position: absolute; left: var(--space-4); top: var(--space-4); z-index: 7;
   min-height: 32px; padding: 0 var(--space-3); border: 1px solid rgb(37 35 31 / 0.35); border-radius: var(--radius-pill);
   background: rgb(244 241 236 / 0.75); font-size: var(--size-xs); font-weight: var(--weight-medium);
 }

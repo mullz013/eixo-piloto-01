@@ -1,8 +1,8 @@
 {
   "overflow": {
-    "320": -15,
-    "375": -15,
-    "768": -15,
+    "320": 0,
+    "375": 0,
+    "768": 0,
     "1024": -15,
     "1440": -15
   },
@@ -35,7 +35,7 @@
       1,
       1,
       1,
-      0.54
+      0.46
     ],
     "1024": [
       1,
@@ -110,7 +110,7 @@
   ],
   "nojs_nav_visible": true,
   "nojs_add_hidden": true,
-  "nojs_overflow": -15,
+  "nojs_overflow": 0,
   "m_moment_filter": [
     "Para servir",
     [

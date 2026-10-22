@@ -1,0 +1,33 @@
+{
+ "ferramenta": "axe-core 4.10.2 via Playwright/Chromium, movimento reduzido",
+ "resultado": {
+  "320": {
+   "violations": [],
+   "passes": 45,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "375": {
+   "violations": [],
+   "passes": 45,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "768": {
+   "violations": [],
+   "passes": 45,
+   "incomplete": [
+    "color-contrast"
+   ]
+  },
+  "1440": {
+   "violations": [],
+   "passes": 45,
+   "incomplete": [
+    "color-contrast"
+   ]
+  }
+ }
+}

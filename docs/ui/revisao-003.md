@@ -175,3 +175,13 @@ Aplicado em `site/styles.css` e `scripts/gerar_site.py` (regera `site/index.html
 - Legendas da faixa "O ateliê" reencaixadas: micro-ondas/lava-louças foi para 1.240 °C, a variação de tom para 14ª fornada, e "1 ceramista" ganhou "torneada e esmaltada à mão pela mesma pessoa".
 - Contrastes refeitos por script: `evidence/UI-003/contrast-check.json` (todos ≥ 4,5:1, iguais ao cálculo manual).
 - Capturas e testes de interação: `evidence/UI-003/render/`.
+
+## 8. Refino de margens no celular (pedido do proprietário, 2026-10-22)
+
+O proprietário viu respiro desigual entre a esquerda e a direita no celular. Medição por script (`evidence/UI-003/a11y/margens-medidas.txt`, 320 a 414 px) achou três causas:
+
+1. `scrollbar-gutter: stable` reservava 15 px à direita mesmo no celular, então tudo ficava deslocado para a esquerda. Agora vale só em telas ≥ 1024 px com mouse.
+2. A pílula "Coleção Névoa · Primavera 2026" não quebrava linha e alargava a coluna do hero além do painel, encurtando o respiro direito do texto (24 px à esquerda, 9 px à direita). A grade do hero agora é `minmax(0, 1fr)`, e abaixo de 420 px a pílula mostra só "Coleção Névoa".
+3. Os recuos internos variavam (12, 20 e 24 px). Agora a regra é uma só: 24 px dentro de todo painel e cartão grande (hero, cartão flutuante, vantagens, ateliê, FAQ, rodapé). Os botões dos cantos do hero ("Pausar animação" e o selo da fornada) ficam a 16 px das duas bordas, espelhados.
+
+Resultado: borda esquerda = borda direita em todos os blocos, em todas as larguras medidas. A exceção é proposital: o trilho dos carrosséis e das categorias corta o próximo cartão na direita (regra do proprietário). Acessibilidade: axe-core 4.10.2 em 320, 375, 768 e 1440 px, 0 violações (`evidence/UI-003/a11y/axe.json`). As duas que apareceram foram corrigidas: o aviso do topo virou região nomeada e a assinatura "Bruma" virou pseudo-elemento decorativo.

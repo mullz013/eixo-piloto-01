@@ -1,0 +1,180 @@
+== 320 clientWidth 320
+.announce                                     L      0 R      0 w 320
+.header__in                                   L      0 R      0 w 320
+.brand                                        L    116 R    116 w 88
+.header__menu                                 L     16 R    260 w 44  <-- assimétrico
+.bag-btn                                      L    260 R     16 w 44  <-- assimétrico
+.hero                                         L     16 R     16 w 288
+.hero__card--piece                            L     40 R     40 w 240
+.hero__card--batch                            L  184.1 R     32 w 104  <-- assimétrico
+.hero__pause                                  L     32 R  163.8 w 124  <-- assimétrico
+.hero__copy                                   L     16 R     16 w 288
+.hero__copy .kicker                           L     40 R  114.3 w 166  <-- assimétrico
+.hero__title                                  L     40 R     40 w 240
+.hero__lead                                   L     40 R     40 w 240
+.hero__cta .btn                               L     40 R     40 w 240
+.perks__list                                  L     16 R     16 w 288
+#categorias .sec__head                        L     16 R     16 w 288
+.cats                                         L     16 R      0 w 304  <-- assimétrico
+.cats > li:first-child                        L     16 R  196.3 w 108  <-- assimétrico
+#novidades .sec__head                         L     16 R     16 w 288
+#novidades .carousel__track                   L     16 R      0 w 304  <-- assimétrico
+#novidades .carousel__track > li:first-child  L     16 R  182.3 w 122  <-- assimétrico
+#novidades .carousel__dots                    L     16 R     16 w 288
+.atelie                                       L     16 R     16 w 288
+.atelie__intro                                L     40 R     40 w 240
+.facts                                        L     40 R     40 w 240
+#colecoes .sec__intro                         L     16 R     16 w 288
+.past--terra .sec__head                       L     16 R     16 w 288
+.past--terra .carousel__track                 L     16 R      0 w 304  <-- assimétrico
+.past--terra .carousel__track > li:first-child L     16 R  182.3 w 122  <-- assimétrico
+.faq header                                   L     16 R     16 w 288
+.faq__list                                    L     16 R     16 w 288
+.faq details:first-child                      L     16 R     16 w 288
+.footer__panel                                L     16 R     16 w 288
+.footer__grid                                 L     40 R     40 w 240
+.footer__mark                                 L     40 R     40 w 240
+== 360 clientWidth 360
+.announce                                     L      0 R      0 w 360
+.header__in                                   L      0 R      0 w 360
+.brand                                        L    136 R    136 w 88
+.header__menu                                 L     18 R    298 w 44  <-- assimétrico
+.bag-btn                                      L    298 R     18 w 44  <-- assimétrico
+.hero                                         L     18 R     18 w 324
+.hero__card--piece                            L     42 R     42 w 276
+.hero__card--batch                            L  222.1 R     34 w 104  <-- assimétrico
+.hero__pause                                  L     34 R  201.8 w 124  <-- assimétrico
+.hero__copy                                   L     18 R     18 w 324
+.hero__copy .kicker                           L     42 R  152.3 w 166  <-- assimétrico
+.hero__title                                  L     42 R     42 w 276
+.hero__lead                                   L     42 R     42 w 276
+.hero__cta .btn                               L     42 R     42 w 276
+.perks__list                                  L     18 R     18 w 324
+#categorias .sec__head                        L     18 R     18 w 324
+.cats                                         L     18 R      0 w 342  <-- assimétrico
+.cats > li:first-child                        L     18 R  219.7 w 122  <-- assimétrico
+#novidades .sec__head                         L     18 R     18 w 324
+#novidades .carousel__track                   L     18 R      0 w 342  <-- assimétrico
+#novidades .carousel__track > li:first-child  L     18 R  203.8 w 138  <-- assimétrico
+#novidades .carousel__dots                    L     18 R     18 w 324
+.atelie                                       L     18 R     18 w 324
+.atelie__intro                                L     42 R     42 w 276
+.facts                                        L     42 R     42 w 276
+#colecoes .sec__intro                         L     18 R     18 w 324
+.past--terra .sec__head                       L     18 R     18 w 324
+.past--terra .carousel__track                 L     18 R      0 w 342  <-- assimétrico
+.past--terra .carousel__track > li:first-child L     18 R  203.8 w 138  <-- assimétrico
+.faq header                                   L     18 R     18 w 324
+.faq__list                                    L     18 R     18 w 324
+.faq details:first-child                      L     18 R     18 w 324
+.footer__panel                                L     18 R     18 w 324
+.footer__grid                                 L     42 R     42 w 276
+.footer__mark                                 L     42 R     42 w 276
+== 375 clientWidth 375
+.announce                                     L      0 R      0 w 375
+.header__in                                   L      0 R      0 w 375
+.brand                                        L  143.5 R  143.5 w 88
+.header__menu                                 L   18.8 R  312.3 w 44  <-- assimétrico
+.bag-btn                                      L  312.3 R   18.8 w 44  <-- assimétrico
+.hero                                         L   18.8 R   18.8 w 338
+.hero__card--piece                            L   42.8 R   42.8 w 290
+.hero__card--batch                            L  236.3 R   34.8 w 104  <-- assimétrico
+.hero__pause                                  L   34.8 R    216 w 124  <-- assimétrico
+.hero__copy                                   L   18.8 R   18.8 w 338
+.hero__copy .kicker                           L   42.8 R  166.5 w 166  <-- assimétrico
+.hero__title                                  L   42.8 R   42.8 w 290
+.hero__lead                                   L   42.8 R   42.8 w 290
+.hero__cta .btn                               L   42.8 R   42.8 w 290
+.perks__list                                  L   18.8 R   18.8 w 338
+#categorias .sec__head                        L   18.8 R   18.8 w 338
+.cats                                         L   18.8 R      0 w 356  <-- assimétrico
+.cats > li:first-child                        L   18.8 R  228.5 w 128  <-- assimétrico
+#novidades .sec__head                         L   18.8 R   18.8 w 338
+#novidades .carousel__track                   L   18.8 R      0 w 356  <-- assimétrico
+#novidades .carousel__track > li:first-child  L   18.8 R  211.8 w 144  <-- assimétrico
+#novidades .carousel__dots                    L   18.8 R   18.8 w 338
+.atelie                                       L   18.8 R   18.8 w 338
+.atelie__intro                                L   42.8 R   42.8 w 290
+.facts                                        L   42.8 R   42.8 w 290
+#colecoes .sec__intro                         L   18.8 R   18.8 w 338
+.past--terra .sec__head                       L   18.8 R   18.8 w 338
+.past--terra .carousel__track                 L   18.8 R      0 w 356  <-- assimétrico
+.past--terra .carousel__track > li:first-child L   18.8 R  211.8 w 144  <-- assimétrico
+.faq header                                   L   18.8 R   18.8 w 338
+.faq__list                                    L   18.8 R   18.8 w 338
+.faq details:first-child                      L   18.8 R   18.8 w 338
+.footer__panel                                L   18.8 R   18.8 w 338
+.footer__grid                                 L   42.8 R   42.8 w 290
+.footer__mark                                 L   42.8 R   42.8 w 290
+== 390 clientWidth 390
+.announce                                     L      0 R      0 w 390
+.header__in                                   L      0 R      0 w 390
+.brand                                        L    151 R    151 w 88
+.header__menu                                 L   19.5 R  326.5 w 44  <-- assimétrico
+.bag-btn                                      L  326.5 R   19.5 w 44  <-- assimétrico
+.hero                                         L   19.5 R   19.5 w 351
+.hero__card--piece                            L   43.5 R   43.5 w 303
+.hero__card--batch                            L  250.6 R   35.5 w 104  <-- assimétrico
+.hero__pause                                  L   35.5 R  230.3 w 124  <-- assimétrico
+.hero__copy                                   L   19.5 R   19.5 w 351
+.hero__copy .kicker                           L   43.5 R  180.8 w 166  <-- assimétrico
+.hero__title                                  L   43.5 R   43.5 w 303
+.hero__lead                                   L   43.5 R   43.5 w 303
+.hero__cta .btn                               L   43.5 R   43.5 w 303
+.perks__list                                  L   19.5 R   19.5 w 351
+#categorias .sec__head                        L   19.5 R   19.5 w 351
+.cats                                         L   19.5 R      0 w 371  <-- assimétrico
+.cats > li:first-child                        L   19.5 R  237.2 w 133  <-- assimétrico
+#novidades .sec__head                         L   19.5 R   19.5 w 351
+#novidades .carousel__track                   L   19.5 R      0 w 371  <-- assimétrico
+#novidades .carousel__track > li:first-child  L   19.5 R  219.9 w 151  <-- assimétrico
+#novidades .carousel__dots                    L   19.5 R   19.5 w 351
+.atelie                                       L   19.5 R   19.5 w 351
+.atelie__intro                                L   43.5 R   43.5 w 303
+.facts                                        L   43.5 R   43.5 w 303
+#colecoes .sec__intro                         L   19.5 R   19.5 w 351
+.past--terra .sec__head                       L   19.5 R   19.5 w 351
+.past--terra .carousel__track                 L   19.5 R      0 w 371  <-- assimétrico
+.past--terra .carousel__track > li:first-child L   19.5 R  219.9 w 151  <-- assimétrico
+.faq header                                   L   19.5 R   19.5 w 351
+.faq__list                                    L   19.5 R   19.5 w 351
+.faq details:first-child                      L   19.5 R   19.5 w 351
+.footer__panel                                L   19.5 R   19.5 w 351
+.footer__grid                                 L   43.5 R   43.5 w 303
+.footer__mark                                 L   43.5 R   43.5 w 303
+== 414 clientWidth 414
+.announce                                     L      0 R      0 w 414
+.header__in                                   L      0 R      0 w 414
+.brand                                        L    163 R    163 w 88
+.header__menu                                 L   20.7 R  349.3 w 44  <-- assimétrico
+.bag-btn                                      L  349.3 R   20.7 w 44  <-- assimétrico
+.hero                                         L   20.7 R   20.7 w 373
+.hero__card--piece                            L   44.7 R   44.7 w 325
+.hero__card--batch                            L  273.4 R   36.7 w 104  <-- assimétrico
+.hero__pause                                  L   36.7 R  253.1 w 124  <-- assimétrico
+.hero__copy                                   L   20.7 R   20.7 w 373
+.hero__copy .kicker                           L   44.7 R  203.6 w 166  <-- assimétrico
+.hero__title                                  L   44.7 R   44.7 w 325
+.hero__lead                                   L   44.7 R   44.7 w 325
+.hero__cta .btn                               L   44.7 R   44.7 w 325
+.perks__list                                  L   20.7 R   20.7 w 373
+#categorias .sec__head                        L   20.7 R   20.7 w 373
+.cats                                         L   20.7 R      0 w 393  <-- assimétrico
+.cats > li:first-child                        L   20.7 R  251.3 w 142  <-- assimétrico
+#novidades .sec__head                         L   20.7 R   20.7 w 373
+#novidades .carousel__track                   L   20.7 R      0 w 393  <-- assimétrico
+#novidades .carousel__track > li:first-child  L   20.7 R  232.8 w 161  <-- assimétrico
+#novidades .carousel__dots                    L   20.7 R   20.7 w 373
+.atelie                                       L   20.7 R   20.7 w 373
+.atelie__intro                                L   44.7 R   44.7 w 325
+.facts                                        L   44.7 R   44.7 w 325
+#colecoes .sec__intro                         L   20.7 R   20.7 w 373
+.past--terra .sec__head                       L   20.7 R   20.7 w 373
+.past--terra .carousel__track                 L   20.7 R      0 w 393  <-- assimétrico
+.past--terra .carousel__track > li:first-child L   20.7 R  232.8 w 161  <-- assimétrico
+.faq header                                   L   20.7 R   20.7 w 373
+.faq__list                                    L   20.7 R   20.7 w 373
+.faq details:first-child                      L   20.7 R   20.7 w 373
+.footer__panel                                L   20.7 R   20.7 w 373
+.footer__grid                                 L   44.7 R   44.7 w 325
+.footer__mark                                 L   44.7 R   44.7 w 325
