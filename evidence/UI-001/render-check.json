@@ -1,0 +1,96 @@
+{
+ "tool": "playwright (python) + chromium headless",
+ "page": "docs/ui/preview.html",
+ "viewports": [
+  {
+   "scrollWidth": 320,
+   "clientWidth": 320,
+   "horizontal_scroll": false,
+   "height": 16816,
+   "overflowing_sample": [
+    "TABLE.tbl",
+    "THEAD.",
+    "TR.",
+    "TH.",
+    "TBODY."
+   ],
+   "viewport": 320
+  },
+  {
+   "scrollWidth": 375,
+   "clientWidth": 375,
+   "horizontal_scroll": false,
+   "height": 15745,
+   "overflowing_sample": [
+    "TABLE.tbl",
+    "THEAD.",
+    "TR.",
+    "TH.",
+    "TBODY."
+   ],
+   "viewport": 375
+  },
+  {
+   "scrollWidth": 768,
+   "clientWidth": 768,
+   "horizontal_scroll": false,
+   "height": 10436,
+   "overflowing_sample": [],
+   "viewport": 768
+  },
+  {
+   "scrollWidth": 1024,
+   "clientWidth": 1024,
+   "horizontal_scroll": false,
+   "height": 9501,
+   "overflowing_sample": [],
+   "viewport": 1024
+  },
+  {
+   "scrollWidth": 1440,
+   "clientWidth": 1440,
+   "horizontal_scroll": false,
+   "height": 9343,
+   "overflowing_sample": [],
+   "viewport": 1440
+  }
+ ],
+ "external_requests": [],
+ "logo_svgs": [
+  {
+   "w": 0,
+   "h": 0,
+   "rendered_w": 32,
+   "rendered_h": 32,
+   "file": "icone-fundo-escuro.svg"
+  },
+  {
+   "w": 0,
+   "h": 0,
+   "rendered_w": 32,
+   "rendered_h": 32,
+   "file": "icone.svg"
+  },
+  {
+   "w": 0,
+   "h": 0,
+   "rendered_w": 32,
+   "rendered_h": 32,
+   "file": "logo-mono-fundo-claro.svg"
+  },
+  {
+   "w": 0,
+   "h": 0,
+   "rendered_w": 32,
+   "rendered_h": 32,
+   "file": "logo-mono-fundo-escuro.svg"
+  },
+  {
+   "w": 0,
+   "h": 0,
+   "rendered_w": 32,
+   "rendered_h": 32,
+   "file": "logo-principal.svg"
+  }
+ ]
+}

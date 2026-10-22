@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prancha Ateliê Bruma (UI-001, fictícia)</title>
+<meta name="robots" content="noindex">
+<style>
+/* Prancha ESTÁTICA de direção de arte. Não é o site final. Sem JS, sem recursos externos.
+   Marca FICTÍCIA; proposta NÃO APROVADA. Tokens copiados de tokens.css (sincronia manual).
+   As fontes Fraunces e Figtree NÃO são carregadas aqui: sem elas instaladas localmente, o navegador usa o fallback. */
+:root{
+  --fog-50:#F4F1EC;--fog-100:#EAE6DF;--fog-200:#D9D4CB;--stone-300:#BDB7AC;
+  --ink-700:#55514A;--ink-900:#25231F;--clay-700:#8A3F22;--clay-800:#6F3019;--clay-900:#5A2813;--mist-300:#B9C4C8;
+  --font-display:"Fraunces","Iowan Old Style","Palatino Linotype",Georgia,serif;
+  --font-text:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --gutter:clamp(1rem,5vw,2rem);
+  --size-h1:clamp(2.25rem,1.4rem + 3.2vw,4rem);
+  --size-h2:clamp(1.75rem,1.4rem + 1.8vw,2.5rem);
+  --size-lg:clamp(1.1875rem,1.1rem + 0.5vw,1.375rem);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fog-50);color:var(--ink-900);font:400 1.0625rem/1.6 var(--font-text)}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+a{color:var(--clay-700);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--ink-900);outline-offset:3px}
+h1,h2,h3{font-family:var(--font-display);font-weight:400;margin:0;color:var(--ink-900)}
+h1{font-size:var(--size-h1);line-height:1.1;letter-spacing:-0.01em;font-weight:300}
+h2{font-size:var(--size-h2);line-height:1.2;font-weight:400}
+h3{font-size:1.375rem;line-height:1.2}
+p{margin:0 0 .75em;max-width:62ch}
+.wrap{max-width:72rem;margin:0 auto;padding-inline:var(--gutter)}
+.sec{padding-block:64px;border-top:1px solid var(--fog-200)}
+.sec--surface{background:var(--fog-100)}
+.sec h2{margin-bottom:12px}
+.lead{font-size:var(--size-lg);color:var(--ink-700);max-width:62ch}
+.note{font-size:.875rem;color:var(--ink-700);max-width:70ch}
+/* Correção de rolagem horizontal (rodada 3, por análise de CSS; precisa de nova medição):
+   a trilha única de .grid era "auto" e os itens tinham min-width:auto, então a maquete de
+   1024 px (dentro de .mockscroll) impunha ~1058 px de largura mínima à página.
+   minmax(0,1fr) + min-width:0 deixam o item encolher e o overflow-x:auto de .mockscroll atuar. */
+.grid{display:grid;gap:24px;grid-template-columns:minmax(0,1fr)}
+.grid>*{min-width:0}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,14rem),1fr))}
+.tag{display:inline-block;background:var(--fog-200);color:var(--ink-900);border:2px dashed var(--ink-700);border-radius:4px;padding:3px 8px;font-size:.8125rem;line-height:1.4;font-weight:600;letter-spacing:.02em}
+.top{background:var(--ink-900);color:var(--fog-50)}
+.top .wrap{padding-block:12px;font-size:.875rem;font-weight:500}
+.top strong{font-weight:600}
+
+/* Logo */
+.logo{display:block;flex:none}
+.logo--lg{width:243px;height:96px}
+.logo--md{width:162px;height:64px}
+.tile{border:1px solid var(--fog-200);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:12px;align-items:flex-start;min-width:0}
+.tile--dark{background:var(--ink-900);color:var(--fog-50);border-color:var(--ink-900)}
+.tile--dark .cap{color:var(--stone-300)}
+.tile--surface{background:var(--fog-100)}
+.cap{font-size:.875rem;color:var(--ink-700);margin:0}
+.c-ink{color:var(--ink-900);--logo-accent:var(--clay-700)}
+.c-mono{color:var(--ink-900);--logo-accent:var(--ink-900)}
+.c-inv{color:var(--fog-50);--logo-accent:var(--fog-50)}
+
+/* Maquetes de header */
+.mockscroll{overflow-x:auto;max-width:100%;min-width:0;border:1px dashed var(--ink-700);border-radius:4px;padding:8px;background:var(--fog-100)}
+.mock{background:var(--fog-50);border-bottom:1px solid var(--fog-200)}
+.hdr{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;min-height:56px;padding-inline:12px;gap:0 8px}
+.brand{display:inline-flex;align-items:center;min-height:44px;min-width:44px;padding:6px 4px;border-radius:10px;color:var(--ink-900);--logo-accent:var(--clay-700);text-decoration:none}
+.brand:hover,.brand.is-hover{background:var(--fog-100)}
+.brand:active,.brand.is-active{background:var(--fog-200)}
+.brand.is-focus{outline:3px solid var(--ink-900);outline-offset:2px}
+.nav{display:flex;gap:0}
+.nav a{display:inline-flex;align-items:center;min-height:44px;padding-inline:4px;font-size:.8125rem;font-weight:600;color:var(--ink-900);text-decoration:none;border-radius:4px}
+.nav a:hover,.nav a.is-hover{text-decoration:underline;text-decoration-color:var(--clay-700);text-decoration-thickness:2px;text-underline-offset:6px}
+.nav a.is-focus{outline:3px solid var(--ink-900);outline-offset:2px}
+.mock--375 .hdr{padding-inline:18.75px}
+.mock--375 .nav a{font-size:.875rem;font-weight:500;padding-inline:8px}
+.mock--wide .hdr{padding-inline:32px}
+.mock--wide .nav a{font-size:1rem;font-weight:500;padding-inline:14px}
+
+/* Botão / CTA */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;min-width:44px;padding:0 28px;border-radius:999px;border:0;background:var(--clay-700);color:var(--fog-50);font:600 1.0625rem/1.2 var(--font-text);text-decoration:none;cursor:pointer;transition:background-color 200ms cubic-bezier(.2,0,0,1)}
+.btn:hover,.btn.is-hover{background:var(--clay-800)}
+.btn:active,.btn.is-active{background:var(--clay-900)}
+.btn.is-focus,.btn:focus-visible{outline:3px solid var(--ink-900);outline-offset:3px}
+
+/* Links */
+.lnk{display:inline-flex;align-items:center;min-height:44px;font-weight:500}
+.lnk.is-hover{color:var(--clay-800);text-decoration-thickness:3px}
+.lnk.is-active{color:var(--clay-900)}
+.lnk.is-focus{outline:3px solid var(--ink-900);outline-offset:2px;border-radius:4px}
+
+/* Skip link visível */
+.skip{display:inline-block;background:var(--ink-900);color:var(--fog-50);padding:12px 16px;border-radius:10px;font-weight:600;text-decoration:none;outline:3px solid var(--ink-900);outline-offset:3px}
+
+/* Placeholder */
+.ph{position:relative;aspect-ratio:4/5;width:100%;border:2px dashed var(--ink-700);border-radius:20px;overflow:hidden;
+  background:
+   radial-gradient(120% 70% at 20% 15%,rgba(185,196,200,.7),transparent 60%),
+   radial-gradient(90% 60% at 85% 90%,rgba(185,196,200,.5),transparent 65%),
+   linear-gradient(180deg,var(--fog-100),var(--fog-200))}
+.ph--arch{border-radius:999px 999px 10px 10px}
+.ph__cap{position:absolute;left:12px;bottom:12px;right:12px;width:fit-content;max-width:calc(100% - 24px);background:var(--fog-50);color:var(--ink-700);border-radius:4px;padding:6px 10px;font-size:.875rem;line-height:1.4}
+.ph__alt{position:absolute;left:12px;top:12px;width:fit-content;max-width:calc(100% - 24px);background:var(--fog-50);color:var(--ink-700);border-radius:4px;padding:6px 10px;font-size:.875rem;line-height:1.4}
+.ph--sm{max-width:15rem}
+.fig{margin:0}
+
+/* Cartão de peça (sem caixa) */
+.card{border-top:1px solid var(--ink-900);padding-top:16px;max-width:20rem}
+.card h3{margin:16px 0 4px}
+.card .meas{color:var(--ink-700);font-size:.9375rem;margin:0 0 8px}
+.card .price{font-family:var(--font-display);font-size:1.25rem;margin:0 0 8px;color:var(--ink-900)}
+.card .price small{font:500 .875rem/1.4 var(--font-text);color:var(--ink-700)}
+.card .use{color:var(--ink-700);margin:0}
+
+/* Contato */
+.dl{display:grid;gap:0;max-width:40rem;margin:0;grid-template-columns:minmax(0,1fr)}
+.dl>div{display:grid;gap:2px;padding:14px 0;border-top:1px solid var(--fog-200);min-width:0;grid-template-columns:minmax(0,1fr)}
+.dl dd{overflow-wrap:anywhere}
+.dl dt{font-size:.875rem;font-weight:600;color:var(--ink-700);letter-spacing:.02em}
+.dl dd{margin:0}
+@media (min-width:768px){.dl div{grid-template-columns:11rem 1fr;gap:16px}}
+
+/* Rodapé */
+.foot{background:var(--ink-900);color:var(--fog-50);padding:32px 0}
+.foot p{color:var(--stone-300)}
+.foot .lnk{color:var(--fog-50)}
+.foot .lnk.is-focus{outline-color:var(--fog-50)}
+.foot .brand{color:var(--fog-50);--logo-accent:var(--fog-50)}
+
+/* Paleta */
+.sw{margin:0}
+.sw__c{height:64px;border-radius:10px;border:1px solid var(--ink-700)}
+.sw figcaption{font-size:.875rem;line-height:1.35;margin-top:6px;color:var(--ink-900)}
+.sw figcaption span{display:block;color:var(--ink-700)}
+
+/* Escala */
+.bars{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-end}
+.bar{background:var(--clay-700);height:24px}
+.rad{width:88px;height:56px;background:var(--fog-200);border:2px dashed var(--ink-700)}
+
+/* Tabela */
+.tbl{width:100%;border-collapse:collapse;font-size:.9375rem}
+.tbl caption{text-align:left;font-weight:600;padding-bottom:8px}
+.tbl th,.tbl td{border-top:1px solid var(--fog-200);padding:8px 10px 8px 0;text-align:left;vertical-align:top}
+.tbl thead th{border-top:0;color:var(--ink-700);font-size:.875rem}
+.tblwrap{overflow-x:auto;max-width:100%}
+.tbl td:nth-child(3){white-space:nowrap}
+
+.dirb{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--ink-700);border-radius:10px;overflow:hidden;max-width:36rem}
+.dirb span{flex:1 1 4rem;height:56px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body id="topo">
+
+<!-- Símbolos internos (sem recurso externo). Cores via currentColor e --logo-accent. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="lg-main" viewBox="0 0 81 32">
+      <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6.6 2H13.4V3.6L12 4.6V8.2C12 11 19 10.5 19 17C19 23.5 17 28 15.5 30.75H4.5C3 28 1 23.5 1 17C1 10.5 8 11 8 8.2V4.6L6.6 3.6Z"/>
+        <path d="M4.6 18.8H13.8M7.2 23.6H15.4" style="stroke:var(--logo-accent,currentColor)"/>
+        <g transform="translate(26.75 0)">
+          <path d="M0 14.8L5 2.8L10 14.8M1.75 10.6H8.25"/>
+          <path transform="translate(10.2 0)" d="M2.2 3.8V11.8A3 3 0 0 0 5.2 14.8M0 7.8H5.6"/>
+          <path transform="translate(17.5 0)" d="M0 11.3H7A3.5 3.5 0 1 0 5.975 13.775"/>
+          <path transform="translate(28.1 0)" d="M0 2.6V14.8"/>
+          <g transform="translate(32 0)"><path d="M0 7.8V14.8"/><circle cx="0" cy="4.2" r="1" fill="currentColor" stroke="none"/></g>
+          <path transform="translate(35.6 0)" d="M0 11.3H7A3.5 3.5 0 1 0 5.975 13.775M1.5 4.8L3.5 2.6L5.5 4.8"/>
+          <path d="M0 18.8V30.8M0 18.8H3.6A2.8 2.8 0 0 1 3.6 24.4H0M0 24.4H4A3.2 3.2 0 0 1 4 30.8H0"/>
+          <path transform="translate(10.8 0)" d="M0 23.8V30.8M0 27.4A3.6 3.6 0 0 1 3.6 23.8H4.4"/>
+          <path transform="translate(18.8 0)" d="M0 23.8V27.3A3.5 3.5 0 0 0 7 27.3M7 23.8V30.8"/>
+          <path transform="translate(29.7 0)" d="M0 23.8V30.8M0 27A3.2 3.2 0 0 1 6.4 27V30.8M6.4 27A3.2 3.2 0 0 1 12.8 27V30.8"/>
+          <path transform="translate(46.1 0)" d="M7 27.3A3.5 3.5 0 1 0 0 27.3A3.5 3.5 0 1 0 7 27.3M7 23.8V30.8"/>
+        </g>
+      </g>
+    </symbol>
+    <symbol id="lg-icon" viewBox="0 0 32 32">
+      <path fill="currentColor" fill-rule="evenodd" d="M11.8 2H20.2V4.2L18.6 5.2V9C18.6 11.8 25.8 11.2 25.8 18C25.8 24 23.8 28 22.2 30.5H9.8C8.2 28 6.2 24 6.2 18C6.2 11.2 13.4 11.8 13.4 9V5.2L11.8 4.2ZM11.4 15.8H20.6A1.2 1.2 0 0 1 20.6 18.2H11.4A1.2 1.2 0 0 1 11.4 15.8ZM13.7 21.6H21.3A1.2 1.2 0 0 1 21.3 24H13.7A1.2 1.2 0 0 1 13.7 21.6Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <strong>FICTÍCIO · NÃO APROVADO.</strong> Prancha de direção de arte da tarefa UI-001 para a marca fictícia Ateliê Bruma. Não é o site final. Figma não foi usado. Esta página não foi aberta em navegador por quem a escreveu.
+  </div>
+</header>
+
+<main>
+<section class="sec" style="border-top:0" aria-labelledby="t-intro">
+  <div class="wrap">
+    <p class="tag">Direção escolhida: A, "Névoa quieta"</p>
+    <h1 id="t-intro" style="margin-top:16px">Prancha Ateliê Bruma</h1>
+    <p class="lead" style="margin-top:16px">Cerâmica de mesa feita à mão. Cinza-névoa, argila e tinta; traço fino; bordas tracejadas para tudo que é ilustrativo.</p>
+    <p class="note">Tudo aqui é proposta. Razões de contraste foram calculadas à mão e conferidas por script pela revisão independente. Nenhuma imagem real: os blocos tracejados são placeholders.</p>
+  </div>
+</section>
+
+<!-- 1. LOGOTIPO -->
+<section class="sec sec--surface" aria-labelledby="t-logo">
+  <div class="wrap">
+    <h2 id="t-logo">1. Logotipo (proposta)</h2>
+    <p class="lead">Vaso garrafa em contorno com duas faixas de bruma, e o nome em duas linhas. Letras desenhadas como paths (arquivos em <code>logo/</code>); aqui são reaproveitadas por referência interna.</p>
+    <div class="grid g2" style="margin-top:24px">
+      <div class="tile">
+        <svg class="logo logo--lg c-ink" viewBox="0 0 81 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-main"/></svg>
+        <p class="cap">Principal (cor): tinta #25231F + argila #8A3F22, em fundo claro. Mostrado a 96 px de altura.</p>
+      </div>
+      <div class="tile">
+        <svg class="logo logo--lg c-mono" viewBox="0 0 81 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-main"/></svg>
+        <p class="cap">Monocromática para fundo claro: #25231F. Mostrado a 96 px.</p>
+      </div>
+      <div class="tile tile--dark">
+        <svg class="logo logo--lg c-inv" viewBox="0 0 81 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-main"/></svg>
+        <p class="cap">Monocromática para fundo escuro: #F4F1EC sobre #25231F. Mostrado a 96 px.</p>
+      </div>
+      <div class="tile">
+        <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap">
+          <svg class="c-mono" width="64" height="64" viewBox="0 0 32 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-icon"/></svg>
+          <svg class="c-mono" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-icon"/></svg>
+          <svg class="c-mono" width="16" height="16" viewBox="0 0 32 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-icon"/></svg>
+          <span style="background:var(--ink-900);padding:12px;border-radius:10px;display:inline-flex"><svg class="c-inv" width="32" height="32" viewBox="0 0 32 32" role="img" aria-label="Ateliê Bruma"><use href="#lg-icon"/></svg></span>
+        </div>
+        <p class="cap">Forma reduzida (ícone): vaso cheio com faixas vazadas. 64, 32 e 16 px; versão em fundo escuro. 16 px é o mínimo proposto e não foi testado.</p>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">No tamanho de uso: 32 px de altura</h3>
+    <p class="note">Maquetes de largura fixa (320, 375 e 1024 px), com rolagem interna para não estourar esta página em telas estreitas. Larguras da navegação são estimativas; medir no navegador real.</p>
+    <div class="grid" style="margin-top:12px">
+      <div>
+        <p class="cap">320 px, logo 32 px, nav 13 px/600</p>
+        <div class="mockscroll"><div class="mock" style="width:320px">
+          <div class="hdr">
+            <a class="brand" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a>
+            <nav class="nav" aria-label="Principal (maquete 320)"><a href="#c">Coleção</a><a href="#m">Material</a><a href="#ct">Contato</a></nav>
+          </div>
+        </div></div>
+      </div>
+      <div>
+        <p class="cap">375 px, logo 32 px, nav 14 px/500</p>
+        <div class="mockscroll"><div class="mock mock--375" style="width:375px">
+          <div class="hdr">
+            <a class="brand" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a>
+            <nav class="nav" aria-label="Principal (maquete 375)"><a href="#c">Coleção</a><a href="#m">Material</a><a href="#ct">Contato</a></nav>
+          </div>
+        </div></div>
+      </div>
+      <div>
+        <p class="cap">1024 px, logo 32 px, nav 16 px/500</p>
+        <div class="mockscroll"><div class="mock mock--wide" style="width:1024px">
+          <div class="hdr">
+            <a class="brand" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a>
+            <nav class="nav" aria-label="Principal (maquete 1024)"><a href="#c">Coleção</a><a href="#m">Material</a><a href="#ct">Contato</a></nav>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px">Estados do link da marca</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <div><p class="cap">Padrão</p><a class="brand" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a></div>
+      <div><p class="cap">Hover (fundo #EAE6DF)</p><a class="brand is-hover" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a></div>
+      <div><p class="cap">Foco (anel 3 px #25231F, offset 2 px)</p><a class="brand is-focus" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a></div>
+      <div><p class="cap">Ativo (fundo #D9D4CB)</p><a class="brand is-active" href="#topo"><svg class="logo c-ink" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a></div>
+      <div><p class="cap">Monocromático</p><a class="brand" style="--logo-accent:var(--ink-900)" href="#topo"><svg class="logo c-mono" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a></div>
+      <div>
+        <p class="cap">Imagem falhou: o alt "Ateliê Bruma" permanece visível (simulado; ver ui-handoff.md §5.1)</p>
+        <a class="brand" href="#topo"><span style="display:block;width:81px;height:32px;overflow:hidden;font:600 13px/32px var(--font-text);color:var(--ink-900);white-space:nowrap">Ateliê Bruma</span><span class="sr-only">, início</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. PALETA -->
+<section class="sec" aria-labelledby="t-cor">
+  <div class="wrap">
+    <h2 id="t-cor">2. Paleta</h2>
+    <p class="lead">Neutros quentes de névoa, tinta e uma única cor de ação, a argila. O azul-névoa é só decoração.</p>
+    <h3 style="margin-top:24px">Primitives</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <figure class="sw"><div class="sw__c" style="background:#F4F1EC"></div><figcaption>fog-50 #F4F1EC<span>canvas</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#EAE6DF"></div><figcaption>fog-100 #EAE6DF<span>surface, hover</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#D9D4CB"></div><figcaption>fog-200 #D9D4CB<span>etiqueta, ativo, divisor decorativo</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#BDB7AC"></div><figcaption>stone-300 #BDB7AC<span>texto secundário em fundo escuro</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#55514A"></div><figcaption>ink-700 #55514A<span>texto secundário, borda forte (placeholder)</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#25231F"></div><figcaption>ink-900 #25231F<span>texto principal, foco, rodapé</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#8A3F22"></div><figcaption>clay-700 #8A3F22<span>ação primária, links</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#6F3019"></div><figcaption>clay-800 #6F3019<span>hover da ação</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#5A2813"></div><figcaption>clay-900 #5A2813<span>ativo da ação</span></figcaption></figure>
+      <figure class="sw"><div class="sw__c" style="background:#B9C4C8"></div><figcaption>mist-300 #B9C4C8<span>DECORATIVO apenas (gradiente do placeholder)</span></figcaption></figure>
+    </div>
+    <h3 style="margin-top:32px">Aliases semânticos</h3>
+    <div class="tblwrap" style="margin-top:12px">
+    <table class="tbl">
+      <thead><tr><th scope="col">Alias</th><th scope="col">Primitive</th><th scope="col">Uso</th></tr></thead>
+      <tbody>
+        <tr><td>background/canvas</td><td>fog-50</td><td>fundo da página</td></tr>
+        <tr><td>background/surface</td><td>fog-100</td><td>faixas Manifesto e Material</td></tr>
+        <tr><td>background/inverse</td><td>ink-900</td><td>rodapé, skip link</td></tr>
+        <tr><td>text/primary · text/secondary</td><td>ink-900 · ink-700</td><td>títulos e corpo · medidas, apoio</td></tr>
+        <tr><td>text/link</td><td>clay-700</td><td>links em texto (sublinhados)</td></tr>
+        <tr><td>action/primary · hover · active</td><td>clay-700 · 800 · 900</td><td>CTA único</td></tr>
+        <tr><td>action/on-primary</td><td>fog-50</td><td>texto do CTA</td></tr>
+        <tr><td>border/default · border/strong</td><td>fog-200 · ink-700</td><td>divisor decorativo · placeholder</td></tr>
+        <tr><td>focus/ring · focus/ring-inverse</td><td>ink-900 · fog-50</td><td>foco em fundo claro · escuro</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<!-- 3. TIPOGRAFIA -->
+<section class="sec sec--surface" aria-labelledby="t-tipo">
+  <div class="wrap">
+    <h2 id="t-tipo">3. Tipografia</h2>
+    <p class="lead">Fraunces (títulos, preços) e Figtree (texto, navegação). Ambas SIL Open Font License 1.1, a auto-hospedar. Nesta prancha elas não estão carregadas: o que aparece abaixo é o fallback, a menos que estejam instaladas no seu sistema.</p>
+    <div style="margin-top:24px">
+      <p class="cap">h1 · Fraunces 300 · clamp(2.25rem, 1.4rem + 3.2vw, 4rem)</p>
+      <h1>Cerâmica de mesa feita à mão</h1>
+      <p class="cap" style="margin-top:24px">h2 · Fraunces 400 · clamp(1.75rem, 1.4rem + 1.8vw, 2.5rem)</p>
+      <h2 style="margin:0">Feito devagar, para durar</h2>
+      <p class="cap" style="margin-top:24px">h3 · Fraunces 400 · 1.375rem</p>
+      <h3>Caneca Névoa</h3>
+      <p class="cap" style="margin-top:24px">Subtítulo · Figtree 400 · clamp(1.1875rem, 1.1rem + .5vw, 1.375rem)</p>
+      <p class="lead" style="color:var(--ink-900)">Uma fornada por mês, para usar todo dia sem medo. <span style="color:var(--ink-700);font-size:.875rem">(exemplo)</span></p>
+      <p class="cap" style="margin-top:24px">Corpo · Figtree 400 · 1.0625rem / 1.6 · medida máx. 62ch</p>
+      <p>Grés é uma argila queimada em temperatura alta, em torno de 1.240 °C, o que deixa a peça resistente e pouco porosa. <span style="color:var(--ink-700);font-size:.875rem">(exemplo)</span></p>
+      <p class="cap" style="margin-top:24px">Preço · Fraunces 400 · 1.25rem + "(exemplo)" Figtree 500 · .875rem</p>
+      <p style="font-family:var(--font-display);font-size:1.25rem;margin:0">R$ 98 <span style="font:500 .875rem/1.4 var(--font-text);color:var(--ink-700)">(exemplo)</span></p>
+      <p class="cap" style="margin-top:24px">Rótulo de navegação · Figtree 500/600 · .8125 a 1rem</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4. ESCALAS -->
+<section class="sec" aria-labelledby="t-esc">
+  <div class="wrap">
+    <h2 id="t-esc">4. Espaçamento, raio, foco e movimento</h2>
+    <h3 style="margin-top:16px">Espaçamento (base 4 px)</h3>
+    <div class="bars" style="margin-top:12px" role="img" aria-label="Barras de 4, 8, 12, 16, 24, 32, 48, 64, 96 e 128 pixels de largura">
+      <div><div class="bar" style="width:4px"></div><p class="cap">4</p></div>
+      <div><div class="bar" style="width:8px"></div><p class="cap">8</p></div>
+      <div><div class="bar" style="width:12px"></div><p class="cap">12</p></div>
+      <div><div class="bar" style="width:16px"></div><p class="cap">16</p></div>
+      <div><div class="bar" style="width:24px"></div><p class="cap">24</p></div>
+      <div><div class="bar" style="width:32px"></div><p class="cap">32</p></div>
+      <div><div class="bar" style="width:48px"></div><p class="cap">48</p></div>
+      <div><div class="bar" style="width:64px"></div><p class="cap">64</p></div>
+      <div><div class="bar" style="width:96px"></div><p class="cap">96</p></div>
+      <div><div class="bar" style="width:128px"></div><p class="cap">128</p></div>
+    </div>
+    <h3 style="margin-top:32px">Raio</h3>
+    <div class="bars" style="margin-top:12px;align-items:flex-start">
+      <div><div class="rad" style="border-radius:4px"></div><p class="cap">sm 4 · etiquetas</p></div>
+      <div><div class="rad" style="border-radius:10px"></div><p class="cap">md 10 · hover do logo</p></div>
+      <div><div class="rad" style="border-radius:20px"></div><p class="cap">lg 20 · placeholders</p></div>
+      <div><div class="rad" style="border-radius:999px 999px 10px 10px;height:88px"></div><p class="cap">arch · hero</p></div>
+      <div><div class="rad" style="border-radius:999px"></div><p class="cap">pill · CTA</p></div>
+    </div>
+    <p class="note" style="margin-top:24px"><strong>Foco:</strong> contorno sólido de 3 px em ink-900 (fundo claro) ou fog-50 (fundo escuro), com offset de 3 px (2 px em links de texto e logo). <strong>Movimento:</strong> só troca de cor em 200 ms ao passar o mouse; nada se move sozinho; <code>prefers-reduced-motion: reduce</code> zera transições e usa rolagem imediata. <strong>Elevação:</strong> sem sombras.</p>
+  </div>
+</section>
+
+<!-- 5. COMPONENTES -->
+<section class="sec sec--surface" aria-labelledby="t-comp">
+  <div class="wrap">
+    <h2 id="t-comp">5. Componentes e estados</h2>
+
+    <h3 style="margin-top:16px">CTA único e skip link</h3>
+    <div class="grid g3" style="margin-top:12px;align-items:start">
+      <div><p class="cap">Padrão</p><a class="btn" href="#colecao-demo">Conhecer a coleção</a></div>
+      <div><p class="cap">Hover (#6F3019)</p><a class="btn is-hover" href="#colecao-demo">Conhecer a coleção</a></div>
+      <div><p class="cap">Ativo (#5A2813)</p><a class="btn is-active" href="#colecao-demo">Conhecer a coleção</a></div>
+      <div><p class="cap">Foco (anel 3 px, offset 3 px)</p><a class="btn is-focus" href="#colecao-demo">Conhecer a coleção</a></div>
+      <div><p class="cap">Skip link, visível ao receber foco</p><a class="skip" href="#topo">Pular para o conteúdo</a></div>
+    </div>
+    <p class="note" style="margin-top:16px">É o único elemento com papel de ação primária. Os links do header são texto simples, sem fundo.</p>
+
+    <h3 style="margin-top:40px">Links de texto (e-mail, "Voltar ao início")</h3>
+    <div class="grid g3" style="margin-top:12px">
+      <div><p class="cap">Padrão</p><a class="lnk" href="#topo">contato@ateliebruma.example</a></div>
+      <div><p class="cap">Hover</p><a class="lnk is-hover" href="#topo">contato@ateliebruma.example</a></div>
+      <div><p class="cap">Foco</p><a class="lnk is-focus" href="#topo">contato@ateliebruma.example</a></div>
+      <div><p class="cap">Ativo</p><a class="lnk is-active" href="#topo">contato@ateliebruma.example</a></div>
+    </div>
+
+    <h3 style="margin-top:40px">Etiqueta "exemplo"</h3>
+    <p class="note">Retangular, traço tracejado, texto sempre visível. O tracejado é a regra visual do projeto: tudo que for ilustrativo ou fictício tem traço tracejado.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:12px">
+      <span class="tag">Marca fictícia · página demonstrativa</span>
+      <span class="tag">Preços de referência de exemplo. Não há venda neste site.</span>
+      <span class="tag">Informações de exemplo</span>
+      <span class="tag">Dados de exemplo. Este endereço e esta feira não existem.</span>
+    </div>
+
+    <h3 style="margin-top:40px">Placeholder de imagem</h3>
+    <div class="grid g3" style="margin-top:12px;align-items:start">
+      <figure class="fig"><div class="ph ph--arch ph--sm" role="img" aria-label="Mesa posta com caneca, xícara com pires e tigela de cerâmica cinza-clara, esmalte fosco, ilustração a ser substituída por foto do ateliê."></div><figcaption class="cap" style="margin-top:8px">Hero, arco 4:5 (legenda abaixo, em cada uso, dentro da caixa)</figcaption></figure>
+      <figure class="fig" style="position:relative"><div class="ph" role="img" aria-label="Caneca de cerâmica cinza-clara, esmalte fosco, alça arredondada."></div><span class="ph__cap" style="left:12px;bottom:12px">Imagem ilustrativa (placeholder)</span></figure>
+      <figure class="fig" style="position:relative"><div class="ph is-failed" role="img" aria-label="Caneca de cerâmica cinza-clara, esmalte fosco, alça arredondada."></div><span class="ph__alt">Caneca de cerâmica cinza-clara, esmalte fosco, alça arredondada.</span><span class="ph__cap">Imagem ilustrativa (placeholder)</span></figure>
+    </div>
+    <p class="note" style="margin-top:12px">Esquerda: arco do hero. Centro: placeholder padrão do cartão (gradiente de névoa decorativo, borda tracejada ink-700, legenda em caixa sólida). Direita: imagem falhou, com o alt visível e a legenda mantida; a proporção 4:5 não muda. Na prancha, as legendas do hero e dos cartões aparecem sobrepostas (centro e direita) e abaixo (esquerda) apenas por limitação do HTML estático; em produção a legenda fica sempre dentro da caixa, num <code>&lt;figcaption&gt;</code>.</p>
+
+    <h3 style="margin-top:40px">Cartão de peça (sem botão, sem caixa)</h3>
+    <div class="grid g3" style="margin-top:12px;align-items:start">
+      <article class="card">
+        <figure class="fig" style="position:relative"><div class="ph" role="img" aria-label="Caneca de cerâmica cinza-clara, esmalte fosco, alça arredondada."></div><span class="ph__cap">Imagem ilustrativa (placeholder)</span></figure>
+        <h3>Caneca Névoa</h3>
+        <p class="meas">300 ml</p>
+        <p class="price">R$ 98 <small>(exemplo)</small></p>
+        <p class="use">Para o café da manhã ou para dar de presente.</p>
+      </article>
+      <article class="card">
+        <figure class="fig" style="position:relative"><div class="ph is-failed" role="img" aria-label="Tigela funda de cerâmica em tom de névoa, esmalte fosco, borda levemente irregular."></div><span class="ph__alt">Tigela funda de cerâmica em tom de névoa, esmalte fosco, borda levemente irregular.</span><span class="ph__cap">Imagem ilustrativa (placeholder)</span></figure>
+        <h3>Tigela funda</h3>
+        <p class="meas">Ø 15 cm · 600 ml</p>
+        <p class="price">R$ 92 <small>(exemplo)</small></p>
+        <p class="use">Sopa, cereal ou salada, no uso diário.</p>
+      </article>
+    </div>
+    <p class="note" style="margin-top:12px">Segundo cartão: estado "imagem falhou". Nome, medida e preço não dependem da imagem.</p>
+
+    <h3 style="margin-top:40px">Contato (texto, sem formulário)</h3>
+    <div style="margin-top:12px"><span class="tag">Dados de exemplo. Este endereço e esta feira não existem.</span></div>
+    <dl class="dl" style="margin-top:12px">
+      <div><dt>E-mail</dt><dd><a class="lnk" href="#topo">contato@ateliebruma.example</a></dd></div>
+      <div><dt>Endereço</dt><dd>Rua da Bruma Clara, 214, Curitiba (PR)</dd></div>
+      <div><dt>Cidade</dt><dd>Curitiba (PR). Ateliê aberto com hora marcada.</dd></div>
+      <div><dt>Onde encontrar as peças</dt><dd>Feira mensal de cerâmica autoral, todo 2º sábado.</dd></div>
+      <div><dt>Encomendas</dt><dd>Prazo de até 45 dias.</dd></div>
+    </dl>
+  </div>
+</section>
+
+<section aria-labelledby="t-foot">
+  <h2 id="t-foot" class="sr-only">Rodapé (maquete)</h2>
+  <div class="foot">
+    <div class="wrap">
+      <a class="brand" href="#topo"><svg class="logo c-inv" width="81" height="32" viewBox="0 0 81 32" aria-hidden="true"><use href="#lg-main"/></svg><span class="sr-only">Ateliê Bruma, início</span></a>
+      <p style="margin-top:12px">Ateliê Bruma é uma marca fictícia criada para um piloto de avaliação. Todos os dados desta página são exemplos.</p>
+      <a class="lnk" href="#topo">Voltar ao início</a>
+      <a class="lnk is-focus" style="margin-left:24px" href="#topo">Voltar ao início (foco)</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. DIREÇÃO NÃO ESCOLHIDA -->
+<section class="sec" aria-labelledby="t-b">
+  <div class="wrap">
+    <h2 id="t-b">6. Direção B, "Esmalte" (não escolhida)</h2>
+    <p class="note">Registro da alternativa explorada, sem layout. Não vale como proposta de produção; sem contrastes verificados.</p>
+    <div class="dirb" style="margin-top:12px" role="img" aria-label="Faixa de seis cores da direção B: osso, cobalto, âmbar, verde-celadon, coral e quase preto">
+      <span style="background:#EFEAE0"></span><span style="background:#1F3A5F"></span><span style="background:#C58B2B"></span><span style="background:#7FA79A"></span><span style="background:#D8664A"></span><span style="background:#1A1A1A"></span>
+    </div>
+    <p class="cap" style="margin-top:8px">Osso #EFEAE0 · cobalto #1F3A5F · âmbar #C58B2B · celadon #7FA79A · coral #D8664A · carvão #1A1A1A. Grotesca de alto contraste, blocos de cor chapados, bordas retas. Motivos da recusa em art-direction.md §3.</p>
+  </div>
+</section>
+
+<!-- 7. CONTRASTES -->
+<section class="sec sec--surface" aria-labelledby="t-ct">
+  <div class="wrap">
+    <h2 id="t-ct">7. Contrastes (conferidos por script pela revisão)</h2>
+    <p class="note">Calculados à mão por quem escreveu a prancha (fórmula WCAG 2.x de luminância relativa) e conferidos por script pela revisão independente (evidence/UI-001/contrast-check.json; diferença máxima 0,04). Quem escreveu a prancha não rodou script. Contraste de cor não equivale a conformidade WCAG. Tabela completa em ui-handoff.md §7.</p>
+    <div class="tblwrap" style="margin-top:12px">
+    <table class="tbl">
+      <thead><tr><th scope="col">Par (primeiro plano / fundo)</th><th scope="col">Uso</th><th scope="col">Razão</th><th scope="col">Mínimo</th></tr></thead>
+      <tbody>
+        <tr><td>ink-900 / fog-50</td><td>texto principal</td><td>13,92:1</td><td>4,5</td></tr>
+        <tr><td>ink-700 / fog-50</td><td>texto secundário, legenda do placeholder</td><td>7,00:1</td><td>4,5</td></tr>
+        <tr><td>ink-700 / fog-100</td><td>texto secundário em faixa</td><td>6,34:1</td><td>4,5</td></tr>
+        <tr><td>ink-700 / fog-200</td><td>borda da etiqueta</td><td>5,35:1</td><td>3</td></tr>
+        <tr><td>clay-700 / fog-50</td><td>link, símbolo do logo</td><td>6,62:1</td><td>4,5</td></tr>
+        <tr><td>clay-700 / fog-100</td><td>link em faixa</td><td>6,00:1</td><td>4,5</td></tr>
+        <tr><td>fog-50 / clay-700</td><td>texto do CTA</td><td>6,62:1</td><td>4,5</td></tr>
+        <tr><td>fog-50 / clay-800</td><td>CTA em hover</td><td>8,82:1</td><td>4,5</td></tr>
+        <tr><td>fog-50 / clay-900</td><td>CTA ativo</td><td>10,67:1</td><td>4,5</td></tr>
+        <tr><td>fog-50 / ink-900</td><td>rodapé, skip link, logo escuro</td><td>13,92:1</td><td>4,5</td></tr>
+        <tr><td>stone-300 / ink-900</td><td>texto secundário no rodapé</td><td>7,87:1</td><td>4,5</td></tr>
+        <tr><td>ink-700 / fog-50</td><td>borda do placeholder vs. página (C11)</td><td>7,00:1</td><td>3</td></tr>
+        <tr><td>ink-700 / fog-100</td><td>borda do placeholder em faixa (C12)</td><td>6,34:1</td><td>3</td></tr>
+        <tr><td>ink-900 / fog-50</td><td>anel de foco</td><td>13,92:1</td><td>3</td></tr>
+        <tr><td>ink-700 / fog-200</td><td>borda do placeholder vs. fim do degradê (C16)</td><td>5,35:1</td><td>3</td></tr>
+        <tr><td>ink-700 / mist-300</td><td>borda do placeholder vs. pior caso do degradê (C16b)</td><td>4,43:1</td><td>3</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-lim">
+  <div class="wrap">
+    <h2 id="t-lim">8. Limites desta prancha</h2>
+    <ul>
+      <li>Não foi aberta em navegador nem renderizada por quem a escreveu. A revisão independente a renderizou (Playwright + Chromium headless; evidence/UI-001/render-check.json) e apontou rolagem horizontal, corrigida na rodada 3 por análise de CSS e ainda sem nova medição. Ninguém avaliou visualmente a prancha. Pode haver erro visual.</li>
+      <li>Fontes não incorporadas. Figma não usado. Nenhuma foto, ícone de terceiros ou recurso externo.</li>
+      <li>Layouts completos por seção e breakpoint estão descritos em ui-handoff.md, não desenhados aqui.</li>
+      <li>Tudo FICTÍCIO; nada aprovado.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p style="margin:0">Prancha UI-001 · marca fictícia · proposta não aprovada.</p>
+  </div>
+</footer>
+</body>
+</html>
