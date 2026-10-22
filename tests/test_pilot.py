@@ -11,7 +11,7 @@ class HandoffContracts(unittest.TestCase):
     def test_approved_briefing_contract(self):
         outcome=validate()
         self.assertTrue(outcome['dna_approved'])
-        self.assertEqual(outcome['tasks'],7)
+        self.assertEqual(outcome['tasks'],10)
     def test_release_blocked(self):
         with self.assertRaisesRegex(ValueError,'Release blocked'):
             validate(require_release=True)

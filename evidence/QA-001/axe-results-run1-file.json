@@ -1,0 +1,317 @@
+{
+ "320": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".btn-link",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 106
+   }
+  ],
+  "passes": 46
+ },
+ "375": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".btn-link",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 106
+   }
+  ],
+  "passes": 46
+ },
+ "768": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".tag__extra",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 98
+   }
+  ],
+  "passes": 46
+ },
+ "1024": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".tag__extra",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 95
+   }
+  ],
+  "passes": 46
+ },
+ "1440": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".tag__extra",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 91
+   }
+  ],
+  "passes": 46
+ },
+ "375-menu": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "skip-link",
+    "impact": "moderate",
+    "help": "The skip-link target should exist and be focusable",
+    "nodes": [
+     {
+      "target": ".skip",
+      "summary": "Fix any of the following:\n  Skip link target should become visible on activation"
+     }
+    ],
+    "count": 1
+   }
+  ],
+  "passes": 33
+ },
+ "375-sacola": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": "button[data-qty=\"-1\"]",
+      "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+     }
+    ],
+    "count": 1
+   },
+   {
+    "id": "skip-link",
+    "impact": "moderate",
+    "help": "The skip-link target should exist and be focusable",
+    "nodes": [
+     {
+      "target": ".skip",
+      "summary": "Fix any of the following:\n  Skip link target should become visible on activation"
+     }
+    ],
+    "count": 1
+   }
+  ],
+  "passes": 35
+ },
+ "1440-sacola": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": "button[data-qty=\"-1\"]",
+      "summary": "Fix any of the following:\n  Element content contains only non-text characters"
+     }
+    ],
+    "count": 1
+   },
+   {
+    "id": "skip-link",
+    "impact": "moderate",
+    "help": "The skip-link target should exist and be focusable",
+    "nodes": [
+     {
+      "target": ".skip",
+      "summary": "Fix any of the following:\n  Skip link target should become visible on activation"
+     }
+    ],
+    "count": 1
+   }
+  ],
+  "passes": 35
+ },
+ "375-filtro": {
+  "version": "4.10.2",
+  "violations": [],
+  "incomplete": [
+   {
+    "id": "color-contrast",
+    "impact": "serious",
+    "help": "Elements must meet minimum color contrast ratio thresholds",
+    "nodes": [
+     {
+      "target": ".tag--outline",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": "#t-hero > em",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__lead",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".hero__cta > .btn[href$=\"#novidades\"]",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     },
+     {
+      "target": ".btn-link",
+      "summary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+     }
+    ],
+    "count": 29
+   }
+  ],
+  "passes": 46
+ }
+}

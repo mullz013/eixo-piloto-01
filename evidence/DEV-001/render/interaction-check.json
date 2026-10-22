@@ -1,0 +1,101 @@
+{
+ "375": {
+  "first_tab": {
+   "text": "Pular para o conteúdo",
+   "href": "#conteudo",
+   "visible": true
+  },
+  "tab_order": [
+   "A #topo , início",
+   "A #colecao Coleção",
+   "A #material Material",
+   "A #contato Contato",
+   "A #colecao Conhecer a coleção",
+   "A mailto:contato@ateliebruma.example contato@ateliebruma.example",
+   "A #topo , início",
+   "A #topo Voltar ao início",
+   "BODY  Pular para o conteúdo , início",
+   "A #conteudo Pular para o conteúdo",
+   "A #topo , início",
+   "A #colecao Coleção",
+   "A #material Material",
+   "A #contato Contato"
+  ],
+  "cta": {
+   "hash": "#colecao",
+   "h2_top": 224,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#colecao"
+  },
+  "nav_material": {
+   "hash": "#material",
+   "h2_top": 224,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#material"
+  },
+  "nav_contato": {
+   "hash": "#contato",
+   "h2_top": 224,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#contato"
+  },
+  "axe": {
+   "violations": [],
+   "passes": 44,
+   "incomplete": []
+  }
+ },
+ "1440": {
+  "first_tab": {
+   "text": "Pular para o conteúdo",
+   "href": "#conteudo",
+   "visible": true
+  },
+  "tab_order": [
+   "A #topo , início",
+   "A #colecao Coleção",
+   "A #material Material",
+   "A #contato Contato",
+   "A #colecao Conhecer a coleção",
+   "A mailto:contato@ateliebruma.example contato@ateliebruma.example",
+   "A #topo , início",
+   "A #topo Voltar ao início",
+   "BODY  Pular para o conteúdo , início",
+   "A #conteudo Pular para o conteúdo",
+   "A #topo , início",
+   "A #colecao Coleção",
+   "A #material Material",
+   "A #contato Contato"
+  ],
+  "cta": {
+   "hash": "#colecao",
+   "h2_top": 272,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#colecao"
+  },
+  "nav_material": {
+   "hash": "#material",
+   "h2_top": 272,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#material"
+  },
+  "nav_contato": {
+   "hash": "#contato",
+   "h2_top": 272,
+   "header_bottom": 57,
+   "h2_visible_below_header": true,
+   "focus": "SECTION#contato"
+  },
+  "axe": {
+   "violations": [],
+   "passes": 44,
+   "incomplete": []
+  }
+ },
+ "text_spacing_320_scrollW": 320
+}
