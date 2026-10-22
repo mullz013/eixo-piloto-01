@@ -130,16 +130,63 @@
       "dna_version": "0.2.0",
       "task_id": "UI-001",
       "agent": "UI Designer & Art Director",
-      "status": "PENDING",
+      "status": "READY_FOR_REVIEW",
       "depends_on": [
         "UX-001"
       ],
-      "artifact_links": [],
-      "assumptions": [],
-      "open_questions": [],
-      "risks": [],
-      "acceptance_criteria": [],
-      "evidence": []
+      "artifact_links": [
+        "handoffs/UI-001.md",
+        "docs/ui/art-direction.md",
+        "docs/ui/ui-handoff.md",
+        "docs/ui/tokens.json",
+        "docs/ui/tokens.css",
+        "docs/ui/preview.html",
+        "docs/ui/logo/README.md",
+        "docs/ui/logo/logo-principal.svg",
+        "docs/ui/logo/logo-mono-fundo-claro.svg",
+        "docs/ui/logo/logo-mono-fundo-escuro.svg",
+        "docs/ui/logo/icone.svg",
+        "docs/ui/logo/icone-fundo-escuro.svg",
+        "evidence/UI-001/delegation-transcript-round1.json",
+        "evidence/UI-001/delegation-transcript-round2.json",
+        "evidence/UI-001/delegation-transcript-round3.json",
+        "evidence/UI-001/contrast-check.json",
+        "evidence/UI-001/render-check.json",
+        "evidence/UI-001/logo-32px-check.json",
+        "evidence/UI-001/logos-32px-1x.png"
+      ],
+      "assumptions": [
+        "Logotipo e direção de arte são FICTÍCIOS, criação original do eixo-ui-art-director, não aprovados.",
+        "Figma MCP não conectado: handoff Figma NÃO REALIZADO; entrega em docs/ui/.",
+        "Borda do placeholder em ink-700 adotada como padrão razoável (C16b), reversível pelo proprietário.",
+        "Fontes Fraunces e Figtree (SIL OFL 1.1) citadas sem baixar as licenças."
+      ],
+      "open_questions": [
+        "Aprova a direção \"Névoa quieta\" e o logotipo proposto?",
+        "Mantém as faixas de bruma dentro do símbolo?",
+        "Aceita o tracejado como marca visual de fictício/ilustrativo?",
+        "Titularidade do logotipo fictício: registrar ou deixar indefinida?",
+        "Autoriza o Developer a baixar e arquivar as licenças OFL das fontes?"
+      ],
+      "risks": [
+        "Sem teste com pessoas; só o revisor olhou a prancha.",
+        "Header a 320 px medido com fonte de fallback, sem Figtree.",
+        "Leitor de tela, teclado e WCAG 2.2 AA completo não testados.",
+        "Subagente em segundo plano é encerrado quando o processo claude -p termina (rodada 1 interrompida)."
+      ],
+      "acceptance_criteria": [
+        "Logotipo original em SVG (principal, mono claro/escuro, ícone), letras em paths, legível a 32 px, nome acessível \"Ateliê Bruma\", link #topo.",
+        "Contraste texto ≥ 4,5:1 e componentes/foco ≥ 3:1, conferido por script.",
+        "Prancha sem rolagem horizontal de 320 a 1440 px e sem recursos externos.",
+        "Sem identidade EIXO, assets sem licença, depoimentos, selos ou CTA secundário.",
+        "Aprovação humana antes de DEV-001."
+      ],
+      "evidence": [
+        "2026-10-22: eixo-orchestrator chamou Agent com subagent_type=eixo-ui-art-director três vezes (toolu_018nE5hipgqQPNMHU4ZpfXrq, toolu_01GvwTGu8hzJuWq4avNFTyxK, toolu_013nLLGn31Vi6TVNTbjP6wh3); todos os Write/Edit em docs/ui/ têm parent_tool_use_id igual ao Agent da rodada (evidence/UI-001/delegation-transcript-round*.json). Custo acumulado ~US$ 3,92.",
+        "Rodada 1 interrompida pelo fim do processo -p antes do ui-handoff.md (evento subagent_interrupted); rodadas 2 e 3 em primeiro plano retornaram READY_FOR_REVIEW.",
+        "Revisão independente: contraste por script confere os 20 pares (dif. máx. 0,04), falha C16b corrigida para 4,43:1 (evidence/UI-001/contrast-check.json).",
+        "Revisão independente: Playwright + Chromium, prancha sem rolagem horizontal em 320/375/768/1024/1440 e sem requisições externas; SVGs válidos em 81×32/32×32; header a 320 px em uma linha (evidence/UI-001/render-check.json, logo-32px-check.json)."
+      ]
     },
     {
       "project_id": "piloto-01",

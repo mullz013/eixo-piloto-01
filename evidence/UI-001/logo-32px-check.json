@@ -1,0 +1,57 @@
+[
+ {
+  "file": "icone-fundo-escuro.svg",
+  "natural": [
+   32,
+   32
+  ],
+  "rendered": [
+   32,
+   32
+  ]
+ },
+ {
+  "file": "icone.svg",
+  "natural": [
+   32,
+   32
+  ],
+  "rendered": [
+   32,
+   32
+  ]
+ },
+ {
+  "file": "logo-mono-fundo-claro.svg",
+  "natural": [
+   81,
+   32
+  ],
+  "rendered": [
+   81,
+   32
+  ]
+ },
+ {
+  "file": "logo-mono-fundo-escuro.svg",
+  "natural": [
+   81,
+   32
+  ],
+  "rendered": [
+   81,
+   32
+  ]
+ },
+ {
+  "file": "logo-principal.svg",
+  "natural": [
+   81,
+   32
+  ],
+  "rendered": [
+   81,
+   32
+  ]
+ }
+]
