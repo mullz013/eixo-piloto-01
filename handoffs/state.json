@@ -56,7 +56,7 @@
       "dna_version": "0.2.0",
       "task_id": "UX-001",
       "agent": "UX Architect",
-      "status": "READY_FOR_REVIEW",
+      "status": "COMPLETED_VERIFIED",
       "depends_on": [
         "ORCH-001"
       ],
@@ -119,8 +119,11 @@
         "2026-10-22: eixo-orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect em segundo plano (14 chamadas de ferramenta, ~47 mil tokens, ~172 s); o subagente escreveu os quatro arquivos em docs/ux/ e retornou READY_FOR_REVIEW sem blockers.",
         "Orchestrator leu os quatro arquivos e conferiu as restrições (CTA único, sem formulário/WhatsApp/e-commerce, sem prova social, sem identidade EIXO, nada APPROVED); detalhes em handoffs/UX-001.md.",
         "evidence/UX-001/delegation-transcript.json: claude 2.1.307 (claude-sonnet-5-5), eixo-orchestrator chamou Agent com subagent_type eixo-ux-architect (toolu_01YJMivLk34TeTL6Z2hFqzC4); os Write/Edit em docs/ux/*.md têm parent_tool_use_id igual a esse id, provando autoria do subagente. Custo ~US$ 0,76.",
-        "evidence/UX-001/delegation-transcript-round2.json: rodada 2 com as decisões do proprietário; Agent toolu_01XfTAkdaxe2tSWkRbjuBVzt (eixo-ux-architect), todos os Edit em docs/ux/ com esse parent_tool_use_id. Custo ~US$ 0,44."
-      ]
+        "evidence/UX-001/delegation-transcript-round2.json: rodada 2 com as decisões do proprietário; Agent toolu_01XfTAkdaxe2tSWkRbjuBVzt (eixo-ux-architect), todos os Edit em docs/ux/ com esse parent_tool_use_id. Custo ~US$ 0,44.",
+        "2026-10-22T00:27:51Z: proprietário revisou a PR #5 (commit e1d8da8) e respondeu \"Tudo certo\" na conversa do projeto, registrado como aprovação humana do UX. UI-001 liberado."
+      ],
+      "approved_by": "Matheus Santos (proprietário)",
+      "approved_at": "2026-10-22T00:27:51Z"
     },
     {
       "project_id": "piloto-01",
