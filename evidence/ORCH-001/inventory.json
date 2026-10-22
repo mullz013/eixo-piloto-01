@@ -1,0 +1,35 @@
+[
+  {
+    "event": "init",
+    "claude_code_version": "2.1.307",
+    "cwd": "/home/claude/eixo-piloto-01",
+    "model": "claude-sonnet-5-5",
+    "agents": [
+      "claude",
+      "claude-code-guide",
+      "eixo-fullstack-developer",
+      "eixo-orchestrator",
+      "eixo-qa-engineer",
+      "eixo-quality-specialist",
+      "eixo-ui-art-director",
+      "eixo-ux-architect",
+      "Explore",
+      "general-purpose",
+      "Plan",
+      "statusline-setup"
+    ],
+    "tools": [
+      "Task",
+      "Read",
+      "Write",
+      "Edit",
+      "Bash"
+    ]
+  },
+  {
+    "event": "result",
+    "subtype": "success",
+    "num_turns": 1,
+    "result": "claude\nclaude-code-guide\neixo-fullstack-developer\neixo-orchestrator\neixo-qa-engineer\neixo-quality-specialist\neixo-ui-art-director\neixo-ux-architect\nExplore\ngeneral-purpose\nPlan\nstatusline-setup"
+  }
+]

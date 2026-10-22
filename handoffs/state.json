@@ -1,28 +1,42 @@
 {
   "project_id": "piloto-01",
   "dna_version": "0.2.0",
-  "status": "DNA_APPROVED_RUNTIME_UNVERIFIED",
+  "status": "DNA_APPROVED_RUNTIME_VERIFIED",
   "tasks": [
     {
       "project_id": "piloto-01",
       "dna_version": "0.2.0",
       "task_id": "ORCH-001",
       "agent": "Orchestrator",
-      "status": "BLOCKED",
+      "status": "COMPLETED_VERIFIED",
       "depends_on": [],
-      "artifact_links": [],
-      "assumptions": [],
+      "artifact_links": [
+        "handoffs/ORCH-001.md",
+        "evidence/ORCH-001/inventory.json",
+        "evidence/ORCH-001/delegation-transcript.json"
+      ],
+      "assumptions": [
+        "Agentes copiados localmente de mullz013/eixo-ai@eixo/setup-multiagent-v1.1 (2b4a012) para .claude/agents/, sem versionar no piloto.",
+        "Execução em container Claude Code na nuvem (claude 2.1.307), não no computador do proprietário."
+      ],
       "open_questions": [
-        "Os seis agentes estão instalados e disponíveis no ambiente Claude Code?"
+        "UX-001: forma da seção de contato demonstrativo (estática ou formulário sem envio)?",
+        "UX-001: quantidade/campos das peças fictícias e uso de placeholders sem licença?",
+        "UX-001: métricas do piloto ou apenas critérios funcionais Dado/Quando/Então?"
       ],
       "risks": [
-        "Claude Code runtime e seis agentes ainda não verificados nesta conversa; não declarar execução real."
+        "O probe foi somente leitura; UX-001 completo ainda não foi executado.",
+        "Modelo padrão do runtime (claude-sonnet-5-5) herdado via model: inherit; outros ambientes podem usar outro modelo."
       ],
       "acceptance_criteria": [
         "Validar seis agentes via runtime Claude Code.",
         "Registrar evidência verificável da primeira delegação real ao UX Architect."
       ],
-      "evidence": []
+      "evidence": [
+        "2026-10-21: `claude --agent eixo-orchestrator -p` no diretório do piloto listou os seis agentes eixo-* no evento init (evidence/ORCH-001/inventory.json).",
+        "2026-10-21: o orchestrator chamou a ferramenta Agent com subagent_type=eixo-ux-architect (tool_use toolu_01BvBtKBTkVgA1U62PXvExXv); o subagente executou Read em docs/project-dna.md e docs/project-dna.json com parent_tool_use_id apontando para essa chamada e devolveu o relatório (evidence/ORCH-001/delegation-transcript.json).",
+        "Citações do subagente conferidas: docs/project-dna.md linhas 11–12 e project-dna.json primary_cta/assets_approved=false."
+      ]
     },
     {
       "project_id": "piloto-01",
