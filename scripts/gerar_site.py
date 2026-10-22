@@ -313,6 +313,15 @@ def page() -> str:
     </div>
   </section>
 
+  <section class="perks" aria-label="Vantagens da loja">
+    <ul class="wrap perks__list" role="list">
+      <li>{ICON["truck"]}<span><strong>Frete grátis</strong> acima de {brl(FRETE_GRATIS)}</span></li>
+      <li>{ICON["swap"]}<span><strong>Troca fácil</strong> em até 7 dias</span></li>
+      <li>{ICON["gift"]}<span><strong>Embalagem para presente</strong> sem custo</span></li>
+      <li>{ICON["card"]}<span><strong>Pix ou cartão</strong> em até 3x sem juros</span></li>
+    </ul>
+  </section>
+
 {secao_categorias()}
 
   <div class="filterbar" data-filterbar hidden>
@@ -341,14 +350,6 @@ def page() -> str:
 
 {secao_passadas()}
 
-  <section class="perks" aria-label="Vantagens da loja">
-    <ul class="wrap perks__list" role="list">
-      <li>{ICON["truck"]}<span><strong>Frete grátis</strong> acima de {brl(FRETE_GRATIS)}</span></li>
-      <li>{ICON["swap"]}<span><strong>Troca fácil</strong> em até 7 dias</span></li>
-      <li>{ICON["gift"]}<span><strong>Embalagem para presente</strong> sem custo</span></li>
-      <li>{ICON["card"]}<span><strong>Pix ou cartão</strong> em até 3x sem juros</span></li>
-    </ul>
-  </section>
 
   <section id="ajuda" class="sec" aria-labelledby="t-ajuda">
     <div class="wrap faq">

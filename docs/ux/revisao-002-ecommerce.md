@@ -38,11 +38,12 @@ Fluxos alternativos: categoria pelo menu do celular; link profundo para `#coleco
 1. Faixa de aviso (frete grátis; loja demonstrativa no desktop)
 2. Header fixo: hambúrguer (< 1024 px) · logo · menu (≥ 1024 px) · sacola com contador
 3. Banner artístico
+3a. Vantagens: frete, troca, embalagem, pagamento (logo abaixo do banner, pedido do proprietário em 2026-10-22)
 4. Categorias (5)
 5. Novidades da fornada: Coleção Névoa, carrossel
 6. O ateliê: faixa escura com 3 fatos de material
 7. Coleções passadas: Terra Molhada e Sal, cada uma com seu carrossel
-8. Vantagens: frete, troca, embalagem, pagamento
+8. (movido) Vantagens: ver item 3a
 9. Ajuda: envio, trocas, cuidados, pagamento (acordeão)
 10. Rodapé de loja
 
