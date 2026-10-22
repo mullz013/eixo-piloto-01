@@ -157,11 +157,48 @@ COLECAO_ALT = {
 }
 
 
-def faixa_colecao(col: dict) -> str:
-    """Foto larga da coleção acima da vitrine (DES-001; espaço aprovado pelo proprietário em 2026-10-22)."""
-    return f'''      <figure class="colbanner colbanner--{col["id"]}">
-        {foto(f"colecoes/{col['id']}", [800, 1536], 1536, 1024, "(min-width: 1200px) 1152px, 100vw", COLECAO_ALT[col["id"]])}
-      </figure>'''
+COLECAO_ABA = {  # subtítulo curto e destino do CTA de cada aba (UI-004)
+    "nevoa": ("Fosco cinza-azulado, com névoa clara escorrendo da borda.", "#novidades"),
+    "terra": ("Ferrugem embaixo, areia molhada em cima.", "#colecao-terra"),
+    "sal": ("Branco de sal grosso, com a borda em azul cobalto.", "#colecao-sal"),
+}
+
+
+def secao_colecoes_abas() -> str:
+    """Seção 'Escolha sua coleção' (UI-004): abas à esquerda, foto à direita; no celular, foto em cima.
+    Padrão de disclosure (botão com aria-expanded), para o CTA poder ficar dentro da aba."""
+    abas, fotos = [], []
+    for i, col in enumerate(COLECOES):
+        cid = col["id"]
+        sub, href = COLECAO_ABA[cid]
+        n = sum(1 for p in CATALOGO if p[0] == cid)
+        ativo = i == 0
+        abas.append(f'''        <li class="ctab{" is-active" if ativo else ""}" data-ctab="{cid}">
+          <h3 class="ctab__h"><button class="ctab__btn" type="button" aria-expanded="{"true" if ativo else "false"}" aria-controls="ctab-foto-{cid} ctab-cta-{cid}">{col["nome"]}<span class="ctab__season">{col["estacao"]}</span></button></h3>
+          <p class="ctab__sub">{sub}</p>
+          <p class="ctab__cta" id="ctab-cta-{cid}"><a class="btn btn--sm" href="{href}">Ver as {n} peças {ICON["arrow"]}</a></p>
+        </li>''')
+        fotos.append(f'''        <figure class="ctabs__foto ctabs__foto--{cid}{" is-active" if ativo else ""}" id="ctab-foto-{cid}">
+          {foto(f"colecoes/{cid}", [800, 1536], 1536, 1024, "(min-width: 1024px) 700px, calc(100vw - 88px)", COLECAO_ALT[cid])}
+        </figure>''')
+    return f'''  <section id="escolha" class="sec sec--ctabs" aria-labelledby="t-escolha">
+    <div class="wrap">
+      <header class="sec__head">
+        <div>
+          <p class="kicker">Três esmaltes, três fornadas</p>
+          <h2 id="t-escolha" class="sec__title">Escolha sua <em>coleção</em></h2>
+        </div>
+      </header>
+      <div class="ctabs" data-ctabs>
+        <div class="ctabs__media">
+{chr(10).join(fotos)}
+        </div>
+        <ul class="ctabs__list" role="list">
+{chr(10).join(abas)}
+        </ul>
+      </div>
+    </div>
+  </section>'''
 
 
 def vitrine(col: dict, titulo_id: str) -> str:
@@ -184,7 +221,6 @@ def secao_atual() -> str:
     col = COLECOES[0]
     return f'''  <section id="novidades" class="sec" aria-labelledby="t-novidades">
     <div class="wrap">
-{faixa_colecao(col)}
       <header class="sec__head">
         <div>
           <p class="kicker">Coleção {col["nome"]} · {col["estacao"]}</p>
@@ -203,14 +239,10 @@ def secao_passadas() -> str:
         tid = f"t-col-{col['id']}"
         blocos.append(f'''    <div class="past past--{col["id"]}" id="colecao-{col["id"]}">
       <div class="wrap">
-{faixa_colecao(col)}
         <header class="sec__head sec__head--past">
           <div class="past__id">
-            <span class="swatch swatch--{col["id"]}" aria-hidden="true"></span>
-            <div>
-              <p class="kicker">{col["estacao"]}</p>
-              <h3 id="{tid}" class="past__title">{col["nome"]}</h3>
-            </div>
+            <p class="kicker">{col["estacao"]}</p>
+            <h3 id="{tid}" class="past__title">{col["nome"]}</h3>
           </div>
           <p class="sec__aside">{col["frase"]}</p>
         </header>
@@ -253,17 +285,15 @@ def secao_categorias() -> str:
 
 
 def hero_cards() -> str:
-    """Cartões flutuantes do hero (UI-003 §4.2): peça em destaque e selo da fornada. Só dados do catálogo."""
+    """Cartões flutuantes do hero (UI-003 §4.2): peça em destaque (selo da fornada removido a pedido do proprietário). Só dados do catálogo."""
     destaque = next(p for p in CATALOGO if p[0] == "nevoa" and p[1] == "jarra")
     col, forma, nome, _medida, preco, _selo = destaque
     pid = f"{col}-{forma}"
-    n_atual = sum(1 for p in CATALOGO if p[0] == COLECOES[0]["id"])
     return f'''    <div class="hero__card hero__card--piece">
       <img class="hero__card-img" src="{FOTOS}/produtos/{pid}-480.webp" width="64" height="80" alt="">
       <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">{escape(nome)}</span><span class="hero__card-price">{brl(preco)}</span></p>
       <button class="add add--float" type="button" data-add="{pid}" data-name="{escape(nome)}" data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>
-    </div>
-    <p class="hero__card hero__card--batch"><span class="hero__batch-title">Fornada nº 14</span><span class="hero__batch-meta"><span class="hero__batch-sep"> · </span>{n_atual} peças<span class="hero__batch-city"> · Curitiba</span></span></p>'''
+    </div>'''
 
 
 def page() -> str:
@@ -389,6 +419,8 @@ def page() -> str:
   </section>
 
 {secao_categorias()}
+
+{secao_colecoes_abas()}
 
   <div class="filterbar" data-filterbar hidden>
     <div class="wrap filterbar__in">

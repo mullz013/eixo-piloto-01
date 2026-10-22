@@ -102,7 +102,6 @@
       <p class="hero__card-text"><span class="hero__card-kicker">Destaque da fornada</span><span class="hero__card-name">Jarra Névoa</span><span class="hero__card-price">R$ 168</span></p>
       <button class="add add--float" type="button" data-add="nevoa-jarra" data-name="Jarra Névoa" data-price="168" data-img="assets/fotos/produtos/nevoa-jarra-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Jarra Névoa à sacola</span></button>
     </div>
-    <p class="hero__card hero__card--batch"><span class="hero__batch-title">Fornada nº 14</span><span class="hero__batch-meta"><span class="hero__batch-sep"> · </span>8 peças<span class="hero__batch-city"> · Curitiba</span></span></p>
     <div class="hero__copy">
       <p class="kicker kicker--pill">Coleção Névoa<span class="kicker__season"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
@@ -171,6 +170,47 @@
     </div>
   </section>
 
+  <section id="escolha" class="sec sec--ctabs" aria-labelledby="t-escolha">
+    <div class="wrap">
+      <header class="sec__head">
+        <div>
+          <p class="kicker">Três esmaltes, três fornadas</p>
+          <h2 id="t-escolha" class="sec__title">Escolha sua <em>coleção</em></h2>
+        </div>
+      </header>
+      <div class="ctabs" data-ctabs>
+        <div class="ctabs__media">
+        <figure class="ctabs__foto ctabs__foto--nevoa is-active" id="ctab-foto-nevoa">
+          <picture><source type="image/webp" srcset="assets/fotos/colecoes/nevoa-800.webp 800w, assets/fotos/colecoes/nevoa-1536.webp 1536w" sizes="(min-width: 1024px) 700px, calc(100vw - 88px)"><img src="assets/fotos/colecoes/nevoa-1536.jpg" width="1536" height="1024" alt="Peças da coleção Névoa em fila sobre uma prateleira de pedra, com névoa ao fundo." loading="lazy" decoding="async"></picture>
+        </figure>
+        <figure class="ctabs__foto ctabs__foto--terra" id="ctab-foto-terra">
+          <picture><source type="image/webp" srcset="assets/fotos/colecoes/terra-800.webp 800w, assets/fotos/colecoes/terra-1536.webp 1536w" sizes="(min-width: 1024px) 700px, calc(100vw - 88px)"><img src="assets/fotos/colecoes/terra-1536.jpg" width="1536" height="1024" alt="Peças da coleção Terra Molhada sobre ardósia molhada, com areia úmida e luz de fim de tarde." loading="lazy" decoding="async"></picture>
+        </figure>
+        <figure class="ctabs__foto ctabs__foto--sal" id="ctab-foto-sal">
+          <picture><source type="image/webp" srcset="assets/fotos/colecoes/sal-800.webp 800w, assets/fotos/colecoes/sal-1536.webp 1536w" sizes="(min-width: 1024px) 700px, calc(100vw - 88px)"><img src="assets/fotos/colecoes/sal-1536.jpg" width="1536" height="1024" alt="Peças da coleção Sal sobre pedra clara, com cristais de sal grosso espalhados." loading="lazy" decoding="async"></picture>
+        </figure>
+        </div>
+        <ul class="ctabs__list" role="list">
+        <li class="ctab is-active" data-ctab="nevoa">
+          <h3 class="ctab__h"><button class="ctab__btn" type="button" aria-expanded="true" aria-controls="ctab-foto-nevoa ctab-cta-nevoa">Névoa<span class="ctab__season">Primavera 2026</span></button></h3>
+          <p class="ctab__sub">Fosco cinza-azulado, com névoa clara escorrendo da borda.</p>
+          <p class="ctab__cta" id="ctab-cta-nevoa"><a class="btn btn--sm" href="#novidades">Ver as 8 peças <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13.5 6.5L19 12l-5.5 5.5"/></svg></a></p>
+        </li>
+        <li class="ctab" data-ctab="terra">
+          <h3 class="ctab__h"><button class="ctab__btn" type="button" aria-expanded="false" aria-controls="ctab-foto-terra ctab-cta-terra">Terra Molhada<span class="ctab__season">Outono 2026</span></button></h3>
+          <p class="ctab__sub">Ferrugem embaixo, areia molhada em cima.</p>
+          <p class="ctab__cta" id="ctab-cta-terra"><a class="btn btn--sm" href="#colecao-terra">Ver as 6 peças <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13.5 6.5L19 12l-5.5 5.5"/></svg></a></p>
+        </li>
+        <li class="ctab" data-ctab="sal">
+          <h3 class="ctab__h"><button class="ctab__btn" type="button" aria-expanded="false" aria-controls="ctab-foto-sal ctab-cta-sal">Sal<span class="ctab__season">Verão 2025/26</span></button></h3>
+          <p class="ctab__sub">Branco de sal grosso, com a borda em azul cobalto.</p>
+          <p class="ctab__cta" id="ctab-cta-sal"><a class="btn btn--sm" href="#colecao-sal">Ver as 6 peças <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13.5 6.5L19 12l-5.5 5.5"/></svg></a></p>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <div class="filterbar" data-filterbar hidden>
     <div class="wrap filterbar__in">
       <p>Mostrando: <strong data-filter-name></strong></p>
@@ -180,9 +220,6 @@
 
   <section id="novidades" class="sec" aria-labelledby="t-novidades">
     <div class="wrap">
-      <figure class="colbanner colbanner--nevoa">
-        <picture><source type="image/webp" srcset="assets/fotos/colecoes/nevoa-800.webp 800w, assets/fotos/colecoes/nevoa-1536.webp 1536w" sizes="(min-width: 1200px) 1152px, 100vw"><img src="assets/fotos/colecoes/nevoa-1536.jpg" width="1536" height="1024" alt="Peças da coleção Névoa em fila sobre uma prateleira de pedra, com névoa ao fundo." loading="lazy" decoding="async"></picture>
-      </figure>
       <header class="sec__head">
         <div>
           <p class="kicker">Coleção Névoa · Primavera 2026</p>
@@ -327,16 +364,10 @@
     </div>
     <div class="past past--terra" id="colecao-terra">
       <div class="wrap">
-      <figure class="colbanner colbanner--terra">
-        <picture><source type="image/webp" srcset="assets/fotos/colecoes/terra-800.webp 800w, assets/fotos/colecoes/terra-1536.webp 1536w" sizes="(min-width: 1200px) 1152px, 100vw"><img src="assets/fotos/colecoes/terra-1536.jpg" width="1536" height="1024" alt="Peças da coleção Terra Molhada sobre ardósia molhada, com areia úmida e luz de fim de tarde." loading="lazy" decoding="async"></picture>
-      </figure>
         <header class="sec__head sec__head--past">
           <div class="past__id">
-            <span class="swatch swatch--terra" aria-hidden="true"></span>
-            <div>
-              <p class="kicker">Outono 2026</p>
-              <h3 id="t-col-terra" class="past__title">Terra Molhada</h3>
-            </div>
+            <p class="kicker">Outono 2026</p>
+            <h3 id="t-col-terra" class="past__title">Terra Molhada</h3>
           </div>
           <p class="sec__aside">Óxido de ferro sobre argila escura: ferrugem embaixo, areia molhada em cima.</p>
         </header>
@@ -425,16 +456,10 @@
     </div>
     <div class="past past--sal" id="colecao-sal">
       <div class="wrap">
-      <figure class="colbanner colbanner--sal">
-        <picture><source type="image/webp" srcset="assets/fotos/colecoes/sal-800.webp 800w, assets/fotos/colecoes/sal-1536.webp 1536w" sizes="(min-width: 1200px) 1152px, 100vw"><img src="assets/fotos/colecoes/sal-1536.jpg" width="1536" height="1024" alt="Peças da coleção Sal sobre pedra clara, com cristais de sal grosso espalhados." loading="lazy" decoding="async"></picture>
-      </figure>
         <header class="sec__head sec__head--past">
           <div class="past__id">
-            <span class="swatch swatch--sal" aria-hidden="true"></span>
-            <div>
-              <p class="kicker">Verão 2025/26</p>
-              <h3 id="t-col-sal" class="past__title">Sal</h3>
-            </div>
+            <p class="kicker">Verão 2025/26</p>
+            <h3 id="t-col-sal" class="past__title">Sal</h3>
           </div>
           <p class="sec__aside">Branco quente de sal grosso, com a borda mergulhada em azul cobalto.</p>
         </header>

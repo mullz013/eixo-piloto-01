@@ -11,7 +11,7 @@
 | `produtos/` | cartões das vitrines, sacola, cartão "Destaque da fornada" | 4:5 | 480, 800 |
 | `categorias/` | "Compre por categoria" | 1:1 | 400, 640 |
 | `banner/` | banner principal (desktop 3:2 com `object-fit`, celular 1:1) | | 1024/1536, 640/960 |
-| `colecoes/` | faixa da coleção acima de cada vitrine (Névoa, Terra Molhada, Sal) | 3:2 no celular, 12:5 no desktop via CSS | 800, 1536 |
+| `colecoes/` | seção "Escolha sua coleção" (abas com foto; UI-004) | 3:2 | 800, 1536 |
 | `atelie/` | painel "O ateliê" (`torno`); `fornada` fica como alternativa, não usada | 4:5 / 3:2 | 640, 1024 |
 | `og/` | prévia de link (Open Graph), ainda sem `<meta>` porque precisa de URL absoluta | 1200×630 | |
 
