@@ -363,7 +363,7 @@
       "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
-      "status": "READY_FOR_REVIEW",
+      "status": "BLOCKED",
       "depends_on": [
         "DEV-002"
       ],
@@ -375,7 +375,7 @@
       ],
       "assumptions": [],
       "open_questions": [
-        "Fica COMPLETED_VERIFIED quando DEV-002 (e UI-003/DES-001) forem aprovados pelo proprietário; o validador exige pré-requisito verificado."
+        "Revisão executada e aprovada no afbd689 (ver evidence). Status fica BLOCKED só porque o validador exige DEV-002 em COMPLETED_VERIFIED, o que depende da aprovação do proprietário."
       ],
       "risks": [],
       "acceptance_criteria": [],
@@ -389,7 +389,7 @@
       "dna_version": "0.2.0",
       "task_id": "QUAL-001",
       "agent": "Quality Specialist",
-      "status": "READY_FOR_REVIEW",
+      "status": "BLOCKED",
       "depends_on": [
         "UI-001",
         "DEV-002"
@@ -400,7 +400,7 @@
       ],
       "assumptions": [],
       "open_questions": [
-        "Fica COMPLETED_VERIFIED quando DEV-002 (e UI-003/DES-001) forem aprovados pelo proprietário; o validador exige pré-requisito verificado."
+        "Revisão executada e aprovada no afbd689 (ver evidence). Status fica BLOCKED só porque o validador exige DEV-002 em COMPLETED_VERIFIED, o que depende da aprovação do proprietário."
       ],
       "risks": [],
       "acceptance_criteria": [],
