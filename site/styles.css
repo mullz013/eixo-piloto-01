@@ -277,7 +277,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   --hero-pad: var(--space-6); /* um só respiro interno: texto, cartão e botão de pausa (pedido do proprietário) */
   position: relative; isolation: isolate; overflow: hidden;
   display: grid; grid-template-columns: minmax(0, 1fr); /* nenhum filho alarga o painel */
-  width: var(--panel-w); margin: var(--space-3) auto 0; border-radius: var(--radius-panel);
+  width: var(--panel-w); margin: var(--gutter) auto 0; border-radius: var(--radius-panel); /* topo = laterais = base (QUAL-001 P2-1) */
   background:
     radial-gradient(120% 70% at 70% 100%, #CDD3D3 0%, transparent 60%),
     linear-gradient(180deg, #EFEBE4 0%, #E3E1DB 55%, #D5D9D8 100%);
@@ -286,7 +286,7 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   content: ""; position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0.35; mix-blend-mode: multiply;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .32 0 0 0 0 .28 0 0 0 .35 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
 }
-.hero__stage { position: relative; height: clamp(220px, 60vw, 320px); }
+.hero__stage { position: relative; height: clamp(150px, 40vw, 320px); } /* mais baixa no celular: o CTA cabe na primeira tela em 375×667 (QA-001 BUG-01) */
 .hero__photo, .hero__photo img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero__photo img { object-fit: cover; object-position: center 72%; }
 @media (max-width: 1023px) { /* a foto se dissolve no painel antes do texto */
@@ -310,6 +310,8 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
 .hero__lead { margin-top: var(--space-5); max-width: 34ch; font-size: var(--size-lg); line-height: 1.5; color: var(--text-secondary); }
 .hero__cta { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3) var(--space-6); margin-top: var(--space-8); }
 @media (max-width: 599px) {
+  .hero__lead { margin-top: var(--space-4); }
+  .hero__cta { margin-top: var(--space-6); }
   .hero__cta .btn { width: 100%; }
 }
 
@@ -317,9 +319,9 @@ svg[aria-hidden] { width: 24px; height: 24px; fill: none; stroke: currentColor; 
   .hero { --hero-pad: var(--space-12); min-height: 0; }
   .hero__stage { position: absolute; inset: 0; height: auto; }
   .hero__photo img { object-position: right 70%; }
-  .hero { margin-top: var(--space-4); }
   .hero__copy { align-self: center; padding: var(--hero-pad); max-width: calc(42% + 4rem); }
   .hero__copy > * { max-width: 36rem; }
+  .hero__copy > .hero__lead { max-width: 30ch; } /* coluna mais curta: o texto não encosta na pedra clara (QUAL-001 P2-2) */
 }
 
 /* entrada e névoa em movimento (desligadas com movimento reduzido) */
@@ -662,6 +664,8 @@ html.has-filter { scroll-padding-top: calc(var(--anchor-offset) + 52px); }
 /* ---------- Sem JavaScript: menu visível em todas as larguras, sem controles de compra ---------- */
 .no-js .header__menu, .no-js .bag-btn, .no-js .add, .no-js .hero__pause, .no-js .drawer { display: none; }
 .no-js .header__in { grid-template-columns: 1fr; height: auto; padding-block: var(--space-3); justify-items: center; }
+html.no-js { --anchor-offset: 184px; } /* header sem JS tem ~160 px (QA-001 BUG-02) */
+@media (min-width: 1024px) { html.no-js { --anchor-offset: 88px; } }
 .no-js .nav { display: block; }
 .no-js .nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--space-1) var(--space-5); }
 .no-js .nav a { display: inline-flex; min-height: 44px; align-items: center; font-size: var(--size-sm); text-decoration: none; }

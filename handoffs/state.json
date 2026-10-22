@@ -363,33 +363,43 @@
       "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
-      "status": "PENDING",
+      "status": "FAILED",
       "depends_on": [
         "DEV-002"
       ],
-      "artifact_links": [],
+      "artifact_links": [
+        "evidence/QA-001/report.md",
+        "evidence/QA-001/report.json",
+        "evidence/QA-001/qa_test.py"
+      ],
       "assumptions": [],
       "open_questions": [],
       "risks": [],
       "acceptance_criteria": [],
-      "evidence": []
+      "evidence": [
+        "1159d06: 79/82 PASS por HTTP, axe 0 violações; P1 BUG-01 (CTA fora da primeira tela no celular). Correções aguardam reteste no novo commit."
+      ]
     },
     {
       "project_id": "piloto-01",
       "dna_version": "0.2.0",
       "task_id": "QUAL-001",
       "agent": "Quality Specialist",
-      "status": "PENDING",
+      "status": "FAILED",
       "depends_on": [
         "UI-001",
         "DEV-002"
       ],
-      "artifact_links": [],
+      "artifact_links": [
+        "evidence/QUAL-001/report.md"
+      ],
       "assumptions": [],
       "open_questions": [],
       "risks": [],
       "acceptance_criteria": [],
-      "evidence": []
+      "evidence": [
+        "1159d06: PASS_WITH_NOTES, 0 P0, 0 P1, 3 P2 (margem do banner, contraste do texto do banner, nome do botão de compra). P2 corrigidos; aguardam reteste."
+      ]
     },
     {
       "project_id": "piloto-01",

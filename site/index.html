@@ -26,7 +26,7 @@
 <header class="header" data-header>
   <div class="wrap header__in">
     <button class="icon-btn header__menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-open-menu><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h12"/></svg></button>
-    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
+    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma, início"></a>
     <nav class="nav" aria-label="Principal">
       <ul role="list">
         <li><a href="#novidades">Novidades</a></li>
@@ -37,7 +37,7 @@
       </ul>
     </nav>
     <button class="bag-btn" type="button" aria-controls="sacola" aria-expanded="false" data-open-cart>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5h14l-1 12H6z"/><path d="M8.75 8.5V7a3.25 3.25 0 0 1 6.5 0v1.5"/></svg><span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5h14l-1 12H6z"/><path d="M8.75 8.5V7a3.25 3.25 0 0 1 6.5 0v1.5"/></svg><span class="bag-btn__label" aria-hidden="true">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>Sacola, 0 itens</span>
     </button>
   </div>
 </header>
@@ -96,7 +96,6 @@
       <div class="hero__mist hero__mist--2"></div>
       <div class="hero__mist hero__mist--3"></div>
     </div>
-    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
     <div class="hero__copy">
       <p class="tag tag--outline">Coleção Névoa<span class="tag__extra"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
@@ -106,6 +105,7 @@
         <a class="btn-link" href="#categorias">Ver categorias <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13.5 6.5L19 12l-5.5 5.5"/></svg></a>
       </div>
     </div>
+    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
   </section>
 
   <section class="perks" aria-label="Vantagens da loja">
@@ -196,7 +196,7 @@
               <h3 class="card__name">Caneca Névoa</h3>
               <p class="card__meta">300 ml · grés</p>
               <p class="price"><span class="price__val">R$ 98</span><span class="price__inst">3x de R$ 32,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-caneca" data-name="Caneca Névoa" data-price="98" data-img="assets/fotos/produtos/nevoa-caneca-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Caneca Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-caneca" data-name="Caneca Névoa" aria-label="Adicionar à sacola: Caneca Névoa" data-price="98" data-img="assets/fotos/produtos/nevoa-caneca-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="canecas cafe presentear">
@@ -208,7 +208,7 @@
               <h3 class="card__name">Xícara com pires Névoa</h3>
               <p class="card__meta">120 ml · grés</p>
               <p class="price"><span class="price__val">R$ 84</span></p>
-              <button class="add" type="button" data-add="nevoa-xicara" data-name="Xícara com pires Névoa" data-price="84" data-img="assets/fotos/produtos/nevoa-xicara-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Xícara com pires Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-xicara" data-name="Xícara com pires Névoa" aria-label="Adicionar à sacola: Xícara com pires Névoa" data-price="84" data-img="assets/fotos/produtos/nevoa-xicara-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="tigelas cafe mesa">
@@ -220,7 +220,7 @@
               <h3 class="card__name">Tigela funda Névoa</h3>
               <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
               <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-tigela" data-name="Tigela funda Névoa" data-price="92" data-img="assets/fotos/produtos/nevoa-tigela-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-tigela" data-name="Tigela funda Névoa" aria-label="Adicionar à sacola: Tigela funda Névoa" data-price="92" data-img="assets/fotos/produtos/nevoa-tigela-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="pratos mesa">
@@ -232,7 +232,7 @@
               <h3 class="card__name">Prato raso Névoa</h3>
               <p class="card__meta">Ø 26 cm · grés</p>
               <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-prato" data-name="Prato raso Névoa" data-price="128" data-img="assets/fotos/produtos/nevoa-prato-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Prato raso Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-prato" data-name="Prato raso Névoa" aria-label="Adicionar à sacola: Prato raso Névoa" data-price="128" data-img="assets/fotos/produtos/nevoa-prato-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="vasos servir">
@@ -244,7 +244,7 @@
               <h3 class="card__name">Jarra Névoa</h3>
               <p class="card__meta">1 litro · grés</p>
               <p class="price"><span class="price__val">R$ 168</span><span class="price__inst">3x de R$ 56<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-jarra" data-name="Jarra Névoa" data-price="168" data-img="assets/fotos/produtos/nevoa-jarra-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Jarra Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-jarra" data-name="Jarra Névoa" aria-label="Adicionar à sacola: Jarra Névoa" data-price="168" data-img="assets/fotos/produtos/nevoa-jarra-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="vasos presentear">
@@ -256,7 +256,7 @@
               <h3 class="card__name">Vaso garrafa Névoa</h3>
               <p class="card__meta">altura 22 cm · grés</p>
               <p class="price"><span class="price__val">R$ 186</span><span class="price__inst">3x de R$ 62<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-garrafa" data-name="Vaso garrafa Névoa" data-price="186" data-img="assets/fotos/produtos/nevoa-garrafa-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Vaso garrafa Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-garrafa" data-name="Vaso garrafa Névoa" aria-label="Adicionar à sacola: Vaso garrafa Névoa" data-price="186" data-img="assets/fotos/produtos/nevoa-garrafa-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="travessas servir">
@@ -268,7 +268,7 @@
               <h3 class="card__name">Travessa oval Névoa</h3>
               <p class="card__meta">32 × 22 cm · grés</p>
               <p class="price"><span class="price__val">R$ 210</span><span class="price__inst">3x de R$ 70<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="nevoa-travessa" data-name="Travessa oval Névoa" data-price="210" data-img="assets/fotos/produtos/nevoa-travessa-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Travessa oval Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-travessa" data-name="Travessa oval Névoa" aria-label="Adicionar à sacola: Travessa oval Névoa" data-price="210" data-img="assets/fotos/produtos/nevoa-travessa-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--nevoa" data-cat="canecas cafe mesa">
@@ -280,7 +280,7 @@
               <h3 class="card__name">Copo Névoa</h3>
               <p class="card__meta">250 ml · grés</p>
               <p class="price"><span class="price__val">R$ 72</span></p>
-              <button class="add" type="button" data-add="nevoa-copo" data-name="Copo Névoa" data-price="72" data-img="assets/fotos/produtos/nevoa-copo-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Copo Névoa à sacola</span></button>
+              <button class="add" type="button" data-add="nevoa-copo" data-name="Copo Névoa" aria-label="Adicionar à sacola: Copo Névoa" data-price="72" data-img="assets/fotos/produtos/nevoa-copo-480.webp" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
         </ul>
@@ -340,7 +340,7 @@
               <h4 class="card__name">Caneca Terra Molhada</h4>
               <p class="card__meta">300 ml · grés</p>
               <p class="price"><span class="price__val">R$ 98</span><span class="price__inst">3x de R$ 32,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="terra-caneca" data-name="Caneca Terra Molhada" data-price="98" data-img="assets/fotos/produtos/terra-caneca-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Caneca Terra Molhada à sacola</span></button>
+              <button class="add" type="button" data-add="terra-caneca" data-name="Caneca Terra Molhada" aria-label="Adicionar à sacola: Caneca Terra Molhada" data-price="98" data-img="assets/fotos/produtos/terra-caneca-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--terra" data-cat="vasos presentear">
@@ -352,7 +352,7 @@
               <h4 class="card__name">Vaso bojudo Terra Molhada</h4>
               <p class="card__meta">altura 18 cm · grés</p>
               <p class="price"><span class="price__val">R$ 196</span><span class="price__inst">3x de R$ 65,33<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="terra-bojudo" data-name="Vaso bojudo Terra Molhada" data-price="196" data-img="assets/fotos/produtos/terra-bojudo-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Vaso bojudo Terra Molhada à sacola</span></button>
+              <button class="add" type="button" data-add="terra-bojudo" data-name="Vaso bojudo Terra Molhada" aria-label="Adicionar à sacola: Vaso bojudo Terra Molhada" data-price="196" data-img="assets/fotos/produtos/terra-bojudo-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--terra" data-cat="tigelas cafe mesa">
@@ -364,7 +364,7 @@
               <h4 class="card__name">Tigela funda Terra Molhada</h4>
               <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
               <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="terra-tigela" data-name="Tigela funda Terra Molhada" data-price="92" data-img="assets/fotos/produtos/terra-tigela-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Terra Molhada à sacola</span></button>
+              <button class="add" type="button" data-add="terra-tigela" data-name="Tigela funda Terra Molhada" aria-label="Adicionar à sacola: Tigela funda Terra Molhada" data-price="92" data-img="assets/fotos/produtos/terra-tigela-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--terra" data-cat="pratos mesa">
@@ -376,7 +376,7 @@
               <h4 class="card__name">Prato raso Terra Molhada</h4>
               <p class="card__meta">Ø 26 cm · grés</p>
               <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" disabled>Esgotado</button>
+              <button class="add" type="button" disabled aria-label="Esgotado: Prato raso Terra Molhada">Esgotado</button>
             </div>
           </li>
           <li class="card card--terra" data-cat="tigelas mesa servir">
@@ -388,7 +388,7 @@
               <h4 class="card__name">Ramequim Terra Molhada</h4>
               <p class="card__meta">Ø 9 cm · 150 ml · grés</p>
               <p class="price"><span class="price__val">R$ 58</span></p>
-              <button class="add" type="button" data-add="terra-ramequim" data-name="Ramequim Terra Molhada" data-price="58" data-img="assets/fotos/produtos/terra-ramequim-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Ramequim Terra Molhada à sacola</span></button>
+              <button class="add" type="button" data-add="terra-ramequim" data-name="Ramequim Terra Molhada" aria-label="Adicionar à sacola: Ramequim Terra Molhada" data-price="58" data-img="assets/fotos/produtos/terra-ramequim-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--terra" data-cat="canecas cafe mesa">
@@ -400,7 +400,7 @@
               <h4 class="card__name">Copo Terra Molhada</h4>
               <p class="card__meta">250 ml · grés</p>
               <p class="price"><span class="price__val">R$ 72</span></p>
-              <button class="add" type="button" data-add="terra-copo" data-name="Copo Terra Molhada" data-price="72" data-img="assets/fotos/produtos/terra-copo-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Copo Terra Molhada à sacola</span></button>
+              <button class="add" type="button" data-add="terra-copo" data-name="Copo Terra Molhada" aria-label="Adicionar à sacola: Copo Terra Molhada" data-price="72" data-img="assets/fotos/produtos/terra-copo-480.webp" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
         </ul>
@@ -432,7 +432,7 @@
               <h4 class="card__name">Xícara com pires Sal</h4>
               <p class="card__meta">120 ml · grés</p>
               <p class="price"><span class="price__val">R$ 84</span></p>
-              <button class="add" type="button" data-add="sal-xicara" data-name="Xícara com pires Sal" data-price="84" data-img="assets/fotos/produtos/sal-xicara-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Xícara com pires Sal à sacola</span></button>
+              <button class="add" type="button" data-add="sal-xicara" data-name="Xícara com pires Sal" aria-label="Adicionar à sacola: Xícara com pires Sal" data-price="84" data-img="assets/fotos/produtos/sal-xicara-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--sal" data-cat="tigelas cafe mesa">
@@ -444,7 +444,7 @@
               <h4 class="card__name">Tigela funda Sal</h4>
               <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
               <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="sal-tigela" data-name="Tigela funda Sal" data-price="92" data-img="assets/fotos/produtos/sal-tigela-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Tigela funda Sal à sacola</span></button>
+              <button class="add" type="button" data-add="sal-tigela" data-name="Tigela funda Sal" aria-label="Adicionar à sacola: Tigela funda Sal" data-price="92" data-img="assets/fotos/produtos/sal-tigela-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--sal" data-cat="vasos servir">
@@ -456,7 +456,7 @@
               <h4 class="card__name">Jarra Sal</h4>
               <p class="card__meta">1 litro · grés</p>
               <p class="price"><span class="price__val">R$ 168</span><span class="price__inst">3x de R$ 56<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="sal-jarra" data-name="Jarra Sal" data-price="168" data-img="assets/fotos/produtos/sal-jarra-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Jarra Sal à sacola</span></button>
+              <button class="add" type="button" data-add="sal-jarra" data-name="Jarra Sal" aria-label="Adicionar à sacola: Jarra Sal" data-price="168" data-img="assets/fotos/produtos/sal-jarra-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--sal" data-cat="pratos mesa">
@@ -468,7 +468,7 @@
               <h4 class="card__name">Prato raso Sal</h4>
               <p class="card__meta">Ø 26 cm · grés</p>
               <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" data-add="sal-prato" data-name="Prato raso Sal" data-price="128" data-img="assets/fotos/produtos/sal-prato-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Prato raso Sal à sacola</span></button>
+              <button class="add" type="button" data-add="sal-prato" data-name="Prato raso Sal" aria-label="Adicionar à sacola: Prato raso Sal" data-price="128" data-img="assets/fotos/produtos/sal-prato-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
           <li class="card card--sal" data-cat="travessas servir">
@@ -480,7 +480,7 @@
               <h4 class="card__name">Travessa oval Sal</h4>
               <p class="card__meta">32 × 22 cm · grés</p>
               <p class="price"><span class="price__val">R$ 210</span><span class="price__inst">3x de R$ 70<span class="price__nojuros"> sem juros</span></span></p>
-              <button class="add" type="button" disabled>Esgotado</button>
+              <button class="add" type="button" disabled aria-label="Esgotado: Travessa oval Sal">Esgotado</button>
             </div>
           </li>
           <li class="card card--sal" data-cat="tigelas mesa servir">
@@ -492,7 +492,7 @@
               <h4 class="card__name">Ramequim Sal</h4>
               <p class="card__meta">Ø 9 cm · 150 ml · grés</p>
               <p class="price"><span class="price__val">R$ 58</span></p>
-              <button class="add" type="button" data-add="sal-ramequim" data-name="Ramequim Sal" data-price="58" data-img="assets/fotos/produtos/sal-ramequim-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span><span class="sr-only">Adicionar Ramequim Sal à sacola</span></button>
+              <button class="add" type="button" data-add="sal-ramequim" data-name="Ramequim Sal" aria-label="Adicionar à sacola: Ramequim Sal" data-price="58" data-img="assets/fotos/produtos/sal-ramequim-480.webp" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span></button>
             </div>
           </li>
         </ul>

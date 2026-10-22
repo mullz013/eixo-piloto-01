@@ -128,13 +128,13 @@ def card(p: tuple, idx: int, hn: str = "h3") -> str:
     if preco >= 90:
         parcela = f'<span class="price__inst">3x de {brl(preco / 3)}<span class="price__nojuros"> sem juros</span></span>'
     if esgotado:
-        btn = '<button class="add" type="button" disabled>Esgotado</button>'
+        btn = f'<button class="add" type="button" disabled aria-label="Esgotado: {escape(nome)}">Esgotado</button>'
     else:
         btn = (
-            f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" '
+            f'<button class="add" type="button" data-add="{pid}" data-name="{escape(nome)}" aria-label="Adicionar à sacola: {escape(nome)}" '
             f'data-price="{preco}" data-img="{FOTOS}/produtos/{pid}-480.webp" data-col="{col}">'
-            f'{ICON["plus"]}<span class="add__label" aria-hidden="true"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
-            f'<span class="sr-only">Adicionar {escape(nome)} à sacola</span></button>'
+            f'{ICON["plus"]}<span class="add__label"><span class="add__long">Adicionar à sacola</span><span class="add__short">Adicionar</span></span>'
+            f'</button>'
         )
     return f'''          <li class="card card--{col}" data-cat="{filtros_de(forma)}">
             <div class="card__media">
@@ -268,7 +268,7 @@ def page() -> str:
 <header class="header" data-header>
   <div class="wrap header__in">
     <button class="icon-btn header__menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-open-menu>{ICON["menu"]}</button>
-    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
+    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma, início"></a>
     <nav class="nav" aria-label="Principal">
       <ul role="list">
         <li><a href="#novidades">Novidades</a></li>
@@ -279,7 +279,7 @@ def page() -> str:
       </ul>
     </nav>
     <button class="bag-btn" type="button" aria-controls="sacola" aria-expanded="false" data-open-cart>
-      {ICON["bag"]}<span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
+      {ICON["bag"]}<span class="bag-btn__label" aria-hidden="true">Sacola</span><span class="bag-btn__count" data-cart-count aria-hidden="true">0</span><span class="sr-only" data-cart-count-sr>Sacola, 0 itens</span>
     </button>
   </div>
 </header>
@@ -331,7 +331,6 @@ def page() -> str:
       <div class="hero__mist hero__mist--2"></div>
       <div class="hero__mist hero__mist--3"></div>
     </div>
-    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
     <div class="hero__copy">
       <p class="tag tag--outline">Coleção Névoa<span class="tag__extra"> · Primavera 2026</span></p>
       <h1 id="t-hero" class="hero__title">A névoa<br> virou <em>mesa.</em></h1>
@@ -341,6 +340,7 @@ def page() -> str:
         <a class="btn-link" href="#categorias">Ver categorias {ICON["arrow"]}</a>
       </div>
     </div>
+    <button class="hero__pause" type="button" aria-pressed="false" data-pause-motion>Pausar animação</button>
   </section>
 
   <section class="perks" aria-label="Vantagens da loja">
