@@ -3,229 +3,578 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ateliê Bruma | Cerâmica de mesa feita à mão (marca fictícia)</title>
-<meta name="description" content="Coleção Névoa, 6 peças de cerâmica utilitária em grés, feitas à mão. Página demonstrativa de uma marca fictícia, com dados de exemplo.">
+<title>Ateliê Bruma | Loja de cerâmica de mesa feita à mão (marca fictícia)</title>
+<meta name="description" content="Loja demonstrativa do Ateliê Bruma, marca fictícia de cerâmica de mesa em grés feita à mão. Coleção Névoa e coleções passadas. Nenhuma compra é processada.">
 <meta name="robots" content="noindex">
 <meta name="color-scheme" content="light">
-<meta name="format-detection" content="telephone=no, address=no, email=no">
+<meta name="theme-color" content="#F4F1EC">
 <link rel="icon" type="image/svg+xml" href="assets/icone.svg">
+<link rel="preload" href="fonts/fraunces-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/figtree-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
 </head>
 <body id="topo">
 
 <a class="skip" href="#conteudo">Pular para o conteúdo</a>
 
-<header class="site-header">
-  <div class="wrap site-header__in">
-    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="81" height="32" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
+<p class="announce">Frete grátis acima de R$ 299 <span class="announce__sep" aria-hidden="true">·</span> <span class="announce__demo">Loja demonstrativa: nenhuma compra é processada</span></p>
+
+<header class="header" data-header>
+  <div class="wrap header__in">
+    <button class="icon-btn header__menu" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" data-open-menu><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18M3 12h18M3 17.5h12"/></svg></button>
+    <a class="brand" href="#topo"><img src="assets/logo-principal.svg" width="101" height="40" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
     <nav class="nav" aria-label="Principal">
-      <a href="#colecao">Coleção</a>
-      <a href="#material">Material</a>
-      <a href="#contato">Contato</a>
+      <ul role="list">
+        <li><a href="#novidades">Novidades</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#colecoes">Coleções passadas</a></li>
+        <li><a href="#atelie">O ateliê</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+      </ul>
     </nav>
+    <button class="bag-btn" type="button" aria-controls="sacola" aria-expanded="false" data-open-cart>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8.5h14l-1 12H6z"/><path d="M8.75 8.5V7a3.25 3.25 0 0 1 6.5 0v1.5"/></svg><span class="bag-btn__label">Sacola</span><span class="bag-btn__count" data-cart-count>0</span><span class="sr-only" data-cart-count-sr>, 0 itens</span>
+    </button>
   </div>
 </header>
 
+<div class="drawer drawer--left" id="menu" data-drawer hidden>
+  <div class="drawer__scrim" data-close></div>
+  <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer__head">
+      <img src="assets/logo-principal.svg" width="81" height="32" alt="Ateliê Bruma">
+      <button class="icon-btn" type="button" aria-label="Fechar menu" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg></button>
+    </div>
+    <nav class="mnav" aria-label="Menu do celular">
+      <ul role="list" class="mnav__main">
+        <li><a href="#novidades">Novidades</a></li>
+        <li><a href="#categorias">Categorias</a>
+          <ul role="list" class="mnav__sub">
+            <li><a href="#novidades" data-filter="canecas">Canecas e xícaras</a></li>
+            <li><a href="#novidades" data-filter="pratos">Pratos</a></li>
+            <li><a href="#novidades" data-filter="tigelas">Tigelas</a></li>
+            <li><a href="#novidades" data-filter="travessas">Travessas</a></li>
+            <li><a href="#novidades" data-filter="vasos">Vasos e jarras</a></li>
+          </ul>
+        </li>
+        <li><a href="#colecoes">Coleções passadas</a>
+          <ul role="list" class="mnav__sub">
+            <li><a href="#colecao-terra">Terra Molhada</a></li>
+            <li><a href="#colecao-sal">Sal</a></li>
+          </ul>
+        </li>
+        <li><a href="#atelie">O ateliê</a></li>
+        <li><a href="#ajuda">Ajuda</a></li>
+      </ul>
+    </nav>
+    <p class="drawer__foot">Frete grátis acima de R$ 299. Troca em até 7 dias.</p>
+  </div>
+</div>
+
 <main id="conteudo" tabindex="-1">
 
-  <!-- Hero -->
-  <section id="proposta" class="hero" aria-labelledby="t-proposta" tabindex="-1">
-    <div class="wrap hero__grid">
-      <div class="hero__text">
-        <p class="tag">Marca fictícia · página demonstrativa</p>
-        <h1 id="t-proposta" tabindex="-1">Cerâmica de mesa feita à mão</h1>
-        <p class="lead">Uma fornada por mês, para usar todo dia sem medo. <span class="ex">(exemplo)</span></p>
-        <p class="support">Grés de alta temperatura, esmalte fosco e peças que podem ir ao micro-ondas e à lava-louças. <span class="ex">(exemplo)</span></p>
-        <p class="hero__cta"><a class="btn" href="#colecao">Conhecer a coleção</a></p>
+  <section class="hero" aria-labelledby="t-hero">
+    <div class="hero__stage" aria-hidden="true">
+      <div class="hero__sun"></div>
+      <p class="hero__word">névoa</p>
+      <div class="hero__plinth"></div>
+      <img class="hero__piece hero__piece--a" src="assets/pecas/nevoa-garrafa.svg" alt="" width="400" height="500">
+      <img class="hero__piece hero__piece--b" src="assets/pecas/nevoa-jarra.svg" alt="" width="400" height="500">
+      <img class="hero__piece hero__piece--c" src="assets/pecas/nevoa-tigela.svg" alt="" width="400" height="500">
+      <img class="hero__piece hero__piece--d" src="assets/pecas/nevoa-xicara.svg" alt="" width="400" height="500">
+      <div class="hero__mist hero__mist--1"></div>
+      <div class="hero__mist hero__mist--2"></div>
+      <div class="hero__mist hero__mist--3"></div>
+      <p class="hero__note">Fornada nº 14 · Curitiba</p>
+    </div>
+    <div class="wrap hero__copy">
+      <p class="kicker">Coleção Névoa · Primavera 2026</p>
+      <h1 id="t-hero" class="hero__title">A névoa<br> virou mesa.</h1>
+      <p class="hero__lead">Grés de alta temperatura, esmalte fosco e uma fornada por mês. Peças feitas à mão para usar todo dia.</p>
+      <div class="hero__cta">
+        <a class="btn" href="#novidades">Comprar a coleção</a>
+        <a class="btn-link" href="#categorias">Ver categorias <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13.5 6.5L19 12l-5.5 5.5"/></svg></a>
       </div>
-      <figure class="ph-fig hero__media">
-        <div class="ph ph--arch" role="img" aria-label="Mesa posta com caneca, xícara com pires e tigela de cerâmica cinza-clara, esmalte fosco, ilustração a ser substituída por foto do ateliê."></div>
-        <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-      </figure>
     </div>
   </section>
 
-  <!-- Manifesto -->
-  <section id="manifesto" class="band band--surface" aria-labelledby="t-manifesto" tabindex="-1">
-    <div class="wrap manifesto">
-      <div class="manifesto__intro">
-        <h2 id="t-manifesto" tabindex="-1">Feito devagar, para durar</h2>
-        <p class="lead">O Ateliê Bruma é um ateliê de uma ceramista que faz peças de mesa com a calma de quem queima uma fornada por vez. <span class="ex">(exemplo)</span></p>
-        <p class="support">&ldquo;Bruma&rdquo; é névoa: tons suaves, bordas que se diluem.</p>
-      </div>
-      <ul class="pillars" role="list">
+  <section id="categorias" class="sec sec--cats" aria-labelledby="t-categorias">
+    <div class="wrap">
+      <header class="sec__head">
+        <h2 id="t-categorias" class="sec__title">Compre por categoria</h2>
+        <p class="sec__aside">Toque numa categoria para ver só essas peças em todas as coleções.</p>
+      </header>
+      <ul class="cats" role="list">
         <li>
-          <h3>Feito à mão.</h3>
-          <p>Cada peça é modelada e esmaltada no ateliê, sem molde industrial.</p>
+          <a class="cat" href="#novidades" data-filter="canecas">
+            <span class="cat__media"><img src="assets/pecas/nevoa-caneca.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__name">Canecas e xícaras</span>
+            <span class="cat__count">6 peças</span>
+          </a>
         </li>
         <li>
-          <h3>Cada fornada é única.</h3>
-          <p>O esmalte fosco muda de tom de uma peça para outra; a variação é parte do desenho.</p>
+          <a class="cat" href="#novidades" data-filter="pratos">
+            <span class="cat__media"><img src="assets/pecas/sal-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__name">Pratos</span>
+            <span class="cat__count">3 peças</span>
+          </a>
         </li>
         <li>
-          <h3>Para o uso de todo dia.</h3>
-          <p>Queima em alta temperatura, pensada para a rotina da cozinha.</p>
+          <a class="cat" href="#novidades" data-filter="tigelas">
+            <span class="cat__media"><img src="assets/pecas/terra-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__name">Tigelas</span>
+            <span class="cat__count">5 peças</span>
+          </a>
+        </li>
+        <li>
+          <a class="cat" href="#novidades" data-filter="travessas">
+            <span class="cat__media"><img src="assets/pecas/nevoa-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__name">Travessas</span>
+            <span class="cat__count">2 peças</span>
+          </a>
+        </li>
+        <li>
+          <a class="cat" href="#novidades" data-filter="vasos">
+            <span class="cat__media"><img src="assets/pecas/terra-bojudo.svg" width="400" height="500" alt="" loading="lazy" decoding="async"></span>
+            <span class="cat__name">Vasos e jarras</span>
+            <span class="cat__count">4 peças</span>
+          </a>
         </li>
       </ul>
     </div>
   </section>
 
-  <!-- Coleção -->
-  <section id="colecao" class="band" aria-labelledby="t-colecao" tabindex="-1">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="t-colecao" tabindex="-1">Coleção Névoa</h2>
-        <p class="lead">Seis peças para a mesa do dia a dia. Pensadas também como presente.</p>
-        <p class="tag">Preços de referência de exemplo. Não há venda neste site.</p>
-      </div>
+  <div class="filterbar" data-filterbar hidden>
+    <div class="wrap filterbar__in">
+      <p>Mostrando: <strong data-filter-name></strong></p>
+      <button class="chip" type="button" data-clear-filter>Limpar filtro <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg></button>
+    </div>
+  </div>
 
-      <ul class="pieces" role="list">
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Caneca de cerâmica cinza-clara, esmalte fosco, alça arredondada."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Caneca Névoa</h3>
-          <p class="meas">300 ml</p>
-          <p class="price">R$ 98 <span class="ex">(exemplo)</span></p>
-          <p class="use">Para o café da manhã ou para dar de presente.</p>
-        </li>
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Xícara pequena de cerâmica cinza-clara sobre pires do mesmo esmalte fosco."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Xícara de café com pires</h3>
-          <p class="meas">120 ml</p>
-          <p class="price">R$ 84 <span class="ex">(exemplo)</span></p>
-          <p class="use">Um presente de entrada, pequeno e fácil de embalar.</p>
-        </li>
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Tigela funda de cerâmica em tom de névoa, esmalte fosco, borda levemente irregular."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Tigela funda</h3>
-          <p class="meas">Ø 15 cm · 600 ml</p>
-          <p class="price">R$ 92 <span class="ex">(exemplo)</span></p>
-          <p class="use">Sopa, cereal ou salada, no uso diário.</p>
-        </li>
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Prato raso redondo de cerâmica cinza-claro, esmalte fosco, borda fina."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Prato raso</h3>
-          <p class="meas">Ø 26 cm</p>
-          <p class="price">R$ 128 <span class="ex">(exemplo)</span></p>
-          <p class="use">A base da mesa posta.</p>
-        </li>
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Travessa oval rasa de cerâmica cinza-clara, esmalte fosco, alças baixas."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Travessa oval</h3>
-          <p class="meas">32 × 22 cm</p>
-          <p class="price">R$ 210 <span class="ex">(exemplo)</span></p>
-          <p class="use">Para servir à mesa.</p>
-        </li>
-        <li class="piece">
-          <figure class="ph-fig">
-            <div class="ph" role="img" aria-label="Vaso de gargalo estreito em cerâmica cinza-clara, esmalte fosco, corpo arredondado."></div>
-            <figcaption class="ph__cap">Imagem ilustrativa (placeholder)</figcaption>
-          </figure>
-          <h3>Vaso garrafa</h3>
-          <p class="meas">altura 22 cm</p>
-          <p class="price">R$ 186 <span class="ex">(exemplo)</span></p>
-          <p class="use">Um ramo seco já basta.</p>
-        </li>
+  <section id="novidades" class="sec" aria-labelledby="t-novidades">
+    <div class="wrap">
+      <header class="sec__head">
+        <div>
+          <p class="kicker">Coleção Névoa · Primavera 2026</p>
+          <h2 id="t-novidades" class="sec__title">Novidades da fornada</h2>
+        </div>
+        <p class="sec__aside">Esmalte fosco cinza-azulado, com uma névoa clara que escorre da borda. A fornada da estação.</p>
+      </header>
+      <div class="carousel" data-carousel>
+        <div class="carousel__nav" hidden>
+          <button class="arrow" type="button" data-dir="-1" aria-label="Peças anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg></button>
+          <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
+        </div>
+        <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-novidades">
+          <li class="card card--nevoa" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-caneca.svg" width="400" height="500" alt="" loading="eager" decoding="async">
+              <span class="badge">Novo</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Caneca Névoa</h3>
+              <p class="card__meta">300 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 98</span><span class="price__inst">3x de R$ 32,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-caneca" data-name="Caneca Névoa" data-price="98" data-img="assets/pecas/nevoa-caneca.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-xicara.svg" width="400" height="500" alt="" loading="eager" decoding="async">
+              <span class="badge">Novo</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Xícara com pires Névoa</h3>
+              <p class="card__meta">120 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 84</span></p>
+              <button class="add" type="button" data-add="nevoa-xicara" data-name="Xícara com pires Névoa" data-price="84" data-img="assets/pecas/nevoa-xicara.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="tigelas">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-tigela.svg" width="400" height="500" alt="" loading="eager" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Tigela funda Névoa</h3>
+              <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-tigela" data-name="Tigela funda Névoa" data-price="92" data-img="assets/pecas/nevoa-tigela.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="pratos">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-prato.svg" width="400" height="500" alt="" loading="eager" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Prato raso Névoa</h3>
+              <p class="card__meta">Ø 26 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-prato" data-name="Prato raso Névoa" data-price="128" data-img="assets/pecas/nevoa-prato.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="vasos">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-jarra.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              <span class="badge">Novo</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Jarra Névoa</h3>
+              <p class="card__meta">1 litro · grés</p>
+              <p class="price"><span class="price__val">R$ 168</span><span class="price__inst">3x de R$ 56<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-jarra" data-name="Jarra Névoa" data-price="168" data-img="assets/pecas/nevoa-jarra.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="vasos">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-garrafa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Vaso garrafa Névoa</h3>
+              <p class="card__meta">altura 22 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 186</span><span class="price__inst">3x de R$ 62<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-garrafa" data-name="Vaso garrafa Névoa" data-price="186" data-img="assets/pecas/nevoa-garrafa.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="travessas">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Travessa oval Névoa</h3>
+              <p class="card__meta">32 × 22 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 210</span><span class="price__inst">3x de R$ 70<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="nevoa-travessa" data-name="Travessa oval Névoa" data-price="210" data-img="assets/pecas/nevoa-travessa.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--nevoa" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/nevoa-copo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Copo Névoa</h3>
+              <p class="card__meta">250 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 72</span></p>
+              <button class="add" type="button" data-add="nevoa-copo" data-name="Copo Névoa" data-price="72" data-img="assets/pecas/nevoa-copo.svg" data-col="nevoa"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+        </ul>
+        <div class="carousel__dots" hidden></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="atelie" class="sec sec--ink" aria-labelledby="t-atelie">
+    <div class="wrap atelie">
+      <div class="atelie__intro">
+        <p class="kicker kicker--inverse">O ateliê</p>
+        <h2 id="t-atelie" class="sec__title">Uma ceramista, um forno, uma fornada por mês.</h2>
+        <p>Cada peça é torneada e esmaltada à mão em Curitiba. Por isso nenhuma é igual à outra: o esmalte escorre do seu jeito em cada queima.</p>
+      </div>
+      <ul class="facts" role="list">
+        <li><span class="facts__num">1.240 °C</span><span>Queima em alta temperatura: o grés fica resistente e pouco poroso.</span></li>
+        <li><span class="facts__num">Dia a dia</span><span>Vai ao micro-ondas e à lava-louças. Evite choques bruscos de temperatura.</span></li>
+        <li><span class="facts__num">Peça única</span><span>A variação de tom entre peças é parte do desenho, não defeito.</span></li>
       </ul>
+    </div>
+  </section>
 
-      <div class="gift">
-        <h3>Ideia de presente</h3>
-        <p><strong>Caneca Névoa + xícara com pires: R$ 182 <span class="ex">(exemplo)</span>.</strong> Combinação sugerida, não é pacote à venda.</p>
+  <section id="colecoes" class="sec sec--past" aria-labelledby="t-colecoes">
+    <div class="wrap">
+      <header class="sec__intro">
+        <h2 id="t-colecoes" class="sec__title">Coleções passadas</h2>
+        <p class="sec__lead">Fornadas anteriores que ainda têm peças no ateliê. Cada coleção tem um esmalte só dela.</p>
+      </header>
+    </div>
+    <div class="past past--terra" id="colecao-terra">
+      <div class="wrap">
+        <header class="sec__head sec__head--past">
+          <div class="past__id">
+            <span class="swatch swatch--terra" aria-hidden="true"></span>
+            <div>
+              <p class="kicker">Outono 2026</p>
+              <h3 id="t-col-terra" class="past__title">Terra Molhada</h3>
+            </div>
+          </div>
+          <p class="sec__aside">Óxido de ferro sobre argila escura: ferrugem embaixo, areia molhada em cima.</p>
+        </header>
+      <div class="carousel" data-carousel>
+        <div class="carousel__nav" hidden>
+          <button class="arrow" type="button" data-dir="-1" aria-label="Peças anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg></button>
+          <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
+        </div>
+        <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-col-terra">
+          <li class="card card--terra" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/terra-caneca.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Caneca Terra Molhada</h3>
+              <p class="card__meta">300 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 98</span><span class="price__inst">3x de R$ 32,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="terra-caneca" data-name="Caneca Terra Molhada" data-price="98" data-img="assets/pecas/terra-caneca.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--terra" data-cat="vasos">
+            <div class="card__media">
+              <img src="assets/pecas/terra-bojudo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Vaso bojudo Terra Molhada</h3>
+              <p class="card__meta">altura 18 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 196</span><span class="price__inst">3x de R$ 65,33<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="terra-bojudo" data-name="Vaso bojudo Terra Molhada" data-price="196" data-img="assets/pecas/terra-bojudo.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--terra" data-cat="tigelas">
+            <div class="card__media">
+              <img src="assets/pecas/terra-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Tigela funda Terra Molhada</h3>
+              <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="terra-tigela" data-name="Tigela funda Terra Molhada" data-price="92" data-img="assets/pecas/terra-tigela.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--terra" data-cat="pratos">
+            <div class="card__media">
+              <img src="assets/pecas/terra-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              <span class="badge badge--muted">Esgotado</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Prato raso Terra Molhada</h3>
+              <p class="card__meta">Ø 26 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" disabled>Esgotado</button>
+            </div>
+          </li>
+          <li class="card card--terra" data-cat="tigelas">
+            <div class="card__media">
+              <img src="assets/pecas/terra-ramequim.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Ramequim Terra Molhada</h3>
+              <p class="card__meta">Ø 9 cm · 150 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 58</span></p>
+              <button class="add" type="button" data-add="terra-ramequim" data-name="Ramequim Terra Molhada" data-price="58" data-img="assets/pecas/terra-ramequim.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--terra" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/terra-copo.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Copo Terra Molhada</h3>
+              <p class="card__meta">250 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 72</span></p>
+              <button class="add" type="button" data-add="terra-copo" data-name="Copo Terra Molhada" data-price="72" data-img="assets/pecas/terra-copo.svg" data-col="terra"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+        </ul>
+        <div class="carousel__dots" hidden></div>
+      </div>
+      </div>
+    </div>
+    <div class="past past--sal" id="colecao-sal">
+      <div class="wrap">
+        <header class="sec__head sec__head--past">
+          <div class="past__id">
+            <span class="swatch swatch--sal" aria-hidden="true"></span>
+            <div>
+              <p class="kicker">Verão 2025/26</p>
+              <h3 id="t-col-sal" class="past__title">Sal</h3>
+            </div>
+          </div>
+          <p class="sec__aside">Branco quente de sal grosso, com a borda mergulhada em azul cobalto.</p>
+        </header>
+      <div class="carousel" data-carousel>
+        <div class="carousel__nav" hidden>
+          <button class="arrow" type="button" data-dir="-1" aria-label="Peças anteriores"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg></button>
+          <button class="arrow" type="button" data-dir="1" aria-label="Próximas peças"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg></button>
+        </div>
+        <ul class="carousel__track" role="list" tabindex="0" aria-labelledby="t-col-sal">
+          <li class="card card--sal" data-cat="canecas">
+            <div class="card__media">
+              <img src="assets/pecas/sal-xicara.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Xícara com pires Sal</h3>
+              <p class="card__meta">120 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 84</span></p>
+              <button class="add" type="button" data-add="sal-xicara" data-name="Xícara com pires Sal" data-price="84" data-img="assets/pecas/sal-xicara.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--sal" data-cat="tigelas">
+            <div class="card__media">
+              <img src="assets/pecas/sal-tigela.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Tigela funda Sal</h3>
+              <p class="card__meta">Ø 15 cm · 600 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 92</span><span class="price__inst">3x de R$ 30,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="sal-tigela" data-name="Tigela funda Sal" data-price="92" data-img="assets/pecas/sal-tigela.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--sal" data-cat="vasos">
+            <div class="card__media">
+              <img src="assets/pecas/sal-jarra.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Jarra Sal</h3>
+              <p class="card__meta">1 litro · grés</p>
+              <p class="price"><span class="price__val">R$ 168</span><span class="price__inst">3x de R$ 56<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="sal-jarra" data-name="Jarra Sal" data-price="168" data-img="assets/pecas/sal-jarra.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--sal" data-cat="pratos">
+            <div class="card__media">
+              <img src="assets/pecas/sal-prato.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Prato raso Sal</h3>
+              <p class="card__meta">Ø 26 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 128</span><span class="price__inst">3x de R$ 42,67<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" data-add="sal-prato" data-name="Prato raso Sal" data-price="128" data-img="assets/pecas/sal-prato.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+          <li class="card card--sal" data-cat="travessas">
+            <div class="card__media">
+              <img src="assets/pecas/sal-travessa.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              <span class="badge badge--muted">Esgotado</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Travessa oval Sal</h3>
+              <p class="card__meta">32 × 22 cm · grés</p>
+              <p class="price"><span class="price__val">R$ 210</span><span class="price__inst">3x de R$ 70<span class="price__nojuros"> sem juros</span></span></p>
+              <button class="add" type="button" disabled>Esgotado</button>
+            </div>
+          </li>
+          <li class="card card--sal" data-cat="tigelas">
+            <div class="card__media">
+              <img src="assets/pecas/sal-ramequim.svg" width="400" height="500" alt="" loading="lazy" decoding="async">
+              
+            </div>
+            <div class="card__body">
+              <h3 class="card__name">Ramequim Sal</h3>
+              <p class="card__meta">Ø 9 cm · 150 ml · grés</p>
+              <p class="price"><span class="price__val">R$ 58</span></p>
+              <button class="add" type="button" data-add="sal-ramequim" data-name="Ramequim Sal" data-price="58" data-img="assets/pecas/sal-ramequim.svg" data-col="sal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span class="add__label">Adicionar à sacola</span></button>
+            </div>
+          </li>
+        </ul>
+        <div class="carousel__dots" hidden></div>
+      </div>
       </div>
     </div>
   </section>
 
-  <!-- Material e cuidados -->
-  <section id="material" class="band band--surface" aria-labelledby="t-material" tabindex="-1">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="t-material" tabindex="-1">Material e cuidados</h2>
-        <p class="tag">Informações de exemplo</p>
-      </div>
-      <div class="blocks">
-        <div class="block">
-          <h3>O que é grés</h3>
-          <p>Grés é uma argila queimada em temperatura alta, em torno de 1.240 °C, o que deixa a peça resistente e pouco porosa. <span class="ex">(exemplo)</span></p>
-        </div>
-        <div class="block">
-          <h3>Como cuidar</h3>
-          <ul class="care">
-            <li>Pode ir ao micro-ondas.</li>
-            <li>Pode ir à lava-louças.</li>
-            <li>Evite choques bruscos de temperatura.</li>
-          </ul>
-        </div>
-        <div class="block">
-          <h3>Cada peça é um pouco diferente</h3>
-          <p>O esmalte pode variar de tom entre uma fornada e outra. Isso não é defeito, é o jeito da peça.</p>
-        </div>
-        <div class="block">
-          <h3>Encomendas</h3>
-          <p>Peças sob encomenda levam até 45 dias. <span class="ex">(exemplo)</span></p>
-        </div>
-      </div>
-    </div>
+  <section class="perks" aria-label="Vantagens da loja">
+    <ul class="wrap perks__list" role="list">
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 6.5h11v10h-11zM13.5 10h4l3 3.2v3.3h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="17" cy="17.5" r="1.8"/></svg><span><strong>Frete grátis</strong> acima de R$ 299</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8.5h14l-3.5-3.5M20 15.5H6l3.5 3.5"/></svg><span><strong>Troca fácil</strong> em até 7 dias</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10h16v10H4zM3 7h18v3H3zM12 7v13"/><path d="M12 7c-1.5-3-5-3.2-5-1.2S10 7 12 7zm0 0c1.5-3 5-3.2 5-1.2S14 7 12 7z"/></svg><span><strong>Embalagem para presente</strong> sem custo</span></li>
+      <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 6h19v12h-19zM2.5 10h19M6 14.5h4"/></svg><span><strong>Pix ou cartão</strong> em até 3x sem juros</span></li>
+    </ul>
   </section>
 
-  <!-- Contato -->
-  <section id="contato" class="band" aria-labelledby="t-contato" tabindex="-1">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 id="t-contato" tabindex="-1">Contato</h2>
-        <p class="tag">Dados de exemplo. Este endereço e esta feira não existem.</p>
-        <p class="support">Escreva para saber quais peças da fornada estão disponíveis.</p>
+  <section id="ajuda" class="sec" aria-labelledby="t-ajuda">
+    <div class="wrap faq">
+      <header>
+        <h2 id="t-ajuda" class="sec__title">Ajuda</h2>
+        <p class="sec__lead">Respostas rápidas antes de fechar o pedido.</p>
+      </header>
+      <div class="faq__list">
+        <details id="envio">
+          <summary>Envio e prazos</summary>
+          <p>Postamos em até 3 dias úteis, em caixa com proteção individual para cada peça. O prazo de entrega aparece no fechamento do pedido.</p>
+        </details>
+        <details id="trocas">
+          <summary>Trocas e devoluções</summary>
+          <p>Você tem 7 dias após o recebimento para pedir troca ou devolução, como prevê o Código de Defesa do Consumidor. Se a peça chegar com dano, enviamos outra.</p>
+        </details>
+        <details id="cuidados">
+          <summary>Cuidados com as peças</summary>
+          <p>Grés queimado a 1.240 °C pode ir ao micro-ondas e à lava-louças. Evite tirar a peça da geladeira direto para o forno quente.</p>
+        </details>
+        <details id="pagamento">
+          <summary>Formas de pagamento</summary>
+          <p>Pix ou cartão de crédito em até 3x sem juros, a partir de R$ 90.</p>
+        </details>
       </div>
-      <dl class="dl">
-        <div>
-          <dt>E-mail</dt>
-          <dd><a class="link link--mail" href="mailto:contato@ateliebruma.example">contato@ateliebruma.example</a></dd>
-        </div>
-        <div>
-          <dt>Endereço</dt>
-          <dd>Rua da Bruma Clara, 214, Curitiba (PR)</dd>
-        </div>
-        <div>
-          <dt>Cidade</dt>
-          <dd>Curitiba (PR). Ateliê aberto com hora marcada.</dd>
-        </div>
-        <div>
-          <dt>Onde encontrar as peças</dt>
-          <dd>Feira mensal de cerâmica autoral, todo 2º sábado.</dd>
-        </div>
-        <div>
-          <dt>Encomendas</dt>
-          <dd>Prazo de até 45 dias.</dd>
-        </div>
-      </dl>
     </div>
   </section>
 
 </main>
 
-<footer class="site-footer">
-  <div class="wrap site-footer__in">
-    <a class="brand brand--inverse" href="#topo"><img src="assets/logo-mono-fundo-escuro.svg" width="81" height="32" alt="Ateliê Bruma"><span class="sr-only">, início</span></a>
-    <div class="site-footer__text">
-      <p>Ateliê Bruma é uma marca fictícia criada para um piloto de avaliação. Todos os dados desta página são exemplos.</p>
-      <a class="link link--inverse" href="#topo">Voltar ao início</a>
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__brand">
+      <img src="assets/logo-mono-fundo-escuro.svg" width="101" height="40" alt="Ateliê Bruma">
+      <p>Cerâmica de mesa feita à mão, em fornadas pequenas.</p>
     </div>
+    <nav class="footer__col" aria-label="Loja">
+      <h2>Loja</h2>
+      <ul role="list">
+        <li><a href="#novidades">Novidades</a></li>
+        <li><a href="#categorias">Categorias</a></li>
+        <li><a href="#colecoes">Coleções passadas</a></li>
+      </ul>
+    </nav>
+    <nav class="footer__col" aria-label="Ajuda">
+      <h2>Ajuda</h2>
+      <ul role="list">
+        <li><a href="#envio">Envio e prazos</a></li>
+        <li><a href="#trocas">Trocas e devoluções</a></li>
+        <li><a href="#cuidados">Cuidados com as peças</a></li>
+        <li><a href="#pagamento">Pagamento</a></li>
+      </ul>
+    </nav>
+    <p class="footer__legal">Ateliê Bruma é uma marca fictícia criada para um piloto de avaliação. Produtos, preços e políticas são exemplos e nenhuma compra é processada.</p>
   </div>
 </footer>
 
+<div class="drawer drawer--right" id="sacola" data-drawer hidden>
+  <div class="drawer__scrim" data-close></div>
+  <div class="drawer__panel cart" role="dialog" aria-modal="true" aria-labelledby="t-sacola">
+    <div class="drawer__head">
+      <h2 id="t-sacola" class="cart__title">Sua sacola</h2>
+      <button class="icon-btn" type="button" aria-label="Fechar sacola" data-close><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></svg></button>
+    </div>
+    <div class="cart__ship" data-ship>
+      <p data-ship-text>Faltam R$ 299 para o frete grátis.</p>
+      <div class="cart__bar"><span data-ship-bar></span></div>
+    </div>
+    <ul class="cart__list" role="list" data-cart-list></ul>
+    <div class="cart__empty" data-cart-empty>
+      <p>Sua sacola está vazia.</p>
+      <a class="btn btn--ghost" href="#novidades" data-close>Ver novidades</a>
+    </div>
+    <div class="cart__foot" data-cart-foot hidden>
+      <p class="cart__sum"><span>Subtotal</span><strong data-cart-subtotal>R$ 0</strong></p>
+      <button class="btn btn--block" type="button" data-checkout>Finalizar compra</button>
+      <p class="cart__notice" data-checkout-notice role="status"></p>
+    </div>
+  </div>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+<script>window.BRUMA_FRETE_GRATIS = 299;</script>
 </body>
 </html>
