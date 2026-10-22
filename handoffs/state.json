@@ -363,7 +363,7 @@
       "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
-      "status": "COMPLETED_VERIFIED",
+      "status": "READY_FOR_REVIEW",
       "depends_on": [
         "DEV-002"
       ],
@@ -374,7 +374,9 @@
         "evidence/QA-001/reteste.json"
       ],
       "assumptions": [],
-      "open_questions": [],
+      "open_questions": [
+        "Fica COMPLETED_VERIFIED quando DEV-002 (e UI-003/DES-001) forem aprovados pelo proprietário; o validador exige pré-requisito verificado."
+      ],
       "risks": [],
       "acceptance_criteria": [],
       "evidence": [
@@ -387,7 +389,7 @@
       "dna_version": "0.2.0",
       "task_id": "QUAL-001",
       "agent": "Quality Specialist",
-      "status": "COMPLETED_VERIFIED",
+      "status": "READY_FOR_REVIEW",
       "depends_on": [
         "UI-001",
         "DEV-002"
@@ -397,7 +399,9 @@
         "evidence/QUAL-001/reteste.json"
       ],
       "assumptions": [],
-      "open_questions": [],
+      "open_questions": [
+        "Fica COMPLETED_VERIFIED quando DEV-002 (e UI-003/DES-001) forem aprovados pelo proprietário; o validador exige pré-requisito verificado."
+      ],
       "risks": [],
       "acceptance_criteria": [],
       "evidence": [
