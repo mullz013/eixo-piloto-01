@@ -3,13 +3,14 @@
   "url": "http://127.0.0.1:8765/index.html",
   "chromium": "141.0.7390.37",
   "playwright_python": "1.64.0",
-  "axe": null
+  "axe": "/tmp/claude-0/-home-claude/ccc621f2-8dc4-5dad-8106-d1347f352e12/scratchpad/axe/package/axe.min.js"
  },
  "summary": {
-  "PASS": 70,
-  "FAIL": 3,
+  "PASS": 83,
+  "FAIL": 0,
   "ERROR": 0,
-  "NOT_RUN": 1
+  "NOT_RUN": 0,
+  "KNOWN_P3": 2
  },
  "results": [
   {
@@ -686,7 +687,7 @@
    "title": "Link profundo index.html#colecoes (375px)",
    "status": "PASS",
    "details": {
-    "top": 471,
+    "top": 402,
     "hb": 65
    }
   },
@@ -695,7 +696,7 @@
    "title": "Link profundo index.html#colecao-terra (375px)",
    "status": "PASS",
    "details": {
-    "top": 506,
+    "top": 314,
     "hb": 65
    }
   },
@@ -704,7 +705,7 @@
    "title": "Link profundo index.html#colecao-sal (375px)",
    "status": "PASS",
    "details": {
-    "top": 484,
+    "top": 343,
     "hb": 65
    }
   },
@@ -1086,7 +1087,7 @@
     "arrowsVisible": false,
     "filterLinks": 14,
     "hash_after_click": "#ajuda",
-    "ajuda_top": 3121.046875,
+    "ajuda_top": 3158.046875,
     "first_tab": "Envio e prazos"
    }
   },
@@ -1123,7 +1124,7 @@
     "arrowsVisible": false,
     "filterLinks": 14,
     "hash_after_click": "#ajuda",
-    "ajuda_top": 3165.0625,
+    "ajuda_top": 3865.0625,
     "first_tab": "Envio e prazos"
    }
   },
@@ -1222,12 +1223,12 @@
      }
     ],
     "fotos_bytes": 139642,
-    "all_local_resources_bytes": 362722,
+    "all_local_resources_bytes": 362878,
     "cls_after_load": 0,
     "cls_after_full_scroll": 0,
     "shifts": [],
     "lcp_ms_lab_unthrottled": {
-     "t": 128,
+     "t": 124,
      "el": "hero",
      "size": 22801
     },
@@ -1290,12 +1291,20 @@
      }
     ],
     "fotos_bytes": 172798,
-    "all_local_resources_bytes": 395878,
+    "all_local_resources_bytes": 396034,
     "cls_after_load": 0,
-    "cls_after_full_scroll": 0,
-    "shifts": [],
+    "cls_after_full_scroll": 0.0,
+    "shifts": [
+     {
+      "v": 6.965877914951989e-07,
+      "src": [
+       "::before",
+       "::before"
+      ]
+     }
+    ],
     "lcp_ms_lab_unthrottled": {
-     "t": 208,
+     "t": 224,
      "el": "hero",
      "size": 25589
     },
@@ -1496,11 +1505,146 @@
    "details": null
   },
   {
-   "id": "T15-axe",
-   "title": "axe-core",
-   "status": "NOT_RUN",
+   "id": "T15-axe-320",
+   "title": "axe-core 4.10.2 (320): 0 violações critical/serious",
+   "status": "PASS",
    "details": {
-    "reason": "axe.min.js não fornecido"
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 106
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-375",
+   "title": "axe-core 4.10.2 (375): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 106
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-768",
+   "title": "axe-core 4.10.2 (768): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 98
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-1024",
+   "title": "axe-core 4.10.2 (1024): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 95
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-1440",
+   "title": "axe-core 4.10.2 (1440): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 91
+     }
+    ],
+    "passes": 46
+   }
+  },
+  {
+   "id": "T15-axe-375-menu",
+   "title": "axe-core 4.10.2 (375-menu): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 33
+   }
+  },
+  {
+   "id": "T15-axe-375-sacola",
+   "title": "axe-core 4.10.2 (375-sacola): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 1
+     },
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 35
+   }
+  },
+  {
+   "id": "T15-axe-1440-sacola",
+   "title": "axe-core 4.10.2 (1440-sacola): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 1
+     },
+     {
+      "id": "skip-link",
+      "count": 1
+     }
+    ],
+    "passes": 35
+   }
+  },
+  {
+   "id": "T15-axe-375-filtro",
+   "title": "axe-core 4.10.2 (375-filtro): 0 violações critical/serious",
+   "status": "PASS",
+   "details": {
+    "other_violations": [],
+    "incomplete": [
+     {
+      "id": "color-contrast",
+      "count": 29
+     }
+    ],
+    "passes": 46
    }
   },
   {
@@ -1859,9 +2003,24 @@
   {
    "id": "T19-accessible-names",
    "title": "Nomes acessíveis: sacola, adicionar, setas, bullets, hambúrguer (aria snapshot do Chromium)",
-   "status": "FAIL",
+   "status": "PASS",
    "details": {
-    "assert": "{'header': '- banner:\\n  - link \"Ateliê Bruma, início\":\\n    - /url: \"#topo\"\\n    - img \"Ateliê Bruma, início\"\\n  - navigation \"Principal\":\\n    - list:\\n      - listitem:\\n        - link \"Novidades\":\\n          - /url: \"#novidades\"\\n      - listitem:\\n        - link \"Categorias\":\\n          - /url: \"#categorias\"\\n      - listitem:\\n        - link \"Coleções passadas\":\\n          - /url: \"#colecoes\"\\n      - listitem:\\n        - link \"O ateliê\":\\n          - /url: \"#atelie\"\\n      - listitem:\\n        - link \"Ajuda\":\\n          - /url: \"#ajuda\"\\n  - button \"Sacola, 1 item\"', 'first_card': '- listitem:\\n  - text: Novo\\n  - heading \"Caneca Névoa\" [level=3]\\n  - paragraph: 300 ml · grés\\n  - paragraph: R$ 98 3x de R$ 32,67 sem juros\\n  - \\'button \"Adicionada à sacola: Caneca Névoa\"\\': Adicionada à sacola', 'carousel_controls': '- button \"Peças anteriores de Névoa\" [disabled]\\n- button \"Próximas peças de Névoa\"', 'dots': '- group \"Páginas da vitrine Névoa\":\\n  - button \"Página 1 de 2 de Névoa\"\\n  - button \"Página 2 de 2 de Névoa\"', 'sold_out': '- listitem:\\n  - text: Esgotado\\n  - heading \"Prato raso Terra Molhada\" [level=4]\\n  - paragraph: Ø 26 cm · grés\\n  - paragraph: R$ 128 3x de R$ 42,67 sem juros\\n  - \\'button \"Esgotado: Prato raso Terra Molhada\" [disabled]\\': Esgotado'}"
+    "bag_text": "Sacola1Sacola, 1 item",
+    "names": {
+     "done_after_click": 1,
+     "add_after_1_9s": 1,
+     "add_all": 18,
+     "sold_out": [
+      "Esgotado: Prato raso Terra Molhada",
+      "Esgotado: Travessa oval Sal"
+     ],
+     "sold_out_role_ok": 1,
+     "old_name": 0,
+     "label_in_name": true
+    },
+    "snapshots_file": "aria-snapshot-reteste-http.yml",
+    "header": "- banner:\n  - link \"Ateliê Bruma, início\":\n    - /url: \"#topo\"\n    - img \"Ateliê Bruma, início\"\n  - navigation \"Principal\":\n    - list:\n      - listitem:\n        - link \"Novidades\":\n          - /url: \"#novidades\"\n      - listitem:\n        - link \"Categorias\":\n          - /url: \"#categorias\"\n      - listitem:\n        - link \"Coleções passadas\":\n          - /url: \"#colecoes\"\n      - listitem:\n        - link \"O ateliê\":\n          - /url: \"#atelie\"\n      - listitem:\n        - link \"Ajuda\":\n          - /url: \"#ajuda\"\n  - button \"Sacola, 1 item\"",
+    "sold_out": "- listitem:\n  - text: Esgotado\n  - heading \"Prato raso Terra Molhada\" [level=4]\n  - paragraph: Ø 26 cm · grés\n  - paragraph: R$ 128 3x de R$ 42,67 sem juros\n  - 'button \"Esgotado: Prato raso Terra Molhada\" [disabled]': Esgotado"
    }
   },
   {
@@ -1878,10 +2037,54 @@
   },
   {
    "id": "T21-first-screen-320",
-   "title": "Primeira tela 320×568: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
-   "status": "FAIL",
+   "title": "Primeira tela 320×568: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível [CTA na dobra fora do escopo da decisão de 2026-10-22]",
+   "status": "KNOWN_P3",
    "details": {
-    "assert": "{'h1': {'top': 357, 'bottom': 457}, 'cta': {'top': 641, 'bottom': 693}, 'vh': 568, 'cta_text': 'Comprar a coleção', 'hash': '#novidades', 'title_top': 196.203125, 'hb': 65, 'tab_after_cta': 'Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades'}"
+    "h1": {
+     "top": 357,
+     "bottom": 457
+    },
+    "cta": {
+     "top": 641,
+     "bottom": 693
+    },
+    "vh": 568,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 196.203125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades",
+    "known_issue": {
+     "severity": "P3",
+     "why": "CTA abaixo da dobra; fora do escopo da decisão do proprietário de 2026-10-22 (375×667+)",
+     "px_below_fold": 125
+    }
+   }
+  },
+  {
+   "id": "T21-first-screen-360",
+   "title": "Primeira tela 360×640: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível [CTA na dobra fora do escopo da decisão de 2026-10-22]",
+   "status": "KNOWN_P3",
+   "details": {
+    "h1": {
+     "top": 359,
+     "bottom": 464
+    },
+    "cta": {
+     "top": 620,
+     "bottom": 672
+    },
+    "vh": 640,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 195.8125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades",
+    "known_issue": {
+     "severity": "P3",
+     "why": "CTA abaixo da dobra; fora do escopo da decisão do proprietário de 2026-10-22 (375×667+)",
+     "px_below_fold": 32
+    }
    }
   },
   {
@@ -1906,11 +2109,54 @@
    }
   },
   {
+   "id": "T21-first-screen-390",
+   "title": "Primeira tela 390×844: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
+   "status": "PASS",
+   "details": {
+    "h1": {
+     "top": 345,
+     "bottom": 454
+    },
+    "cta": {
+     "top": 611,
+     "bottom": 663
+    },
+    "vh": 844,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 196.015625,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades"
+   }
+  },
+  {
+   "id": "T21-first-screen-414",
+   "title": "Primeira tela 414×896: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível",
+   "status": "PASS",
+   "details": {
+    "h1": {
+     "top": 356,
+     "bottom": 467
+    },
+    "cta": {
+     "top": 596,
+     "bottom": 648
+    },
+    "vh": 896,
+    "cta_text": "Comprar a coleção",
+    "hash": "#novidades",
+    "title_top": 195.953125,
+    "hb": 65,
+    "tab_after_cta": "Novo Caneca Névoa 300 ml · grés R$ 983x  @novidades"
+   }
+  },
+  {
    "id": "T22-nojs-anchor-scroll",
    "title": "Sem JavaScript (375): clicar 'Ajuda' leva o título para baixo do header (após a rolagem suave)",
-   "status": "FAIL",
+   "status": "PASS",
    "details": {
-    "assert": "{'top': 152.046875, 'header_bottom': 159.75}"
+    "top": 248.046875,
+    "header_bottom": 159.75
    }
   },
   {

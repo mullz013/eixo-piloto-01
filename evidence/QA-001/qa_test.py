@@ -905,9 +905,18 @@ def main():
                         "sold_out": pg.locator(".carousel__track > li:has(button.add[disabled])").first.aria_snapshot()}
                 (OUT / f"aria-snapshot-{TAG}.yml").write_text("\n\n".join(f"# {k}\n{v}" for k, v in snap.items()), encoding="utf-8")
                 bag_name = pg.get_by_role("button", name=re.compile("Sacola")).first.evaluate("e => e.textContent.replace(/\\s+/g,' ').trim()")
-                add_ok = pg.get_by_role("button", name="Adicionar Caneca Névoa à sacola").count()
-                assert add_ok == 1, snap
-                return {"bag_text": bag_name, "snapshots_file": f"aria-snapshot-{TAG}.yml", "header": snap["header"][:600], "sold_out": snap["sold_out"][:400]}
+                # Reteste afbd689: nomes "Adicionar à sacola: <peça>" / "Adicionada à sacola: <peça>" (1,6 s) / "Esgotado: <peça>" (Quality P2-3, WCAG 2.5.3)
+                names = {"done_after_click": pg.get_by_role("button", name="Adicionada à sacola: Caneca Névoa", exact=True).count()}
+                pg.wait_for_timeout(1900)
+                names["add_after_1_9s"] = pg.get_by_role("button", name="Adicionar à sacola: Caneca Névoa", exact=True).count()
+                names["add_all"] = pg.get_by_role("button", name=re.compile(r"^Adicionar à sacola: .+")).count()
+                names["sold_out"] = pg.locator("button.add[disabled]").evaluate_all("bs => bs.map(b => b.getAttribute('aria-label'))")
+                names["sold_out_role_ok"] = pg.get_by_role("button", name="Esgotado: Prato raso Terra Molhada", exact=True).count()
+                names["old_name"] = pg.get_by_role("button", name="Adicionar Caneca Névoa à sacola", exact=True).count()
+                names["label_in_name"] = pg.locator("[data-add]").evaluate_all("bs => bs.every(b => b.getAttribute('aria-label').startsWith(b.querySelector('.add__long').textContent.trim()) || b.getAttribute('aria-label').startsWith(b.querySelector('.add__short').textContent.trim()))")
+                assert names["done_after_click"] == 1 and names["add_after_1_9s"] == 1 and names["sold_out_role_ok"] == 1 and names["old_name"] == 0 \
+                    and all(re.match(r"^Esgotado: .+", n or "") for n in names["sold_out"]) and names["label_in_name"], {"names": names, "snap": snap}
+                return {"bag_text": bag_name, "names": names, "snapshots_file": f"aria-snapshot-{TAG}.yml", "header": snap["header"][:600], "sold_out": snap["sold_out"][:400]}
             finally:
                 c.close()
 
@@ -925,8 +934,12 @@ def main():
             finally:
                 c.close()
 
-        for (w, h) in [(320, 568), (375, 667)]:
-            @run(f"T21-first-screen-{w}", f"Primeira tela {w}×{h}: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível")
+        # Decisão do proprietário (2026-10-22, BUG-01 "foto mais baixa no celular"): escopo = CTA sem rolar em 375×667 e maiores.
+        # 320×568 e 360×640 ficam fora da decisão: CTA abaixo da dobra é registrado como KNOWN_P3 (não P1); o resto do critério continua exigido.
+        OUT_OF_SCOPE_FOLD = {320, 360}
+        for (w, h) in [(320, 568), (360, 640), (375, 667), (390, 844), (414, 896)]:
+            @run(f"T21-first-screen-{w}", f"Primeira tela {w}×{h}: h1 e CTA 'Comprar a coleção' visíveis sem rolar; CTA leva a #novidades com título visível"
+                 + (" [CTA na dobra fora do escopo da decisão de 2026-10-22]" if w in OUT_OF_SCOPE_FOLD else ""))
             def _(w=w, h=h):
                 c, pg = new_page(browser, w, h, motion="reduce")
                 try:
@@ -940,8 +953,12 @@ def main():
                     info["hb"] = pg.evaluate("document.querySelector('[data-header]').getBoundingClientRect().bottom")
                     pg.keyboard.press("Tab")
                     info["tab_after_cta"] = pg.evaluate("(() => { const e = document.activeElement; return (e.getAttribute('aria-label') || e.textContent).trim().replace(/\\s+/g,' ').slice(0,40) + ' @' + (e.closest('section') || {}).id; })()")
-                    ok = info["h1"]["bottom"] <= h and info["cta"]["bottom"] <= h and info["hash"] == "#novidades" and info["hb"] <= info["title_top"] < h
-                    assert ok, info
+                    rest_ok = info["h1"]["bottom"] <= h and info["hash"] == "#novidades" and info["hb"] <= info["title_top"] < h
+                    cta_ok = info["cta"]["bottom"] <= h
+                    if w in OUT_OF_SCOPE_FOLD and rest_ok and not cta_ok:
+                        info["known_issue"] = {"severity": "P3", "why": "CTA abaixo da dobra; fora do escopo da decisão do proprietário de 2026-10-22 (375×667+)", "px_below_fold": info["cta"]["bottom"] - h}
+                        return ("KNOWN_P3", info)
+                    assert rest_ok and cta_ok, info
                     return info
                 finally:
                     c.close()
@@ -1001,7 +1018,7 @@ def main():
 
         browser.close()
 
-    summary = {s: sum(1 for r in RESULTS if r["status"] == s) for s in ("PASS", "FAIL", "ERROR", "NOT_RUN")}
+    summary = {s: sum(1 for r in RESULTS if r["status"] == s) for s in ("PASS", "FAIL", "ERROR", "NOT_RUN", "KNOWN_P3")}
     (OUT / f"results-{TAG}.json").write_text(json.dumps({"meta": meta, "summary": summary, "results": RESULTS}, ensure_ascii=False, indent=1), encoding="utf-8")
     print("SUMMARY", summary)
 

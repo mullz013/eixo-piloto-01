@@ -363,21 +363,23 @@
       "dna_version": "0.2.0",
       "task_id": "QA-001",
       "agent": "QA Engineer",
-      "status": "FAILED",
+      "status": "COMPLETED_VERIFIED",
       "depends_on": [
         "DEV-002"
       ],
       "artifact_links": [
         "evidence/QA-001/report.md",
         "evidence/QA-001/report.json",
-        "evidence/QA-001/qa_test.py"
+        "evidence/QA-001/qa_test.py",
+        "evidence/QA-001/reteste.json"
       ],
       "assumptions": [],
       "open_questions": [],
       "risks": [],
       "acceptance_criteria": [],
       "evidence": [
-        "1159d06: 79/82 PASS por HTTP, axe 0 violações; P1 BUG-01 (CTA fora da primeira tela no celular). Correções aguardam reteste no novo commit."
+        "1159d06: 79/82 PASS por HTTP, axe 0 violações; P1 BUG-01 (CTA fora da primeira tela no celular). Correções aguardam reteste no novo commit.",
+        "Reteste em afbd689: PASS/GO, 83 PASS, 0 FAIL, 2 KNOWN_P3 (CTA abaixo da dobra em 320 e 360, fora da decisão do proprietário); axe 0 violações. Não é autorização de deploy."
       ]
     },
     {
@@ -385,20 +387,22 @@
       "dna_version": "0.2.0",
       "task_id": "QUAL-001",
       "agent": "Quality Specialist",
-      "status": "FAILED",
+      "status": "COMPLETED_VERIFIED",
       "depends_on": [
         "UI-001",
         "DEV-002"
       ],
       "artifact_links": [
-        "evidence/QUAL-001/report.md"
+        "evidence/QUAL-001/report.md",
+        "evidence/QUAL-001/reteste.json"
       ],
       "assumptions": [],
       "open_questions": [],
       "risks": [],
       "acceptance_criteria": [],
       "evidence": [
-        "1159d06: PASS_WITH_NOTES, 0 P0, 0 P1, 3 P2 (margem do banner, contraste do texto do banner, nome do botão de compra). P2 corrigidos; aguardam reteste."
+        "1159d06: PASS_WITH_NOTES, 0 P0, 0 P1, 3 P2 (margem do banner, contraste do texto do banner, nome do botão de compra). P2 corrigidos; aguardam reteste.",
+        "Reteste em afbd689: PASS_WITH_NOTES, os 3 P2 corrigidos (margens iguais, contraste mínimo 4,69:1, nomes acessíveis); P3 abertos registrados no report.md."
       ]
     },
     {
